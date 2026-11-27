@@ -1,0 +1,34 @@
+---
+layout: layouts/page.njk
+title: Sources
+eyebrow: Credits
+lede: Every outside source Bible Carrel uses, with the notice its holder asks for and its license.
+description: The translations, study data, typefaces, icon artwork, videos and software Bible Carrel credits, with each notice and license.
+permalink: /sources/
+---
+{#- credits.json is kept in step with the app's Credits.swift by a test, so its "use" is the app's
+    wording. Where that wording reads only beside the app's own layout, the line here says it in full. #}
+{%- set useInFull = {
+  "amp": "Bible text, shown as AMP in the app",
+  "kjv": "Bible text and its book titles"
+} %}
+{%- for section in credits | bySection %}
+<h2>{{ section.name }}</h2>
+<ul class="credits">
+  {%- for credit in section.credits %}
+  {%- set use = useInFull[credit.id] or credit.use %}
+  <li id="credit-{{ credit.id }}">
+    <p class="credit-head">
+      <span class="credit-name">{{ credit.name }}{% if use != "Bible text" %} · {{ use }}{% endif %}</span>
+      <span class="credit-license">
+        {%- if credit.licenseFile %}<a href="{{ credit.licenseFile | licenseHref | url }}">{{ credit.license }}</a>
+        {%- elif credit.licenseLink %}<a href="{{ credit.licenseLink }}">{{ credit.license }}</a>
+        {%- else %}{{ credit.license }}{% endif -%}
+      </span>
+    </p>
+    <p class="credit-notice">{% if credit.noticeLinks.length %}{{ credit.notice | linkNotice(credit.noticeLinks) | safe }}{% else %}{{ credit.notice }}{% endif %}</p>
+    <p class="credit-address"><a href="{{ credit.link }}">{{ credit.link | replace("https://", "") }}</a></p>
+  </li>
+  {%- endfor %}
+</ul>
+{%- endfor %}

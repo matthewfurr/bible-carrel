@@ -1,0 +1,131 @@
+{
+  "version": "WEB",
+  "ID": "NT:MAT(WEB)",
+  "name": "Matthew",
+  "text": [
+    {
+      "ID": "NT:MAT.1",
+      "name": "Matthew 1",
+      "text": [
+        {
+          "ID": "1",
+          "text": "Chapter one verse one."
+        },
+        {
+          "ID": "2",
+          "text": "Chapter one verse two."
+        },
+        {
+          "ID": "2",
+          "text": ""
+        },
+        {
+          "ID": "3",
+          "text": "Chapter one verse three."
+        }
+      ]
+    },
+    {
+      "ID": "NT:MAT.2",
+      "name": "Matthew 2",
+      "text": [
+        {
+          "ID": "1",
+          "text": "Chapter two verse one."
+        },
+        {
+          "ID": "2",
+          "text": "Line a"
+        },
+        {
+          "ID": "2",
+          "text": "Line b"
+        },
+        {
+          "ID": "3",
+          "text": "Chapter two verse three."
+        }
+      ]
+    },
+    {
+      "ID": "NT:MAT.3",
+      "name": "Matthew 3",
+      "text": [
+        {
+          "ID": "1",
+          "text": "Chapter three verse one."
+        },
+        {
+          "ID": "3",
+          "text": "Chapter three verse three."
+        },
+        {
+          "ID": "4-5",
+          "text": "Chapter three verses four and five."
+        }
+      ]
+    },
+    {
+      "ID": "NT:MAT.4",
+      "name": "Matthew 4",
+      "text": [
+        {
+          "ID": "1",
+          "text": "Then Jesus was led up by the Spirit into the wilderness."
+        },
+        {
+          "ID": "2",
+          "text": "When he had fasted forty days and forty nights, he was hungry afterward."
+        },
+        {
+          "ID": "3",
+          "text": "The tempter came and said to him."
+        }
+      ]
+    },
+    {
+      "ID": "NT:MAT.5",
+      "name": "Matthew 5",
+      "text": [
+        {
+          "ID": "1",
+          "text": "Seeing the multitudes, he went up onto the mountain."
+        },
+        {
+          "ID": "2",
+          "text": "He opened his mouth and taught them, saying,"
+        },
+        {
+          "ID": "3",
+          "text": "Blessed are the poor in spirit, for theirs is the Kingdom of Heaven."
+        },
+        {
+          "ID": "4",
+          "text": "Blessed are those who mourn, for they shall be comforted."
+        },
+        {
+          "ID": "5",
+          "text": "Blessed are the gentle, for they shall inherit the earth."
+        }
+      ]
+    },
+    {
+      "ID": "NT:MAT.6",
+      "name": "Matthew 6",
+      "text": [
+        {
+          "ID": "1",
+          "text": "Be careful that you don't do your charitable giving before men."
+        },
+        {
+          "ID": "2",
+          "text": "Therefore when you do merciful deeds, don't sound a trumpet."
+        },
+        {
+          "ID": "3",
+          "text": "But when you do merciful deeds, don't let your left hand know."
+        }
+      ]
+    }
+  ]
+}

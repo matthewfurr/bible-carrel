@@ -1,0 +1,289 @@
+[
+ {
+  "id": "recP00000000905",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "personLookup": "jesus_905",
+   "personID": 905,
+   "displayTitle": "Jesus Christ",
+   "slug": "jesus_905",
+   "name": "Jesus",
+   "gender": "Male",
+   "surname": "Christ",
+   "alsoCalled": "Lord,Son,JESUS,LORD",
+   "birthYear": "-3",
+   "deathYear": "30",
+   "mother": [
+    "recP00000001938"
+   ],
+   "dictText": [
+    "The proper name of our Lord ([Matt. 1:21](/matt#Matt.1.21)).\n\nHe was born at\nBethlehem."
+   ],
+   "verseCount": 7,
+   "verses": [
+    "recV00000000006",
+    "recV00000000011",
+    "recV00000000017",
+    "recV00000000018",
+    "recV00000000022",
+    "recV00000000037",
+    "recV00000000038"
+   ]
+  }
+ },
+ {
+  "id": "recP00000000682",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "personLookup": "israel_682",
+   "personID": 682,
+   "displayTitle": "Jacob (Israel)",
+   "slug": "israel_682",
+   "name": "Israel",
+   "gender": "Male",
+   "alsoCalled": "Israel",
+   "birthYear": "-1835",
+   "deathYear": "-1688",
+   "father": [
+    "recP00000000616"
+   ],
+   "children": [
+    "recP00000001710"
+   ],
+   "verseCount": 2,
+   "verses": [
+    "recV00000000008",
+    "recV00000000012"
+   ]
+  }
+ },
+ {
+  "id": "recP00000000683",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "personLookup": "jacob_683",
+   "personID": 683,
+   "displayTitle": "Jacob",
+   "slug": "jacob_683",
+   "name": "Jacob",
+   "gender": "Male",
+   "children": [
+    "recP00000001715"
+   ],
+   "verseCount": 2,
+   "verses": [
+    "recV00000000016",
+    "recV00000000017"
+   ]
+  }
+ },
+ {
+  "id": "recP00000001715",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "personLookup": "joseph_1715",
+   "personID": 1715,
+   "displayTitle": "Joseph (Mary's Husband)",
+   "slug": "joseph_1715",
+   "name": "Joseph",
+   "gender": "Male",
+   "father": [
+    "recP00000000683"
+   ],
+   "partners": [
+    "recP00000001938"
+   ],
+   "verseCount": 6,
+   "verses": [
+    "recV00000000017",
+    "recV00000000018",
+    "recV00000000019",
+    "recV00000000020",
+    "recV00000000021",
+    "recV00000000030"
+   ]
+  }
+ },
+ {
+  "id": "recP00000001710",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "personLookup": "joseph_1710",
+   "personID": 1710,
+   "displayTitle": "Joseph (son of Jacob)",
+   "slug": "joseph_1710",
+   "name": "Joseph",
+   "gender": "Male",
+   "father": [
+    "recP00000000682"
+   ],
+   "verseCount": 1,
+   "verses": [
+    "recV00000000009"
+   ]
+  }
+ },
+ {
+  "id": "recP00000001938",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "personLookup": "mary_1938",
+   "personID": 1938,
+   "displayTitle": "Mary (Mother of Jesus)",
+   "slug": "mary_1938",
+   "name": "Mary",
+   "gender": "Female",
+   "alsoCalled": "mother",
+   "partners": [
+    "recP00000001715"
+   ],
+   "children": [
+    "recP00000000905"
+   ],
+   "verseCount": 4,
+   "verses": [
+    "recV00000000017",
+    "recV00000000018",
+    "recV00000000020",
+    "recV00000000029"
+   ]
+  }
+ },
+ {
+  "id": "recP00000000994",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "personLookup": "david_994",
+   "personID": 994,
+   "displayTitle": "David",
+   "slug": "david_994",
+   "name": "David",
+   "gender": "Male",
+   "birthYear": "-1084",
+   "deathYear": "-1014",
+   "father": [
+    "recP00000000903"
+   ],
+   "children": [
+    "recP00000002762"
+   ],
+   "verseCount": 3,
+   "verses": [
+    "recV00000000007",
+    "recV00000000011",
+    "recV00000000014"
+   ]
+  }
+ },
+ {
+  "id": "recP00000002762",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "personLookup": "solomon_2762",
+   "personID": 2762,
+   "displayTitle": "Solomon",
+   "slug": "solomon_2762",
+   "name": "Solomon",
+   "gender": "Male",
+   "father": [
+    "recP00000000994"
+   ],
+   "verseCount": 3,
+   "verses": [
+    "recV00000000014",
+    "recV00000000015",
+    "recV00000000042"
+   ]
+  }
+ },
+ {
+  "id": "recP00000000903",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "personLookup": "jesse_903",
+   "personID": 903,
+   "displayTitle": "Jesse",
+   "slug": "jesse_903",
+   "name": "Jesse",
+   "gender": "Male",
+   "children": [
+    "recP00000000994"
+   ],
+   "verseCount": 2,
+   "verses": [
+    "recV00000000013",
+    "recV00000000014"
+   ]
+  }
+ },
+ {
+  "id": "recP00000000616",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "personLookup": "isaac_616",
+   "personID": 616,
+   "displayTitle": "Isaac",
+   "slug": "isaac_616",
+   "name": "Isaac",
+   "gender": "Male",
+   "children": [
+    "recP00000000682"
+   ],
+   "verseCount": 1,
+   "verses": [
+    "recV00000000012"
+   ]
+  }
+ },
+ {
+  "id": "recP00000001493",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "personLookup": "herod_1493",
+   "personID": 1493,
+   "displayTitle": "Herod",
+   "slug": "herod_1493",
+   "name": "Herod",
+   "gender": "Male",
+   "verseCount": 3,
+   "verses": [
+    "recV00000000022",
+    "recV00000000024",
+    "recV00000000027"
+   ]
+  }
+ },
+ {
+  "id": "recP00000001494",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "personLookup": "herod_1494",
+   "personID": 1494,
+   "displayTitle": "Herod",
+   "slug": "herod_1494",
+   "name": "Herod",
+   "gender": "Male",
+   "verseCount": 1,
+   "verses": [
+    "recV00000000046"
+   ]
+  }
+ },
+ {
+  "id": "recP00000001971",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "personLookup": "matthew_1971",
+   "personID": 1971,
+   "displayTitle": "Matthew",
+   "slug": "matthew_1971",
+   "name": "Matthew",
+   "gender": "Male",
+   "verseCount": 2,
+   "verses": [
+    "recV00000000043",
+    "recV00000000044"
+   ]
+  }
+ }
+]

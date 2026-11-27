@@ -1,0 +1,1137 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-12T00:00:00Z",
+  "title": "Design System: Bible Carrel",
+  "seed": false,
+  "northStar": "The Study Carrel",
+  "extensions": {
+    "colorMeta": {
+      "paper-page": {
+        "role": "neutral",
+        "displayName": "Page",
+        "hasDarkVariant": true,
+        "light": "#F5F7F9",
+        "dark": "#101418",
+        "oklch": {
+          "light": [
+            0.975,
+            0.004,
+            245
+          ],
+          "dark": [
+            0.19,
+            0.01,
+            250
+          ]
+        },
+        "token": "paper.page",
+        "sepia": "#F5EDDE"
+      },
+      "paper-panel": {
+        "role": "neutral",
+        "displayName": "Panel",
+        "hasDarkVariant": true,
+        "light": "#EDF1F4",
+        "dark": "#191D22",
+        "oklch": {
+          "light": [
+            0.955,
+            0.006,
+            245
+          ],
+          "dark": [
+            0.23,
+            0.012,
+            250
+          ]
+        },
+        "token": "paper.panel",
+        "sepia": "#ECE2CF"
+      },
+      "paper-overlay": {
+        "role": "neutral",
+        "displayName": "Overlay",
+        "hasDarkVariant": true,
+        "light": "#FAFCFE",
+        "dark": "#22272D",
+        "oklch": {
+          "light": [
+            0.99,
+            0.003,
+            245
+          ],
+          "dark": [
+            0.27,
+            0.013,
+            250
+          ]
+        },
+        "token": "paper.overlay",
+        "sepia": "#F9F3E8"
+      },
+      "ink-primary": {
+        "role": "text",
+        "displayName": "Primary Ink",
+        "hasDarkVariant": true,
+        "light": "#192028",
+        "dark": "#E5E8EC",
+        "contrastOnPage": {
+          "light": 15.3,
+          "dark": 15.0,
+          "sepia": 13.6
+        },
+        "token": "ink.primary",
+        "sepia": "#2A2118"
+      },
+      "ink-secondary": {
+        "role": "text",
+        "displayName": "Secondary Ink",
+        "hasDarkVariant": true,
+        "light": "#5D646C",
+        "dark": "#A0A5AB",
+        "contrastOnPage": {
+          "light": 5.57,
+          "dark": 7.45,
+          "sepia": 5.6
+        },
+        "token": "ink.secondary",
+        "highContrast": {
+          "light": "#414951",
+          "dark": "#C0C5C9"
+        },
+        "sepia": "#6A5B49"
+      },
+      "ink-tertiary": {
+        "role": "text",
+        "displayName": "Tertiary Ink (metadata only)",
+        "hasDarkVariant": true,
+        "light": "#8D9399",
+        "dark": "#6D7277",
+        "contrastOnPage": {
+          "light": 2.89,
+          "dark": 3.81,
+          "sepia": 2.8
+        },
+        "token": "ink.tertiary",
+        "highContrast": {
+          "light": "#515961",
+          "dark": "#A6ACB1"
+        },
+        "sepia": "#9A8B78"
+      },
+      "ink-rule": {
+        "role": "border",
+        "displayName": "Rule",
+        "hasDarkVariant": true,
+        "light": "#D3D8DC",
+        "dark": "#292E34",
+        "token": "ink.rule",
+        "highContrast": {
+          "light": "#989FA6",
+          "dark": "#5E646A"
+        },
+        "sepia": "#DCCFB8"
+      },
+      "ink-verse": {
+        "role": "text",
+        "displayName": "Verse bronze",
+        "hasDarkVariant": true,
+        "light": "#7A5320",
+        "dark": "#DDB683",
+        "token": "ink.verse",
+        "note": "Verse numbers and the chapter label in the Printed style (the default). 4.5:1 or better on the page and every mark fill; 5.9:1 on the Sepia page. Keeps its light value in Sepia.",
+        "contrastOnPage": {
+          "light": 6.3,
+          "dark": 9.8,
+          "sepia": 5.9
+        }
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Verdigris",
+        "hasDarkVariant": true,
+        "light": "#247966",
+        "dark": "#73C3AE",
+        "contrastOnPage": {
+          "light": 4.9,
+          "dark": 8.93
+        },
+        "token": "accent",
+        "highContrast": {
+          "light": "#005B4B",
+          "dark": "#91DCC7"
+        }
+      },
+      "accent-wash": {
+        "role": "primary",
+        "displayName": "Verdigris Wash",
+        "hasDarkVariant": true,
+        "light": "#D1F0E6",
+        "dark": "#0A3028",
+        "token": "accent.wash",
+        "highContrast": {
+          "light": "#B6E3D5",
+          "dark": "#084236"
+        }
+      },
+      "assistant": {
+        "role": "secondary",
+        "displayName": "Plum",
+        "hasDarkVariant": true,
+        "light": "#7E517A",
+        "dark": "#D3A6CE",
+        "contrastOnPage": {
+          "light": 5.84,
+          "dark": 8.94
+        },
+        "token": "assistant",
+        "highContrast": {
+          "light": "#61355D",
+          "dark": "#EAC2E6"
+        }
+      },
+      "assistant-wash": {
+        "role": "secondary",
+        "displayName": "Plum Wash",
+        "hasDarkVariant": true,
+        "light": "#F7E4F5",
+        "dark": "#372435",
+        "token": "assistant.wash"
+      },
+      "mark-yellow": {
+        "role": "mark",
+        "displayName": "Yellow",
+        "hasDarkVariant": true,
+        "light": "#F8E18A",
+        "dark": "#554704",
+        "inkContrast": {
+          "light": 12.62,
+          "dark": 7.49
+        },
+        "token": null,
+        "source": "MarkupContainer.defaultColors"
+      },
+      "mark-green": {
+        "role": "mark",
+        "displayName": "Green",
+        "hasDarkVariant": true,
+        "light": "#BCF2BD",
+        "dark": "#2E522F",
+        "inkContrast": {
+          "light": 12.96,
+          "dark": 7.27
+        },
+        "token": null,
+        "source": "MarkupContainer.defaultColors"
+      },
+      "mark-blue": {
+        "role": "mark",
+        "displayName": "Blue",
+        "hasDarkVariant": true,
+        "light": "#B8E8FF",
+        "dark": "#144D6E",
+        "inkContrast": {
+          "light": 12.57,
+          "dark": 7.42
+        },
+        "token": null,
+        "source": "MarkupContainer.defaultColors"
+      },
+      "mark-rose": {
+        "role": "mark",
+        "displayName": "Rose",
+        "hasDarkVariant": true,
+        "light": "#FFCFE8",
+        "dark": "#67344E",
+        "inkContrast": {
+          "light": 12.0,
+          "dark": 7.83
+        },
+        "token": null,
+        "source": "MarkupContainer.defaultColors",
+        "migratedFrom": "Pink #FFC7DE / #7A2E55"
+      },
+      "mark-orange": {
+        "role": "mark",
+        "displayName": "Orange",
+        "hasDarkVariant": true,
+        "light": "#FFD0A1",
+        "dark": "#683B18",
+        "inkContrast": {
+          "light": 11.58,
+          "dark": 7.7
+        },
+        "token": null,
+        "source": "MarkupContainer.defaultColors"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "fontSource": "Font.system(.title, design: .serif).weight(.semibold)",
+        "dynamicType": true,
+        "purpose": "Chapter heading, the book name at the head of the front page's book pane and over the phone's chapters."
+      },
+      "reader": {
+        "displayName": "Reader",
+        "fontSource": "ReaderTypography.scaled(size:lineHeightMultiple:)",
+        "dynamicType": false,
+        "purpose": "Chapter text at the user's size (14 to 28); measure = size x 640/18 (498 to 853), a maximum that narrows with the window."
+      },
+      "verseNumber": {
+        "displayName": "Verse number",
+        "fontSource": "NSFont.systemFont(ofSize: 0.58 x size rounded to 0.5, weight: .medium), baseline 0.39 x size",
+        "dynamicType": false,
+        "purpose": "Superscript verse numbers in ink.secondary, baseline offset 0.39 x size."
+      },
+      "chapterNumeral": {
+        "displayName": "Chapter numeral",
+        "fontSource": "Font.system(.title3, design: .serif).monospacedDigit()",
+        "dynamicType": true,
+        "purpose": "The phone's chapter lists (.title3). The front page's book pane sets the page face at the reader size (PageFace.paneNumeralFont(size:); in New York and Iowan Old Style the system serif at the reader size) in cells 2.9 by 2.2 x the reader size, each rounded to a whole point."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "fontSource": ".font(.headline)",
+        "dynamicType": true,
+        "purpose": "Column and sheet titles, Settings sections, browser group headers."
+      },
+      "body": {
+        "displayName": "Body",
+        "fontSource": ".font(.callout)",
+        "dynamicType": true,
+        "purpose": "Note bodies, browser row bodies, palette titles. .body only in Settings forms and the editor, a browser row's passage (semibold) and a source's name on Settings > About."
+      },
+      "quote": {
+        "displayName": "Quote",
+        "fontSource": "Font.system(.callout, design: .serif).italic()",
+        "dynamicType": true,
+        "purpose": "Quoted scripture phrase on rows, in ink.secondary."
+      },
+      "label": {
+        "displayName": "Label",
+        "fontSource": ".font(.caption.weight(.semibold))",
+        "dynamicType": true,
+        "purpose": "References, translation tags, counts (monospacedDigit)."
+      },
+      "meta": {
+        "displayName": "Meta",
+        "fontSource": ".font(.caption2)",
+        "dynamicType": true,
+        "purpose": "Dates only, in ink.tertiary."
+      }
+    },
+    "materials": [
+      {
+        "name": "floating-panel",
+        "api": "solid paper.overlay in RoundedRectangle(cornerRadius: 12, style: .continuous); no material",
+        "usage": "The ⌘K palette only. Nothing dims behind it: a click on the page outside it closes it (a clear, VoiceOver-hidden layer over the window's content takes the click); a click on a toolbar button acts and leaves it open (read in the code, not tried live); the panel carries the modal trait."
+      },
+      {
+        "name": "verse-panel-popover",
+        "api": "system NSPopover (transient) on the Mac, hosting the panel with .followsPageFace() and .followsSepia(); a sheet on the phone; the panel draws no fill, stroke or shadow of its own",
+        "usage": "Compare Translations and Cross-References. The system's popover chrome is translucent and the page's text shows blurred through it; the mockup Matt chose from was opaque paper, so this is his to judge. Esc or a click outside closes it."
+      }
+    ],
+    "shadows": [
+      {
+        "name": "panel-shadow",
+        "value": ".shadow(color: .black.opacity(0.2), radius: 24, x: 0, y: 8)",
+        "purpose": "The ⌘K palette only, cast by the panel's own shape so no row or keycap inside casts one. The only opacity tint in the app."
+      }
+    ],
+    "motion": [
+      {
+        "name": "snappy-state",
+        "value": ".snappy(duration: 0.2)",
+        "purpose": "Selection wash and fill changes; opacity and color only."
+      },
+      {
+        "name": "smooth-scroll",
+        "value": ".smooth",
+        "purpose": "Scroll to a row or highlight; a cut under Reduce Motion."
+      },
+      {
+        "name": "palette-open",
+        "value": ".transition(.opacity)",
+        "purpose": "⌘K panel appearance; no scale or spring."
+      },
+      {
+        "name": "places-map-camera",
+        "value": ".smooth when the map moves to hold a chosen place in view and to a chosen chapter (its pins framed; on the phone framed into the part above the sheet); a cut under Reduce Motion; moves coalesced by a generation so stepping chapters quickly goes to the last one; never moves when nothing was chosen",
+        "purpose": "The Library's Places map; no other Library motion on the Mac."
+      }
+    ],
+    "sfSymbols": {
+      "renderingMode": "monochrome",
+      "weightTracking": "takes the weight of the adjacent text style; .medium in the toolbar; .bold only on the 11pt selected-swatch checkmark",
+      "alsoUsedFor": {
+        "link": "Copy Link in the selection menu, beside the markdown toolbar's link",
+        "info.circle": "About in the Library's reference row (both apps), Settings > About, and Look Up in the phone's selection menu",
+        "keyboard": "the palette's Keyboard Shortcuts command",
+        "arrow.right.circle": "the palette's Go to row",
+        "character.book.closed": "a translation row and Switch Translation… in the palette",
+        "textformat": "the palette's Page Style commands",
+        "circle.lefthalf.filled": "the palette's Appearance commands",
+        "textformat.size.larger": "Larger Text in the palette",
+        "textformat.size.smaller": "Smaller Text in the palette",
+        "arrow.clockwise": "Try Again in the palette",
+        "clock.arrow.circlepath": "Clear Recents in the palette",
+        "chevron.down": "the palette's scope chip, beside its use in Settings > Prompts and Next verse in the Cross-References header; the family tree's folded chips (Mac)",
+        "clock": "the Recent group's header",
+        "rectangle.split.2x1": "Compare Translations in the selection menu on both apps (the phone's bar shows it as its symbol alone)",
+        "arrow.triangle.branch": "Cross-References in the selection menu on both apps",
+        "chevron.up": "Previous verse in the Cross-References header, beside its use in Settings > Prompts; the family tree's 'Fewer' (Mac)",
+        "person": "a person's row in the palette (People)",
+        "mappin": "a place's row in the palette (Places)",
+        "person.2": "People in the Library's reference row (both apps); the People chip on the phone's Search tab",
+        "map": "Places in the Library's reference row (both apps); the Places chip on the phone's Search tab; the 'No Places' empty state",
+        "calendar": "the reading plan: the toolbar's This Week and Change Meeting Date…, the plan window's empty state, the palette's Reading Plan and the phone's Plan tab",
+        "circle": "the tick circle of a reading not yet read, in ink.secondary",
+        "checkmark.circle.fill": "the tick circle of a reading read, in the accent",
+        "square.and.arrow.down": "Import… in the plan window and the phone's plan menu",
+        "minus.circle": "Remove Reading in the plan's editor",
+        "exclamationmark.triangle": "a line under To check in the plan's review, in ink.secondary",
+        "square.on.square": "the versions mark, on both platforms (the Mac's notes column and Notes window, the phone's Notes tab and note sheet)"
+      },
+      "inventory": {
+        "navigation": [
+          "house",
+          "chevron.left",
+          "chevron.right",
+          "arrow.right",
+          "chevron.up.chevron.down",
+          "sidebar.right",
+          "magnifyingglass"
+        ],
+        "markup": [
+          "highlighter",
+          "underline",
+          "bookmark.fill",
+          "note.text",
+          "doc",
+          "plus.circle",
+          "checkmark"
+        ],
+        "editing": [
+          "pencil",
+          "trash",
+          "bold",
+          "italic",
+          "textformat.size",
+          "list.bullet",
+          "link",
+          "line.3.horizontal"
+        ],
+        "settings": [
+          "gearshape",
+          "textformat.size",
+          "keyboard",
+          "info.circle"
+        ],
+        "emptyStates": [
+          "book",
+          "note.text"
+        ],
+        "assistant": [
+          "sparkles"
+        ],
+        "phone": [
+          "book",
+          "note.text",
+          "sparkles",
+          "books.vertical",
+          "ellipsis",
+          "checkmark",
+          "chevron.left"
+        ],
+        "versePanels": [
+          "rectangle.split.2x1",
+          "arrow.triangle.branch",
+          "chevron.up",
+          "chevron.down",
+          "sparkles",
+          "doc.on.doc",
+          "chevron.left"
+        ],
+        "readingPlan": [
+          "calendar",
+          "circle",
+          "checkmark.circle.fill",
+          "square.and.arrow.down",
+          "minus.circle",
+          "exclamationmark.triangle",
+          "plus",
+          "pencil"
+        ],
+        "keptVersions": [
+          "square.on.square"
+        ]
+      }
+    },
+    "spacing": {
+      "enum": "AppSpacing",
+      "steps": {
+        "xxs": 4,
+        "xs": 8,
+        "sm": 12,
+        "md": 16,
+        "lg": 24,
+        "xl": 32,
+        "xxl": 48,
+        "xxxl": 64
+      }
+    },
+    "radius": {
+      "enum": "AppRadius",
+      "steps": {
+        "sm": 4,
+        "md": 6,
+        "lg": 10,
+        "xl": 12,
+        "xxl": 14
+      },
+      "style": "continuous"
+    },
+    "iphone": {
+      "tabBar": {
+        "implementation": "PhoneRootView, TabView(selection:)",
+        "tabs": [
+          {
+            "title": "Read",
+            "symbol": "book"
+          },
+          {
+            "title": "Plan",
+            "symbol": "calendar"
+          },
+          {
+            "title": "Notes",
+            "symbol": "note.text"
+          },
+          {
+            "title": "Ask",
+            "symbol": "sparkles"
+          },
+          {
+            "role": "search",
+            "api": "Tab(value: .search, role: .search)"
+          }
+        ],
+        "minimize": ".tabBarMinimizeBehavior(.onScrollDown)",
+        "searchActivation": ".tabViewSearchActivation(.searchTabSelection)",
+        "searchable": "on the search tab's own NavigationStack, not on the tab view",
+        "tint": "accent"
+      },
+      "glass": "System glass, none restyled: tab bar, top toolbar, pen bar, edit menu, menus, sheets, search field. The app applies .glassEffect() nowhere. The book thumb's loupe is a lens the app draws over the page (LoupeLens, also on the Mac); the chapter switcher's cards are paper.overlay with an ink.rule hairline.",
+      "penBar": {
+        "implementation": "PenBar, a bottom toolbar in the tab bar's place (.toolbarVisibility(.hidden, for: .tabBar))",
+        "colors": "one button per color: a filled circle with an ink.rule keyline; the pen's color ringed in the accent and marked selected; scrolls sideways",
+        "done": "checkmark",
+        "highlighterButton": "takes the accent while the pen is on; hidden while VoiceOver runs"
+      },
+      "sheetDetents": {
+        "note": [
+          ".medium",
+          ".large"
+        ],
+        "chapterNotes": [
+          ".medium",
+          ".large"
+        ],
+        "versePreview": [
+          ".medium"
+        ],
+        "askOverPage": [
+          ".large"
+        ],
+        "planEditor": [
+          ".large"
+        ],
+        "changeMeetingDate": [
+          ".medium"
+        ],
+        "settings": "the system's full sheet",
+        "library": "not a sheet: the screen to the left of Read, over the tabs and the tab bar (PhoneLibraryLayer), sliding in from the left edge and out to it (.smooth 0.35 s; a cut under Reduce Motion), with Close (xmark)",
+        "versePanels": [
+          ".medium",
+          ".large"
+        ],
+        "versePanelsNote": "Compare Translations and Cross-References (PhoneVersePanelSheet) on paper.page, the panel's name as the inline title (the Cross-References chevrons move the verse, so a title of the reference would go stale) and the reference beneath it in the panel's own header; a pushed passage has Back and Open in Read",
+        "placesList": [
+          ".fraction(0.25)",
+          ".fraction(0.5) (where it opens; never past half, list or page: Matt, 2026-11-24)"
+        ],
+        "placesListNote": "Places' list on the phone: a sheet over the map on paper.page, never dismissed by a swipe, its root bar hidden; the count line ('101 places · 101 on the map', 'Chapter 1 · 6 places' while a chapter is chosen), then the Order Control (Most named, A to Z, By chapter; segments below the accessibility sizes, a menu from them), then the rows or, under By chapter, Chapter Headings as inset bands (at least a scaled 44 high) with the other chapters' rows dimmed; a row pushes the place's page inside the sheet; a scroll inside the sheet scrolls its content, never the sheet (presentationContentInteraction .scrolls); a chosen pin is kept clear of the sheet (panned into the part above it at the same zoom) and a chosen chapter framed into that part, the upper half of the page at the least, at both detents",
+        "planSheetsNote": "the reading plan's editor (New Plan, Edit Plan…, Import…) is .large only, in its own navigation stack on paper.page with Cancel and Save in the bar, a swipe down being Cancel and asking nothing; Change Meeting Date is .medium, inline-titled, with Cancel and Change in the bar (.cancelAction, .defaultAction)",
+        "keptVersion": [
+          ".medium",
+          ".large"
+        ]
+      },
+      "sheetDone": "Done (checkmark) in the confirmation slot on the note, the two verse panels, Notes in This Chapter, Ask over the page and Settings; the verse preview has none and is dismissed by a swipe",
+      "library": "PhoneLibraryScreen (decisions in LibraryList): a system segmented control 'Old Testament' / 'New Testament' in a safe-area bar (the Apocrypha listed with the Old), opening on the testament of the book being read, else Old; the testament's books in translation order as plain rows (.body ink.primary, lg side and sm vertical padding, no fill, Divider between rows only); a tapped book opens its chapters under its name as ChapterCell in .adaptive columns (six at the default size, two at the largest), xs apart, one book open at a time; a one-chapter book opens like any other, to its icons and a single '1' (Matt, 2026-11-16); opens with the book being read open and scrolled to the top; switching testament scrolls to its open or marked book, or its first. VoiceOver: book row a button, value 'Expanded'/'Collapsed'; chapter 'Chapter N', value 'Where you left off' / 'Marked'; rows open and close as a cut. An open book shows BookReferenceRow under its name: four equal columns across the row inside lg margins, icons centred in them, sm over its chapters; outlines at AppRadius.xxl (14, scaled) A marked chapter wears a ring in the highlights' hues in place of the old dot (Chapter Ring); VoiceOver still says 'Marked'. Group labels (GroupLabel: caption2 semibold, upper case, tracked a scaled 1.4 pt, ink.verse, header trait; lg at the sides, md over, xxs under) head each group's books, with a hairline between the books of a group and none after a group's last (the Library spec's call, 4.5). People, Places and About are available for the 66 books and each pushes a page inside the Library on paper.page (.containerBackground(Color.paperPage, for: .navigation), never clear) with the system's back button: People as the Order Control at its head over plain rows in the chosen order, a person (the Page Title and the Fact List stacked where it must, the dictionary entry, the Family Line, the Verse Lines), a place and About each one scrolling page (About: the head, the fact list stacked label over value, and the timeline's rail with no chart), Places the map with its list in a sheet (the Order Control under the count line, By chapter's headings and dimmed rows, the chosen pin and chapter kept clear of the sheet). A reference pushes its passage with Open in Read, which is a lookup; the bar's way back then names the page it came from and reopens the Library on it. Closing the Library, and a relaunch, forget its page.",
+      "edgeSwipes": "PhoneEdgeSwipes (Matt, 2026-11-12): left edge moves one screen left (Ask → Notes → Plan → Read → Library), right edge one screen right; search outside the chain. The screen follows the finger in pictures only, the live screens never moved (going left, the leaving screen is carried off over the arriving one, which drifts in from a third across; going right, the arriving one comes in over the leaving one, which drifts beneath); the tab bar stays and its selection changes as the swipe begins. Settles past half the width or on a 300 pt/s flick (spring 0.35 s, no bounce), else springs back. Reduce Motion: a cut once 60 pt in. Starts only in the 24 pt edge zone, before scrolls and row swipe actions; never under a sheet, with text selected, or from the left edge of a pushed screen (the back swipe's). The keyboard goes down as Ask is left. At the chain's ends (Ask's right edge, Library's left) the edge holds the drag and nothing moves; the glass bar buttons are not in the pictures",
+      "noteSheet": "PhoneNoteSheet (Matt chose option A, 2026-11-12): a tap on a highlight with a note (pen off), a note's margin mark or a Notes in This Chapter row opens it to read on paper.page: Close (xmark), the reference as title, Edit; the quote on its color; the note rendered with references as accent links (NoteBodyText, ReferenceLinker note rules). A reference pushes its verses in the sheet (Back, Open in Read). Foot: bottom bar of color chip (menu of colors and No Color, current checked), bookmark, Ask, delete (closes, undoable), ellipsis (Copy, Copy with Reference, Share); a chapter note has delete alone. Edit shows the editor with Done (back to reading); Add Note, Edit Note and an empty note open in the editor. A highlight without a note keeps the edit bar. While a note is read and has more than one version, its mark is a button of at least 44 pt under the text that pushes a Versions page (the versions view; choices at least 44 pt tall; a choice that settles the last version pops the page)",
+      "progressLine": "the Mac's ReadingProgressLine (accent, 2 pt, ReadingProgress's rule) under the title and translation in the top bar's principal item; width a @ScaledMetric tied to the headline; no animation; VoiceOver reads it apart from the title as 'Chapter progress'",
+      "verseTap": "a tap on a verse's words or number (pen off) selects that verse's text (VerseSpan.textRange, no number) with the system's handles and presents the selection menu at once, never waiting for a second tap; with a selection up (a tapped verse, a dragged range, a held word, an opened highlight) a tap anywhere off it only clears it and closes the menu, selecting and opening nothing, and the next tap acts as with nothing selected (Matt, 2026-11-17, overturning 'a tap on another verse moves it'); a tap on the selection keeps it and shows its menu again; one rule, isTapAway, read as the touch came down, answers for the verse tap, the highlight tap and the repeated tap; with nothing selected a highlight keeps its old behaviour; with the chapter cards open the tap closes them and selects nothing; a tap that stops a moving scroll, in the thumb's zone or on a margin mark is not a verse tap; with VoiceOver running nothing changes; a second tap the system does not take as a double tap leaves the verse selected with its menu (settleRepeatedTap); the double tap narrows to the word",
+      "selectionFill": "the system's own selection (handles, loupe, menu, VoiceOver, selectedRange); only the fill's shape is the app's: ReaderSelectionHighlightView, set as the text view's UITextSelectionDisplayInteraction.highlightView (public API, iOS 17+), takes the system's line rects (full line height, joined) and paints each cut to that line's words by segmentFrames, the highlights' own segments, square cornered, as one shape, in the tint the system gives it (the system's selection colour); a line with no words is not filled; never after a line's last word, in an indent or across the margins. The system gives rects only for the lines in or near view, and only the layout fragments under them are walked, so a handle drag on a whole chapter's selection costs what one screen does; a selection never carries into other text (another chapter, translation or book clears it; the screen is told on the next main-queue turn, after the SwiftUI update, and an outline a jump set is kept), while the same chapter laid out again keeps it on the same words (a text size keeps its range; a page style that moves the verses' offsets, Lectern, carries it by verse and offset as highlights are)",
+      "selectionMenu": "system edit menu, placed against the whole selection's bounds (the part in view between the bars): directly above its first line when there is room under the top bar, else directly below its last line, never over a selected word; with room on neither side, above the visible part at the page's top edge over the bar (menuPlacement; the text view's own menu after a held word or a handle drag is the system's placement, also above or below): one color chip first (a filled circle, no title, in the highlight's color inside one, else the pen's; drawn for the text view's appearance), a submenu the system lists vertically with every color by circle and name, then No Color where offered, the current one checked; then the Mac's actions in the phone's own order (Note, Delete inside a highlight, bookmark, Ask, Compare Translations, Cross-References, Copy, Copy with Reference, Copy Link, Share; the Mac keeps its order), each drawn in the bar as its symbol alone (the Mac's symbols; Delete's trash in the destructive red; the title empty, carried as subtitle and accessibility label so VoiceOver and the chevron's list name it), then the system's titled Look Up and Translate; on iOS 27 the system may add one item of its own (Ask Siri) at the bar's end, after all of these, which the app cannot remove. Wide phone (the iPhone 18 Pro Max in the simulator), default size: seven symbols before the chevron over plain words, the chip, Note, Bookmark, Ask, Compare Translations and Cross-References, with Copy as the seventh (Matt asked for the panels in the bar in place of Copy and Copy with Reference, 2026-11-18), with Copy with Reference, Copy Link and Share behind the chevron; inside a highlight: chip, Note, Delete, Bookmark, Ask, Compare Translations, Cross-References, Copy as the seventh, then the same tail (not looked at with the panels); a narrower phone fits fewer, and the system's own iOS 27 item shares the bar; neither was seen with the panels; both panel items are dimmed, not hidden, while the screen has not wired them; largest accessibility size: chip and two actions. The chevron lists the whole menu, every row named. VoiceOver: 'Highlight color', value the color's name. The pen's menu under a mark leads with the same chip in the mark's color, then note, bookmark, Ask and Delete as symbols; a choice recolors the mark and becomes the pen's color",
+      "searchTab": {
+        "search": "the Mac's: every bare word a word start in any order, \"phrases\", -excluded words, a near spelling offered when nothing is found; off the main thread, a newer keystroke abandons an older search",
+        "empty": "Recent (clock, 'Recent', no count; newest five) with Clear trailing (.caption semibold, accent), the phone's only way to clear recents; with none, one .callout ink.secondary sentence; asked for again each time the tab shows with the field empty",
+        "recentChoice": "a recent search stays on the search tab and fills the field; a chapter, passage or mark goes to the reader; a conversation opens Ask and stays there (PaletteItem.showsReaderWhenChosen)",
+        "chips": "Marks, Notes, Asked, Scripture, People (person.2) and Places (map), a chip only when its group has results; a person or place row pushes its whole-Bible page inside the Search tab with the system's back button and is not added to Recent",
+        "menus": "under the chips, PhoneMenuLabel capsules side by side or stacked (ViewThatFits): 'Search in' (the scope; Whole Bible, Old Testament, New Testament, Apocrypha where it exists, This Book, Book) while Scripture is among the results, and 'Order' (Best match, Bible order) while the Scripture chip is chosen; accent.wash when off the default; the scope menu stays above 'No matches' when narrowed",
+        "scopeReturns": "to Whole Bible when the field is cleared, not when the reader visits a verse and comes back",
+        "suggestionRow": "'Did you mean “fruit”?' with magnifyingglass and its verse count; one row with no header, the only row when nothing else matched and the last group when something did; tapping it fills the field and runs it on the search tab",
+        "searchMatch": "matched words are semibold (the face's, PageFace.settingMatches) and underlined in the quote and the verse's serif on the phone, bold and underlined in a note's lines; the underline in the text's own ink"
+      },
+      "notesTab": {
+        "menus": {
+          "howFarBack": "NotesBrowserTimeFilter titles",
+          "whatKind": [
+            "Everything",
+            "Notes",
+            "Highlights",
+            "Bookmarks",
+            "Conversations",
+            "Kept versions (only while one exists)"
+          ],
+          "order": [
+            "Newest first",
+            "Bible order"
+          ],
+          "style": "capsule on paper.panel; accent.wash when not at its default; side by side, or stacked when they do not fit (ViewThatFits)"
+        },
+        "row": "PhoneMarkRow: optional symbol, reference (Label) and date (Meta), quoted words in the page's serif on their mark's fill, up to two lines of the note; no card",
+        "accessibility": "the kind first: 'Bookmark, John 15:5'",
+        "searchMatch": "the matched word is bold and underlined in the quote (the face's semibold italic) and the note, on the same fill; the underline in the ink's own color",
+        "keptVersions": "a text with no note is a row with the mark 'Kept version' (VoiceOver reads the kind once); it opens PhoneVersionSheet; its swipe is Discard (trash, no destructive role), undone by a shake; a row with versions carries the mark under its lines and its spoken label ends with it",
+        "groupHeadings": "PhoneNotesGroups, a Section per group: sorted by date each day sits under the Notes window's Group Heading (Today, Yesterday, the weekday and date; the count trailing, the word following the What kind menu); by passage the book headings as before, title only. Rows, separators (the system's, tinted ink.rule), swipes and taps unchanged. A # heading in a note's line is set at the row's size (PhoneNotesScreen.noteBody(for:))"
+      },
+      "planTab": {
+        "implementation": "PhonePlanScreen (decisions in PhonePlanList, the ellipsis menu's in PhonePlanMenu); reading plans spec 5.3",
+        "surface": "one plain List on paper.page in a NavigationStack, the plan's title inline in the bar ('Plan' with none); opens scrolled to this week at the head, each time the tab is shown, and again when another plan is followed or the day changes",
+        "thisWeek": "'This week' in the page face at .title2, ink.primary, header trait; the title line in .subheadline ink.secondary with monospaced digits; the plan's progress line xs below; then the shared reading rows",
+        "reading": "PlanReadingRow stacked: the tick circle in a scaled 44 pt target and each passage a button at least 44 pt tall, one to a line; the space under a reading is a scaled AppSpacing.xl, at least twice the space inside one; one ink.rule hairline closes a week's readings, none between readings",
+        "week": "'Week 54' .body ink.primary with the date and 'done' / '3 of 5' / nothing trailing in .callout ink.secondary, monospaced (under the name at accessibility sizes); a tap opens its readings in place, one week at a time, nothing pushed; VoiceOver value Expanded or Collapsed; context menu Change Meeting Date…; 'Next' header .caption semibold ink.secondary",
+        "menu": "ellipsis while a plan is followed: the plans (inline picker), Import…, New Plan, Edit Plan…, Change Meeting Date… (this week's), Delete Plan… last (destructive, asks, a shake undoes); with no plan a ContentUnavailableView 'No reading plan' with Import… and New Plan",
+        "open": "how tall five readings are (about 640 pt for a Gen 1 week at the default size) is Matt's to judge; the alternative is a reading's passages on one line where they fit"
+      },
+      "marginMarks": {
+        "symbols": [
+          "note.text",
+          "bookmark.fill"
+        ],
+        "color": "accent",
+        "size": ".caption",
+        "placement": "right margin; the note above the bookmark when a verse has both",
+        "touchArea": "44 pt tall, across the margin, never into the text column",
+        "accessibility": "after the chapter's text: 'Note, verse 4', 'Bookmark, verse 5'"
+      },
+      "settings": {
+        "layout": "the Mac's panes as pages pushed from one list: General, Reading, Highlight Colors, Prompts, Assistant, About (the last row, the same AboutView as the Mac's tab); a passage link opened while Settings shows closes it and shows the passage",
+        "deviceWording": "sentences about where notes are kept say 'this iPhone'",
+        "perDevice": [
+          "text size",
+          "line spacing",
+          "appearance",
+          "the Notes tab's time filter",
+          "the pen's color"
+        ],
+        "yourData": "a General section after Backups (DataSettingsSection, form rows, no cards): Export All Data… (the system share sheet) and Import Data… (the system file picker, dimmed with its reason while a sync may be importing), then a .callout ink.secondary result line announced to VoiceOver"
+      },
+      "symbolsAdded": {
+        "books.vertical": "the library",
+        "ellipsis": "more",
+        "checkmark": "Done, and Save in the plan's editor",
+        "chevron.left": "the way back",
+        "xmark": "Close on Library",
+        "chevron.up.chevron.down": "the Notes menus",
+        "play.rectangle": "BibleProject in the Library's reference row",
+        "person.2": "People in the Library's reference row; the People chip on the Search tab",
+        "map": "Places in the Library's reference row; the Places chip on the Search tab",
+        "info.circle": "About in the Library's reference row",
+        "calendar": "the Plan tab and its Change Meeting Date…",
+        "square.and.arrow.down": "Import… in the plan's menu",
+        "minus.circle": "Remove Reading in the plan's editor",
+        "square.on.square": "the versions mark in the Notes tab's rows and the note sheet"
+      },
+      "typeAndSpacing": "The type ladder and spacing scale apply unchanged.",
+      "readerSideMargin": "AppSpacing.lg (24), in place of the Mac's AppSpacing.xxl (48)"
+    }
+  },
+  "components": [
+    {
+      "name": "Note Row",
+      "replaces": "NoteCardView card chrome",
+      "shape": "selection wash only, RoundedRectangle(cornerRadius: 6, style: .continuous)",
+      "background": "none at rest; accent.wash when selected",
+      "border": "none: rows are separated by rhythm. Only the Notes window draws a 1 pt ink.rule between notes and between groups (see Notes Browser Row); the phone's Notes tab keeps the system's separators tinted ink.rule",
+      "padding": "AppSpacing.sm, @ScaledMetric",
+      "anatomy": [
+        "marker (10pt dot, 0.5pt ink.rule keyline)",
+        "Label reference + Meta date on one line",
+        "Quote phrase",
+        "Body"
+      ],
+      "implementation": "NoteRowView",
+      "interaction": "First click selects (highlight selected, outlined, scrolled to); click on a selected row, Return, or Edit Note edits; Escape finishes; Delete deletes undoably.",
+      "accessibility": "One combined element: 'Note, <reference>, <color>'; button + selected traits; Edit, Delete and per-color actions."
+    },
+    {
+      "name": "Compact Highlight Row",
+      "shape": "as Note Row",
+      "background": "accent.wash when selected",
+      "border": "none",
+      "padding": "AppSpacing.xs vertical, AppSpacing.sm horizontal",
+      "implementation": "CompactHighlightRow",
+      "interaction": "First click selects; click when selected or Return starts a note; Delete deletes undoably."
+    },
+    {
+      "name": "Note Editor",
+      "background": "paper.overlay",
+      "border": "1pt ink.rule",
+      "radius": "AppRadius.md",
+      "padding": "AppSpacing.xs",
+      "typography": ".body",
+      "note": "The only bordered element inside a row; the row itself has no border.",
+      "implementation": "NoteRowView.editor around NoteTextEditor (.callout, ink.primary, accent caret)"
+    },
+    {
+      "name": "Chapter Cell",
+      "size": "phone 56 x 40; pane 2.9 x 2.2 x the reader size (52 x 40 at 18)",
+      "radius": "AppRadius.lg",
+      "typography": "chapterNumeral (the phone, .title3); the page face at the reader size in the pane",
+      "states": {
+        "rest": "transparent, ink.secondary",
+        "current": "accent.wash fill, ink.primary",
+        "marked": "a Chapter Ring inside the cell, in place of the old dot; VoiceOver hears 'Marked'; each cell reads 'Chapter N' under the book's name",
+        "searched": "a 3 pt accent ring (scaled by the reader size over 18 in the pane) outside the cell while the grid does not hold the keyboard (the front page's search found this chapter, e.g. 'rom 8')"
+      },
+      "sizes": {
+        "phone (Library list)": "56 x 40, numeral at .title3",
+        "pane (the Mac's front page book pane)": "2.9 x 2.2 x the reader size (52 x 40 at 18), numeral in the page face at the reader size, xs gutters, as many across as the pane holds: five at its narrowest, never fewer than three"
+      }
+    },
+    {
+      "name": "Chapter Ring",
+      "implementation": "ChapterRing, ChapterRingView, RingShape (both apps)",
+      "shape": "the cell's rounded rectangle inset AppSpacing.xxs, a 1.5 pt line (scaled by the reader size over 18 in the pane, by Dynamic Type on the phone), butt caps; starts at the top's middle, clockwise; never a circle (it cannot clear a three-figure chapter)",
+      "segments": "no colour or one: a whole ring; two to six share it equally with a gap of 0.03 of the path; more than six: the first six in the reader's colour order; a colour that has been deleted counts as none",
+      "color": "each highlight colour's hue at OKLab L 0.55 (light) or 0.68 (dark) with chroma as high as sRGB holds; 3:1 on paper.page, paper.panel and accent.wash in light, dark, Sepia and Increase Contrast (worst 3.2:1 light, 3.35:1 dark)",
+      "colourless": "ink.tertiary: 2.56:1 to 2.89:1 on light and Sepia, 2.95:1 on dark; below 3:1, a known limit; PaletteTests holds it at 2.5:1",
+      "accessibility": "the cell says 'Marked'; the ring is hidden from VoiceOver",
+      "rule": "The One Saturated Voice Rule's second home: the marks' own hues in the Library's cells"
+    },
+    {
+      "name": "Contents Page",
+      "implementation": "ContentsPage (model), ContentsPageView, inside FrontPageView (Mac)",
+      "surface": "paper.page",
+      "columns": "as many as fit, each as wide as the widest book name of the translation at the reader size plus the dot, its gap and the wash's inset on both sides (three at 18 in the default 1,100 pt window for the ESV, so the Testaments stack); from four up the two Testaments side by side, the Old taking the odd column; the Apocrypha a band of its own below; a column breaks only before a group, the tallest made shortest, then the most even, then the earliest",
+      "testamentTitle": "page face at 1.15 x the reader size, its book count trailing in .caption ink.secondary, over a 1 pt ink.rule",
+      "groupLabel": "GroupLabel at 0.58 x the reader size, floor .caption2 (shared with the phone's Library, which keeps .caption2)",
+      "book": "page face at the reader size, ink.primary (ink.tertiary when a search dims it); a 3 pt (x reader size over 18) ink.tertiary dot after a marked book, 'Marked' to VoiceOver",
+      "chosen": "accent.wash at radius md, reaching xs beyond the name",
+      "keys": "one Tab stop with the focus ring round the chosen book's wash; arrows move book to book and across columns; Return or Space moves into the pane's grid; click chooses, double-click opens (the book being read resumes, any other opens at chapter 1); command F searches (toolbar field 'Books or a reference'), typing dims and chooses and rings a reference's chapter, Return opens, Esc clears"
+    },
+    {
+      "name": "Book Pane",
+      "implementation": "BookPaneView (Mac)",
+      "surface": "paper.panel",
+      "width": "five cells across at the reader size plus gutters and sm each side (316 at 18), at most 40% of the window; the reader may drag it wider (Pane Divider), kept in frontPagePaneWidth",
+      "header": "the book name in Display, its subtitle in the page face's italic .callout ink.secondary, and the Library reference row, none of it scrolling",
+      "grid": "Chapter Cell, pane size, as many across as fit (at least five at the five-across width, never fewer than three), scrolls on its own"
+    },
+    {
+      "name": "Pane Divider",
+      "implementation": "PaneDivider, PaneWidth, inside FrontPageView (Mac)",
+      "line": "1 pt ink.rule (HairlineRule) on the pane's leading edge; an overlay that takes no layout width",
+      "dragArea": "AppSpacing.xs (8 pt) wide, centred on the line; the system's left-right resize pointer (.pointerStyle(.columnResize)); no grabber, no hover fill, no animation",
+      "limits": "the pane's narrowest (five cells across) to 40% of the window, the 40% winning; a stored width beyond either shows at the limit and is kept",
+      "reset": "a double-click removes the stored width; the pane returns to its narrowest and follows the size",
+      "accessibility": "an adjustable element 'Chapter pane width', value 'N chapters across', steps of one column; not a Tab stop",
+      "stored": "frontPagePaneWidth, points, UserDefaults on this Mac only (not synced); written when a drag ends or VoiceOver adjusts, never on opening"
+    },
+    {
+      "name": "Group Label",
+      "implementation": "GroupLabel",
+      "typography": "semibold, upper case; phone .caption2 with kerning a scaled 1.4 pt; Mac contents 0.58 x the reader size (floor .caption2's size) through the platform font, kerning 1.4 x size over .caption2's base size",
+      "color": "ink.verse",
+      "traits": "header",
+      "padding": "none of its own; each caller pads (the phone: lg sides, md over, xxs under)"
+    },
+    {
+      "name": "Library View",
+      "implementation": "LibraryView and its pages (Mac); PhoneLibraryScreen's pages (phone)",
+      "header": "a 'Contents' button (chevron.left, accent; Esc does the same wherever the keyboard is), the person before while a family is walked, the title in the page face .title3, a count in .caption ink.secondary ('12 named · by mentions', '12 named · by name' in A to Z), then a 1 pt ink.rule",
+      "page": "lg around, lg between sections; the text in the reader's own column (ReaderTypography.measure: 640 pt at 18 times the Column width setting), centred in the page as the reader's is (the phone keeps a scaled 520 pt page, leading); a person's family tree spans the page's whole width less lg; section headings (LibraryPageHeading, Matt's C, 2026-11-24): a 1 pt ink.rule hairline across the text column, then the heading in the page face semibold .title3 (21 pt at 18) ink.primary, header trait, a count beside it in SF Pro at the reading size ink.secondary; no rule on a heading nothing precedes; never a card; a list's group label keeps the Label style",
+      "type": "Mac (LibraryType from FrontPageView, Matt's review 2026-11-24): every macOS text style times the reader size over 13, to the half point (.body = the reader size; .callout 16.5, .caption 14, .largeTitle 36 at 18); the reading text (names, facts' values, the dictionary paragraph, the verse lines, a list row's name) at .body; sizes tied to text times the same scale; phone and Settings > About: semantic styles, Dynamic Type",
+      "people": "a 200 pt list times the reader scale (lazy) with the Order Control at its head (xs from its top and sides; Most named or A to Z, one choice for every book, this device only; switching keeps the chosen person chosen and scrolls them into view), beside the person's page: the dates notice, the head (the name as a Page Title, the data's own label as its subtitle, nothing where there is none; md under, a Fact List: Father, Mother (links), Also called, Lived (dates on; the footnote under the list), Named ('226 verses here, 896 in 28 books'), Family ('8 partners, 21 children' or '2 parents, 4 siblings'), each only when it has something), the dictionary entry (Quote serif, the reader size on the Mac, .callout on the phone, ink.primary, selectable: the first paragraph whole; past ten lines at the column's width it stops at the last sentence ending within ten, a sentence alone past ten cut at the tenth with an ellipsis; Show more in the accent with no count, only when something is hidden, opening the whole entry in place, then Show less; 'Easton's Bible Dictionary, 1897' .caption; its verse references links in the accent (DictionaryReferences: ';' keeps the book, ',' the chapter, ranges, a chapter alone; a bare '(20:2)' takes the book named just before it or the last cited, unsure ones plain, as is a verse the translation lacks), a click the verse popover at the pointer with Open, a tap on the phone pushing the passage, VoiceOver an action per reference named as the verse lines say it), Family, References · N verses (the page's every verse; each book a disclosure row of its name and count opening to its Verse Lines, the book opened from first and open at first, the rest in canon order, closed unless the page holds 40 references or fewer; the whole Bible has no first book), the credit line",
+      "family": "the Family Tree on the Mac, the Family Line on the phone; the section and the tree are absent for a person with no relations",
+      "places": "a 232 pt list times the reader scale (32 pt wider than People's, so the Order Control's three segments, 210 pt at the least, fit) beside Apple's map (muted standard, accent Marker, a gathered pin's count as its monogram, pins gathered at 0.001 degrees and never merging or splitting with zoom); the place's page under the map, nothing floating over it. Orders: Most named, A to Z, By chapter (Chapter Headings; the header line 'Chapter 1 · 6 places'). Under By chapter the map shows the chapter's places as its pins, framed to them, and every other place of the book as a dot (an Annotation with no title holding a Circle a scaled xxs across in ink.tertiary, not choosable, hidden from VoiceOver, map content never a view over the map); other chapters' rows dimmed in ink.tertiary (the Tertiary exception); ← → step chapters, ↑ ↓ walk the rows across them, Back keeps the chapter. The pin: a gathered pin is titled with the chosen place while one is chosen, the chosen marker is drawn above its neighbours and its system title hidden, its name drawn instead by the chosen label (PlacesMapLabel: .caption semibold ink.primary on a paper.page plate at radius sm, laid over the map under the pin's point by MapReader's projection and moved with the camera, above every balloon; hidden from VoiceOver, which hears the marker; Matt's review, 2026-11-24); a re-click on a chosen gathered pin lists its places (unconfirmed)",
+      "about": "the head (the book's name in the page face, light, .largeTitle; the subtitle in the page face's italic .callout ink.secondary; md under), the Fact List (Testament, Length, Attributed to, Spans (dates on), a gap of xs, People, Places; the five most named, 'and 347 more' a link to People), then the timeline: header 'Timeline' with the count line in .caption ink.secondary; the Timeline Chart (Mac only) then the Timeline Rail; no dictionary entry. Dates off: no year column, no Spans, no chart, no dashes; lengths stay. VoiceOver: a row is one element ('2348 BC, The Great Flood begins, Genesis 7:6'), an era row a header, a fold a button ('8 lives, Seth to Lamech', collapsed); Tab reaches only a fold's Show/Hide. The dates footnote sits under the timeline. Keyboard: the pane's People, Places and About icons are Tab stops, so About is reached by keys.",
+      "reference": "a run (neighbouring verses of one chapter, '1-5', the app's hyphen), one link in the Verse Lines; a popover anchored at the run with Open (Mac), a pushed passage with Open in Read (phone); a verse the translation lacks says so and offers no Open; About's rail keeps one linked run of text with the popover at the pointer"
+    },
+    {
+      "name": "Fact List",
+      "implementation": "FactList, FactRow (FactList.swift); names as LibraryNameRun links",
+      "label": ".caption semibold, upper case, tracked a scaled 0.7 pt, ink.secondary, right-aligned in a column as wide as the longest label shown now",
+      "value": "the reading style (the reader size on the Mac, .callout on the phone) ink.primary, wrapping under itself; any view; a plain value selectable on the Mac; names are accent links",
+      "spacing": "a scaled xs between the columns and between rows; an optional xs gap above a row that starts a group",
+      "stacking": "label over value when the widest label plus the gap passes 40% of the list's width (FactList.widestLabelShare)",
+      "voiceover": "one element a row ('Testament, Old Testament, the Law'); links as actions",
+      "reuse": "project 3 for a person's page; Settings > About (project 5) uses no fact list"
+    },
+    {
+      "name": "Page Title",
+      "implementation": "LibraryPageTitle (milestone 11, project 3; About's head taken out unchanged)",
+      "title": "the page face, light, .largeTitle (about 2.1 x the body size on the Mac), ink.primary, header trait",
+      "subtitle": "the page face's italic .callout ink.secondary, xxs under the title, only when there is one (About: the book's subtitle; a person: the data's label, as stored)",
+      "selection": "title and subtitle selectable on the Mac (Matt's review, 2026-11-24)",
+      "reuse": "About and a person's page; project 5"
+    },
+    {
+      "name": "Order Control",
+      "implementation": "LibraryOrderPicker, PeopleOrder (LibraryOrder.swift; milestone 11, project 3)",
+      "control": "the system segmented Picker, label hidden, VoiceOver 'Order'; segments from the view that holds it (People: Most named, A to Z; Places: Most named, A to Z, By chapter); .small on the Mac, the regular size on the phone; the chosen segment is the system's, not a token; where three segments do not fit it is a menu of the same choices (PlacesOrderControl.isSegmented, by the measured minimum width, leading-aligned, accent-tinted): 210 pt at the least and 249 ideally on the Mac at .small (People's two: 134 and 166), 285 pt on the phone at every size from .large to .accessibility1, so the Mac's 232 pt column and the phone's sheet show segments, the phone a menu from the accessibility sizes",
+      "placement": "Mac: the head of the list's column, xs from its top and sides; phone: the head of the People list, lg at the sides, sm above and below, only when the book names someone; on Places' sheet under the count line",
+      "aToZ": "by name (localizedStandardCompare), then the data's label (none first), then id",
+      "stored": "People: libraryPeopleOrder ('mostNamed', the default, or 'alphabetical'); Places: its own libraryPlacesOrder ('mostNamed', the default, 'alphabetical' or 'byChapter'); UserDefaults on this device only: not synced, not in the store, not in the export",
+      "cost": "the system control is about 9 ms to make in a debug build"
+    },
+    {
+      "name": "Chapter Heading",
+      "implementation": "PlacesChapterHeading (Mac column and phone sheet; milestone 11, project 4)",
+      "typography": "'Chapter 1' as a Group Label (caption2 semibold, upper case, tracked, ink.verse); the place count trailing in .caption.monospacedDigit() ink.secondary",
+      "chosen": "accent.wash at radius md, only while no row is chosen; the selected trait stays while its chapter is chosen",
+      "spacing": "md above (none above the first), xxs under, xxs above and below the text; phone: an inset band, xs inside and lg - xs outside so the text sits at lg, at least a scaled 44 high",
+      "interaction": "a button (onTapGesture and an accessibility action); not a Tab stop of its own, the list is one; chosen again while it shows its wash it clears the chapter, and with a row of its chapter chosen (no wash) a click chooses the chapter as on any heading: the page closes, the map full height and framed",
+      "voiceOver": "one element, 'Chapter 1, 6 places', button and header traits, selected while chosen",
+      "help": "what a click does: 'Show chapter 1 on the map', or, while it shows its wash, 'Show the whole book on the map' (PlacesChapters.headingHelp)"
+    },
+    {
+      "name": "Places List",
+      "implementation": "LibraryPlacesList (Mac), PhonePlacesList (phone); items from PlacesList; the chapter rules in PlacesChapters",
+      "head": "the Order Control; phone: the count line first",
+      "rows": "the name, the kind or the data's label beneath, the count trailing except under By chapter, 'not on the map' trailing there; a dimmed row's name and detail in ink.tertiary",
+      "foot": "'Not on the map' in Most named and A to Z; none under By chapter",
+      "column": "Mac: a scaled 232 pt with a HairlineRule on its trailing edge",
+      "keys": "↑ ↓ rows across headings, ← → chapters (By chapter only), Esc to Contents",
+      "stored": "libraryPlacesOrder"
+    },
+    {
+      "name": "Verse Lines",
+      "implementation": "VerseLinesView, VerseLineView (VerseLinesView.swift); VerseLine, VerseLines (VerseRuns.swift); both apps, a person's and a place's page",
+      "line": "one line per chapter: 'Ch 3' as one unit (Matt, 2026-11-24) in the reading style (the reader size on the Mac, .callout on the phone) semibold ink.secondary .monospacedDigit(), right-aligned as a whole in a column as wide as 'Ch 000', so the numbers end on one edge; then the runs as accent links in the reading style, commas in ink.secondary; wraps under its own runs, never under the chapter; VoiceOver 'Chapter 3'",
+      "oneChapterBook": "Obadiah, Philemon, 2 and 3 John, Jude: one line, no number",
+      "long": "past 12 lines the first 12, then 'n more chapters' (.callout, accent, at the leading edge), which opens the rest in place and has no way back",
+      "run": "one link: a click opens all its verses in the popover anchored at the run (Mac), a tap pushes the passage (phone)",
+      "header": "under its book's row in one section heading 'References' with the page's '896 verses' beside it, on a place's page too; each book's row keeps its count",
+      "keys": "Mac: a book's lines are one focusable view; Tab onto them focuses the first run of the first line (the last line from Shift-Tab), on accent.wash at AppRadius.md with the system ring, its text ink.primary while focused (AA); ← → along the line, stopping at its ends; Return opens the popover; Tab and Shift-Tab line to line, scrolled into view as a cut, then out of the book; Esc or Open returns the focus to the run, a click elsewhere does not",
+      "voiceover": "'Chapter 3', then each run a link: '2 Samuel 1:1 to 5'; a single verse '2 Samuel 1:11'",
+      "cost": "one focusable view per book, not per line (a focusable line cost about 0.4 ms; God's Psalms have 150)"
+    },
+    {
+      "name": "Family Tree",
+      "implementation": "FamilyTreeView, FamilyTreeNamesLayout (a Layout) and a Canvas for the lines; geometry and folds in FamilyTreeLayout (FamilyTreeFolding, FamilyTreeGeometry, FamilyChip); keys FamilyTreeKeys; speech FamilyTreeSpeech; the model FamilyTree (Mac only)",
+      "rows": "grandparents (ink.tertiary links, each over its own parent; .callout on the phone's styles, the reader size on the Mac); parents (.body links); the person's generation (siblings leading, half-siblings trailing on a dashed bar, both hung from the parents' drop; the person .body semibold ink.primary on accent.wash at AppRadius.md); the mothers' row (partners with children first, then childless, then mothers who are not partners; .body links on a bar that drops from the person; no relation word written); children stacked one link a line under each mother (the reader size on the Mac); 'Mother not named' (.caption italic ink.secondary; 'Father not named' on a mother's page) last. With no partner and no named mother, the children are one row from the person, ending in an 'n more' chip. A row with nobody in it goes with its lines; no relations, no tree",
+      "lines": "1 pt ink.rule (HairlineRule.thickness): a drop from a parent, a bar across a generation, a rise to each name; the half-siblings' dashed [3, 3]; snapped to pixels",
+      "spacing": "AppSpacing steps; names, columns and chips one even gap apart, 1.5 em of the tree's .body (27 pt at 18), rows never spread; the person as near the middle as its generation lets it (off-centre when one side is long), the parents over the person (the person moving under them where their own parents hold them off the middle), the rows below centred under the person's drop; the row pitch AppSpacing.md times the reader scale; the tree grows up to the page's whole width less lg (not the text column), never a sideways scroll; too narrow for it (FamilyTreeLayoutRule.fitsAsTree, laid with 'n more' and the 'not named' chip open: a cut name, the person stacked, or a third opened row; about 657 pt for David at 18) the Mac shows the Family Line in the text column, decided from the page's width; laid once, at the page's width read by its GeometryReader (less a legacy scroller), then per width and open set",
+      "folding": "when the person's generation does not fit the whole width one gap apart: siblings into '7 siblings', then half-siblings into '2 half-siblings'; the mothers' row from its end into '4 more', childless partners first, then non-partner mothers, then partners with children, a mother's children with her; children under one mother never fold sideways; 'Mother not named' keeps its label and its children fold into '11' when taller than the tallest mother's column plus three lines, at any width; too narrow for a chip beside the person, one centred row; narrower, the siblings' and half-siblings' chips on one row either side of a lane, each hung from the parents' bar, the person under them on the lane by a rise from the same bar, the household hung from the person (an open run keeps to its side of the lane); below about 270 pt a name too long for its share is cut at its end (whole in its help and to VoiceOver). while the mothers' row fits, every partner on one row and no 'n more' (Matt's B). every one of David's partners shows from a tree about 1,000 pt wide at 18 pt; Jacob folds nothing",
+      "chip": "a Capsule on paper.panel, the count and chevron.down in .callout accent, sm and xxs inside; with 'Fewer' the only filled shapes; a button (help 'Show the names'); opens a wrapped run under its generation on a bar of its own (siblings leading, half-siblings trailing), ending in 'Fewer', the same capsule with chevron.up (help 'Fold the names'); an opened 'n more' is a second row of the tree (each folded mother a column with her children under her, on a bar lg under the first row joined to it down the chip's emptied column, 'Fewer' the row's last column; a row that does not fit continues on the next, joined down a lane at its end; no colon run); never widens the tree; hit area a scaled 24 pt; open chips are @State, forgotten per person",
+      "motion": ".snappy on opacity for what a chip adds or takes away; a cut under Reduce Motion; lines and width changes do not animate",
+      "keys": "one Tab stop, entered on the person, the system ring on the focused name's shape; ← → the nearest name on the same line; ↑ ↓ the nearest line above or below, then the nearest centre, ties leading; Return walks to a name or toggles a chip; Space toggles a chip; an opened chip hands focus to its 'Fewer'; the focused name scrolled into view as a cut; ⌘ ⌥ ⌃ keys pass through; after a walk by Return the new page's tree has the keyboard, on the person (FamilyTreeWalkFocus)",
+      "voiceover": "by relation: 'David', 'Grandparents: Obed', 'Parents: Jesse', 'Siblings: …' or '7 siblings, folded' (a button), 'Half-siblings: …', 'Bathsheba, partner. Children: Nathan, Shobab, Solomon, Shammua', 'Tamar, mother of Pharez and Zerah', 'Children, mother not named: 11, folded' (or 'Children: …'); each one element over its names (FamilyTreeSpeech.groups, the tree's accessibility children while an assistive technology is on), each name a named action that walks; a one-person group or a mother's group a link that walks to that person, a folded chip a button that opens it, an open run's group offers 'Fewer'",
+      "oneRelation": "a person shows once, the nearer relation winning (father, mother, partner, child, sibling, half-sibling)"
+    },
+    {
+      "name": "Family Line",
+      "implementation": "FamilyLineView, FamilyLine (the phone), on the Timeline Rail with its branch",
+      "line": "one rail row a person: grandparents (ring, .callout ink.tertiary; one shared by both parents shows once), parents (ring, .body links), the person (RailMarker.accent, .body semibold ink.primary); relation words after each in .caption ink.secondary: 'grandparent', 'father', 'mother'",
+      "siblings": "under the parents: 'Siblings: Abinadab, Eliab, Elihu and 4 more', 'Half-siblings: Abigail and Zeruiah' (.callout ink.secondary, names as links); three shown, 'and n more' a link that opens the rest in place, only when two or more are hidden",
+      "household": "on the branch: an elbow to each head (partners with children first; after the third, 'and 5 more partners', a button in the accent with a scaled 44 pt hit area, only for two or more), then mothers who are not partners, then 'Mother not named' (.callout italic ink.secondary); each head's children after a RailElbow as a run of .callout links; the last head's elbow ends the line; with no partner and no named mother the children follow the person as one unlabelled run",
+      "words": "names in a run read 'A, B and C'; the app never writes son, daughter, brother, sister, eldest, youngest or grandfather",
+      "voiceover": "top to bottom; a one-name row one element ('Obed, grandparent'), a run its text with an action per name and for 'and n more'",
+      "tap": "each name pushes that person's page; the system's back walks back up"
+    },
+    {
+      "name": "Timeline Rail",
+      "implementation": "TimelineRail, RailRow, RailMarker, RailSegment, RailElbow, RailMetrics (TimelineRail.swift); items by TimelineItems",
+      "yearColumn": "a scaled width never narrower than at the default size, right-aligned, .caption monospacedDigit ink.secondary, the year without 'about' on the first row of each year only; above the title at accessibility sizes",
+      "line": "1 pt ink.rule (HairlineRule vertical) through every row, joined; dashed (stroked path, ink.rule) where the next row is more than 500 years on, dates on only; meets the marker at its middle",
+      "marker": "7 pt, @ScaledMetric(relativeTo: .callout): dot (ink.secondary) for an event, ring (1.25 pt ink.secondary, the page's paper inside) for a life, none for a header, accent (a dot filled in the accent: the person on a Family Line), elbow (no dot; a 1 pt ink.rule line from the rail's line across to the text, xxs short of it); on the middle of a row's first line, a scaled 21 pt (RailMetrics.firstLineAtDefault)",
+      "rows": "title .callout medium ink.primary; passage a link .caption accent without the book; length .caption ink.secondary; xxs apart, an era group sm above; a LazyVStack",
+      "life": "the name (a link to People through the person, plain without one), 'lived 930 years · to 3074 BC'; three or more in a row fold: '8 lives, Seth to Lamech' .callout italic ink.secondary with Show/Hide in the accent, a button that takes Tab",
+      "eraHeader": "GroupLabel style, 'The Great Flood · 2348 BC, one year' (dates off: the title alone), its passage a link after it; a header trait",
+      "voiceover": "a row is one element reading its spoken text, year included, once; an era row a header; a fold a button with value collapsed/expanded",
+      "reuse": "project 3 for a person's family on the phone (the Family Line), with the branch",
+      "branch": "milestone 11, project 3: the line runs on below the person as a household's branch, RailMarker.elbow to each head, the last head's elbow ending it; RailElbow, the short └ (down to the first line's middle, then a scaled sm across) set xxs before a run, hangs the run from the name above; About uses none of it"
+    },
+    {
+      "name": "Timeline Chart",
+      "implementation": "TimelineChartView, TimelineChartModel (Mac only)",
+      "marks": "Swift Charts BarMarks for lives (ink.tertiary) and eras (ink.secondary) in lanes of a scaled 20 pt, at most 12; RuleMark ticks for events (ink.secondary); names above a bar's start in .caption2 ink.secondary where they fit",
+      "axis": ".caption2 ink.secondary: both ends named at the domain's own years with their era ('4004 BC' ... '1491 BC'; '6 BC', 'AD 10', '20', 'AD 30'), round years between where they clear their neighbours by two characters, the first of an era not yet named carrying it; the end labels turned inward",
+      "domain": "every row's year, unless a few rows (at most 5%) lie beyond a gap wider than half the span: those are left off the chart and kept on the rail (Luke's two genealogy lives)",
+      "band": "an accent.wash rectangle behind the bars, no stroke, from the earliest to the latest year of the rows in view under the chart (a closed fold by its lives' years; a row off the chart counts for nothing), at least 1% of the domain wide, no animation; it keeps its last span while no row is in view",
+      "click": "SpatialTapGesture on the plot scrolls the rail to the nearest row (.smooth; a cut under Reduce Motion), landing it just under the pinned chart; a folded life goes to its fold, which stays closed",
+      "shown": "dates on, at least five rows and at least two distinct years",
+      "behaviour": "the column's width; the rail's pinned section header (Matt's review, 2026-11-24): it scrolls with the page until it reaches the window's top, stays there on paper.page across the column with a 1 pt ink.rule hairline under it while the rail scrolls under it, and leaves with the rail's end; the 'Timeline' heading scrolls away above it; hidden from VoiceOver and takes no focus; never the only way to its information"
+    },
+    {
+      "name": "Dates Notice",
+      "implementation": "DatesNotice, DatesFootnote, LibraryDates",
+      "notice": "paper.overlay row at radius md, sm padded, no stroke, not an alert: 'Dates follow a traditional chronology (Ussher's, as worked out by Floyd Nolen Jones), which puts Creation at 4004 BC. You can turn dates off in Settings.' .callout ink.primary with Settings and OK in .callout semibold accent",
+      "footnote": "'Dates follow a traditional chronology.' .caption ink.secondary, opens the setting",
+      "rule": "the first time a view shows a date; either button, or turning Show dates off, answers it (synced: datesNoticeAnswered); the notice and the footnote never show together; no year is shown without one of them; with Show dates off (showDates) no year the app writes appears, though a dictionary entry may mention one in its own words",
+      "hitArea": "a scaled 24 pt minimum on the Mac, 44 pt on the phone"
+    },
+    {
+      "name": "Library Credit Line",
+      "implementation": "LibraryCreditLine",
+      "typography": ".caption ink.secondary",
+      "text": "People, places and events from Theographic Bible Metadata by Robert Rouse (viz.bible), CC BY-SA 4.0, changed: converted to this app's tables. It includes data from STEPBible (CC BY 4.0), OpenBible.info (CC BY 4.0) and Easton's Bible Dictionary (1897).",
+      "links": "each source's name in the accent",
+      "where": "the foot of People's, Places' and About's pages on both apps"
+    },
+    {
+      "name": "Palette Panel",
+      "width": 560,
+      "material": "none: solid paper.overlay (floating-panel); nothing dims behind it",
+      "stroke": "1pt ink.rule",
+      "shadow": "panel-shadow",
+      "rowSelected": "accent.wash, AppRadius.md",
+      "listMaxHeight": "a plain stack, exactly as tall as its rows up to 420 pt the moment results change, then it scrolls; the foot sits under it; an arrow key brings the selected row itself into view, and going up onto a group's first row brings its header",
+      "placeholder": "Go to a passage, search, or run a command",
+      "emptyState": "Recent (up to five, newest first, the open chapter left out while the reader is showing it, so on the front page the chapter last read is listed; twenty kept on the device, outside iCloud; the header carries no count) then Commands (the six suggested that can run now: Home, Notes Browser, Ask the Assistant, Text & Layout, Keyboard Shortcuts, Switch Translation…)",
+      "recentRow": "the symbol of what it opens (book, text.quote, the mark's own, magnifyingglass); title .callout; beneath, .caption ink.secondary: 'Read yesterday · ESV', 'Looked up Tuesday · KJV', 'Note', 'Search · 12 verses'",
+      "suggestionRow": "'Did you mean “abide”?' with magnifyingglass and its verse count beneath; no header; the only row when nothing else matched, the last group when a passage, book, translation, command, note or conversation did (so a command typed by name stays first); offered only for at most twelve words and no quote, exclusion, apostrophe or hyphen word, reference or digit word; Return or a click runs it",
+      "commandRow": "symbol, title (.callout, the menus' names), a trailing checkmark in ink.secondary when in force, then its shortcut as keycaps on paper.panel from ShortcutCatalog; a command that cannot run is left out",
+      "chips": "once something is typed and there are two or more kinds of result or the scope menu shows: All, then Marks, Notes, Asked, Scripture, Passages, Commands, People, Places with their counts (Chip component); a click chooses, Tab and Shift-Tab step through them round to All; a chosen chip shows that kind alone with more rows; a chip whose count is 0 is not offered; the chip returns to All when the field is emptied",
+      "tab": "the palette's whenever VoiceOver is off, whatever Keyboard navigation is: steps the chips, and with no chips does nothing so the field keeps the keyboard; under VoiceOver the system's",
+      "controlTab": "Matt, 2026-11-17 (Option-Tab was suggested first; his window manager, AeroSpace, binds alt-tab and alt-shift-tab): while the scope menu shows and VoiceOver is off, Control-Tab steps the scope forward and Control-Shift-Tab back round the menu's top level (SearchScope.next: Whole Bible, each section the translation has, This Book while the reader shows, round to Whole Bible; another single book steps on to Whole Bible, or back to the last); the field keeps the keyboard, no tab is typed, the selection goes to the first row; the palette's whenever Tab is (a key equivalent, ahead of the window's key-view handling, so with no scope menu it does nothing and focus stays in the field); under VoiceOver the system's; Option-Tab is not the palette's and acts as Tab",
+      "scopeMenu": "a chip at the trailing end of the chip row while Scripture is among the results: Whole Bible, Old Testament, New Testament, Apocrypha (only where the translation has it), This Book: <name> while the reader shows, and a Book submenu by canon section; the scope in force is checked; it returns to Whole Bible each time the palette opens, when the field is emptied, and when the translation has no book of it (a translation switched, a recent search chosen, a lookup that changes the translation)",
+      "foot": "an ink.rule hairline, then one line in .caption ink.secondary (md across, xs down): Return and its word (Read, Show verse, Show note, Show highlight, Show bookmark, Open conversation, Switch, Run, Search), ↑↓ Move, ⇥ Narrow while Tab steps chips, ⌃ ⇥ Scope while Control-Tab steps the scope (one line at 560 pt with Open conversation), trailing esc Close (Back while Switch Translation… shows the translations alone); keycaps on paper.panel; one element for VoiceOver",
+      "escape": "one Esc acts once; from Switch Translation… the first goes back and a second closes",
+      "onClose": "Matt, 2026-11-17: every way it closes (Esc, a click outside, Command-K, a row chosen, a passage link) leaves no words and no results (NavigationModel.isPaletteShown), so Command-K always opens on Recent and Commands; the phone's search tab never shows the palette and keeps its words",
+      "groups": "SearchResults with SearchLimits.palette, commands included; a header per group (.caption semibold, ink.secondary, count trailing) that is not a row: arrow keys, hover and Return move over results.flatItems",
+      "markRow": "symbol; reference (.callout semibold) with the date trailing (.caption, ink.tertiary); quoted words beneath in the Quote serif on their highlight color, up to two lines; then the first line (.callout, ink.secondary); matches bold and underlined in quote and first line (SearchRanker.bolded; Matt, 2026-11-17): the face's semibold in the serif (PageFace.settingMatches; Literata SemiBold and SemiBold Italic, bundled for this alone; semibold italic in a quote except Source Serif 4, which has none bundled, so its quotes' matches are italic and underlined only), the system's bold in SF Pro, a single underline in the text's own ink; no color, so the fill and its contrast hold; an attribute, not a trait, so VoiceOver reads the line as before",
+      "verseRow": "text.quote; reference (.callout) with a 10pt dot in the color of the reader's mark on the verse (verseColors, 0.5pt ink.rule keyline); verse beneath in the page's serif (.callout, ink.primary, two lines), matches semibold and underlined as in markRow (words that start with a bare word, a phrase's exact words, never an excluded word); Source Serif 4 has no semibold italic bundled, so its quotes' matches are italic and underlined only; New York takes the system serif's bold",
+      "commandK": "From another window, brings the main window forward and makes it key before showing the palette",
+      "noMatches": "One line naming the query plus accepted forms (John 3:16, Psalms, KJV).",
+      "peopleAndPlaces": "People and Places come after Commands and before the notes; up to four rows each, the chip for the rest; a row: person or mappin, the name (.callout), beneath it what tells a shared name apart or the place's kind, and the verse count; Return opens the whole-Bible page on the front page under '‹ Contents', the pane keeping its book; not added to Recent",
+      "commands": "35 commands, found by name when typed; Export All Data… and Import Data… (no keys) are the 34th and 35th"
+    },
+    {
+      "name": "Marked Phrase",
+      "fill": "mark.* Color Set behind the exact character range",
+      "noteless": "1pt dotted underline, ink.secondary",
+      "otherTranslation": "1pt dashed underline on the whole verse",
+      "focused": "1.5pt AccentColor rounded outline, 2pt outset",
+      "bookmark": "bookmark.fill in AccentColor in the gutter, 26pt from the column edge"
+    },
+    {
+      "name": "Chapter-Note Mark",
+      "implementation": "ChapterNoteMark, both apps; replaces the chapter note band",
+      "placement": "trailing end of each chapter's opening line, AppSpacing.md from the label (and the Mac's running head for the chapter in view)",
+      "symbol": "doc (outline paper) in .title, the heading's text style",
+      "count": "inside the paper below the fold, semibold monospacedDigit at the default caption size (body size on the Mac) as a @ScaledMetric(relativeTo: .title), so it grows with the paper; '9+' above nine; shrinks to fit",
+      "color": "accent",
+      "hitArea": "@ScaledMetric(relativeTo: .title): 24pt on the Mac, 44pt on the phone",
+      "action": "Mac: shows the notes column (the inspector turns back from the assistant to the notes); phone: Notes in This Chapter",
+      "accessibility": "'1 chapter note' or 'N chapter notes', a button; on the phone it is in the hosted heading, read before the text",
+      "empty": "with no chapter notes it keeps its place, invisible, disabled and hidden from VoiceOver"
+    },
+    {
+      "name": "Assistant Reply",
+      "background": "assistant.wash",
+      "radius": "AppRadius.lg",
+      "padding": "AppSpacing.sm vertical, AppSpacing.md horizontal",
+      "symbol": "sparkles in assistant",
+      "note": "Milestone 5. A reply saved as a note drops the wash."
+    },
+    {
+      "name": "Notes Browser Row",
+      "implementation": "NotesBrowserView: the window's own ScrollView and LazyVStack (no spacing of its own, AppSpacing.xs padding), as NotesColumnView.rows; no system List. The row is NotesBrowserRow, its words NotesBrowserRowParts",
+      "shape": "selection wash only, RoundedRectangle(cornerRadius: AppRadius.md, style: .continuous), inset as the notes column's rows are",
+      "background": "none at rest; accent.wash when selected, key window or not; text colors unchanged",
+      "keyboard": "one focus stop for the list; up and down select (with nothing selected, down takes the first and up the last), Return opens the note in the reader, Delete deletes after the confirmation the browser asks (undoable too)",
+      "pointer": "a click selects at once; a double-click opens; a right-click or Control-click selects the row before its menu opens (an AppKit overlay answering hit tests for those clicks only; SecondaryClickHook); after a delete the selection goes to the note that took its place",
+      "accessibility": "selected trait kept; one element per row, the kind first and the time or date last: 'Note, John 15:4, 8:14 AM', 'Conversation, Mark 4, Outline: Mark 4, 9:03 PM'; the marker symbols carry the kind as their label",
+      "focus": "the list takes the keyboard as it appears only when nothing is being searched, so rows coming back as a search is corrected never take it from the search field; a click on a row still focuses the list",
+      "notRebuilt": "sticky section headers, Home and End, the Page keys, type-to-select",
+      "keptVersions": "the filter's sixth segment 'Kept versions' is offered only while one exists and returns to All when the last is settled; the filter is a segmented control from 1,000 pt (five segments) or 1,200 pt (six) and a menu of the same choices below that, and the window opens 1,100 pt wide; a kept version is a row with the mark 'Kept version', its Delete is 'Discard…' with no destructive role; a text with no note is listed only under Kept versions",
+      "groups": "rows sit under a Group Heading: sorted by date, the days of their last change, newest first (Today, Yesterday, then the weekday and date, the year added when it is not this year); by passage, the books in canon order. The groups are made once per rebuild in the model (NotesBrowserModel.days and sections; groups picks one), never in a row's body",
+      "rules": "between two groups a 1 pt ink.rule (HairlineRule) the list's full width, AppSpacing.xxs under a group's last row (NotesBrowserList.spaceAboveGroupRule) so a selected last row's wash never sits on it, none before the first; between two notes of a group a HairlineRule inset AppSpacing.sm on both sides, hidden (opacity, .snappy, a cut under Reduce Motion, keeping its point of height) while either note beside it is selected, so the wash stands alone",
+      "spacing": "AppSpacing.xs between the lines of a note, sm + 1 pt + sm between two notes",
+      "anatomy": "AppSpacing.sm padding all round, xs between lines. Line 1: the marker in a @ScaledMetric(relativeTo: .body) 14 pt column, the passage .body semibold ink.primary (a conversation's title, one line, then its place and translation .caption2 semibold ink.secondary), trailing the time (.dateTime.hour().minute()) under a day heading or the date (Nov 18, 2026) under a book heading, .caption monospacedDigit ink.tertiary. Then at the text's leading edge: the marked words in the page's italic (quoteFont()), two lines, on the mark's colour in ink.primary, or on no fill in ink.secondary when the mark has none (a bookmark's label, a colourless anchor, a kept version's words: nothing new is stored); up to three lines of the note (NoteBodyText, .callout, a heading at the row's own size, the lines running on across blocks), or a conversation's last turn .callout ink.primary, two lines; the versions mark"
+    },
+    {
+      "name": "Group Heading",
+      "implementation": "NotesGroupHeading(title:count:spoken:), the Notes window and the phone's Notes tab sorted by date (milestone 11, project 5)",
+      "typography": "the day or the book .headline ink.primary; the count trailing .callout monospacedDigit ink.secondary; baseline aligned, AppSpacing.xs between at the least",
+      "count": "the word follows the filter: items, notes, highlights, bookmarks, conversations, kept versions; singular for one ('2 items', '1 note')",
+      "spacing": "no padding of its own. Notes window: AppSpacing.md above (xs above the first, which with the list's own xs makes 16), xxs below, sm across. Phone: the system Section header's own",
+      "accessibility": "one element, the header trait, read 'Today, 2 notes'; never selected, never a keyboard stop",
+      "phone": "by date only; by passage the phone's book headings are the title in .headline ink.primary with no count"
+    },
+    {
+      "name": "Mac Reader Selection and Keys",
+      "implementation": "ChapterTextController (+Keys), ReaderKeyCommands, ShortcutCatalog, ReaderFocusRule; verse basics spec 4 and 5",
+      "click": "a verse is selected as ordinary text, so every existing action acts on it; a click on a verse's words or number selects the verse and opens the markup menu for it, every time, as on the phone (Matt, 2026-11-17, overturning 'no menu opens'); a click on the selected verse opens it again; J, K, ⇧J and ⇧K select quietly; a drag, a double-click and a click inside a highlight open the same menu and a right-click behaves as before; the menu's top-left sits at the selection's left edge just below its last visible line, else just above its first, covering no selected word, and beside the click (right, else left) when neither side has room or the place would hold the click's point, so the pointer is never inside the menu as it opens (menuOrigin, one rule for every route); with the menu open a click anywhere outside it only closes it and deselects (and takes a highlight's outline), selecting nothing and leaving nothing (the caret at the page's opening, the next Shift-click a plain click), except the second click of a double-click on a verse's word, which selects the word and opens its menu; Esc closes the menu and keeps the selection for the keys, a second Esc clears it; with a selection and no menu open a click on another verse selects it with its menu; the selection's fill follows a drag while the mouse is down",
+      "selectionFill": "drawn by the app, behind the words only (ChapterTextController.selectionFills, painted by HighlightFillView): on each line from the first selected glyph to the last, from the same segments the highlights use, the line's full height, joined to the next line's, square cornered; over a highlight's fill and under the text; never after a line's last word, in an indent or across the margins; in the system's colours (selectedTextBackgroundColor, unemphasizedSelectedTextBackgroundColor when the window is not key or the text lacks the keyboard), the one system colour on the page because it is the system's selection; the system's own fill never shows (its selection view drawn at alpha 0, selectedTextAttributes a clear background) and selected text keeps its own colours; filled only for the lines in or near view, refilled on a scroll, a reflow, new text and a change of key window or keyboard",
+      "keys": "one catalogue (ShortcutCatalog) feeds the handler and the shortcuts sheet: J and K select the next and previous verse (with nothing selected, from the first verse on screen; held, from the verse the keys last reached, a hand scroll told from the keys' own for 0.3 s after a key); Shift-J and Shift-K grow or shrink the selection by a verse and reveal the verse that moved; 1 to 9 highlight in the nth color; 0 is No Color; N adds or edits the note (showing the notes column if hidden); B bookmarks; C opens Compare Translations and R Cross-References on the selection (nothing without one; held, each acts once; neither is a palette command); left and right arrows turn chapters; Esc clears the selection; Command-slash and ? show the sheet. Up, down, Space and the Page keys scroll as before. Nothing in the catalogue shares a key within one focus",
+      "heldKeys": "a held 1 to 9, 0, N or B acts once and its repeats are ignored; J, K, Shift-J, Shift-K and the arrows repeat",
+      "whileTyping": "every reader key, J, K, Shift-J, Shift-K and Esc included, does nothing while the palette (Command-K) is showing or a note is being edited: the key is swallowed, with no beep, so letters typed before the palette's field or a new note's editor has the keyboard never act on the selection",
+      "focus": "the keys act only while the reader's text has keyboard focus; the reader takes it when the window opens on a chapter, when a chapter opens, when a note's edit finishes and when the palette or the shortcuts sheet closes, never from a field being typed in (a text field counts by the field its shared field editor is editing, so the assistant's composer taking focus as the palette closes keeps it) or from the notes column's rows while up and down move among them; a note editor asked for focus before it is in the window takes it once it is"
+    },
+    {
+      "name": "Shortcuts Sheet",
+      "implementation": "ShortcutsSheet (macOS), fed by ShortcutCatalog, which the reader's key handling also reads",
+      "ways": "Command-slash, ? in the reader, Help > Keyboard Shortcuts, the palette's Keyboard Shortcuts command",
+      "surface": "the system's sheet on paper.panel; AppSpacing.lg padding; no card, shadow or material",
+      "title": ".headline ink.primary with a Filter field (focused on open) beside it",
+      "labels": "the menus' names where a menu has the command; the Option-Command arrows are 'Chapters, from anywhere', which keeps the word the filter finds and fits its column on two lines",
+      "layout": "three columns of groups (Go, View, Verses, Notes Column, Assistant), each @ScaledMetric(relativeTo: .callout) 220pt wide, AppSpacing.lg apart; the columns area keeps a minimum of three columns and @ScaledMetric 340pt so the sheet does not shrink as the filter narrows",
+      "group": ".caption semibold, ink.secondary, header trait",
+      "row": ".callout ink.primary label, then its keys AppSpacing.xxs apart from one another and AppSpacing.xs after the label; a pair of keys shares a row; '1 - 9' with the dash in .caption ink.secondary",
+      "foot": "'Press Command-slash any time to see this.' in .caption ink.secondary, and Done (default button)",
+      "noMatch": "one line naming what was typed",
+      "accessibility": "a row is one element: its label, then its keys by name"
+    },
+    {
+      "name": "Keycap",
+      "implementation": "Keycap and KeycapRow (Keycap.swift); the shortcuts sheet and the ⌘K palette",
+      "fill": "the paper it sits on, one step over: paper.overlay in the sheet (on paper.panel), paper.panel in the palette (itself paper.overlay), including on a selected row",
+      "radius": "AppRadius.sm",
+      "stroke": "none",
+      "typography": ".caption medium, ink.primary; text glyphs, not symbols",
+      "size": "at least a @ScaledMetric(relativeTo: .caption) 20pt square, AppSpacing.xxs horizontal padding, wider for esc",
+      "run": "keys AppSpacing.xxs apart; '–' between two is plain .caption ink.secondary text"
+    },
+    {
+      "name": "Chip",
+      "implementation": "ChipLabel (PaletteChrome.swift); the phone's menu capsules on the Notes and Search tabs are a sibling, PhoneMenuLabel: the same capsule and fills at .subheadline, AppSpacing.xs down, with chevron.up.chevron.down",
+      "fill": "paper.panel; accent.wash when it is the one in force (a chosen chip, a scope other than Whole Bible, a menu off its default)",
+      "shape": "Capsule; AppSpacing.sm across, AppSpacing.xxs down; no stroke",
+      "typography": ".caption semibold, ink.primary; a count after the title is .monospacedDigit() ink.secondary",
+      "accessibility": "a chosen chip carries the selected trait; the scope menu is 'Search in' with the scope as its value",
+      "rule": "a control the reader sets, never a label or tag on a row"
+    },
+    {
+      "name": "About",
+      "implementation": "AboutView, from the Credits catalogue; Mac Settings' last tab and the iPhone's last Settings row (milestone 11, project 5)",
+      "layout": "a colophon: a plain scrolling page, no Form, no card, no rule. The column is at most a @ScaledMetric(relativeTo: .body) 520 pt, AppSpacing.lg inset; the head, the group labels and every line carry sm across, so they share one leading edge. The phone's page is on paper.page; the Mac's has no fill of its own",
+      "notALibraryPage": "it keeps Dynamic Type and takes no LibraryType, and its sections are GroupLabel (md above, xxs below), not the Library pages' hairline and heading; Matt's People review left Settings > About as it was",
+      "head": "Page Title (the app's name, no subtitle, selectable on the Mac) with the version line under it, .callout ink.secondary, xxs apart; one element with the header trait",
+      "sections": "Scripture (ESV, NASB, AMP, ERV, ASV, KJV, WEB, CPDV), Study data (Berean Standard Bible, OpenBible.info, Theographic Bible Metadata), Typefaces, icon, videos and software (Literata, Source Serif 4, 3dicons, BibleProject, bobuk/holybooks, GRDB.swift); Credit.Section, one catalogue",
+      "line": "one Credit Line per source; several may be open; the page opens with every line closed and remembers nothing",
+      "license": "for a licence file a 'Licence text' line (its own button) opening the text in .caption ink.secondary, re-wrapped for display with line breaks only changed; the stored files are as received (the holybooks licence is the pinned commit's own file)",
+      "noFile": "a source with a licence link shows the licence's name as a link in the accent",
+      "copyrighted": "the ESV, NASB, Amplified Classic and ERV are named with their holders and never 'Used by permission'"
+    },
+    {
+      "name": "Credit Line",
+      "implementation": "CreditLineView (AboutView.swift), one outside source on Settings > About, both apps; not the Library Credit Line",
+      "closed": "chevron.right (.caption ink.tertiary, in a @ScaledMetric(relativeTo: .caption) column so the names align), the name .body ink.primary, then after a middle dot the use .callout ink.secondary (none for plain Bible text; a no-break space after the dot keeps it with the use, so a wrapped line breaks before the dot), the licence trailing .callout ink.secondary; where one line is too narrow the licence moves under the name (ViewThatFits), nothing truncates",
+      "padding": "AppSpacing.xs down, open or closed, so the name never moves; no rule, no fill at rest",
+      "opening": "a click anywhere on the line, Space or Return (versePanelRowAction, so the system focus ring is on the line's own AppRadius.md shape): the chevron turns down and the block fades in, .snappy on the rotation and the opacity only and never a frame, a cut under Reduce Motion",
+      "block": "its own fill at AppRadius.md, no stroke, xxs below the line (the ring and the fill never cross) and xs above the next, padded sm, text on the name's edge; paper.panel on the Mac (the Settings window is white in Light), paper.overlay on the phone's paper.page. Notice .callout ink.secondary (selectable), the link .callout accent without https://, then 'Licence text' or the licence's link",
+      "accessibility": "one element, a button, labelled 'English Standard Version, Copyright' with the value Collapsed or Expanded; the notice and link follow, the link is a link; Tab reaches each line, and the link and 'Licence text' while open"
+    },
+    {
+      "name": "Notes Column",
+      "implementation": "NotesColumnView in the reader's .inspector",
+      "width": "260 to 480, ideal 320",
+      "background": "paper.panel",
+      "keyboard": "Tab reaches rows; up/down move and select; Return edits; Delete deletes"
+    },
+    {
+      "name": "Verse Panels",
+      "implementation": "CompareTranslationsPanel, CrossReferencesPanel, VersePanelLayout, versePanelRowAction (VersePanel.swift); ChapterTextController+VersePanel (the Mac's popover); PhoneVersePanelSheet; spec 2026-11-16-milestone-10-on-a-verse-design.md 4, 5 and 7",
+      "layout": "a header, a middle that scrolls and a foot, AppSpacing.xs apart, padded AppSpacing.sm; no background, stroke or shadow of its own; rows, never cards. On the Mac 360 pt wide, growing to 480 pt (both @ScaledMetric) before the middle scrolls",
+      "compareRow": "the translation's short name .caption semibold ink.secondary, 'reading' beside it for the one being read (.caption ink.secondary), then the verse in the page face at .callout, roman, ink.primary, as prose with each verse's number; the row being read on accent.wash at AppRadius.md; a translation lacking the verse says 'Not in the ERV.' in .callout ink.secondary and is not a button; the row for the translation being read closes the panel and looks nothing up; the CPDV's Psalms carry a .caption ink.secondary line about numbering",
+      "referenceRow": "the passage's reference in .callout semibold ink.primary over its opening words in the Quote style (pageFace.quoteFont(), ink.secondary), one line; no fill at rest; votes never shown",
+      "rowAsButton": "a plain view acting as a button (versePanelRowAction): a tap, and on the Mac Return or Space; its focus-effect shape is RoundedRectangle(AppRadius.md) set before .focusable so the system ring follows the rounded row, which a Button's own ring does not",
+      "foot": "Compare: Ask About the Differences (sparkles, assistant plum, .callout), Copy as a symbol alone (doc.on.doc, checkmark for 1.5 s), Translations… menu at the trailing end. Cross-References: Ask About These (sparkles, plum) and the credit 'Cross-references: OpenBible.info' in .caption ink.secondary as a link. One line each at ordinary sizes; at large text sizes the foot wraps (Compare: Ask above Copy and Translations…; Cross-References: Ask above the credit, which is never cut off). At those sizes Compare's count moves under the reference and Cross-References' title wraps. Neither panel is ever wider than what holds it",
+      "keyboard": "the keyboard rests as the popover opens on a 1 pt focusable view of the panel's own, so no control rings on open; while a popover is up every reader key but Esc is swallowed; when it goes down the reader takes the keyboard back by its focus rule, never from a field being typed in. A popover closes when the page scrolls under it or its text is laid out again (text size, page style, the notes column, a resize); the keys' own scroll begun before it opened, and a passage shown in place, do not close it",
+      "accessibility": "a compare row reads 'KJV: ' then the verse ('KJV, reading: ' for the one being read); a reference row reads the reference then its opening words and is a button; the chevrons are 'Previous verse' and 'Next verse'",
+      "rule": "the panel takes the reader's place for a moment and gives it back: a row is a lookup, and Back returns"
+    },
+    {
+      "name": "Reading Plan Band",
+      "implementation": "PlanWeekSummary inside FrontPageView (also the reader's This Week popover); reading plans spec 5.1",
+      "where": "over the Mac's contents while a plan is followed and not finished; none with no plan and none over a Library view; the same content in a system popover (a scaled 360 pt wide, padded AppSpacing.xs) from the toolbar's calendar button, help 'This week's readings', dimmed on the front page",
+      "header": "'This week' in the page face at .title3 ink.primary (header trait), the title line beside it in .callout ink.secondary, monospaced digits ('Week 63 of 67 · meets Tue, Nov 17'; 'meets today' on the day; the label after it; dates in the reader's region's order), 'The whole plan' with chevron.right trailing in the accent (.callout medium; help 'Reading Plan (⌥⌘P)')",
+      "columns": "the week's readings in equal adaptive columns, AppSpacing.md apart, at least a scaled 140 pt each (five fit at the usual 1100 pt window, wrapping at 820 pt), each the Reading Row",
+      "foot": "the plan's progress line, then a 1 pt ink.rule hairline inset AppSpacing.lg (hidden from VoiceOver); AppSpacing.lg at the sides, md above, sm below; no fill, no card",
+      "open": "the progress line and the hairline are two rules a few points apart; whether the band closes with both is Matt's to judge"
+    },
+    {
+      "name": "Tick Circle",
+      "implementation": "TickCircle (PlanReadingViews.swift)",
+      "states": {
+        "notRead": "circle, ink.secondary (not the accent: an accent ring on every unread reading would be the loudest thing on the page)",
+        "read": "checkmark.circle.fill, the accent"
+      },
+      "typography": ".title3",
+      "hitArea": "at least a scaled 24 pt on the Mac, a scaled 44 pt on the phone",
+      "accessibility": "help and label 'Mark as read' / 'Mark as not read'"
+    },
+    {
+      "name": "Reading Row",
+      "implementation": "PlanReadingRow (stacked, or inline for the plan window), one view for the band, the popover, the window and the phone",
+      "passages": "plain .callout buttons in the accent, one to a line (inline: joined by ' · ' while they fit); a ticked reading's passages are ink.tertiary and still open; a passage the translation lacks is ink.tertiary text with the help 'Not in the ESV.', not a button",
+      "label": "after the passages in .caption ink.secondary ('NT Focus', 'Holidays')",
+      "accessibility": "one element, 'Reading 3 of 5, Psalms 84, Esther 7 to 8, not read', a button whose action ticks, with an 'Open …' action per passage that can be opened"
+    },
+    {
+      "name": "Plan Progress Line",
+      "implementation": "PlanProgressLine",
+      "shape": "2 pt of accent over an ink.rule track; the share of all the plan's readings ticked; grows only when one is ticked, never animates; VoiceOver 'Plan progress', 'N of M readings'. Unlike the chapter's ReadingProgressLine it does not follow scrolling"
+    },
+    {
+      "name": "Plan Window",
+      "implementation": "PlanWindowView, PlanWindowState; Window 'Reading Plan' at 780 by 560 (least 560 by 360); ⌥⌘P, View > Reading Plan, ⌘K",
+      "surface": "paper.page; a scaled 230 pt sidebar and the chosen week's detail, an ink.rule Divider between",
+      "sidebarRow": "'Week 63' .callout ink.primary; trailing the date and 'done' / '3 of 5' / nothing in .caption ink.secondary, monospaced; the chosen row on accent.wash at AppRadius.md, AppSpacing.xs padded; a week passed with nothing ticked is not marked in any colour; opens on this week with the sidebar holding the keyboard",
+      "detail": "the week's number in the page face at .title2, its line in .callout ink.secondary, the readings as rows with rhythm, AppSpacing.sm apart, no hairlines between",
+      "toolbar": "the plans menu (followed plan checked; Delete Plan… last, destructive, asks, undone from Edit > Undo with its ticks), Import… (square.and.arrow.down), New Plan (plus), Edit Plan… (pencil), Change Meeting Date… (calendar, a popover)",
+      "empty": "ContentUnavailableView 'No reading plan', 'Import your group's plan, or type one in.', Import… and New Plan; a plan with no weeks says 'This plan has no weeks yet.'",
+      "anchor": "a plan with no dates asks 'When does it next meet?' (PlanAnchorView: the week pop-up, a date picker, Set Dates, the one borderedProminent button), then every week is dated seven days apart; a changed date (ChangeMeetingDateView) asks 'Week N meets' and says 'Later weeks move by the same number of days.' only for a week that has a date"
+    },
+    {
+      "name": "Plan Review",
+      "implementation": "PlanEditorView, PlanEditorSession, PlanEditorRows; New Plan, Edit Plan… and Import… on both apps; reading plans spec 6.2",
+      "surface": "a plain List on paper.page, no separators, rows inset AppSpacing.lg; a sheet on the Mac (least 620 by 520, ideal 680 by 640), a .large sheet on the phone",
+      "head": "the plan's title in .title3; 'Starts in' with the year in a stepper when the dates were read without one; 'To check' (Label header with the count) with one plain button per flag, exclamationmark.triangle in ink.secondary and the sentence in .callout ink.primary, going to the line; nothing is red",
+      "week": "a Section: 'Week' .headline, the number, the date (a compact date picker with Clear in its context menu, or Set Date) and the label; the readings one to a line as plain .body text fields with a minus.circle Remove Reading and, under a flagged line, its own sentence in .caption ink.secondary; Add Reading and an ellipsis menu with Remove Week; the foot has Add Week and, for a new plan, the system Paste button",
+      "undo": "Remove Week, Remove Reading and a move are undone with ⌘Z (a shake on the phone) in the sheet's own undo manager",
+      "bar": "Mac: Cancel (.cancelAction) and Save (.borderedProminent, dimmed while a line cannot be read, a book is unknown or there is no title or week) under an ink.rule Divider; phone: the bar's Cancel and Save (checkmark)",
+      "phone": "the week's number and label are fields on paper.panel at AppRadius.md with no hairline, the label's prompt in ink.tertiary; the number takes the number pad; the keyboard goes down when the list is dragged"
+    },
+    {
+      "name": "Versions Mark and View",
+      "implementation": "VersionsMark, NoteVersionsView, VersionBlock (both apps); NoteVersionsPopover and VersionsMarkButton (Mac); PhoneNoteVersionsPage and PhoneVersionSheet (phone)",
+      "spec": "2026-11-16-milestone-10-keeping-data-safe-design.md 4.1 and 4.2; mockup milestone-10-mockups/note-kept-versions.html",
+      "mark": "square.on.square and the words ('2 versions') in .caption ink.secondary, AppSpacing.xs across and xxs down, on paper.overlay in a Capsule with no stroke: a tonal step, not a chip, not a card, never the accent, never red, never a badge; not shown while the note is edited; a count of one shows nothing",
+      "macPopover": "the system's popover; the view padded AppSpacing.sm, a scaled 380 pt wide (content 356 pt) and at most a scaled 420 pt tall, scrolling past that; the mark's button has a scaled 24 pt hit height and the help 'Show the versions of this note'",
+      "blocks": "a title ('Two versions of this note'), a .callout ink.secondary sentence, then one block per text: name and time ('This version · Mac', 'Kept version · iPhone'; 'Today 8:14 AM' in the reader's region), the text rendered as a note's with no links, then its choices; a hairline in ink.rule between blocks",
+      "choices": "Use This One, Keep Both in the Note, Discard: .bordered in one row at the regular control size, stacking when they do not fit; Use This One is .borderedProminent only while there is one kept version; none is red and none has a destructive role; only Discard is undone (Edit > Undo, a shake on the phone)",
+      "textWithNoNote": "'A version with no note', mark 'Kept version', help 'Show the kept version': one block with Restore as a Note (prominent) and Discard",
+      "closing": "the popover, the pushed Versions page and the phone's kept-version sheet close once the last version is settled",
+      "phone": "in the note sheet the mark is a button of at least 44 pt that pushes a Versions page (inline title, paper.page); the choices are at least 44 pt tall (a floor, growing with the text size); a kept version's row in the Notes tab opens PhoneVersionSheet (.medium, .large, Done), and its swipe is Discard (trash, no destructive role)",
+      "accessibility": "the mark is part of its row's label and an action of the row named '2 versions'; a block is one element (label: name and time; value: the text; one action per choice)"
+    }
+  ],
+  "tokenSource": {
+    "colors": "Packages/ScriptureKit/Sources/ScriptureUI/Palette.swift (ColorToken; Color.<name> and .platformColor)",
+    "metrics": "Packages/ScriptureKit/Sources/ScriptureUI/Metrics.swift (AppSpacing, AppRadius)",
+    "marks": "Packages/ScriptureKit/Sources/ScriptureModel/MarkupContainer.swift (defaultColors, migrateDefaultColorsIfNeeded)",
+    "appAccent": "Apps/Mac/ReadingThroughScripture/Assets.xcassets/AccentColor mirrors the accent token",
+    "why": "SwiftPM's command-line build does not compile .xcassets, so asset Color Sets would load as nil under swift test.",
+    "contrastTests": "Packages/ScriptureKit/Tests/ScriptureUITests/PaletteTests.swift"
+  }
+}

@@ -1,0 +1,9 @@
+[
+  { "group": "Start",      "pages": [["first-chapter", "Your first chapter"]] },
+  { "group": "Reading",    "pages": [["reader", "The reader"], ["page-styles", "Page styles and text"], ["your-place", "Your place"], ["reading-plans", "Reading plans"]] },
+  { "group": "Marking",    "pages": [["highlights", "Highlights and bookmarks"], ["notes", "Notes"], ["notes-window", "The Notes window"]] },
+  { "group": "Studying",   "pages": [["library", "The Library"], ["search", "Search and ⌘K"], ["verse-panels", "Verse panels"], ["assistant", "The study assistant"]] },
+  { "group": "Keeping",    "pages": [["sync-and-backups", "Sync and backups"], ["export-and-import", "Export and import"]] },
+  { "group": "The iPhone", "pages": [["iphone", "The iPhone app"]] },
+  { "group": "Reference",  "pages": [["shortcuts", "Every shortcut"], ["passage-links", "Passage links"]] }
+]

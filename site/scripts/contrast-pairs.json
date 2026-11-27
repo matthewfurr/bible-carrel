@@ -1,0 +1,16 @@
+[
+  { "text": "ink-primary", "on": "paper-page", "min": 4.5 },
+  { "text": "ink-primary", "on": "paper-panel", "min": 4.5 },
+  { "text": "ink-primary", "on": "paper-overlay", "min": 4.5 },
+  { "text": "ink-secondary", "on": "paper-page", "min": 4.5 },
+  { "text": "ink-secondary", "on": "paper-panel", "min": 4.5 },
+  { "text": "ink-secondary", "on": "paper-overlay", "min": 4.5 },
+  { "text": "ink-verse", "on": "paper-page", "min": 4.5 },
+  { "text": "ink-verse", "on": "paper-panel", "min": 4.5 },
+  { "text": "ink-verse", "on": "paper-overlay", "min": 4.5 },
+  { "text": "accent", "on": "paper-page", "min": 4.5 },
+  { "text": "accent", "on": "paper-overlay", "min": 4.5 },
+  { "text": "ink-primary", "on": "accent-wash", "min": 4.5 },
+  { "text": "on-accent", "on": "accent", "min": 4.5 },
+  { "text": "ink-primary", "on": "paper-page", "min": 3 }
+]

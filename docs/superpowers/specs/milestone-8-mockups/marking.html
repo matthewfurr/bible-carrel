@@ -1,0 +1,255 @@
+<style>
+  .ph { width: 264px; height: 548px; border-radius: 42px; background: #F5F7F9; color: #192028;
+        position: relative; overflow: hidden; box-shadow: 0 0 0 7px #1b1f24, 0 14px 30px rgba(0,0,0,.28);
+        font-family: -apple-system, "SF Pro Text", system-ui, sans-serif; text-align: left; flex: none; }
+  .ph .island { position: absolute; top: 10px; left: 50%; width: 76px; height: 22px; margin-left: -38px;
+        border-radius: 12px; background: #0c0e10; z-index: 5; }
+  .ph .top { position: absolute; top: 40px; left: 12px; right: 12px; height: 34px; display: flex; align-items: center;
+        justify-content: space-between; z-index: 4; }
+  .ph .top .r { display: flex; gap: 6px; }
+  .ph .title { position: absolute; left: 0; right: 0; text-align: center; pointer-events: none;
+        font-family: "New York", ui-serif, Georgia, serif; font-weight: 600; font-size: 15px; }
+  .glass { background: rgba(255,255,255,.62); -webkit-backdrop-filter: blur(14px) saturate(1.7);
+        backdrop-filter: blur(14px) saturate(1.7); border: 1px solid rgba(255,255,255,.85);
+        box-shadow: 0 4px 14px rgba(25,32,40,.14), inset 0 0 0 .5px rgba(25,32,40,.06); }
+  .glass.tint { background: #247966; border-color: #2f8c77; color: #fff; }
+  .ph .rb { width: 34px; height: 34px; border-radius: 17px; display: flex; align-items: center; justify-content: center; }
+  .ph svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.7;
+        stroke-linecap: round; stroke-linejoin: round; }
+  .ph .page { position: absolute; inset: 86px 0 0 0; padding: 0 26px 0 22px;
+        font-family: "New York", ui-serif, Georgia, serif; font-size: 13.5px; line-height: 1.62; }
+  .ph .page h4 { font-size: 19px; font-weight: 600; margin: 0 0 8px; color: #192028; }
+  .ph .page sup { font-family: -apple-system, system-ui, sans-serif; font-size: 8px; color: #8D9399; margin-right: 2px; }
+  .ph .hl1 { background: #F3E3A8; border-radius: 2px; }
+  .ph .hl2 { background: #F1D5DA; border-radius: 2px; }
+  .ph .hd { display: inline-block; width: 2px; height: 17px; background: #247966; vertical-align: -4px; position: relative; }
+  .ph .hd::before { content: ""; position: absolute; left: -3px; width: 8px; height: 8px; border-radius: 4px; background: #247966; }
+  .ph .hd.s::before { top: -7px; } .ph .hd.e::before { bottom: -7px; }
+  .ph .bar { position: absolute; bottom: 16px; left: 14px; right: 14px; display: flex; gap: 8px; align-items: center; z-index: 6; }
+  .ph .tabs { flex: 1; height: 52px; border-radius: 26px; display: flex; align-items: center; padding: 4px; }
+  .ph .tab { flex: 1; height: 44px; border-radius: 22px; display: flex; flex-direction: column;
+        align-items: center; justify-content: center; gap: 1px; font-size: 9px; font-weight: 600; color: #192028; }
+  .ph .tab.on { color: #247966; background: rgba(25,32,40,.07); }
+  .ph .srch { width: 52px; height: 52px; border-radius: 26px; display: flex; align-items: center; justify-content: center; flex: none; }
+  .ph .dots { justify-content: space-evenly; }
+  .ph .dot { width: 24px; height: 24px; border-radius: 12px; box-shadow: inset 0 0 0 .5px rgba(25,32,40,.18); }
+  .ph .dot.on { box-shadow: 0 0 0 2px #F5F7F9, 0 0 0 4px #192028; }
+  .ph .acts { position: absolute; left: 14px; right: 14px; bottom: 76px; height: 52px; border-radius: 26px;
+        display: flex; align-items: center; padding: 4px; z-index: 6; }
+  .ph .pop { position: absolute; left: 30px; z-index: 7; border-radius: 22px; padding: 4px; }
+  .ph .pop.glass, .ph .acts.glass { background: rgba(250,252,254,.9); }
+  .ph .pop .row { display: flex; align-items: center; height: 42px; }
+  .ph .pop .row + .row { border-top: 1px solid rgba(25,32,40,.09); }
+  .ph .pop .tab { width: 48px; flex: none; }
+  .ph .pop .dots { width: 192px; }
+  .ph .finger { position: absolute; width: 34px; height: 34px; border-radius: 17px; z-index: 8;
+        background: rgba(36,121,102,.22); border: 1.5px solid rgba(36,121,102,.55); }
+  .steps { display: flex; gap: 40px; justify-content: center; align-items: flex-start; flex-wrap: wrap; padding: 26px 0 8px; }
+  .step { width: 264px; }
+  .step p { font-size: .85rem; margin-top: 20px; text-align: left; }
+  .step b { font-weight: 600; }
+  .tabnote { font-size: .8rem; margin-top: .5rem; }
+</style>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="i-read" viewBox="0 0 24 24"><path d="M12 6.500C9.500 4.800 6.500 4.600 3.500 5.400v12.800c3-.8 6-.6 8.500 1.100M12 6.500c2.500-1.700 5.500-1.900 8.500-1.100v12.800c-3-.8-6-.6-8.500 1.100M12 6.500v12.800"/></symbol>
+    <symbol id="i-notes" viewBox="0 0 24 24"><path d="M6 3.500h12a1.500 1.500 0 0 1 1.500 1.500v14a1.500 1.500 0 0 1-1.500 1.500H6A1.500 1.500 0 0 1 4.500 19V5A1.500 1.500 0 0 1 6 3.500zM8.500 8.500h7M8.500 12h7M8.500 15.500h4"/></symbol>
+    <symbol id="i-ask" viewBox="0 0 24 24"><path d="M5 4.500h14A1.500 1.500 0 0 1 20.500 6v9a1.500 1.500 0 0 1-1.500 1.500h-7l-4.500 3.500v-3.500H5A1.500 1.500 0 0 1 3.500 15V6A1.500 1.500 0 0 1 5 4.500z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.500" cy="10.500" r="6"/><path d="M15 15l5 5"/></symbol>
+    <symbol id="i-lib" viewBox="0 0 24 24"><path d="M4.500 4.500h3.500v15H4.500zM10.500 4.500H14v15h-3.500zM16.200 7l3.300-.9 3 12.500-3.300.9z"/></symbol>
+    <symbol id="i-more" viewBox="0 0 24 24"><circle cx="6" cy="12" r=".9"/><circle cx="12" cy="12" r=".9"/><circle cx="18" cy="12" r=".9"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M7 4h10v16l-5-3.500L7 20z"/></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24"><path d="M14.500 5.500l4 4L10 18l-5 1 1-5zM4 21.500h16"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M5 7h14M10 7V4.500h4V7M7 7l1 12.500h8L17 7"/></symbol>
+    <symbol id="i-done" viewBox="0 0 24 24"><path d="M5 12.500l4.500 4.500L19 7.500"/></symbol>
+  </defs>
+</svg>
+
+<h2>Marking text on the phone</h2>
+<p class="subtitle">Your idea, drawn out. A pen button sits at the top of the reader beside the Library button. The first two steps are the same whichever option you pick below.</p>
+
+<div class="steps">
+  <div class="step">
+    <div class="ph">
+      <div class="island"></div>
+      <div class="top">
+        <div class="rb glass"><svg><use href="#i-lib"/></svg></div>
+        <div class="title">John 15</div>
+        <div class="r"><div class="rb glass"><svg><use href="#i-pen"/></svg></div><div class="rb glass"><svg><use href="#i-more"/></svg></div></div>
+      </div>
+      <div class="page">
+        <h4>John 15</h4>
+        <sup>1</sup>I am the true vine, and my Father is the husbandman. <sup>2</sup>Every branch in me that beareth not fruit he taketh away: and every branch that beareth fruit, he purgeth it, that it may bring forth more fruit. <sup>3</sup>Now ye are clean through the word which I have spoken unto you. <sup>4</sup>Abide in me, and I in you. As the branch cannot bear fruit of itself, except it abide in the vine; no more can ye, except ye abide in me. <sup>5</sup>I am the vine, ye are the branches: He that abideth in me, and I in him, the same bringeth forth much fruit: <span class="hl2">for without me ye can do nothing.</span> <sup>6</sup>If a man abide not in me, he is cast forth as a branch, and is withered; and men gather them, and cast them into the fire, and they are burned.
+      </div>
+      <div class="bar">
+        <div class="tabs glass">
+          <div class="tab on"><svg><use href="#i-read"/></svg>Read</div>
+          <div class="tab"><svg><use href="#i-notes"/></svg>Notes</div>
+          <div class="tab"><svg><use href="#i-ask"/></svg>Ask</div>
+        </div>
+        <div class="srch glass"><svg><use href="#i-search"/></svg></div>
+      </div>
+    </div>
+    <p><b>1 · Reading.</b> Library top left, pen top right. Read, Notes and Ask are places; Read is how you come back to the chapter from the other two.</p>
+  </div>
+
+  <div class="step">
+    <div class="ph">
+      <div class="island"></div>
+      <div class="top">
+        <div class="rb glass"><svg><use href="#i-lib"/></svg></div>
+        <div class="title">John 15</div>
+        <div class="r"><div class="rb glass tint"><svg><use href="#i-pen"/></svg></div><div class="rb glass"><svg><use href="#i-more"/></svg></div></div>
+      </div>
+      <div class="page">
+        <h4>John 15</h4>
+        <sup>1</sup>I am the true vine, and my Father is the husbandman. <sup>2</sup>Every branch in me that beareth not fruit he taketh away: and every branch that beareth fruit, he purgeth it, that it may bring forth more fruit. <sup>3</sup>Now ye are clean through the word which I have spoken unto you. <sup>4</sup><span class="hl1">Abide in me, and I</span> in you. As the branch cannot bear fruit of itself, except it abide in the vine; no more can ye, except ye abide in me. <sup>5</sup>I am the vine, ye are the branches: He that abideth in me, and I in him, the same bringeth forth much fruit: <span class="hl2">for without me ye can do nothing.</span> <sup>6</sup>If a man abide not in me, he is cast forth as a branch, and is withered; and men gather them, and cast them into the fire, and they are burned.
+      </div>
+      <div class="finger" style="top:296px; left:92px"></div>
+      <div class="bar">
+        <div class="tabs glass dots">
+          <div class="dot on" style="background:#EBCB5E"></div>
+          <div class="dot" style="background:#E6A1AC"></div>
+          <div class="dot" style="background:#9FCF9E"></div>
+          <div class="dot" style="background:#9CC0E8"></div>
+          <div class="dot" style="background:#C5ABE2"></div>
+        </div>
+        <div class="srch glass tint"><svg><use href="#i-done"/></svg></div>
+      </div>
+    </div>
+    <p><b>2 · Pen on.</b> The tab bar turns into your colors. Drag a finger across the words, part of a verse or several, and they take the ringed color. The check puts the tab bar back.</p>
+  </div>
+</div>
+
+<h3 style="margin-top:1.75rem">Once something is marked, where do its options show up?</h3>
+<p class="subtitle">You've just marked "Abide in me, and I in you." The handles let you stretch or shrink it. Click the one that fits.</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="a-all-in-bar" onclick="toggleSelect(this)">
+    <div class="card-image" style="aspect-ratio:auto;padding:26px 0">
+      <div class="ph">
+        <div class="island"></div>
+        <div class="top">
+          <div class="rb glass"><svg><use href="#i-lib"/></svg></div>
+          <div class="title">John 15</div>
+          <div class="r"><div class="rb glass tint"><svg><use href="#i-pen"/></svg></div><div class="rb glass"><svg><use href="#i-more"/></svg></div></div>
+        </div>
+        <div class="page">
+          <h4>John 15</h4>
+          <sup>1</sup>I am the true vine, and my Father is the husbandman. <sup>2</sup>Every branch in me that beareth not fruit he taketh away: and every branch that beareth fruit, he purgeth it, that it may bring forth more fruit. <sup>3</sup>Now ye are clean through the word which I have spoken unto you. <sup>4</sup><i class="hd s"></i><span class="hl1">Abide in me, and I in you.</span><i class="hd e"></i> As the branch cannot bear fruit of itself, except it abide in the vine; no more can ye, except ye abide in me. <sup>5</sup>I am the vine, ye are the branches: He that abideth in me, and I in him, the same bringeth forth much fruit: <span class="hl2">for without me ye can do nothing.</span> <sup>6</sup>If a man abide not in me, he is cast forth as a branch, and is withered; and men gather them, and cast them into the fire, and they are burned.
+        </div>
+        <div class="acts glass">
+          <div class="tab"><svg><use href="#i-notes"/></svg>Note</div>
+          <div class="tab"><svg><use href="#i-pin"/></svg>Bookmark</div>
+          <div class="tab"><svg><use href="#i-ask"/></svg>Ask</div>
+          <div class="tab"><svg><use href="#i-trash"/></svg>Delete</div>
+        </div>
+        <div class="bar">
+          <div class="tabs glass dots">
+            <div class="dot on" style="background:#EBCB5E"></div>
+            <div class="dot" style="background:#E6A1AC"></div>
+            <div class="dot" style="background:#9FCF9E"></div>
+            <div class="dot" style="background:#9CC0E8"></div>
+            <div class="dot" style="background:#C5ABE2"></div>
+          </div>
+          <div class="srch glass tint"><svg><use href="#i-done"/></svg></div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A · Everything in the bar</h3>
+      <p>A second glass row rises above the colors with Note, Bookmark, Ask and Delete. Tapping another color recolors the mark.</p>
+      <p class="tabnote">All of it under your thumb and nothing ever covers the verse. Takes the most of the page while a mark is selected.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b-colors-bar-actions-under" onclick="toggleSelect(this)">
+    <div class="card-image" style="aspect-ratio:auto;padding:26px 0">
+      <div class="ph">
+        <div class="island"></div>
+        <div class="top">
+          <div class="rb glass"><svg><use href="#i-lib"/></svg></div>
+          <div class="title">John 15</div>
+          <div class="r"><div class="rb glass tint"><svg><use href="#i-pen"/></svg></div><div class="rb glass"><svg><use href="#i-more"/></svg></div></div>
+        </div>
+        <div class="page">
+          <h4>John 15</h4>
+          <sup>1</sup>I am the true vine, and my Father is the husbandman. <sup>2</sup>Every branch in me that beareth not fruit he taketh away: and every branch that beareth fruit, he purgeth it, that it may bring forth more fruit. <sup>3</sup>Now ye are clean through the word which I have spoken unto you. <sup>4</sup><i class="hd s"></i><span class="hl1">Abide in me, and I in you.</span><i class="hd e"></i> As the branch cannot bear fruit of itself, except it abide in the vine; no more can ye, except ye abide in me. <sup>5</sup>I am the vine, ye are the branches: He that abideth in me, and I in him, the same bringeth forth much fruit: <span class="hl2">for without me ye can do nothing.</span> <sup>6</sup>If a man abide not in me, he is cast forth as a branch, and is withered; and men gather them, and cast them into the fire, and they are burned.
+        </div>
+        <div class="pop glass" style="top:322px">
+          <div class="row">
+            <div class="tab"><svg><use href="#i-notes"/></svg>Note</div>
+            <div class="tab"><svg><use href="#i-pin"/></svg>Bookmark</div>
+            <div class="tab"><svg><use href="#i-ask"/></svg>Ask</div>
+            <div class="tab"><svg><use href="#i-trash"/></svg>Delete</div>
+          </div>
+        </div>
+        <div class="bar">
+          <div class="tabs glass dots">
+            <div class="dot on" style="background:#EBCB5E"></div>
+            <div class="dot" style="background:#E6A1AC"></div>
+            <div class="dot" style="background:#9FCF9E"></div>
+            <div class="dot" style="background:#9CC0E8"></div>
+            <div class="dot" style="background:#C5ABE2"></div>
+          </div>
+          <div class="srch glass tint"><svg><use href="#i-done"/></svg></div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B · Colors in the bar, actions under the mark</h3>
+      <p>Both of your ideas together. Colors stay at the bottom; Note, Bookmark, Ask and Delete pop up right under the words.</p>
+      <p class="tabnote">The actions are where your eyes already are. The popup covers a line or two below the mark until you pick or tap away.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c-all-under-mark" onclick="toggleSelect(this)">
+    <div class="card-image" style="aspect-ratio:auto;padding:26px 0">
+      <div class="ph">
+        <div class="island"></div>
+        <div class="top">
+          <div class="rb glass"><svg><use href="#i-lib"/></svg></div>
+          <div class="title">John 15</div>
+          <div class="r"><div class="rb glass tint"><svg><use href="#i-pen"/></svg></div><div class="rb glass"><svg><use href="#i-more"/></svg></div></div>
+        </div>
+        <div class="page">
+          <h4>John 15</h4>
+          <sup>1</sup>I am the true vine, and my Father is the husbandman. <sup>2</sup>Every branch in me that beareth not fruit he taketh away: and every branch that beareth fruit, he purgeth it, that it may bring forth more fruit. <sup>3</sup>Now ye are clean through the word which I have spoken unto you. <sup>4</sup><i class="hd s"></i><span class="hl1">Abide in me, and I in you.</span><i class="hd e"></i> As the branch cannot bear fruit of itself, except it abide in the vine; no more can ye, except ye abide in me. <sup>5</sup>I am the vine, ye are the branches: He that abideth in me, and I in him, the same bringeth forth much fruit: <span class="hl2">for without me ye can do nothing.</span> <sup>6</sup>If a man abide not in me, he is cast forth as a branch, and is withered; and men gather them, and cast them into the fire, and they are burned.
+        </div>
+        <div class="pop glass" style="top:322px">
+          <div class="row dots">
+            <div class="dot on" style="background:#EBCB5E"></div>
+            <div class="dot" style="background:#E6A1AC"></div>
+            <div class="dot" style="background:#9FCF9E"></div>
+            <div class="dot" style="background:#9CC0E8"></div>
+            <div class="dot" style="background:#C5ABE2"></div>
+          </div>
+          <div class="row">
+            <div class="tab"><svg><use href="#i-notes"/></svg>Note</div>
+            <div class="tab"><svg><use href="#i-pin"/></svg>Bookmark</div>
+            <div class="tab"><svg><use href="#i-ask"/></svg>Ask</div>
+            <div class="tab"><svg><use href="#i-trash"/></svg>Delete</div>
+          </div>
+        </div>
+        <div class="bar">
+          <div class="tabs glass">
+            <div class="tab on"><svg><use href="#i-read"/></svg>Read</div>
+            <div class="tab"><svg><use href="#i-notes"/></svg>Notes</div>
+            <div class="tab"><svg><use href="#i-ask"/></svg>Ask</div>
+          </div>
+          <div class="srch glass"><svg><use href="#i-search"/></svg></div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C · Everything under the mark</h3>
+      <p>The tab bar never changes, even with the pen on. Colors and actions come up together beside the words.</p>
+      <p class="tabnote">Closest to how other iPhone apps do it, and you can still jump to Notes or Ask mid-marking. The biggest popup over the text, and no color is picked ahead of the drag: the pen uses the last one.</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top:1.25rem">With the pen off, pressing and holding on a word selects text the usual iPhone way and offers the same choices, plus Copy. Sample text is the King James Version.</p>

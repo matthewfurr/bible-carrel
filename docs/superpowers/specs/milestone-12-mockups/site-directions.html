@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bible Carrel site: three directions</title>
+<style>
+@font-face { font-family: Literata; font-weight: 300; src: url(../../../../Packages/ScriptureKit/Sources/ScriptureUI/Fonts/Literata-Light.ttf); }
+@font-face { font-family: Literata; font-weight: 400; src: url(../../../../Packages/ScriptureKit/Sources/ScriptureUI/Fonts/Literata-Regular.ttf); }
+@font-face { font-family: Literata; font-weight: 400; font-style: italic; src: url(../../../../Packages/ScriptureKit/Sources/ScriptureUI/Fonts/Literata-Italic.ttf); }
+@font-face { font-family: Literata; font-weight: 500; src: url(../../../../Packages/ScriptureKit/Sources/ScriptureUI/Fonts/Literata-Medium.ttf); }
+@font-face { font-family: Literata; font-weight: 600; src: url(../../../../Packages/ScriptureKit/Sources/ScriptureUI/Fonts/Literata-SemiBold.ttf); }
+
+:root {
+  --page:#F5F7F9; --panel:#EDF1F4; --overlay:#FAFCFE; --ink:#192028; --ink2:#5D646C; --ink3:#8D9399;
+  --rule:#D3D8DC; --bronze:#7A5320; --accent:#247966; --wash:#D1F0E6; --yellow:#F8E18A; --green:#BCF2BD;
+  --serif: Literata, Georgia, serif; --sans: -apple-system, "SF Pro Text", system-ui, sans-serif;
+}
+.sepia { --page:#F5EDDE; --panel:#ECE2CF; --overlay:#F9F3E8; --ink:#2A2118; --ink2:#6A5B49; --ink3:#9A8B78; --rule:#DCCFB8;
+  --serif: "Iowan Old Style", Literata, Georgia, serif; }
+* { box-sizing: border-box; }
+body { margin:0; background:#2b2f34; font-family: var(--sans); color: var(--ink); }
+
+/* the chooser bar (not part of any design) */
+.chooser { position: sticky; top:0; z-index:10; background:#1d2125; color:#e5e8ec; display:flex; gap:8px; align-items:center; padding:10px 16px; font-size:13px; }
+.chooser b { margin-right:8px; font-weight:600; }
+.chooser button { font: inherit; color:#c9ced3; background:#2b3036; border:1px solid #3a4047; border-radius:6px; padding:6px 12px; cursor:pointer; }
+.chooser button.on { background:#73C3AE; color:#0b2a23; border-color:#73C3AE; font-weight:600; }
+.chooser span { margin-left:auto; color:#8d9399; }
+.dir { display:none; background: var(--page); min-height: 100vh; }
+.dir.on { display:block; }
+.note-to-matt { background:#1d2125; color:#c9ced3; font-size:13px; line-height:1.5; padding:12px 16px 14px; border-top:1px solid #3a4047; }
+.note-to-matt b { color:#fff; }
+.pick { display:flex; justify-content:center; padding:36px 0 56px; background: var(--page); }
+.pick button { font: 600 15px var(--sans); background: var(--accent); color:#fff; border:0; border-radius:8px; padding:11px 22px; cursor:pointer; }
+.pick button.picked { background: var(--ink); }
+
+/* a drawn stand-in for a screenshot */
+.win { background: var(--page); border:1px solid var(--rule); border-radius:11px; overflow:hidden; box-shadow: 0 18px 50px rgba(25,32,40,.14), 0 2px 6px rgba(25,32,40,.06); text-align:left; }
+.win .bar { height:38px; display:flex; align-items:center; padding:0 14px; border-bottom:1px solid var(--rule); background: var(--panel); position:relative; }
+.win .bar i { width:11px; height:11px; border-radius:50%; background: var(--rule); margin-right:7px; }
+.win .bar em { position:absolute; left:0; right:0; text-align:center; font: 600 10.5px var(--sans); letter-spacing:.18em; color: var(--ink2); font-style:normal; }
+.win .body { display:grid; grid-template-columns: 1fr 230px; }
+.win .reader { padding: 34px 54px 40px; font: 400 16.5px/1.58 var(--serif); }
+.win .col { background: var(--panel); padding:18px 16px; font-size:12px; color: var(--ink2); }
+.win .col h6 { margin:0 0 12px; font: 600 10.5px var(--sans); letter-spacing:.1em; text-transform:uppercase; color: var(--ink3); }
+.win .col .ref { font-weight:600; color: var(--ink2); }
+.win .col q { display:block; font: italic 13px/1.45 var(--serif); color: var(--ink); margin:3px 0 5px; quotes:none; }
+.win .col p { margin:0 0 16px; font-size:12.5px; line-height:1.45; color: var(--ink); }
+.reader h4 { font: 300 38px/1.1 var(--serif); text-align:center; margin:0; }
+.reader .sub { font: italic 15px var(--serif); color: var(--ink2); text-align:center; margin:4px 0 16px; }
+.reader .ch { font: 600 10px var(--sans); letter-spacing:.22em; color: var(--bronze); text-align:center; margin-bottom:14px; }
+.reader p { margin:0; }
+.reader p + p { text-indent:1.4em; }
+.reader sup { font: 500 9.5px var(--sans); color: var(--bronze); margin-right:2px; }
+.reader mark { background: var(--yellow); color:inherit; border-radius:2px; padding:1px 0; }
+.reader mark.g { background: var(--green); }
+.sepia .reader h4 { font: 400 26px var(--serif); font-variant: small-caps; letter-spacing:.16em; text-transform:lowercase; }
+.sepia .reader sup { font-family: var(--serif); color: var(--ink2); font-size:10px; }
+.drop { float:left; font: 400 76px/0.8 var(--serif); color: var(--accent); margin: 6px 12px 0 0; }
+.orn { text-align:center; color: var(--ink3); letter-spacing:.5em; margin: 2px 0 16px; font-size:13px; }
+.standin { font: 11px var(--sans); color: var(--ink3); text-align:center; margin-top:10px; }
+
+/* ============ A: Printed ============ */
+#A nav { display:flex; align-items:baseline; gap:26px; max-width:1040px; margin:0 auto; padding:22px 28px; font-size:14px; }
+#A nav strong { font: 500 18px var(--serif); margin-right:auto; }
+#A nav a { color: var(--ink2); text-decoration:none; }
+#A .hero { text-align:center; padding: 54px 28px 0; max-width:1040px; margin:0 auto; }
+.eyebrow { font: 600 11px var(--sans); letter-spacing:.22em; text-transform:uppercase; color: var(--bronze); }
+#A .hero h1 { font: 300 76px/1.05 var(--serif); margin:14px 0 10px; letter-spacing:-.01em; }
+#A .hero .lede { font: italic 21px/1.45 var(--serif); color: var(--ink2); max-width: 30em; margin: 0 auto 26px; }
+.btn { display:inline-block; font: 600 15px var(--sans); background: var(--accent); color:#fff; border-radius:8px; padding:11px 20px; text-decoration:none; }
+.link { font: 500 15px var(--sans); color: var(--accent); margin-left:18px; text-decoration:none; }
+#A .hero .win { margin-top:46px; }
+#A .small { font-size:13px; color: var(--ink3); margin-top:14px; }
+#A section { max-width:1040px; margin:0 auto; padding: 84px 28px 0; }
+#A .row { display:grid; grid-template-columns: 1fr 1.15fr; gap:56px; align-items:center; margin-bottom:76px; }
+#A .row.flip > div:first-child { order:2; }
+#A .row h2 { font: 400 30px/1.2 var(--serif); margin: 10px 0 12px; }
+#A .row p { font: 400 17px/1.6 var(--serif); color: var(--ink); margin:0 0 10px; }
+#A .row p sup { font: 500 10px var(--sans); color: var(--bronze); margin-right:3px; }
+#A .row .win .body { grid-template-columns:1fr; } #A .row .win .reader { padding:26px 34px; font-size:15px; }
+#A .facts { border-top:1px solid var(--rule); padding-top:48px; }
+#A .facts h2 { font: 300 40px var(--serif); text-align:center; margin: 10px 0 30px; }
+dl.aligned { display:grid; grid-template-columns: max-content 1fr; gap: 12px 28px; max-width: 760px; margin:0 auto; font-size:15px; }
+dl.aligned dt { color: var(--ink2); text-align:right; }
+dl.aligned dd { margin:0; font: 400 16.5px/1.5 var(--serif); }
+dl.aligned dd small { font: 13px var(--sans); color: var(--ink3); }
+
+/* ============ B: Lectern ============ */
+#B { padding-bottom:1px; }
+#B nav { text-align:center; padding:26px 0 0; font: 400 14px var(--serif); font-variant: small-caps; letter-spacing:.14em; color: var(--ink2); text-transform:lowercase; }
+#B nav a { color:inherit; text-decoration:none; margin:0 14px; }
+#B .leaf { max-width: 660px; margin: 0 auto; padding: 70px 24px 0; font: 400 19px/1.62 var(--serif); }
+#B h1 { font: 400 46px/1.15 var(--serif); font-variant: small-caps; letter-spacing:.16em; text-transform:lowercase; text-align:center; margin:0; }
+#B .sub { font-style:italic; text-align:center; color: var(--ink2); font-size:20px; margin:8px 0 14px; }
+#B .orn { margin: 0 0 40px; font-size:16px; }
+#B h2 { font: 400 17px var(--serif); font-variant: small-caps; letter-spacing:.1em; text-transform:lowercase; text-align:center; color: var(--ink2); margin: 58px 0 18px; }
+#B p { margin:0; text-align:justify; hyphens:auto; }
+#B p + p { text-indent:1.5em; }
+#B .drop { font-size: 92px; margin: 8px 14px 0 0; }
+#B figure { margin: 38px -150px 12px; }
+#B figcaption { font: italic 15px var(--serif); color: var(--ink2); text-align:center; margin-top:14px; }
+#B .colophon { text-align:center; font-style:italic; color: var(--ink2); font-size:17px; line-height:1.7; }
+#B .colophon p { text-align:center; }
+#B .ways { text-align:center; margin-top:34px; font: 400 16px var(--serif); font-variant: small-caps; letter-spacing:.1em; text-transform:lowercase; }
+#B .ways a { color: var(--accent); text-decoration:none; margin: 0 14px; }
+
+/* ============ C: Contents page ============ */
+#C .front { display:grid; grid-template-columns: 1fr 44%; min-height: 880px; }
+#C .contents { padding: 54px 56px; }
+#C .contents h1 { font: 300 54px/1.05 var(--serif); margin: 10px 0 6px; }
+#C .contents .lede { font: italic 18px/1.5 var(--serif); color: var(--ink2); margin:0 0 34px; max-width: 26em; }
+#C .cols { columns: 2; column-gap: 44px; }
+#C .grp { break-inside: avoid; margin-bottom: 26px; }
+#C .grp h3 { font: 600 10.5px var(--sans); letter-spacing:.2em; text-transform:uppercase; color: var(--bronze); margin:0 0 8px; }
+#C .grp a { display:block; font: 400 19px/1.3 var(--serif); color: var(--ink); padding: 5px 9px; margin: 0 -9px; border-radius:6px; cursor:pointer; }
+#C .grp a.sel { background: var(--wash); }
+#C .pane { background: var(--panel); padding: 54px 44px; }
+#C .pane .win .body { grid-template-columns:1fr; } #C .pane .win .reader { padding: 24px 30px; font-size:14.5px; }
+#C .pane h2 { font: 400 28px/1.2 var(--serif); margin: 30px 0 10px; }
+#C .pane p { font: 400 16.5px/1.6 var(--serif); margin:0 0 16px; }
+
+/* ============ Guide page ============ */
+#G .wrap { display:grid; grid-template-columns: 250px 1fr; max-width: 1080px; margin:0 auto; }
+#G aside { padding: 40px 24px; font-size:14px; border-right:1px solid var(--rule); min-height: 900px; }
+#G aside strong { font: 500 18px var(--serif); display:block; margin-bottom:26px; }
+#G aside h3 { font: 600 10.5px var(--sans); letter-spacing:.2em; text-transform:uppercase; color: var(--bronze); margin: 22px 0 8px; }
+#G aside a { display:block; padding:5px 9px; margin:0 -9px; border-radius:6px; color: var(--ink); }
+#G aside a.sel { background: var(--wash); }
+#G article { padding: 56px 64px 80px; max-width: 760px; font: 400 17.5px/1.62 var(--serif); }
+#G article h1 { font: 300 46px/1.1 var(--serif); margin: 10px 0 8px; }
+#G article .sub { font-style: italic; color: var(--ink2); margin-bottom: 30px; }
+#G article h2 { font: italic 400 21px var(--serif); color: var(--ink2); margin: 34px 0 8px; }
+#G article p { margin: 0 0 12px; }
+kbd { font: 500 12.5px var(--sans); background: var(--overlay); border:1px solid var(--rule); border-radius:5px; padding:2px 6px; margin:0 1px; }
+table.keys { border-collapse: collapse; width:100%; font-size:15.5px; margin: 10px 0 20px; }
+table.keys td { padding: 8px 0; border-bottom:1px solid var(--rule); }
+table.keys td:first-child { width: 150px; font-family: var(--sans); }
+#G .next { display:flex; justify-content:space-between; margin-top:44px; font: 500 15px var(--sans); color: var(--accent); }
+</style>
+</head>
+<body>
+
+<div class="chooser">
+  <b>Bible Carrel site</b>
+  <button data-tab="A" class="on">A · Printed</button>
+  <button data-tab="B">B · Lectern</button>
+  <button data-tab="C">C · Contents page</button>
+  <button data-tab="G">A guide page</button>
+  <span>Screenshots are drawn stand-ins; the real ones come from the app, in the World English Bible.</span>
+</div>
+
+<!-- ======================= A ======================= -->
+<div class="dir on" id="A">
+  <div class="note-to-matt"><b>A · Printed.</b> A features page in the usual shape (a title, one large screenshot, then features in turn with a picture each), set as the Printed page sets a chapter: Literata, the cool slate paper, bronze spaced labels, features numbered like verses. The sources are an aligned list, as a book's About page is.</div>
+  <nav><strong>Bible Carrel</strong><a>Features</a><a>Sources</a><a>Guide</a><a>Build it</a><a>GitHub</a></nav>
+  <div class="hero">
+    <div class="eyebrow">For Mac and iPhone</div>
+    <h1>Bible Carrel</h1>
+    <p class="lede">A quiet desk for reading through the Bible: the page set like print, your highlights and notes in its margin, and a study assistant at your elbow.</p>
+    <a class="btn">Read the guide</a><a class="link">Build it from source ›</a>
+    <div class="small">Not in the App Store. It is one reader's app, and the source is here to build with Xcode.</div>
+    <div class="win">
+      <div class="bar"><i></i><i></i><i></i><em>JOHN · 1</em></div>
+      <div class="body">
+        <div class="reader">
+          <h4>John</h4><div class="sub">The Gospel According to John</div><div class="ch">CHAPTER 1</div>
+          <p><sup>1</sup>In the beginning was the Word, and the Word was with God, and the Word was God. <sup>2</sup>The same was in the beginning with God. <sup>3</sup>All things were made through him. Without him, nothing was made that has been made. <sup>4</sup><mark>In him was life, and the life was the light of men.</mark> <sup>5</sup>The light shines in the darkness, and the darkness hasn’t overcome it.</p>
+          <p><sup>6</sup>There came a man sent from God, whose name was John. <sup>7</sup>The same came as a witness, that he might testify about the light, <mark class="g">that all might believe through him.</mark> <sup>8</sup>He was not the light, but was sent that he might testify about the light.</p>
+        </div>
+        <div class="col"><h6>Notes in this chapter</h6>
+          <div class="ref">John 1:4</div><q>In him was life, and the life was the light of men.</q><p>Life first, then light. Compare Psalm 36:9.</p>
+          <div class="ref">John 1:7</div><q>that all might believe through him.</q><p>The witness is for the sake of belief.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section>
+    <div class="row">
+      <div><div class="eyebrow">The page</div><h2>It reads like a printed Bible.</h2>
+        <p><sup>1</sup>One chapter at a time, with a measure, margins and paragraphs that indent. Poetry hangs under its first word.</p>
+        <p><sup>2</sup>Four page styles (Printed, Lectern, Study and Classic) in light, sepia and dark.</p></div>
+      <div class="win sepia"><div class="bar"><i></i><i></i><i></i><em>Psalms · 1</em></div><div class="body"><div class="reader"><p><span class="drop">1</span>Blessed is the man who doesn’t walk in the counsel of the wicked, nor stand on the path of sinners, nor sit in the seat of scoffers; <sup>2</sup>but his delight is in Yahweh’s law. On his law he meditates day and night.</p></div></div></div>
+    </div>
+    <div class="row flip">
+      <div><div class="eyebrow">Marks and notes</div><h2>Pencil in the margin.</h2>
+        <p><sup>1</sup>Highlight a phrase, not just a verse, in colours you name. Write a note beside it; bookmark the verse.</p>
+        <p><sup>2</sup>Every delete can be undone, and everything syncs through your own iCloud.</p></div>
+      <div class="win"><div class="bar"><i></i><i></i><i></i><em>JOHN · 1</em></div><div class="body"><div class="reader"><p><sup>4</sup><mark>In him was life, and the life was the light of men.</mark> <sup>5</sup>The light shines in the darkness, and the darkness hasn’t overcome it.</p></div></div></div>
+    </div>
+    <div class="row"><div><div class="eyebrow">The Library</div><h2>People, places and each book’s story.</h2><p><sup>1</sup>A family tree for anyone the Bible names, a map of every place in a book, and a timeline in the order of history.</p></div>
+      <div class="win"><div class="bar"><i></i><i></i><i></i><em>GENESIS · PEOPLE</em></div><div class="body"><div class="reader" style="text-align:center"><h4 style="font-size:28px">Jacob</h4><div class="sub">son of Isaac</div><p style="font-size:13px;color:var(--ink2)">Abraham — Isaac — <b>Jacob</b> — 12 children</p></div></div></div></div>
+  </section>
+  <section class="facts">
+    <div class="eyebrow" style="text-align:center">Where it comes from</div>
+    <h2>The sources</h2>
+    <dl class="aligned">
+      <dt>Bible text</dt><dd>Eight English translations <small>· each named with its holder and notice</small></dd>
+      <dt>Section headings</dt><dd>Berean Standard Bible <small>· public domain</small></dd>
+      <dt>Cross-references</dt><dd>OpenBible.info <small>· CC BY</small></dd>
+      <dt>People, places, events</dt><dd>Theographic Bible Metadata <small>· CC BY-SA 4.0</small></dd>
+      <dt>Typefaces</dt><dd>Literata and Source Serif 4 <small>· SIL Open Font License</small></dd>
+    </dl>
+  </section>
+  <div class="pick"><button data-choice="A-printed">Choose A · Printed</button></div>
+</div>
+
+<!-- ======================= B ======================= -->
+<div class="dir sepia" id="B">
+  <div class="note-to-matt"><b>B · Lectern.</b> The whole site is one page of a book: a single narrow column on warm paper, a small-capital title with an ornament, each part opening on a verdigris drop numeral, screenshots as plates with captions, the sources as a colophon. Quieter and more unusual; less to scan. Iowan Old Style shows on Apple devices; other visitors see Literata.</div>
+  <nav><a>Features</a>·<a>Sources</a>·<a>Guide</a>·<a>Build it</a></nav>
+  <div class="leaf">
+    <h1>Bible Carrel</h1>
+    <div class="sub">A study desk for reading through the Bible</div>
+    <div class="orn">❦</div>
+    <p><span class="drop">1</span>Bible Carrel is a reader for the Mac and the iPhone that sets a chapter as a printed Bible would: a measure, margins, paragraphs that indent and poetry that hangs. It opens where you left off and shows one chapter at a time, with nothing on the page that the text did not earn.</p>
+    <figure><div class="win sepia"><div class="bar"><i></i><i></i><i></i><em>John · 1</em></div><div class="body"><div class="reader">
+      <h4>John</h4><div class="sub">The Gospel According to John</div><div class="orn">❦</div>
+      <p><span class="drop">1</span>In the beginning was the Word, and the Word was with God, and the Word was God. <sup>2</sup>The same was in the beginning with God. <sup>3</sup>All things were made through him. Without him, nothing was made that has been made. <sup>4</sup><mark>In him was life, and the life was the light of men.</mark> <sup>5</sup>The light shines in the darkness, and the darkness hasn’t overcome it.</p></div>
+      <div class="col"><h6>Notes in this chapter</h6><div class="ref">John 1:4</div><q>In him was life, and the life was the light of men.</q><p>Life first, then light. Compare Psalm 36:9.</p></div></div></div>
+      <figcaption>Plate 1. The reader in the Lectern style, with the notes column.</figcaption></figure>
+    <h2>Marks and notes</h2>
+    <p><span class="drop">2</span>Highlight a phrase, not just a verse, in colours you name, and write a note beside it. Bookmark a verse. Every mark is kept in your own iCloud and reaches your other devices; every delete can be undone.</p>
+    <p>The Notes window lists everything you have marked across the whole Bible, by day or in Bible order, and exports it as Markdown.</p>
+    <h2>The Library</h2>
+    <p><span class="drop">3</span>Each book opens to its people, with a drawn family tree; its places, on a map; and a timeline in the order of history.</p>
+    <h2>Colophon</h2>
+    <div class="colophon"><p>Set in Iowan Old Style and Literata. The Bible text is eight English translations, each named with its holder; the cross-references are OpenBible.info’s; the people, places and events are Theographic Bible Metadata’s.</p></div>
+    <div class="ways"><a>Read the guide</a><a>Build it from source</a></div>
+  </div>
+  <div class="pick"><button data-choice="B-lectern">Choose B · Lectern</button></div>
+</div>
+
+<!-- ======================= C ======================= -->
+<div class="dir" id="C">
+  <div class="note-to-matt"><b>C · Contents page.</b> The site’s front is the app’s own front page: a contents list on the left under small bronze headings, and a pane on the right that shows whatever is chosen (click a line to try it). It is the most like the app and the least like a marketing page; a visitor has to click to see each feature.</div>
+  <div class="front">
+    <div class="contents">
+      <div class="eyebrow">For Mac and iPhone</div>
+      <h1>Bible Carrel</h1>
+      <p class="lede">A quiet desk for reading through the Bible, with your highlights and notes in its margin.</p>
+      <div class="cols">
+        <div class="grp"><h3>The app</h3>
+          <a class="sel" data-t="The reader" data-p="One chapter at a time, set like a printed page in four styles, in light, sepia and dark.">The reader</a>
+          <a data-t="Marks and notes" data-p="Highlight a phrase in colours you name, write a note beside it, bookmark a verse. Every delete can be undone.">Marks and notes</a>
+          <a data-t="The Library" data-p="Each book’s people with a family tree, its places on a map, and its timeline in the order of history.">The Library</a>
+          <a data-t="Search" data-p="⌘K finds a passage, a word, a note or a command.">Search</a>
+          <a data-t="Reading plans" data-p="Follow your group’s plan week by week, from a PDF or typed in.">Reading plans</a>
+          <a data-t="The study assistant" data-p="Ask about a passage beside the page. Apple’s on-device model answers by default.">The study assistant</a>
+          <a data-t="On the iPhone" data-p="The same reader and the same notes, synced through your own iCloud.">On the iPhone</a></div>
+        <div class="grp"><h3>The guide</h3><a>Getting started</a><a>Reading</a><a>Highlights and notes</a><a>Keyboard</a><a>Sync and backups</a></div>
+        <div class="grp"><h3>The sources</h3><a>Bible texts</a><a>Data</a><a>Typefaces</a></div>
+        <div class="grp"><h3>Build it</h3><a>From source, with Xcode</a><a>On GitHub</a></div>
+      </div>
+    </div>
+    <div class="pane">
+      <div class="win"><div class="bar"><i></i><i></i><i></i><em>JOHN · 1</em></div><div class="body"><div class="reader">
+        <h4>John</h4><div class="sub">The Gospel According to John</div><div class="ch">CHAPTER 1</div>
+        <p><sup>1</sup>In the beginning was the Word, and the Word was with God, and the Word was God. <sup>2</sup>The same was in the beginning with God. <sup>3</sup>All things were made through him. <sup>4</sup><mark>In him was life, and the life was the light of men.</mark></p></div></div></div>
+      <div class="standin">the picture changes with the line chosen</div>
+      <h2 id="ct">The reader</h2>
+      <p id="cp">One chapter at a time, set like a printed page in four styles, in light, sepia and dark.</p>
+      <a class="link" style="margin:0">Read more in the guide ›</a>
+    </div>
+  </div>
+  <div class="pick"><button data-choice="C-contents">Choose C · Contents page</button></div>
+</div>
+
+<!-- ======================= Guide ======================= -->
+<div class="dir" id="G">
+  <div class="note-to-matt"><b>A guide page</b>, the same under any of the three: the guide’s contents down the side, the page set like a chapter, keys as keycaps. Shown in Printed’s type; under B it would take the warm paper and small-capital headings.</div>
+  <div class="wrap">
+    <aside><strong>Bible Carrel</strong>
+      <h3>Start</h3><a>Building the app</a><a>Your first chapter</a>
+      <h3>Reading</h3><a class="sel">The reader</a><a>Page styles</a><a>Finding your place</a><a>Reading plans</a>
+      <h3>Marking</h3><a>Highlights</a><a>Notes</a><a>The Notes window</a>
+      <h3>Studying</h3><a>The Library</a><a>Search and ⌘K</a><a>Verse panels</a><a>The study assistant</a>
+      <h3>Keeping</h3><a>Sync and backups</a><a>Export and import</a>
+      <h3>Reference</h3><a>Every shortcut</a><a>Sources and licences</a></aside>
+    <article>
+      <div class="eyebrow">Reading</div>
+      <h1>The reader</h1>
+      <div class="sub">One chapter at a time, set like a printed page.</div>
+      <p>The reader shows one chapter. Chapter 1 opens on the book’s title; each later chapter opens on its own label. As the opening scrolls away, a running head names the chapter, and the thin line under it grows as you read.</p>
+      <h2>Turning chapters</h2>
+      <p>Scrolling stops at the chapter’s end, where two links go back or on. From the keyboard:</p>
+      <table class="keys">
+        <tr><td><kbd>⌥</kbd><kbd>⌘</kbd><kbd>→</kbd></td><td>Next chapter</td></tr>
+        <tr><td><kbd>⌥</kbd><kbd>⌘</kbd><kbd>←</kbd></td><td>Previous chapter</td></tr>
+        <tr><td><kbd>⌘</kbd><kbd>K</kbd></td><td>Go to any passage</td></tr>
+        <tr><td><kbd>⇧</kbd><kbd>⌘</kbd><kbd>H</kbd></td><td>Home</td></tr>
+      </table>
+      <h2>Your place</h2>
+      <p>The app remembers the chapter and verse you are reading and reopens there on every device. Looking something up does not move it: Back returns you to where you were.</p>
+      <div class="next"><span>‹ Your first chapter</span><span>Page styles ›</span></div>
+    </article>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.chooser button').forEach(b => b.onclick = () => {
+  document.querySelectorAll('.chooser button').forEach(x => x.classList.toggle('on', x === b));
+  document.querySelectorAll('.dir').forEach(d => d.classList.toggle('on', d.id === b.dataset.tab));
+  window.scrollTo(0, 0);
+});
+document.querySelectorAll('#C .grp a[data-t]').forEach(a => a.onclick = () => {
+  document.querySelectorAll('#C .grp a').forEach(x => x.classList.remove('sel'));
+  a.classList.add('sel');
+  document.getElementById('ct').textContent = a.dataset.t;
+  document.getElementById('cp').textContent = a.dataset.p;
+});
+document.querySelectorAll('.pick button').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('.pick button').forEach(x => x.classList.remove('picked'));
+  b.classList.add('picked'); b.textContent = 'Chosen: ' + b.textContent.replace(/^Cho(ose|sen:)\s*/, '');
+}));
+</script>
+</body>
+</html>

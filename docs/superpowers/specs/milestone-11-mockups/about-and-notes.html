@@ -1,0 +1,176 @@
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;1,7..72,400&display=swap" rel="stylesheet">
+<style>
+  .bc { --page:#F5F7F9; --panel:#EDF1F4; --over:#FAFCFE; --ink:#192028; --ink2:#5D646C; --ink3:#8D9399; --rule:#D3D8DC; --verse:#7A5320; --acc:#247966; --wash:#D1F0E6; --y:#F8E18A; --g:#BCF2BD; --b:#B8E8FF; --r:#FFCFE8; font-family:-apple-system,"SF Pro Text",sans-serif; color:var(--ink); }
+  .win { background:var(--page); border-radius:12px; overflow:hidden; box-shadow:0 0 0 1px #c9ced3,0 10px 30px rgba(0,0,0,.16); }
+  .tb { height:30px; display:flex; align-items:center; gap:6px; padding:0 12px; font-size:12px; color:var(--ink2); } .tb i { width:10px; height:10px; border-radius:5px; background:#d5d9dd; } .tb span { margin-left:auto; margin-right:auto; font-weight:600; color:var(--ink); }
+  .serif { font-family:"Literata",Georgia,serif; }
+  .ln { color:var(--acc); }
+  .gl { font-size:9px; font-weight:600; letter-spacing:.12em; color:var(--verse); text-transform:uppercase; margin:16px 0 4px; }
+  .cost { font-size:12.5px; line-height:1.5; margin-top:10px; max-width:900px; }
+  .note { font-size:13px; line-height:1.5; max-width:900px; }
+  /* about A */
+  .ab { padding:22px 34px 24px; }
+  .ab .t { font-family:"Literata",Georgia,serif; font-weight:300; font-size:30px; }
+  .ab .v { font-size:12px; color:var(--ink2); margin-top:2px; }
+  .crow { display:grid; grid-template-columns:1fr auto; gap:0 14px; padding:5px 0; font-size:12.5px; align-items:baseline; }
+  .crow .u { color:var(--ink2); font-size:11.5px; }
+  .crow .l { font-size:11px; color:var(--ink2); }
+  .crow.open { background:var(--panel); margin:2px -10px; padding:8px 10px; border-radius:6px; }
+  .crow .det { grid-column:1/3; font-size:11px; color:var(--ink2); line-height:1.5; margin-top:5px; }
+  .chev { color:var(--ink3); font-size:10px; margin-right:6px; display:inline-block; width:8px; }
+  /* about B */
+  .md { display:flex; height:380px; }
+  .md .list { width:220px; border-right:1px solid var(--rule); padding:12px 10px; font-size:12.5px; overflow:hidden; }
+  .md .list .r { padding:3px 8px; border-radius:6px; display:flex; justify-content:space-between; }
+  .md .list .r span { font-size:10.5px; color:var(--ink2); }
+  .md .list .r.on { background:var(--wash); }
+  .md .det { flex:1; padding:18px 24px; font-size:12.5px; line-height:1.55; }
+  .md .det h4 { margin:0; font-family:"Literata",Georgia,serif; font-weight:400; font-size:20px; }
+  .kv { display:grid; grid-template-columns:76px 1fr; gap:6px 12px; margin-top:12px; }
+  .kv .k { text-align:right; font-size:9.5px; font-weight:600; letter-spacing:.07em; color:var(--ink2); text-transform:uppercase; padding-top:2px; }
+  /* notes */
+  .nw { width:640px; }
+  .nlist { padding:6px 10px 14px; height:430px; overflow:hidden; }
+  .nr { display:grid; grid-template-columns:16px 1fr auto; gap:0 10px; padding:8px 10px; font-size:12.5px; }
+  .nr .dot { width:10px; height:10px; border-radius:5px; margin-top:4px; box-shadow:0 0 0 .5px #b9bfc5; }
+  .nr .ref { font-weight:600; } .nr .ref small { font-size:9.5px; color:var(--ink2); font-weight:600; margin-left:4px; }
+  .nr .date { font-size:10.5px; color:var(--ink3); }
+  .nr .q { font-family:"Literata",Georgia,serif; font-style:italic; font-size:12.5px; margin-top:3px; padding:0 2px; border-radius:2px; display:inline; line-height:1.6; }
+  .nr .b { color:var(--ink2); margin-top:3px; line-height:1.45; }
+  .nr .b.p { color:var(--ink); }
+  .nr.on { background:var(--wash); border-radius:6px; }
+  .hair { height:1px; background:var(--rule); margin:0 10px; }
+  .day { font-size:12px; font-weight:600; padding:14px 10px 4px; display:flex; justify-content:space-between; }
+  .day span { font-weight:400; color:var(--ink2); font-size:11px; }
+  .nrc { padding:12px 10px 14px; font-size:12.5px; }
+  .nrc .top { display:flex; align-items:baseline; gap:8px; }
+  .nrc .ref { font-size:13.5px; font-weight:600; }
+  .nrc .ref small { font-size:9.5px; color:var(--ink2); font-weight:600; margin-left:3px; }
+  .nrc .dot { width:9px; height:9px; border-radius:5px; box-shadow:0 0 0 .5px #b9bfc5; flex:none; align-self:center; }
+  .nrc .tm { margin-left:auto; font-size:10.5px; color:var(--ink3); }
+  .nrc .q { font-family:"Literata",Georgia,serif; font-style:italic; margin:6px 0 0; line-height:1.6; }
+  .nrc .q span { padding:1px 2px; border-radius:2px; }
+  .nrc .b { margin-top:6px; line-height:1.5; }
+  .nrc.on { background:var(--wash); border-radius:6px; }
+</style>
+<div class="bc">
+<h2>Settings › About, and the Notes window</h2>
+<p class="subtitle">Two choices on this page: About (A, B or C) and the Notes window (1, 2 or 3).</p>
+
+<h3 style="margin:10px 0 4px">Settings › About</h3>
+<div class="note">Today: 9 sections and 17 sources, each source four or five lines (name, what it is for, the holder's notice, the link, the licence), all open at once. Every option keeps every credit in the app and never says "Used by permission".</div>
+<div class="options" style="margin-top:10px">
+  <div class="option" data-choice="about-a" onclick="toggleSelect(this)"><div class="letter">A</div><div class="content">
+    <h3>A colophon: one line per source, opened in place</h3>
+    <div class="win" style="width:640px"><div class="tb"><i></i><i></i><i></i><span>About</span></div><div class="ab">
+      <div class="t">Bible Carrel</div><div class="v">Version 1.0 (42)</div>
+      <div class="gl">Scripture</div>
+      <div class="crow"><div><span class="chev">›</span>English Standard Version</div><div class="l">Copyright</div></div>
+      <div class="crow open"><div><span class="chev">⌄</span>New American Standard Bible (1995)</div><div class="l">Copyright</div>
+        <div class="det">New American Standard Bible®, Copyright © 1960, 1971, 1977, 1995 by The Lockman Foundation. All rights reserved. www.Lockman.org<br><span class="ln">lockman.org</span></div></div>
+      <div class="crow"><div><span class="chev">›</span>Amplified Bible, Classic Edition</div><div class="l">Copyright</div></div>
+      <div class="crow"><div><span class="chev">›</span>Easy-to-Read Version</div><div class="l">Copyright</div></div>
+      <div class="crow"><div><span class="chev">›</span>American Standard Version (1901)</div><div class="l">Public domain</div></div>
+      <div class="crow"><div><span class="chev">›</span>King James Version <span class="u">· and its book titles</span></div><div class="l">Public domain</div></div>
+      <div class="crow"><div><span class="chev">›</span>World English Bible</div><div class="l">Public domain</div></div>
+      <div class="crow"><div><span class="chev">›</span>Catholic Public Domain Version</div><div class="l">Public domain</div></div>
+      <div class="gl">Study data</div>
+      <div class="crow"><div><span class="chev">›</span>Berean Standard Bible <span class="u">· section headings</span></div><div class="l">Public domain</div></div>
+      <div class="crow"><div><span class="chev">›</span>OpenBible.info <span class="u">· cross-references</span></div><div class="l">CC BY 4.0</div></div>
+      <div class="crow"><div><span class="chev">›</span>Theographic <span class="u">· people, places, events</span></div><div class="l">CC BY-SA 4.0</div></div>
+      <div class="gl">Typefaces, icon, videos and software</div>
+      <div class="crow"><div><span class="chev">›</span>Literata <span class="u">· reading typeface</span></div><div class="l">SIL OFL 1.1</div></div>
+      <div class="crow"><div><span class="chev">›</span>Source Serif 4 <span class="u">· reading typeface</span></div><div class="l">SIL OFL 1.1</div></div>
+      <div style="font-size:11px;color:#8D9399;padding-top:2px">… 3dicons, BibleProject, holybooks, GRDB.swift</div>
+    </div></div>
+    <div class="cost"><b>What it is:</b> the app's name set like a title page, then one quiet line per source with its licence at the edge, grouped into three sections, not nine. A click opens the notice, the link and (for a font or a library) the licence text, in place. <b>Cost:</b> small. The same catalogue, a new row; the phone shows the same list in its Settings page.<br><b>Worth knowing:</b> the four copyrighted translations' notices sit one click away rather than on view. Before the app is ever given to anyone, the publishers' terms may want them on view; for you alone it does not matter.</div>
+  </div></div>
+
+  <div class="option" data-choice="about-b" onclick="toggleSelect(this)"><div class="letter">B</div><div class="content">
+    <h3>A list and a page for each source</h3>
+    <div class="win" style="width:640px"><div class="tb"><i></i><i></i><i></i><span>About</span></div><div class="md">
+      <div class="list">
+        <div style="font-family:'Literata',Georgia,serif;font-size:18px;font-weight:300;padding:0 8px">Bible Carrel</div><div style="font-size:10.5px;color:#5D646C;padding:0 8px 4px">Version 1.0 (42)</div>
+        <div class="gl" style="padding:0 8px">Scripture</div>
+        <div class="r">ESV<span>©</span></div><div class="r on">NASB (1995)<span>©</span></div><div class="r">AMP<span>©</span></div><div class="r">ERV<span>©</span></div><div class="r">ASV, KJV, WEB, CPDV<span>PD</span></div>
+        <div class="gl" style="padding:0 8px">Study data</div>
+        <div class="r">Berean Standard Bible</div><div class="r">OpenBible.info</div><div class="r">Theographic</div>
+        <div class="gl" style="padding:0 8px">More</div><div class="r">Typefaces</div><div class="r">Icon, videos, software</div>
+      </div>
+      <div class="det"><h4>New American Standard Bible (1995)</h4><div style="color:#5D646C;font-size:12px">Bible text</div>
+        <div class="kv"><div class="k">Notice</div><div>New American Standard Bible®, Copyright © 1960, 1971, 1977, 1995 by The Lockman Foundation. All rights reserved. www.Lockman.org</div>
+        <div class="k">Licence</div><div>Copyright</div><div class="k">Source</div><div class="ln">lockman.org</div></div></div>
+    </div></div>
+    <div class="cost"><b>What it is:</b> the sources as a short list; each opens its own page beside it on the Mac (pushed on the phone), set like the Library's pages. <b>Cost:</b> medium. A master and detail inside a Settings tab, with selection and keyboard, which Settings has nowhere else.</div>
+  </div></div>
+
+  <div class="option" data-choice="about-c" onclick="toggleSelect(this)"><div class="letter">C</div><div class="content">
+    <h3>Today's form, tidied</h3>
+    <div class="win" style="width:640px"><div class="tb"><i></i><i></i><i></i><span>About</span></div><div style="padding:14px 24px 18px;background:#ECEEF0">
+      <div style="background:#fff;border-radius:8px;padding:10px 14px;font-size:12.5px"><b>Bible Carrel</b><div style="color:#5D646C;font-size:11.5px">Version 1.0 (42)</div></div>
+      <div style="font-size:11px;color:#5D646C;font-weight:600;margin:12px 4px 4px">Scripture</div>
+      <div style="background:#fff;border-radius:8px;font-size:12.5px">
+        <div style="padding:8px 14px;display:flex;justify-content:space-between;border-bottom:1px solid #e4e6e8"><div>English Standard Version<div style="color:#5D646C;font-size:11px">Bible text</div></div><div style="color:#5D646C;font-size:11px">Copyright ›</div></div>
+        <div style="padding:8px 14px;display:flex;justify-content:space-between;border-bottom:1px solid #e4e6e8"><div>New American Standard Bible (1995)<div style="color:#5D646C;font-size:11px">Bible text</div></div><div style="color:#5D646C;font-size:11px">Copyright ›</div></div>
+        <div style="padding:8px 14px;display:flex;justify-content:space-between"><div>Amplified Bible, Classic Edition<div style="color:#5D646C;font-size:11px">Bible text</div></div><div style="color:#5D646C;font-size:11px">Copyright ›</div></div>
+      </div></div></div>
+    <div class="cost"><b>What it is:</b> the system's grouped form as now, each source two lines (name, use) with its licence trailing; the notice and link behind a disclosure. <b>Cost:</b> smallest. It stays the system's look rather than the app's.</div>
+  </div></div>
+</div>
+
+<h3 style="margin:30px 0 4px">The Notes window</h3>
+<div class="note">Today a note's lines sit 4 pt apart and the next note starts 20 pt below, with nothing between them. On the phone a hairline already separates notes. In every option: a note that begins with a "#" heading previews at the row's own size, not larger than its reference. (These sample notes are made up; your store was not read.)</div>
+<div class="options" style="margin-top:10px">
+  <div class="option" data-choice="notes-1" onclick="toggleSelect(this)"><div class="letter">1</div><div class="content">
+    <h3>Today's rows with a hairline between notes</h3>
+    <div class="win nw"><div class="tb"><i></i><i></i><i></i><span>Notes</span></div><div class="nlist">
+      <div class="nr on"><div class="dot" style="background:var(--y)"></div><div><div class="ref">John 15:4 <small>ESV</small></div><div class="b">Abiding is not effort but staying put. Compare 1 John 2:28 on confidence at his coming.</div></div><div class="date">Today</div></div>
+      <div class="hair"></div>
+      <div class="nr"><div class="dot" style="background:var(--b)"></div><div><div class="ref">Romans 8:28 <small>ESV</small></div><div class="b">Who are "those who love God"? Verse 29 answers: those he foreknew. The promise is to the called.</div></div><div class="date">Today</div></div>
+      <div class="hair"></div>
+      <div class="nr"><div class="dot" style="background:var(--g)"></div><div><div class="ref">Psalm 23:2 <small>ESV</small></div><div class="b">Still waters. He makes me lie down; rest is given, not taken.</div></div><div class="date">Yesterday</div></div>
+      <div class="hair"></div>
+      <div class="nr"><div class="dot" style="background:var(--r)"></div><div><div class="ref">Genesis 22:8 <small>ESV</small></div><div class="b">The Lord will provide (Jehovah-jireh). Abraham's answer to Isaac before the ram appears.</div></div><div class="date">Tuesday</div></div>
+      <div class="hair"></div>
+      <div class="nr"><div class="dot" style="background:var(--y)"></div><div><div class="ref">Ezra 4:4 <small>ESV</small></div><div class="b">Discouragement as opposition: "the people of the land discouraged the people of Judah".</div></div><div class="date">Tuesday</div></div>
+    </div></div>
+    <div class="cost"><b>What it is:</b> the phone's hairline brought to the Mac, nothing else changed. <b>Cost:</b> smallest.</div>
+  </div></div>
+
+  <div class="option" data-choice="notes-2" onclick="toggleSelect(this)"><div class="letter">2</div><div class="content">
+    <h3>Hairlines, and days as headings</h3>
+    <div class="win nw"><div class="tb"><i></i><i></i><i></i><span>Notes</span></div><div class="nlist">
+      <div class="day">Today<span>2 notes</span></div>
+      <div class="nr on"><div class="dot" style="background:var(--y)"></div><div><div class="ref">John 15:4 <small>ESV</small></div><div class="b">Abiding is not effort but staying put. Compare 1 John 2:28 on confidence at his coming.</div></div><div class="date">8:14 AM</div></div>
+      <div class="hair"></div>
+      <div class="nr"><div class="dot" style="background:var(--b)"></div><div><div class="ref">Romans 8:28 <small>ESV</small></div><div class="b">Who are "those who love God"? Verse 29 answers: those he foreknew. The promise is to the called.</div></div><div class="date">7:52 AM</div></div>
+      <div class="day">Yesterday<span>1 note</span></div>
+      <div class="nr"><div class="dot" style="background:var(--g)"></div><div><div class="ref">Psalm 23:2 <small>ESV</small></div><div class="b">Still waters. He makes me lie down; rest is given, not taken.</div></div><div class="date">9:03 PM</div></div>
+      <div class="day">Tuesday 18 November<span>2 notes</span></div>
+      <div class="nr"><div class="dot" style="background:var(--r)"></div><div><div class="ref">Genesis 22:8 <small>ESV</small></div><div class="b">The Lord will provide (Jehovah-jireh). Abraham's answer to Isaac before the ram appears.</div></div><div class="date">6:40 AM</div></div>
+      <div class="hair"></div>
+      <div class="nr"><div class="dot" style="background:var(--y)"></div><div><div class="ref">Ezra 4:4 <small>ESV</small></div><div class="b">Discouragement as opposition.</div></div><div class="date">6:31 AM</div></div>
+    </div></div>
+    <div class="cost"><b>What it is:</b> sorted by date, notes sit under the day they were written, and the row shows the time. Sorted by passage, the book headings it has today. <b>Cost:</b> small. The day grouping beside the book grouping that exists; the phone takes the same headings.</div>
+  </div></div>
+
+  <div class="option" data-choice="notes-3" onclick="toggleSelect(this)"><div class="letter">3</div><div class="content">
+    <h3>2, with a fuller row: the passage leads, then the words, then the note</h3>
+    <div class="win nw"><div class="tb"><i></i><i></i><i></i><span>Notes</span></div><div class="nlist">
+      <div class="day">Today<span>2 notes</span></div>
+      <div class="nrc on"><div class="top"><div class="dot" style="background:var(--y)"></div><div class="ref">John 15:4 <small>ESV</small></div><div class="tm">8:14 AM</div></div>
+        <div class="q"><span style="background:var(--y)">Abide in me, and I in you.</span></div>
+        <div class="b">Abiding is not effort but staying put. Compare <span class="ln">1 John 2:28</span> on confidence at his coming.</div></div>
+      <div class="hair"></div>
+      <div class="nrc"><div class="top"><div class="dot" style="background:var(--b)"></div><div class="ref">Romans 8:28 <small>ESV</small></div><div class="tm">7:52 AM</div></div>
+        <div class="q"><span style="background:var(--b)">for those who love God all things work together for good</span></div>
+        <div class="b">Who are "those who love God"? Verse 29 answers: those he foreknew. The promise is to the called.</div></div>
+      <div class="day">Yesterday<span>1 note</span></div>
+      <div class="nrc"><div class="top"><div class="dot" style="background:var(--g)"></div><div class="ref">Psalm 23:2 <small>ESV</small></div><div class="tm">9:03 PM</div></div>
+        <div class="q"><span style="background:var(--g)">He leads me beside still waters.</span></div>
+        <div class="b">Still waters. He makes me lie down; rest is given, not taken.</div></div>
+    </div></div>
+    <div class="cost"><b>What it is:</b> each note reads as a small passage: its reference a size larger, the words you highlighted in the page's serif on their own colour (as the phone and ⌘K already show them), then the note in full ink, up to three lines, with links. More air inside a note than between its lines, a hairline between notes. Fewer notes fit on screen (about five against seven). <b>Cost:</b> small to medium. A new row on the Mac, closer to the phone's, and the same headings as 2.</div>
+  </div></div>
+</div>
+</div>

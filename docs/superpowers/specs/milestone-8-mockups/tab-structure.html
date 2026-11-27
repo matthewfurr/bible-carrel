@@ -1,0 +1,155 @@
+<style>
+  .ph { width: 264px; height: 548px; border-radius: 42px; background: #F5F7F9; color: #192028;
+        position: relative; overflow: hidden; box-shadow: 0 0 0 7px #1b1f24, 0 14px 30px rgba(0,0,0,.28);
+        font-family: -apple-system, "SF Pro Text", system-ui, sans-serif; text-align: left; }
+  .ph .island { position: absolute; top: 10px; left: 50%; width: 76px; height: 22px; margin-left: -38px;
+        border-radius: 12px; background: #0c0e10; z-index: 5; }
+  .ph .top { position: absolute; top: 40px; left: 12px; right: 12px; display: flex; align-items: center;
+        justify-content: space-between; z-index: 4; }
+  .ph .title { font-family: "New York", ui-serif, Georgia, serif; font-weight: 600; font-size: 15px; }
+  .ph .title small { font-family: -apple-system, system-ui, sans-serif; font-weight: 500; font-size: 10px;
+        color: #5D646C; margin-left: 4px; letter-spacing: .03em; }
+  .glass { background: rgba(255,255,255,.58); -webkit-backdrop-filter: blur(14px) saturate(1.7);
+        backdrop-filter: blur(14px) saturate(1.7); border: 1px solid rgba(255,255,255,.85);
+        box-shadow: 0 4px 14px rgba(25,32,40,.14), inset 0 0 0 .5px rgba(25,32,40,.06); }
+  .ph .rb { width: 34px; height: 34px; border-radius: 17px; display: flex; align-items: center; justify-content: center; }
+  .ph svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.7;
+        stroke-linecap: round; stroke-linejoin: round; }
+  .ph .page { position: absolute; inset: 86px 0 0 0; padding: 0 26px 0 22px;
+        font-family: "New York", ui-serif, Georgia, serif; font-size: 13.5px; line-height: 1.62; }
+  .ph .page h4 { font-size: 19px; font-weight: 600; margin: 0 0 8px; color: #192028; }
+  .ph .page sup { font-family: -apple-system, system-ui, sans-serif; font-size: 8px; color: #8D9399; margin-right: 2px; }
+  .ph .hl1 { background: #F3E3A8; border-radius: 2px; }
+  .ph .hl2 { background: #F1D5DA; border-radius: 2px; }
+  .ph .mark { position: absolute; right: 8px; width: 12px; height: 12px; color: #247966; }
+  .ph .mark svg { width: 12px; height: 12px; stroke-width: 2; }
+  .ph .bar { position: absolute; bottom: 16px; left: 14px; right: 14px; display: flex; gap: 8px; align-items: center; z-index: 6; }
+  .ph .tabs { flex: 1; height: 52px; border-radius: 26px; display: flex; align-items: center; padding: 4px; }
+  .ph .tab { flex: 1; height: 44px; border-radius: 22px; display: flex; flex-direction: column;
+        align-items: center; justify-content: center; gap: 1px; font-size: 9px; font-weight: 600; color: #192028; }
+  .ph .tab.on { color: #247966; background: rgba(25,32,40,.07); }
+  .ph .srch { width: 52px; height: 52px; border-radius: 26px; display: flex; align-items: center; justify-content: center; flex: none; }
+  .ph .acc { position: absolute; bottom: 76px; left: 14px; right: 14px; height: 42px; border-radius: 21px;
+        display: flex; align-items: center; gap: 8px; padding: 0 14px; font-size: 12.5px; color: #192028; z-index: 6; }
+  .ph .acc span { color: #5D646C; }
+  .tabnote { font-size: .8rem; margin-top: .5rem; }
+  .tabnote b { font-weight: 600; }
+</style>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="i-read" viewBox="0 0 24 24"><path d="M12 6.5C9.5 4.8 6.5 4.6 3.5 5.4v12.8c3-.8 6-.6 8.500 1.100M12 6.500c2.500-1.700 5.500-1.900 8.500-1.100v12.800c-3-.8-6-.6-8.500 1.100M12 6.500v12.800"/></symbol>
+    <symbol id="i-notes" viewBox="0 0 24 24"><path d="M6 3.500h12a1.500 1.500 0 0 1 1.500 1.500v14a1.500 1.500 0 0 1-1.500 1.500H6A1.500 1.500 0 0 1 4.500 19V5A1.500 1.500 0 0 1 6 3.500zM8.500 8.500h7M8.500 12h7M8.500 15.500h4"/></symbol>
+    <symbol id="i-ask" viewBox="0 0 24 24"><path d="M5 4.500h14A1.500 1.500 0 0 1 20.500 6v9a1.500 1.500 0 0 1-1.500 1.500h-7l-4.500 3.500v-3.500H5A1.500 1.500 0 0 1 3.500 15V6A1.500 1.500 0 0 1 5 4.500z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.500" cy="10.500" r="6"/><path d="M15 15l5 5"/></symbol>
+    <symbol id="i-lib" viewBox="0 0 24 24"><path d="M4.500 4.500h3.500v15H4.500zM10.500 4.500H14v15h-3.500zM16.200 7l3.300-.9 3 12.500-3.300.9z"/></symbol>
+    <symbol id="i-more" viewBox="0 0 24 24"><circle cx="6" cy="12" r=".9"/><circle cx="12" cy="12" r=".9"/><circle cx="18" cy="12" r=".9"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M6 4h12v16l-6-4-6 4z"/></symbol>
+  </defs>
+</svg>
+
+<h2>What sits in the tab bar on iPhone?</h2>
+<p class="subtitle">All three use the system Liquid Glass tab bar. It floats over the page, shrinks out of the way as you scroll the chapter, and the search button turns into a search field when tapped. The difference is what gets a tab and where asking a question lives. Click the one that fits; tell me in the chat what you'd change.</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="a-three-plus-search" onclick="toggleSelect(this)">
+    <div class="card-image" style="aspect-ratio:auto;padding:26px 0">
+      <div class="ph">
+        <div class="island"></div>
+        <div class="top">
+          <div class="rb glass"><svg><use href="#i-lib"/></svg></div>
+          <div class="title">John 15<small>KJV</small></div>
+          <div class="rb glass"><svg><use href="#i-more"/></svg></div>
+        </div>
+        <div class="page">
+          <h4>John 15</h4>
+          <span class="mark" style="top:168px"><svg><use href="#i-notes"/></svg></span>
+          <span class="mark" style="top:282px"><svg><use href="#i-pin"/></svg></span>
+          <sup>1</sup>I am the true vine, and my Father is the husbandman. <sup>2</sup>Every branch in me that beareth not fruit he taketh away: and every branch that beareth fruit, he purgeth it, that it may bring forth more fruit. <sup>3</sup>Now ye are clean through the word which I have spoken unto you. <sup>4</sup><span class="hl1">Abide in me, and I in you.</span> As the branch cannot bear fruit of itself, except it abide in the vine; no more can ye, except ye abide in me. <sup>5</sup>I am the vine, ye are the branches: He that abideth in me, and I in him, the same bringeth forth much fruit: <span class="hl2">for without me ye can do nothing.</span> <sup>6</sup>If a man abide not in me, he is cast forth as a branch, and is withered; and men gather them, and cast them into the fire, and they are burned. <sup>7</sup>If ye abide in me, and my words abide in you, ye shall ask what ye will, and it shall be done unto you.
+        </div>
+        <div class="bar">
+          <div class="tabs glass">
+            <div class="tab on"><svg><use href="#i-read"/></svg>Read</div>
+            <div class="tab"><svg><use href="#i-notes"/></svg>Notes</div>
+            <div class="tab"><svg><use href="#i-ask"/></svg>Ask</div>
+          </div>
+          <div class="srch glass"><svg><use href="#i-search"/></svg></div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A · Read, Notes, Ask + Search</h3>
+      <p>One tab per job. Books and chapters open from the button beside the title.</p>
+      <p class="tabnote"><b>Read</b> the chapter, where you left it. <b>Notes</b> everything you've marked, with search and the time filter. <b>Ask</b> a question with the keyboard ready, past conversations below. <b>Search</b> jumps to a reference or finds words in the Bible and in your notes.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b-ask-above-bar" onclick="toggleSelect(this)">
+    <div class="card-image" style="aspect-ratio:auto;padding:26px 0">
+      <div class="ph">
+        <div class="island"></div>
+        <div class="top">
+          <div class="rb glass"><svg><use href="#i-lib"/></svg></div>
+          <div class="title">John 15<small>KJV</small></div>
+          <div class="rb glass"><svg><use href="#i-more"/></svg></div>
+        </div>
+        <div class="page">
+          <h4>John 15</h4>
+          <span class="mark" style="top:168px"><svg><use href="#i-notes"/></svg></span>
+          <span class="mark" style="top:282px"><svg><use href="#i-pin"/></svg></span>
+          <sup>1</sup>I am the true vine, and my Father is the husbandman. <sup>2</sup>Every branch in me that beareth not fruit he taketh away: and every branch that beareth fruit, he purgeth it, that it may bring forth more fruit. <sup>3</sup>Now ye are clean through the word which I have spoken unto you. <sup>4</sup><span class="hl1">Abide in me, and I in you.</span> As the branch cannot bear fruit of itself, except it abide in the vine; no more can ye, except ye abide in me. <sup>5</sup>I am the vine, ye are the branches: He that abideth in me, and I in him, the same bringeth forth much fruit: <span class="hl2">for without me ye can do nothing.</span> <sup>6</sup>If a man abide not in me, he is cast forth as a branch, and is withered; and men gather them, and cast them into the fire, and they are burned. <sup>7</sup>If ye abide in me, and my words abide in you, ye shall ask what ye will, and it shall be done unto you.
+        </div>
+        <div class="acc glass"><svg><use href="#i-ask"/></svg><span>Ask about John 15</span></div>
+        <div class="bar">
+          <div class="tabs glass">
+            <div class="tab on"><svg><use href="#i-read"/></svg>Read</div>
+            <div class="tab"><svg><use href="#i-notes"/></svg>Notes</div>
+          </div>
+          <div class="srch glass"><svg><use href="#i-search"/></svg></div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B · Read, Notes + Search, Ask above the bar</h3>
+      <p>Asking is never a tab away: a glass strip rides above the bar on every screen and already knows the passage you're on.</p>
+      <p class="tabnote">Tap it and the conversation comes up as a sheet over the page. When the bar shrinks on scroll, the strip tucks in beside it. Past conversations live inside the sheet. Costs a strip of the page while the bar is showing.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c-library-tab" onclick="toggleSelect(this)">
+    <div class="card-image" style="aspect-ratio:auto;padding:26px 0">
+      <div class="ph">
+        <div class="island"></div>
+        <div class="top">
+          <div class="rb" style="visibility:hidden"></div>
+          <div class="title">John 15<small>KJV</small></div>
+          <div class="rb glass"><svg><use href="#i-more"/></svg></div>
+        </div>
+        <div class="page">
+          <h4>John 15</h4>
+          <span class="mark" style="top:168px"><svg><use href="#i-notes"/></svg></span>
+          <span class="mark" style="top:282px"><svg><use href="#i-pin"/></svg></span>
+          <sup>1</sup>I am the true vine, and my Father is the husbandman. <sup>2</sup>Every branch in me that beareth not fruit he taketh away: and every branch that beareth fruit, he purgeth it, that it may bring forth more fruit. <sup>3</sup>Now ye are clean through the word which I have spoken unto you. <sup>4</sup><span class="hl1">Abide in me, and I in you.</span> As the branch cannot bear fruit of itself, except it abide in the vine; no more can ye, except ye abide in me. <sup>5</sup>I am the vine, ye are the branches: He that abideth in me, and I in him, the same bringeth forth much fruit: <span class="hl2">for without me ye can do nothing.</span> <sup>6</sup>If a man abide not in me, he is cast forth as a branch, and is withered; and men gather them, and cast them into the fire, and they are burned. <sup>7</sup>If ye abide in me, and my words abide in you, ye shall ask what ye will, and it shall be done unto you.
+        </div>
+        <div class="bar">
+          <div class="tabs glass">
+            <div class="tab"><svg><use href="#i-lib"/></svg>Library</div>
+            <div class="tab on"><svg><use href="#i-read"/></svg>Read</div>
+            <div class="tab"><svg><use href="#i-notes"/></svg>Notes</div>
+            <div class="tab"><svg><use href="#i-ask"/></svg>Ask</div>
+          </div>
+          <div class="srch glass"><svg><use href="#i-search"/></svg></div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C · Library, Read, Notes, Ask + Search</h3>
+      <p>The fullest bar. The bookshelf from the Mac's home page gets its own tab instead of hiding behind the title.</p>
+      <p class="tabnote"><b>Library</b> the shelf of books, chapter grids, and where you left off. The other four are as in A. Five targets is the most an iPhone bar holds, so the labels run tight.</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top:1.25rem">Sample text is the King James Version. Marks in the right margin show a note (verse 4) and a bookmark (verse 5), the way the Mac's gutter does.</p>

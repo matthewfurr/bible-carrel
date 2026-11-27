@@ -1,0 +1,245 @@
+[
+ {
+  "id": "recE00000000001",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "title": "Creation of all things",
+   "eventID": 1,
+   "startDate": "-4003",
+   "duration": "1D",
+   "verses": [
+    "recV00000000001",
+    "recV00000000002",
+    "recV00000000003"
+   ],
+   "sortKey": -4002.99
+  }
+ },
+ {
+  "id": "recE00000000300",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "title": "Birth of Jesus",
+   "eventID": 300,
+   "startDate": "-4",
+   "duration": "1D",
+   "verses": [
+    "recV00000000018",
+    "recV00000000019",
+    "recV00000000020",
+    "recV00000000021",
+    "recV00000000049"
+   ],
+   "sortKey": -3.5
+  }
+ },
+ {
+  "id": "recE00000000301",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "title": "Visit of the Magi",
+   "eventID": 301,
+   "startDate": "-3",
+   "duration": "1D",
+   "verses": [
+    "recV00000000022",
+    "recV00000000023",
+    "recV00000000024"
+   ],
+   "sortKey": -2.9
+  }
+ },
+ {
+  "id": "recE00000000302",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "title": "Escape to Egypt",
+   "eventID": 302,
+   "startDate": "-3",
+   "duration": "1D",
+   "verses": [
+    "recV00000000030",
+    "recV00000000031",
+    "recV00000000032"
+   ],
+   "sortKey": -2.8
+  }
+ },
+ {
+  "id": "recE00000000310",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "title": "Jesus Is Baptized",
+   "eventID": 310,
+   "startDate": "26",
+   "duration": "1D",
+   "verses": [
+    "recV00000000037"
+   ],
+   "sortKey": 26.4
+  }
+ },
+ {
+  "id": "recE00000000311",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "title": "Sermon on the Mount",
+   "eventID": 311,
+   "startDate": "0028-06-01",
+   "duration": "1D",
+   "verses": [
+    "recV00000000041"
+   ],
+   "sortKey": 28.4
+  }
+ },
+ {
+  "id": "recE00000000040",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "title": "Water covers the earth",
+   "eventID": 40,
+   "startDate": "-2347",
+   "duration": "150D",
+   "verses": [
+    "recV00000000101"
+   ],
+   "sortKey": -2346.5,
+   "partOf": [
+    "recE00000000999"
+   ]
+  }
+ },
+ {
+  "id": "recE00000000086",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "title": "Lifetime of Jacob",
+   "eventID": 86,
+   "startDate": "-1835",
+   "duration": "147Y",
+   "verses": [
+    "recV00000000102",
+    "recV00000000105"
+   ],
+   "sortKey": -1834.9,
+   "participants": [
+    "recP00000000682"
+   ]
+  }
+ },
+ {
+  "id": "recE00000000088",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "title": "Birth of Jacob",
+   "eventID": 88,
+   "startDate": "-1835",
+   "duration": "1D",
+   "verses": [
+    "recV00000000102"
+   ],
+   "sortKey": -1834.95,
+   "partOf": [
+    "recE00000000086"
+   ]
+  }
+ },
+ {
+  "id": "recE00000000102",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "title": "Death of Jacob",
+   "eventID": 102,
+   "startDate": "-1688",
+   "duration": "1D",
+   "verses": [
+    "recV00000000105"
+   ],
+   "sortKey": -1688.5,
+   "partOf": [
+    "recE00000000086"
+   ]
+  }
+ },
+ {
+  "id": "recE00000000107",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "title": "Birth of Job",
+   "eventID": 107,
+   "startDate": "-1719",
+   "duration": "1D",
+   "verses": [
+    "recV00000000104"
+   ],
+   "sortKey": -1718.95,
+   "partOf": [
+    "recE00000000108"
+   ]
+  }
+ },
+ {
+  "id": "recE00000000108",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "title": "Lifetime of Job",
+   "eventID": 108,
+   "startDate": "-1719",
+   "duration": "140Y",
+   "verses": [
+    "recV00000000104",
+    "recV00000000108"
+   ],
+   "sortKey": -1718.9
+  }
+ },
+ {
+  "id": "recE00000000121",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "title": "Lifetime of Moses",
+   "eventID": 121,
+   "startDate": "-1570",
+   "duration": "120Y",
+   "verses": [
+    "recV00000000107"
+   ],
+   "sortKey": -1569.9
+  }
+ },
+ {
+  "id": "recE00000000126",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "title": "Wilderness Wanderings",
+   "eventID": 126,
+   "startDate": "-1490",
+   "duration": "40Y",
+   "verses": [
+    "recV00000000106"
+   ],
+   "sortKey": -1489.9
+  }
+ },
+ {
+  "id": "recE00000000129",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "title": "Death of Moses",
+   "eventID": 129,
+   "startDate": "-1450",
+   "duration": "1D",
+   "verses": [
+    "recV00000000103",
+    "recV00000000106",
+    "recV00000000107"
+   ],
+   "sortKey": -1450.5,
+   "partOf": [
+    "recE00000000121",
+    "recE00000000126"
+   ]
+  }
+ }
+]

@@ -1,0 +1,159 @@
+{
+  "app" : "Bible Carrel stand-in data, written by hand for the site's pictures",
+  "bookmarks" : [
+    {
+      "book" : "JHN",
+      "chapter" : 1,
+      "createdAt" : "2026-11-24T14:05:00.000Z",
+      "id" : "51E00000-0000-4000-8000-000000000301",
+      "verse" : 12
+    }
+  ],
+  "colors" : [
+    { "builtInKey" : "yellow", "darkHex" : "#554704", "id" : "51E00000-0000-4000-8000-000000000001", "isDefault" : true, "lightHex" : "#F8E18A", "name" : "Yellow", "sortOrder" : 0 },
+    { "builtInKey" : "green", "darkHex" : "#2E522F", "id" : "51E00000-0000-4000-8000-000000000002", "isDefault" : true, "lightHex" : "#BCF2BD", "name" : "Green", "sortOrder" : 1 },
+    { "builtInKey" : "blue", "darkHex" : "#144D6E", "id" : "51E00000-0000-4000-8000-000000000003", "isDefault" : true, "lightHex" : "#B8E8FF", "name" : "Blue", "sortOrder" : 2 },
+    { "builtInKey" : "rose", "darkHex" : "#67344E", "id" : "51E00000-0000-4000-8000-000000000004", "isDefault" : true, "lightHex" : "#FFCFE8", "name" : "Rose", "sortOrder" : 3 },
+    { "builtInKey" : "orange", "darkHex" : "#683B18", "id" : "51E00000-0000-4000-8000-000000000005", "isDefault" : true, "lightHex" : "#FFD0A1", "name" : "Orange", "sortOrder" : 4 }
+  ],
+  "conversations" : [],
+  "exportedAt" : "2026-11-26T19:00:00.000Z",
+  "format" : "bible-carrel-data",
+  "highlights" : [
+    {
+      "book" : "JHN",
+      "chapter" : 1,
+      "colorID" : "51E00000-0000-4000-8000-000000000001",
+      "createdAt" : "2026-11-24T14:00:00.000Z",
+      "endOffset" : 50,
+      "endVerse" : 4,
+      "id" : "51E00000-0000-4000-8000-000000000101",
+      "modifiedAt" : "2026-11-24T14:00:00.000Z",
+      "quotedText" : "the life was the light of men",
+      "startOffset" : 21,
+      "translationID" : "WEB",
+      "verse" : 4
+    },
+    {
+      "book" : "JHN",
+      "chapter" : 1,
+      "colorID" : "51E00000-0000-4000-8000-000000000003",
+      "createdAt" : "2026-11-24T14:02:00.000Z",
+      "endOffset" : 137,
+      "endVerse" : 14,
+      "id" : "51E00000-0000-4000-8000-000000000102",
+      "modifiedAt" : "2026-11-24T14:02:00.000Z",
+      "quotedText" : "full of grace and truth",
+      "startOffset" : 114,
+      "translationID" : "WEB",
+      "verse" : 14
+    },
+    {
+      "book" : "PSA",
+      "chapter" : 1,
+      "colorID" : "51E00000-0000-4000-8000-000000000002",
+      "createdAt" : "2026-11-25T13:30:00.000Z",
+      "endOffset" : 54,
+      "endVerse" : 3,
+      "id" : "51E00000-0000-4000-8000-000000000103",
+      "modifiedAt" : "2026-11-25T13:30:00.000Z",
+      "quotedText" : "like a tree planted by the streams of water",
+      "startOffset" : 11,
+      "translationID" : "WEB",
+      "verse" : 3
+    }
+  ],
+  "keptVersions" : [],
+  "notes" : [
+    {
+      "body" : "Life and light, side by side. Light comes back in 8:12 and 9:5; read those next.",
+      "book" : "JHN",
+      "chapter" : 1,
+      "createdAt" : "2026-11-24T14:01:00.000Z",
+      "deviceKind" : "Mac",
+      "endVerse" : 4,
+      "highlightID" : "51E00000-0000-4000-8000-000000000101",
+      "id" : "51E00000-0000-4000-8000-000000000201",
+      "modifiedAt" : "2026-11-24T14:01:00.000Z",
+      "quotedText" : "the life was the light of men",
+      "scope" : "highlight",
+      "translationID" : "WEB",
+      "verse" : 4
+    },
+    {
+      "body" : "Grace and truth again in verse 17, set beside the law given through Moses.",
+      "book" : "JHN",
+      "chapter" : 1,
+      "createdAt" : "2026-11-24T14:03:00.000Z",
+      "deviceKind" : "Mac",
+      "endVerse" : 14,
+      "highlightID" : "51E00000-0000-4000-8000-000000000102",
+      "id" : "51E00000-0000-4000-8000-000000000202",
+      "modifiedAt" : "2026-11-24T14:03:00.000Z",
+      "quotedText" : "full of grace and truth",
+      "scope" : "highlight",
+      "translationID" : "WEB",
+      "verse" : 14
+    },
+    {
+      "body" : "Read beside John 1. Each day opens with “God said”; list what is made on each.",
+      "book" : "GEN",
+      "chapter" : 1,
+      "createdAt" : "2026-11-23T15:00:00.000Z",
+      "deviceKind" : "Mac",
+      "endVerse" : 0,
+      "id" : "51E00000-0000-4000-8000-000000000203",
+      "modifiedAt" : "2026-11-23T15:00:00.000Z",
+      "quotedText" : "",
+      "scope" : "chapter",
+      "translationID" : "WEB",
+      "verse" : 0
+    }
+  ],
+  "plans" : [
+    {
+      "createdAt" : "2026-11-20T12:00:00.000Z",
+      "id" : "51E00000-0000-4000-8000-000000000401",
+      "modifiedAt" : "2026-11-20T12:00:00.000Z",
+      "title" : "A stand-in plan",
+      "weeks" : {
+        "v" : 1,
+        "weeks" : [
+          { "n" : 1, "d" : "2026-11-22", "r" : [
+            { "id" : "51E00000-0000-4000-8000-000000000501", "p" : [ { "b" : "PSA", "c" : 1 } ] },
+            { "id" : "51E00000-0000-4000-8000-000000000502", "p" : [ { "b" : "GEN", "c" : 1, "e" : 2 } ] },
+            { "id" : "51E00000-0000-4000-8000-000000000503", "p" : [ { "b" : "JHN", "c" : 1 } ] }
+          ] },
+          { "n" : 2, "d" : "2026-11-29", "r" : [
+            { "id" : "51E00000-0000-4000-8000-000000000511", "p" : [ { "b" : "PSA", "c" : 2 } ] },
+            { "id" : "51E00000-0000-4000-8000-000000000512", "p" : [ { "b" : "GEN", "c" : 3, "e" : 4 } ] },
+            { "id" : "51E00000-0000-4000-8000-000000000513", "p" : [ { "b" : "JHN", "c" : 2 } ] }
+          ] },
+          { "n" : 3, "d" : "2026-12-06", "r" : [
+            { "id" : "51E00000-0000-4000-8000-000000000521", "p" : [ { "b" : "PSA", "c" : 3 } ] },
+            { "id" : "51E00000-0000-4000-8000-000000000522", "p" : [ { "b" : "GEN", "c" : 5, "e" : 6 } ] },
+            { "id" : "51E00000-0000-4000-8000-000000000523", "p" : [ { "b" : "JHN", "c" : 3 } ] }
+          ] },
+          { "n" : 4, "d" : "2026-12-13", "r" : [
+            { "id" : "51E00000-0000-4000-8000-000000000531", "p" : [ { "b" : "PSA", "c" : 4 } ] },
+            { "id" : "51E00000-0000-4000-8000-000000000532", "p" : [ { "b" : "GEN", "c" : 7, "e" : 8 } ] },
+            { "id" : "51E00000-0000-4000-8000-000000000533", "p" : [ { "b" : "JHN", "c" : 4 } ] }
+          ] },
+          { "n" : 5, "d" : "2026-12-20", "r" : [
+            { "id" : "51E00000-0000-4000-8000-000000000541", "p" : [ { "b" : "PSA", "c" : 5 } ] },
+            { "id" : "51E00000-0000-4000-8000-000000000542", "p" : [ { "b" : "GEN", "c" : 9, "e" : 10 } ] },
+            { "id" : "51E00000-0000-4000-8000-000000000543", "p" : [ { "b" : "JHN", "c" : 5 } ] }
+          ] }
+        ]
+      }
+    }
+  ],
+  "prompts" : [],
+  "ticks" : [
+    { "id" : "51E00000-0000-4000-8000-000000000601", "planID" : "51E00000-0000-4000-8000-000000000401", "readingID" : "51E00000-0000-4000-8000-000000000501", "tickedAt" : "2026-11-23T13:00:00.000Z" },
+    { "id" : "51E00000-0000-4000-8000-000000000602", "planID" : "51E00000-0000-4000-8000-000000000401", "readingID" : "51E00000-0000-4000-8000-000000000502", "tickedAt" : "2026-11-24T13:00:00.000Z" },
+    { "id" : "51E00000-0000-4000-8000-000000000603", "planID" : "51E00000-0000-4000-8000-000000000401", "readingID" : "51E00000-0000-4000-8000-000000000503", "tickedAt" : "2026-11-24T14:10:00.000Z" },
+    { "id" : "51E00000-0000-4000-8000-000000000611", "planID" : "51E00000-0000-4000-8000-000000000401", "readingID" : "51E00000-0000-4000-8000-000000000511", "tickedAt" : "2026-11-26T13:00:00.000Z" }
+  ],
+  "version" : 1
+}

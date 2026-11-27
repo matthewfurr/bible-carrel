@@ -1,0 +1,196 @@
+[
+ {
+  "id": "recL00000000636",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "placeLookup": "jerusalem_636",
+   "placeID": 636,
+   "displayTitle": "Jerusalem",
+   "slug": "jerusalem_636",
+   "kjvName": "Jerusalem",
+   "featureType": "City",
+   "latitude": "31.777189",
+   "longitude": "35.234978",
+   "precision": "Precise",
+   "aliases": "Zion, Jebus, Salem, City of God",
+   "dictText": [
+    "Called also Salem ([Ps. 76:2](/ps#Ps.76.2))."
+   ],
+   "verses": [
+    "recV00000000010",
+    "recV00000000022",
+    "recV00000000024",
+    "recV00000000040",
+    "recV00000000041"
+   ],
+   "verseCount": 5
+  }
+ },
+ {
+  "id": "recL00000001263",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "placeLookup": "zion_1263",
+   "placeID": 1263,
+   "displayTitle": "Zion",
+   "slug": "zion_1263",
+   "featureType": "Mountain",
+   "latitude": "31.777444",
+   "longitude": "35.234935",
+   "precision": "Precise",
+   "kjvName": "Sion",
+   "esvName": "Zion",
+   "verses": [
+    "recV00000000005",
+    "recV00000000047"
+   ],
+   "verseCount": 2
+  }
+ },
+ {
+  "id": "recL00000000218",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "placeLookup": "bethlehem_218",
+   "placeID": 218,
+   "displayTitle": "Bethlehem",
+   "slug": "bethlehem_218",
+   "kjvName": "Bethlehem",
+   "featureType": "City",
+   "latitude": "31.705361",
+   "longitude": "35.210266",
+   "verses": [
+    "recV00000000022",
+    "recV00000000025",
+    "recV00000000026",
+    "recV00000000028",
+    "recV00000000033"
+   ],
+   "verseCount": 5
+  }
+ },
+ {
+  "id": "recL00000000362",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "placeLookup": "egypt_362",
+   "placeID": 362,
+   "displayTitle": "Egypt",
+   "slug": "egypt_362",
+   "kjvName": "Egypt",
+   "featureType": "Region",
+   "featureSubType": "Country",
+   "latitude": "26.696361",
+   "longitude": "30.246486",
+   "verses": [
+    "recV00000000030",
+    "recV00000000031",
+    "recV00000000032",
+    "recV00000000035"
+   ],
+   "verseCount": 4
+  }
+ },
+ {
+  "id": "recL00000000882",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "placeLookup": "nazareth_882",
+   "placeID": 882,
+   "displayTitle": "Nazareth",
+   "slug": "nazareth_882",
+   "kjvName": "Nazareth",
+   "featureType": "City",
+   "latitude": "32.706745",
+   "longitude": "35.301528",
+   "verses": [
+    "recV00000000036",
+    "recV00000000039"
+   ],
+   "verseCount": 2
+  }
+ },
+ {
+  "id": "recL00000000978",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "placeLookup": "ramah_978",
+   "placeID": 978,
+   "displayTitle": "Ramah",
+   "slug": "ramah_978",
+   "kjvName": "Ramah",
+   "featureType": "City",
+   "latitude": "31.896",
+   "longitude": "35.201",
+   "precision": "Rough",
+   "verses": [
+    "recV00000000034"
+   ],
+   "verseCount": 1
+  }
+ },
+ {
+  "id": "recL00000000979",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "placeLookup": "ramah_979",
+   "placeID": 979,
+   "displayTitle": "Ramah",
+   "slug": "ramah_979",
+   "kjvName": "Ramah",
+   "latitude": "32.936",
+   "longitude": "35.367",
+   "precision": "Related-Surrounding",
+   "verses": [
+    "recV00000000004"
+   ],
+   "verseCount": 1
+  }
+ },
+ {
+  "id": "recL00000000574",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "placeLookup": "holy_place_574",
+   "placeID": 574,
+   "displayTitle": "Holy place",
+   "slug": "holy_place_574",
+   "kjvName": "Holy place",
+   "verses": [
+    "recV00000000048"
+   ],
+   "verseCount": 1
+  }
+ },
+ {
+  "id": "recL00000001110",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "placeLookup": "south_1110",
+   "placeID": 1110,
+   "displayTitle": "South",
+   "slug": "south_1110",
+   "kjvName": "South",
+   "latitude": "30.3",
+   "longitude": "34.2",
+   "precision": "Unlocated",
+   "verses": [
+    "recV00000000045"
+   ],
+   "verseCount": 1
+  }
+ },
+ {
+  "id": "recL00000000637",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "placeLookup": "jerusalems_637",
+   "placeID": 637,
+   "displayTitle": "Jerusalem's",
+   "slug": "jerusalems_637",
+   "kjvName": "Jerusalem's",
+   "latitude": "31.777189",
+   "longitude": "35.234978"
+  }
+ }
+]

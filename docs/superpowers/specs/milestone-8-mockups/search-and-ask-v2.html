@@ -1,0 +1,241 @@
+<style>
+  .ph { width: 264px; height: 548px; border-radius: 42px; background: #F5F7F9; color: #192028;
+        position: relative; overflow: hidden; box-shadow: 0 0 0 7px #1b1f24, 0 14px 30px rgba(0,0,0,.28);
+        font-family: -apple-system, "SF Pro Text", system-ui, sans-serif; text-align: left; flex: none; zoom: .86; }
+  .ph .island { position: absolute; top: 10px; left: 50%; width: 76px; height: 22px; margin-left: -38px;
+        border-radius: 12px; background: #0c0e10; z-index: 9; }
+  .glass { background: rgba(255,255,255,.78); -webkit-backdrop-filter: blur(14px) saturate(1.7);
+        backdrop-filter: blur(14px) saturate(1.7); border: 1px solid rgba(255,255,255,.85);
+        box-shadow: 0 4px 14px rgba(25,32,40,.14), inset 0 0 0 .5px rgba(25,32,40,.06); }
+  .ui svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.7;
+        stroke-linecap: round; stroke-linejoin: round; flex: none; }
+  .ph .body { position: absolute; inset: 44px 0 0 0; padding: 0 16px; }
+  .ph .body.t { top: 82px; padding: 0 18px; }
+  .ph h4 { font-family: "New York", ui-serif, Georgia, serif; font-size: 25px; font-weight: 600; margin: 0 0 10px; color: #192028; }
+  .chips { display: flex; gap: 5px; margin-bottom: 4px; }
+  .chip { font-size: 10px; font-weight: 600; padding: 5px 8px; border-radius: 12px; background: #EDF1F4; color: #192028; white-space: nowrap; }
+  .chip.on { background: #D1F0E6; color: #1b6253; }
+  .chip.ask { background: #F7E4F5; color: #7E517A; font-size: 10.500px; }
+  .chip i { font-style: normal; opacity: .6; margin-left: 3px; font-weight: 500; }
+  .sec { display: flex; align-items: center; gap: 5px; font-size: 10px; font-weight: 600; color: #5D646C; margin: 11px 0 1px; letter-spacing: .02em; }
+  .sec span { margin-left: auto; font-weight: 500; color: #8D9399; }
+  .r { display: flex; gap: 8px; padding: 7px 0; border-bottom: 1px solid #D3D8DC; align-items: flex-start; }
+  .r > svg { width: 15px; height: 15px; color: #5D646C; margin-top: 1px; }
+  .r .c { flex: 1; min-width: 0; }
+  .r .hd { display: flex; justify-content: space-between; align-items: baseline; gap: 6px; font-size: 11px; font-weight: 600; }
+  .r .hd span { font-weight: 400; color: #8D9399; font-size: 9.500px; white-space: nowrap; }
+  .r .q { font-family: "New York", ui-serif, Georgia, serif; font-size: 11.500px; line-height: 1.45; margin-top: 2px; }
+  .r .q mark { color: inherit; border-radius: 2px; padding: 0 1px; }
+  .r .n { font-size: 11px; line-height: 1.4; color: #5D646C; margin-top: 2px; }
+  .r b { font-weight: 700; color: #192028; }
+  .r .dot { display: inline-block; width: 7px; height: 7px; border-radius: 4px; margin-left: 4px; vertical-align: 1px; }
+  .r.top { background: #D1F0E6; border: 0; border-radius: 10px; padding: 8px; margin: 2px -6px 0; }
+  .r.top > svg { color: #247966; }
+  .ph .sbar { position: absolute; bottom: 16px; left: 14px; right: 14px; display: flex; gap: 8px; align-items: center; z-index: 6; }
+  .ph .sbar .tb { width: 48px; height: 48px; border-radius: 24px; display: flex; align-items: center; justify-content: center; flex: none; }
+  .ph .sbar .f { flex: 1; height: 48px; border-radius: 24px; display: flex; align-items: center; gap: 7px; padding: 0 14px; font-size: 13.500px; }
+  .ph .sbar .f svg { width: 16px; height: 16px; color: #5D646C; }
+  .ph .sbar .f i { margin-left: auto; font-style: normal; color: #8D9399; font-size: 12px; }
+  .ph .bar { position: absolute; bottom: 16px; left: 14px; right: 14px; display: flex; gap: 8px; align-items: center; z-index: 6; }
+  .ph .tabs { flex: 1; height: 52px; border-radius: 26px; display: flex; align-items: center; padding: 4px; }
+  .ph .tab { flex: 1; height: 44px; border-radius: 22px; display: flex; flex-direction: column;
+        align-items: center; justify-content: center; gap: 1px; font-size: 9px; font-weight: 600; color: #192028; }
+  .ph .tab.on { color: #247966; background: rgba(25,32,40,.07); }
+  .ph .srch { width: 52px; height: 52px; border-radius: 26px; display: flex; align-items: center; justify-content: center; flex: none; }
+  .ph .comp { position: absolute; left: 14px; right: 14px; bottom: 76px; height: 44px; border-radius: 22px; z-index: 6;
+        display: flex; align-items: center; justify-content: space-between; padding: 0 6px 0 16px; font-size: 13px; color: #8D9399; }
+  .ph .send { width: 32px; height: 32px; border-radius: 16px; background: #7E517A; color: #fff; display: flex; align-items: center; justify-content: center; }
+  .ph .send svg { width: 16px; height: 16px; stroke-width: 2.2; }
+  .ph .more { position: absolute; top: 40px; right: 12px; width: 34px; height: 34px; border-radius: 17px; display: flex; align-items: center; justify-content: center; }
+  .tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 5px; }
+  .tile { background: #FAFCFE; border-radius: 12px; padding: 9px 10px; box-shadow: 0 0 0 1px rgba(211,216,220,.55); }
+  .tile b { display: block; font-size: 11.500px; font-weight: 600; }
+  .tile span { display: block; font-size: 10px; line-height: 1.35; color: #5D646C; margin-top: 2px; }
+  .steps { display: flex; gap: 22px; justify-content: center; align-items: flex-start; flex-wrap: wrap; padding: 26px 0 8px; }
+  .step { width: 228px; }
+  .step p { font-size: .82rem; margin-top: 18px; text-align: left; }
+  .step b { font-weight: 600; }
+  .desk { background: linear-gradient(#dfe5ea, #cfd6dc); border-radius: 12px; padding: 34px 0 40px; margin-top: 14px; display: flex; justify-content: center; }
+  .pal { width: 560px; max-width: 94%; border-radius: 16px; background: rgba(250,252,254,.94); border: 1px solid #D3D8DC;
+        box-shadow: 0 8px 24px rgba(0,0,0,.2); color: #192028; text-align: left; overflow: hidden;
+        font-family: -apple-system, "SF Pro Text", system-ui, sans-serif; }
+  .pal .field { display: flex; align-items: center; gap: 9px; padding: 12px 16px; font-size: 17px; border-bottom: 1px solid #D3D8DC; }
+  .pal .field svg { color: #5D646C; }
+  .pal .list { padding: 2px 6px 8px; }
+  .pal .sec { margin: 9px 10px 2px; font-size: 10.500px; }
+  .pal .r { border: 0; padding: 6px 10px; border-radius: 8px; gap: 10px; }
+  .pal .r.sel { background: #D1F0E6; }
+  .pal .r.sel > svg { color: #247966; }
+  .pal .r > svg { width: 16px; height: 16px; margin-top: 2px; }
+  .pal .r .hd { font-size: 13px; font-weight: 400; justify-content: flex-start; }
+  .pal .r .hd em { font-style: normal; font-weight: 600; }
+  .pal .r .hd .q { font-size: 13px; margin: 0; }
+  .pal .r .hd span { margin-left: auto; font-size: 11px; }
+  .pal .r .n { font-size: 11.500px; }
+</style>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="i-read" viewBox="0 0 24 24"><path d="M12 6.500C9.500 4.800 6.500 4.600 3.500 5.400v12.800c3-.8 6-.6 8.500 1.100M12 6.500c2.500-1.700 5.500-1.900 8.500-1.100v12.800c-3-.8-6-.6-8.500 1.100M12 6.500v12.800"/></symbol>
+    <symbol id="i-notes" viewBox="0 0 24 24"><path d="M6 3.500h12a1.500 1.500 0 0 1 1.500 1.500v14a1.500 1.500 0 0 1-1.500 1.500H6A1.500 1.500 0 0 1 4.500 19V5A1.500 1.500 0 0 1 6 3.500zM8.500 8.500h7M8.500 12h7M8.500 15.500h4"/></symbol>
+    <symbol id="i-ask" viewBox="0 0 24 24"><path d="M5 4.500h14A1.500 1.500 0 0 1 20.500 6v9a1.500 1.500 0 0 1-1.500 1.500h-7l-4.500 3.500v-3.500H5A1.500 1.500 0 0 1 3.500 15V6A1.500 1.500 0 0 1 5 4.500z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.500" cy="10.500" r="6"/><path d="M15 15l5 5"/></symbol>
+    <symbol id="i-more" viewBox="0 0 24 24"><circle cx="6" cy="12" r=".9"/><circle cx="12" cy="12" r=".9"/><circle cx="18" cy="12" r=".9"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5.500M6.500 11L12 5.500l5.500 5.500"/></symbol>
+    <symbol id="i-verse" viewBox="0 0 24 24"><path d="M4.500 6.500h15M4.500 12h15M4.500 17.500h9"/></symbol>
+    <symbol id="i-go" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.500"/><path d="M8 12h8M12.500 8.500L16 12l-3.500 3.500"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M7 4h10v16l-5-3.500L7 20z"/></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24"><path d="M14.500 5.500l4 4L10 18l-5 1 1-5zM4 21.500h16"/></symbol>
+  </defs>
+</svg>
+
+<h2>Search, and a second pass at Ask</h2>
+<p class="subtitle">One search for everything. Results come grouped by what they are, each kind with its own icon, and anything you marked shows the words in the color you gave them. Tell me in the chat what's wrong or missing.</p>
+
+<div class="steps ui">
+
+  <div class="step">
+    <div class="ph">
+      <div class="island"></div>
+      <div class="body">
+        <div class="chips">
+          <div class="chip on">All</div>
+          <div class="chip">Notes<i>2</i></div>
+          <div class="chip">Scripture<i>61</i></div>
+          <div class="chip">Asked<i>1</i></div>
+        </div>
+        <div class="sec"><svg style="width:12px;height:12px"><use href="#i-notes"/></svg>Your notes<span>2</span></div>
+        <div class="r"><svg><use href="#i-notes"/></svg><div class="c">
+          <div class="hd">John 15:4 <span>Nov 5</span></div>
+          <div class="q"><mark style="background:#F3E3A8"><b>Abide</b> in me, and I in you.</mark></div>
+          <div class="n"><b>Abiding</b> comes before bearing. The branch doesn't strain; it stays.</div></div></div>
+        <div class="r"><svg><use href="#i-notes"/></svg><div class="c">
+          <div class="hd">1 John 2:6 <span>Oct 12</span></div>
+          <div class="q"><mark style="background:#CFE0F4">ought himself also so to walk</mark></div>
+          <div class="n">To <b>abide</b> is to walk as he walked.</div></div></div>
+        <div class="sec"><svg style="width:12px;height:12px"><use href="#i-ask"/></svg>Asked<span>1</span></div>
+        <div class="r"><svg><use href="#i-ask"/></svg><div class="c">
+          <div class="hd"><div>What does "<b>abide</b>" mean in the Greek?</div> <span>Today</span></div>
+          <div class="n">John 15</div></div></div>
+        <div class="sec"><svg style="width:12px;height:12px"><use href="#i-verse"/></svg>Scripture · KJV<span>61</span></div>
+        <div class="r"><svg><use href="#i-verse"/></svg><div class="c">
+          <div class="hd">Psalm 91:1</div>
+          <div class="q">He that dwelleth in the secret place of the most High shall <b>abide</b> under the shadow of the Almighty.</div></div></div>
+        <div class="r"><svg><use href="#i-verse"/></svg><div class="c">
+          <div class="hd"><div>John 15:4<i class="dot" style="background:#EBCB5E"></i></div></div>
+          <div class="q"><b>Abide</b> in me, and I in you. As the branch cannot bear fruit of itself</div></div></div>
+      </div>
+      <div class="sbar">
+        <div class="tb glass"><svg><use href="#i-read"/></svg></div>
+        <div class="f glass"><svg><use href="#i-search"/></svg>abide<i>✕</i></div>
+      </div>
+    </div>
+    <p><b>A word.</b> Your own notes come first, then questions you've asked, then Scripture. A note shows the marked words in their color. A verse you've marked carries a small dot. The chips narrow to one kind.</p>
+  </div>
+
+  <div class="step">
+    <div class="ph">
+      <div class="island"></div>
+      <div class="body">
+        <div class="chips">
+          <div class="chip on">All</div>
+          <div class="chip">Notes<i>2</i></div>
+          <div class="chip">Marks<i>2</i></div>
+          <div class="chip">Asked<i>1</i></div>
+        </div>
+        <div class="sec"><svg style="width:12px;height:12px"><use href="#i-go"/></svg>Go to</div>
+        <div class="r top"><svg><use href="#i-go"/></svg><div class="c">
+          <div class="hd">John 15 <span>KJV</span></div>
+          <div class="n">Open chapter</div></div></div>
+        <div class="sec"><svg style="width:12px;height:12px"><use href="#i-notes"/></svg>Your marks in John 15<span>5</span></div>
+        <div class="r"><svg><use href="#i-notes"/></svg><div class="c">
+          <div class="hd">John 15:4 <span>Nov 5</span></div>
+          <div class="q"><mark style="background:#F3E3A8">Abide in me, and I in you.</mark></div>
+          <div class="n">Abiding comes before bearing. The branch doesn't strain; it stays.</div></div></div>
+        <div class="r"><svg><use href="#i-pen"/></svg><div class="c">
+          <div class="hd">John 15:5 <span>Nov 5</span></div>
+          <div class="q"><mark style="background:#F1D5DA">for without me ye can do nothing.</mark></div></div></div>
+        <div class="r"><svg><use href="#i-pin"/></svg><div class="c">
+          <div class="hd">John 15:5 <span>Nov 5</span></div>
+          <div class="n">Bookmark</div></div></div>
+        <div class="r"><svg><use href="#i-notes"/></svg><div class="c">
+          <div class="hd">John 15:13 <span>Nov 6</span></div>
+          <div class="q"><mark style="background:#D3E9D2">Greater love hath no man than this</mark></div>
+          <div class="n">Said the night before he does it.</div></div></div>
+        <div class="r"><svg><use href="#i-ask"/></svg><div class="c">
+          <div class="hd">What does "abide" mean in the Greek? <span>Today</span></div></div></div>
+      </div>
+      <div class="sbar">
+        <div class="tb glass"><svg><use href="#i-read"/></svg></div>
+        <div class="f glass"><svg><use href="#i-search"/></svg>john 15<i>✕</i></div>
+      </div>
+    </div>
+    <p><b>A passage.</b> Type where the group is and you get the way in, then everything you marked there in verse order: notes, highlights, bookmarks and questions. This is the "find the spot" job in one step.</p>
+  </div>
+
+  <div class="step">
+    <div class="ph">
+      <div class="island"></div>
+      <div class="more glass"><svg><use href="#i-more"/></svg></div>
+      <div class="body t">
+        <h4>Ask</h4>
+        <div class="chips"><div class="chip ask">About John 15<i>✕</i></div></div>
+        <div class="sec">Start with a prompt</div>
+        <div class="tiles">
+          <div class="tile"><b>Chapter study</b><span>Outline, themes and questions</span></div>
+          <div class="tile"><b>Key words</b><span>Terms worth a closer look</span></div>
+          <div class="tile"><b>Cross-references</b><span>Where else this appears</span></div>
+          <div class="tile"><b>Background</b><span>Who, when and why</span></div>
+        </div>
+        <div class="sec" style="margin-top:16px">Earlier conversations</div>
+        <div class="r"><svg><use href="#i-ask"/></svg><div class="c">
+          <div class="hd">What does "abide" mean in the Greek? <span>Today</span></div>
+          <div class="n">John 15</div></div></div>
+        <div class="r"><svg><use href="#i-ask"/></svg><div class="c">
+          <div class="hd">Who is the Comforter? <span>Tue</span></div>
+          <div class="n">John 14</div></div></div>
+      </div>
+      <div class="comp glass">Ask a question<div class="send"><svg><use href="#i-up"/></svg></div></div>
+      <div class="bar">
+        <div class="tabs glass">
+          <div class="tab"><svg><use href="#i-read"/></svg>Read</div>
+          <div class="tab"><svg><use href="#i-notes"/></svg>Notes</div>
+          <div class="tab on"><svg><use href="#i-ask"/></svg>Ask</div>
+        </div>
+        <div class="srch glass"><svg><use href="#i-search"/></svg></div>
+      </div>
+    </div>
+    <p><b>Ask, second pass.</b> Prompts are tiles you tap to start something, the same tiles the Mac shows. Earlier conversations are a plain dated list underneath with the conversation icon. Two shapes, so they no longer read as one list.</p>
+  </div>
+
+</div>
+
+<h3 style="margin-top:1.5rem">The same search on the Mac (⌘K)</h3>
+<p class="subtitle">Today the Mac's palette is one flat list. This groups it the same way and gives notes their color.</p>
+
+<div class="desk ui">
+  <div class="pal">
+    <div class="field"><svg><use href="#i-search"/></svg>abide</div>
+    <div class="list">
+      <div class="sec">Your notes<span>2</span></div>
+      <div class="r sel"><svg><use href="#i-notes"/></svg><div class="c">
+        <div class="hd"><em>John 15:4</em><div class="q"><mark style="background:#F3E3A8"><b>Abide</b> in me, and I in you.</mark></div><span>Nov 5</span></div>
+        <div class="n"><b>Abiding</b> comes before bearing. The branch doesn't strain; it stays.</div></div></div>
+      <div class="r"><svg><use href="#i-notes"/></svg><div class="c">
+        <div class="hd"><em>1 John 2:6</em><div class="q"><mark style="background:#CFE0F4">ought himself also so to walk</mark></div><span>Oct 12</span></div>
+        <div class="n">To <b>abide</b> is to walk as he walked.</div></div></div>
+      <div class="sec">Asked<span>1</span></div>
+      <div class="r"><svg><use href="#i-ask"/></svg><div class="c">
+        <div class="hd"><em>What does "abide" mean in the Greek?</em><span>John 15 · Today</span></div></div></div>
+      <div class="sec">Scripture · KJV<span>61</span></div>
+      <div class="r"><svg><use href="#i-verse"/></svg><div class="c">
+        <div class="hd"><em>Psalm 91:1</em></div>
+        <div class="n">He that dwelleth in the secret place of the most High shall <b>abide</b> under the shadow of the Almighty.</div></div></div>
+      <div class="r"><svg><use href="#i-verse"/></svg><div class="c">
+        <div class="hd"><em>John 15:4</em><i class="dot" style="background:#EBCB5E"></i></div>
+        <div class="n"><b>Abide</b> in me, and I in you. As the branch cannot bear fruit of itself, except it abide in the vine</div></div></div>
+    </div>
+  </div>
+</div>
+
+<p class="subtitle" style="margin-top:1rem">Books, translations and commands keep their own icons and groups when the query matches them (type "ps" and Psalms leads). Counts here are made up. Sample text is the King James Version.</p>

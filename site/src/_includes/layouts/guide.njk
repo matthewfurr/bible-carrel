@@ -1,0 +1,32 @@
+---
+layout: layouts/base.njk
+---
+{%- set currentSlug = page.fileSlug %}
+{%- set neighbours = collections.guide | guideNeighbours(currentSlug) %}
+<div class="guide">
+  <details class="guide-contents">
+    <summary>Guide contents</summary>
+    <nav aria-label="Guide contents">
+      {%- include "guide-nav.njk" %}
+    </nav>
+  </details>
+  <nav class="guide-side" aria-label="Guide">
+    {%- include "guide-nav.njk" %}
+  </nav>
+  <article class="column guide-article guide-{{ currentSlug }}">
+    <p class="eyebrow">{{ collections.guide | guideGroupOf(currentSlug) }}</p>
+    <h1>{{ title }}</h1>
+    {%- if lede %}
+    <p class="lede">{{ lede }}</p>
+    {%- endif %}
+    {{ content | safe }}
+    <nav class="guide-pager" aria-label="Previous and next page">
+      {%- if neighbours.previous %}
+      <a class="guide-previous" href="{{ ('/guide/' + neighbours.previous.slug + '/') | url }}"><span class="eyebrow">Previous</span><span>{{ neighbours.previous.title }}</span></a>
+      {%- endif %}
+      {%- if neighbours.next %}
+      <a class="guide-next" href="{{ ('/guide/' + neighbours.next.slug + '/') | url }}"><span class="eyebrow">Next</span><span>{{ neighbours.next.title }}</span></a>
+      {%- endif %}
+    </nav>
+  </article>
+</div>

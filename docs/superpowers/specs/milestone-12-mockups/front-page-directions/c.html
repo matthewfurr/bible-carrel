@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mockup C · The page and its margin</title>
+<script>if (location.search.includes('dark')) document.documentElement.dataset.appearance = 'dark'</script>
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="mock.css">
+<style>
+/* C: the front page is the reader itself. The features run down a text column as
+   numbered verses with a phrase highlighted in each; a notes column on the panel
+   surface runs beside it, and each highlight has its note there, as in the app. */
+.title-page { padding-top: var(--space-7); }
+.title-page h1 { font-size: var(--text-title); }
+.reader { display: grid; grid-template-columns: minmax(0, 1fr) 21rem; max-width: 74rem; margin: var(--space-7) auto 0; border-top: 1px solid var(--ink-rule); }
+.reader > * { padding: var(--space-6) var(--space-6) var(--space-7); }
+.text { grid-column: 1; }
+.margin { grid-column: 2; background: var(--paper-panel); border-left: 1px solid var(--ink-rule); }
+.text h2 { margin-bottom: var(--space-3); color: var(--ink-secondary); font: italic 400 var(--text-lede) / var(--leading-lede) var(--serif); }
+.text p { max-width: var(--measure); margin: 0 0 var(--space-5); font-size: var(--text-lede); line-height: 1.75; }
+.text .shot { margin: 0 0 var(--space-3); }
+.y { background: var(--hl-yellow); } .b { background: var(--hl-blue); } .k { background: var(--hl-pink); }
+mark { color: inherit; padding: 0.1em 0; }
+.margin-head { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: var(--space-3); border-bottom: 1px solid var(--ink-rule); font: 600 var(--text-body) var(--sans); }
+.margin-head span { color: var(--ink-secondary); font: var(--text-small) var(--sans); }
+.note { padding: var(--space-5) 0; border-bottom: 1px solid var(--ink-rule); }
+.note .ref { display: flex; align-items: center; gap: var(--space-2); margin: 0 0 var(--space-2); font: 600 var(--text-small) var(--sans); }
+.dot { width: var(--space-3); height: var(--space-3); border-radius: 50%; }
+.note .quote { margin: 0 0 var(--space-2); color: var(--ink-secondary); font: italic 400 var(--text-body) / var(--leading-lede) var(--serif); }
+.note .body { margin: 0; font: var(--text-small) / var(--leading-body) var(--sans); }
+.row { display: contents; }
+.row > .margin { border-top: 0; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="#"><img src="/img/icon-64.png" alt="">Bible Carrel</a>
+  <nav class="site-nav"><a class="first" href="#">Build it</a><a href="#">Guide</a><a href="#">Sources</a><a href="#">Roadmap</a></nav>
+  <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+</header>
+
+<div class="title-page">
+  <p class="label">For Mac and iPhone</p>
+  <h1>Bible Carrel</h1>
+  <p class="sub">A quiet desk for reading through the Bible</p>
+  <p class="links"><a class="button" href="#">Build it from source</a><a href="#">Read the guide ›</a></p>
+  <p class="small">Not in the App Store and not downloadable. You build it yourself from its source, with Xcode.</p>
+</div>
+
+<main class="reader">
+  <div class="text">
+    <h2>The page</h2>
+    <p><sup class="verse">1</sup>One chapter at a time, <mark class="y">set like a printed page</mark> as far as each translation's text allows: paragraphs that indent and poetry that hangs under its first word. <sup class="verse">2</sup>Four page styles, Printed, Lectern, Study and Classic, each in light, sepia and dark.</p>
+    <figure class="shot"><img src="/img/mBvSMODKJM-1600.png" alt="Psalm 23 in the Lectern style"></figure>
+
+    <h2 style="margin-top: var(--space-7)">Marks and notes</h2>
+    <p><sup class="verse">3</sup><mark class="b">Highlight a phrase, not only a verse</mark>, in colors you choose. <sup class="verse">4</sup>Write a note beside it, or bookmark the verse. <sup class="verse">5</sup>Every delete can be undone.</p>
+    <figure class="shot"><img src="/img/KEzPTAcj6D-1600.png" alt="The markup menu under John 1:5"></figure>
+
+    <h2 style="margin-top: var(--space-7)">The Library</h2>
+    <p><sup class="verse">6</sup>Each of the 66 books opens to <mark class="k">the people it names</mark>, with a family tree on the Mac. <sup class="verse">7</sup>A map shows its places, and a timeline sets its events in the order of history.</p>
+    <figure class="shot"><img src="/img/J74fnIOqtY-1600.png" alt="The People view for Genesis"></figure>
+
+    <h2 style="margin-top: var(--space-7)">Search</h2>
+    <p><sup class="verse">8</sup>⌘K on the Mac, and the search button on the iPhone, <mark class="y">search the Bible, your notes, highlights, bookmarks and conversations at once</mark>. <sup class="verse">9</sup>On the Mac the same field goes to a passage and runs commands.</p>
+    <figure class="shot"><img src="/img/UZ96JVKPvq-1600.png" alt="Search over John 1"></figure>
+  </div>
+
+  <aside class="margin">
+    <div class="margin-head">Notes <span>4</span></div>
+    <div class="note">
+      <p class="ref"><span class="dot y"></span>The page</p>
+      <p class="quote">set like a printed page</p>
+      <p class="body">Paragraphs and poetry as each translation gives them. <a href="#">How the reader works ›</a></p>
+    </div>
+    <div class="note">
+      <p class="ref"><span class="dot b"></span>Marks and notes</p>
+      <p class="quote">Highlight a phrase, not only a verse</p>
+      <p class="body">A note sits in this column beside what it marks. <a href="#">Highlights and bookmarks ›</a></p>
+    </div>
+    <div class="note">
+      <p class="ref"><span class="dot k"></span>The Library</p>
+      <p class="quote">the people it names</p>
+      <p class="body">People, places and a timeline for each of the 66 books. <a href="#">The Library ›</a></p>
+    </div>
+    <div class="note">
+      <p class="ref"><span class="dot y"></span>Search</p>
+      <p class="quote">search the Bible, your notes, highlights, bookmarks and conversations at once</p>
+      <p class="body">One field, on both apps. <a href="#">Search and ⌘K ›</a></p>
+    </div>
+  </aside>
+</main>
+
+<section class="close">
+  <h2>Build it yourself.</h2>
+  <p>The source is here, and the app builds with Xcode.</p>
+  <a class="button" href="#">Build it from source</a>
+</section>
+<footer class="site-footer">A carrel is a desk for one in a library. · GPL-3.0 · Sources</footer>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mockup B · The contents page</title>
+<script>if (location.search.includes('dark')) document.documentElement.dataset.appearance = 'dark'</script>
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="mock.css">
+<style>
+/* B: the features are the app's own contents page. Entries in columns under tracked
+   group labels, as the books are; the chosen entry is washed in the accent and its
+   picture and words fill a pane at the right, as a book's chapters do. No script:
+   the choice is a radio button and :has(). */
+.title-page { padding-top: var(--space-7); }
+.title-page h1 { font-size: var(--text-title); }
+.contents { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr); max-width: 78rem; margin: var(--space-7) auto 0; border-top: 1px solid var(--ink-rule); border-bottom: 1px solid var(--ink-rule); }
+.toc { padding: var(--space-6) var(--space-5); }
+.toc-head { display: flex; align-items: baseline; justify-content: space-between; padding-bottom: var(--space-3); border-bottom: 1px solid var(--ink-rule); }
+.toc-head h2 { font: 400 var(--text-heading) / var(--leading-tight) var(--serif); }
+.toc-head span { color: var(--ink-secondary); font: var(--text-small) var(--sans); }
+.groups { display: grid; grid-template-columns: 1fr 1fr; gap: 0 var(--space-5); }
+.groups .label { margin: var(--space-5) 0 var(--space-2); }
+.toc input { position: absolute; opacity: 0; }
+.toc label { display: block; width: fit-content; margin-left: calc(var(--space-3) * -1); padding: var(--space-1) var(--space-3); border-radius: var(--radius-sm); font: 400 var(--text-lede) / var(--leading-lede) var(--serif); cursor: pointer; }
+.toc input:checked + label { background: var(--accent-wash); box-shadow: 0 0 0 2px var(--accent); }
+.toc input:focus-visible + label { outline: 2px solid var(--accent); outline-offset: 2px; }
+.pane { padding: var(--space-6) var(--space-6) var(--space-7); background: var(--paper-panel); border-left: 1px solid var(--ink-rule); }
+.entry { display: none; }
+.entry h3 { font: 400 var(--text-heading) / var(--leading-tight) var(--serif); text-align: center; }
+.entry .sub { margin: var(--space-1) 0 var(--space-5); color: var(--ink-secondary); font: italic 400 var(--text-body) / var(--leading-lede) var(--serif); text-align: center; }
+.entry p.words { max-width: var(--measure); margin: var(--space-5) auto 0; }
+.entry .more { text-align: center; }
+.contents:has(#e1:checked) .entry-1, .contents:has(#e2:checked) .entry-2, .contents:has(#e3:checked) .entry-3,
+.contents:has(#e4:checked) .entry-4, .contents:has(#e5:checked) .entry-5, .contents:has(#e6:checked) .entry-6 { display: block; }
+.facts { max-width: 46rem; margin: 0 auto; padding: var(--space-8) var(--space-5) 0; }
+.facts h2 { margin-bottom: var(--space-4); font: 300 var(--text-title) / var(--leading-tight) var(--serif); text-align: center; }
+.facts dl { display: grid; grid-template-columns: max-content 1fr; gap: var(--space-2) var(--space-5); margin: 0; }
+.facts dt { color: var(--ink-secondary); font: var(--text-small) / var(--leading-body) var(--sans); text-align: right; padding-top: var(--space-1); }
+.facts dd { margin: 0; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="#"><img src="/img/icon-64.png" alt="">Bible Carrel</a>
+  <nav class="site-nav"><a class="first" href="#">Build it</a><a href="#">Guide</a><a href="#">Sources</a><a href="#">Roadmap</a></nav>
+  <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+</header>
+
+<div class="title-page">
+  <p class="label">For Mac and iPhone</p>
+  <h1>Bible Carrel</h1>
+  <p class="sub">A quiet desk for reading through the Bible</p>
+  <p class="links"><a class="button" href="#">Build it from source</a><a href="#">Read the guide ›</a></p>
+  <p class="small">Not in the App Store and not downloadable. You build it yourself from its source, with Xcode.</p>
+</div>
+
+<main class="contents">
+  <div class="toc">
+    <div class="toc-head"><h2>What it does</h2><span>6 parts</span></div>
+    <div class="groups">
+      <div>
+        <p class="label">Reading</p>
+        <input type="radio" name="e" id="e1" checked><label for="e1">The page</label>
+        <input type="radio" name="e" id="e5"><label for="e5">Reading plans</label>
+        <p class="label">Marking</p>
+        <input type="radio" name="e" id="e2"><label for="e2">Highlights and notes</label>
+      </div>
+      <div>
+        <p class="label">Studying</p>
+        <input type="radio" name="e" id="e3"><label for="e3">The Library</label>
+        <input type="radio" name="e" id="e4"><label for="e4">Search and ⌘K</label>
+        <p class="label">The iPhone</p>
+        <input type="radio" name="e" id="e6"><label for="e6">The iPhone app</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="pane">
+    <article class="entry entry-1">
+      <h3>The page</h3><p class="sub">It reads like a printed Bible</p>
+      <figure class="shot"><img src="/img/KEzPTAcj6D-1600.png" alt="The reader on John 1"></figure>
+      <p class="words"><sup class="verse">1</sup>One chapter at a time, set like a printed page as far as each translation's text allows: paragraphs that indent and poetry that hangs under its first word. <sup class="verse">2</sup>Four page styles, Printed, Lectern, Study and Classic, each in light, sepia and dark.</p>
+      <p class="more"><a href="#">How the reader works ›</a></p>
+    </article>
+    <article class="entry entry-2">
+      <h3>Highlights and notes</h3><p class="sub">Pencil in the margin</p>
+      <figure class="shot"><img src="/img/KEzPTAcj6D-1600.png" alt="The markup menu under John 1:5"></figure>
+      <p class="words"><sup class="verse">1</sup>Highlight a phrase, not only a verse, in colors you choose. <sup class="verse">2</sup>Write a note beside it, or bookmark the verse. <sup class="verse">3</sup>Every delete can be undone.</p>
+      <p class="more"><a href="#">Highlights and bookmarks ›</a></p>
+    </article>
+    <article class="entry entry-3">
+      <h3>The Library</h3><p class="sub">People, places and each book's story</p>
+      <figure class="shot"><img src="/img/J74fnIOqtY-1600.png" alt="The People view for Genesis"></figure>
+      <p class="words"><sup class="verse">1</sup>Each of the 66 books opens to the people it names, with a family tree on the Mac. <sup class="verse">2</sup>A map shows its places, and a timeline sets its events in the order of history.</p>
+      <p class="more"><a href="#">The Library ›</a></p>
+    </article>
+    <article class="entry entry-4">
+      <h3>Search and ⌘K</h3><p class="sub">One field finds anything</p>
+      <figure class="shot"><img src="/img/UZ96JVKPvq-1600.png" alt="Search over John 1"></figure>
+      <p class="words"><sup class="verse">1</sup>⌘K on the Mac, and the search button on the iPhone, search the Bible, your notes, highlights, bookmarks and conversations at once. <sup class="verse">2</sup>On the Mac the same field goes to a passage and runs commands.</p>
+      <p class="more"><a href="#">Search and ⌘K ›</a></p>
+    </article>
+    <article class="entry entry-5">
+      <h3>Reading plans</h3><p class="sub">Your group's plan, week by week</p>
+      <figure class="shot"><img src="/img/UQsNOo6cdU-1560.png" alt="The reading plan window"></figure>
+      <p class="words"><sup class="verse">1</sup>A plan is a table of weeks and their readings, for a group that meets weekly. <sup class="verse">2</sup>Tick a reading when you have read it. Nothing counts as behind.</p>
+      <p class="more"><a href="#">Reading plans ›</a></p>
+    </article>
+    <article class="entry entry-6">
+      <h3>The iPhone app</h3><p class="sub">The same desk in your pocket</p>
+      <figure class="shot" style="width: 16rem; margin: 0 auto"><img src="/img/BkAVepJ7y5-800.png" alt="The iPhone reader"></figure>
+      <p class="words"><sup class="verse">1</sup>The iPhone app is the same reader, laid out for the phone. <sup class="verse">2</sup>With iCloud sync set up, it shares your notes with the Mac.</p>
+      <p class="more"><a href="#">The iPhone app ›</a></p>
+    </article>
+  </div>
+</main>
+
+<section class="facts">
+  <h2>The sources</h2>
+  <dl>
+    <dt>Bible text</dt><dd>World English Bible, King James Version, American Standard Version and five more</dd>
+    <dt>Section headings</dt><dd>Berean Standard Bible</dd>
+    <dt>Cross-references</dt><dd>OpenBible.info</dd>
+    <dt>People and places</dt><dd>Theographic Bible Metadata</dd>
+    <dt>Typefaces</dt><dd>Literata and Source Serif 4</dd>
+  </dl>
+</section>
+
+<section class="close">
+  <h2>Build it yourself.</h2>
+  <p>The source is here, and the app builds with Xcode.</p>
+  <a class="button" href="#">Build it from source</a>
+</section>
+<footer class="site-footer">A carrel is a desk for one in a library. · GPL-3.0 · Sources</footer>
+</body>
+</html>

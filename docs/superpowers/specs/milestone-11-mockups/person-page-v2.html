@@ -1,0 +1,59 @@
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;1,7..72,400&display=swap" rel="stylesheet">
+<style>
+  .bc { --page:#F5F7F9; --panel:#EDF1F4; --ink:#192028; --ink2:#5D646C; --ink3:#8D9399; --rule:#D3D8DC; --acc:#247966; --wash:#D1F0E6; font-family:-apple-system,"SF Pro Text",sans-serif; color:var(--ink); }
+  .win { background:var(--page); border-radius:12px; overflow:hidden; box-shadow:0 0 0 1px #c9ced3,0 10px 30px rgba(0,0,0,.16); width:560px; padding:16px 24px 20px; }
+  .h1t { font-family:"Literata",Georgia,serif; font-weight:300; font-size:34px; line-height:1.05; margin-bottom:12px; }
+  .colo { display:grid; grid-template-columns:84px 1fr; gap:6px 14px; font-size:12.5px; }
+  .colo .k { text-align:right; font-size:9.5px; font-weight:600; letter-spacing:.07em; color:var(--ink2); text-transform:uppercase; padding-top:2px; }
+  .dict { font-family:"Literata",Georgia,serif; font-size:12.5px; line-height:1.55; margin-top:14px; }
+  .dict a, .more { color:var(--acc); font-family:-apple-system,sans-serif; font-size:11.5px; }
+  .src { font-size:10px; color:var(--ink2); margin-top:4px; }
+  .lab { font-size:9.5px; font-weight:600; letter-spacing:.07em; color:var(--ink2); text-transform:uppercase; margin:18px 0 8px; }
+  .ln { color:var(--acc); } .num { font-variant-numeric:tabular-nums; }
+  .runs { font-size:12.5px; line-height:1.65; }
+  .ch { display:grid; grid-template-columns:30px 1fr; gap:0 10px; font-size:12.5px; line-height:1.6; }
+  .ch .c { text-align:right; color:var(--ink2); font-variant-numeric:tabular-nums; font-weight:600; font-size:11.5px; }
+  .row2 { display:flex; gap:24px; align-items:flex-start; }
+  .cost { font-size:12.5px; line-height:1.5; margin-top:10px; max-width:560px; }
+</style>
+<div class="bc">
+<h2>A person's page: the whole first paragraph, and verses in runs</h2>
+<p class="subtitle">The dictionary entry now opens with its first paragraph whole. The verses below: pick a layout (1 or 2).</p>
+<div class="win">
+  <div class="h1t">David</div>
+  <div class="colo">
+    <div class="k">Father</div><div><span class="ln">Jesse</span></div>
+    <div class="k">Lived</div><div>about 1085 to 1015 BC</div>
+    <div class="k">Named</div><div>226 verses here, 896 in 28 books</div>
+  </div>
+  <div class="dict">Beloved, the eighth and youngest son of Jesse, a citizen of Bethlehem. His father seems to have been a man in humble life. His mother’s name is not recorded. Some think she was the Nahash of 2 Sam. 17:25. As to his personal appearance, we only know that he was red-haired, with beautiful eyes and a fair face (1 Sam. 16:12; 17:42).<br><a>Show more</a> <span class="src" style="margin-left:6px">25 more paragraphs</span></div>
+  <div class="src">Easton’s Bible Dictionary, 1897</div>
+</div>
+<div class="cost"><b>The rule:</b> the first paragraph shows whole. Nine entries in ten are a single paragraph and show complete, with no Show more. One in sixteen has a first paragraph longer than about ten lines (the longest is 4,016 characters); those stop at the end of the sentence that reaches ten lines, then Show more.</div>
+
+<h3 style="margin:26px 0 6px">In 2 Samuel: 226 verses</h3>
+<div class="options">
+  <div class="option" data-choice="verses-1" onclick="toggleSelect(this)"><div class="letter">1</div><div class="content">
+    <h3>Runs, in one paragraph</h3>
+    <div class="win"><div class="runs"><span class="ln">1:1-5, 1:11, 1:13-17, 2:1-5, 2:10-11, 2:13, 2:15, 2:17, 2:30-31, 3:1-2, 3:5-6, 3:8-10, 3:12, 3:14, 3:17-22, 3:26, 3:28, 3:31, 3:35, 4:8-9, 4:12, 5:1, 5:3-4, 5:6-13, 5:17, 5:19-21, 5:23, 5:25, 6:1-2, 6:5, 6:8-10, 6:12, 6:14-18, 6:20-21, 7:5, 7:8, 7:17-18, 7:20, 7:26, 8:1-11 …</span></div></div>
+    <div class="cost">What you asked for, literally: 226 verses become 116 links. Each run is one link and opens all its verses.</div>
+  </div></div>
+  <div class="option" data-choice="verses-2" onclick="toggleSelect(this)"><div class="letter">2</div><div class="content">
+    <h3>Runs, one line per chapter</h3>
+    <div class="win"><div class="ch">
+      <div class="c">1</div><div class="ln">1-5, 11, 13-17</div>
+      <div class="c">2</div><div class="ln">1-5, 10-11, 13, 15, 17, 30-31</div>
+      <div class="c">3</div><div class="ln">1-2, 5-6, 8-10, 12, 14, 17-22, 26, 28, 31, 35</div>
+      <div class="c">4</div><div class="ln">8-9, 12</div>
+      <div class="c">5</div><div class="ln">1, 3-4, 6-13, 17, 19-21, 23, 25</div>
+      <div class="c">6</div><div class="ln">1-2, 5, 8-10, 12, 14-18, 20-21</div>
+      <div class="c">7</div><div class="ln">5, 8, 17-18, 20, 26</div>
+      <div class="c">8</div><div class="ln">1-11, 13-15, 18</div>
+      <div class="c">9</div><div class="ln">1-2, 5-7</div>
+      <div class="c"></div><div class="more">14 more chapters</div>
+    </div></div>
+    <div class="cost">The same runs, with the chapter said once at the start of its line: 23 lines for 2 Samuel, and the eye finds a chapter at once. Very long lists show the first chapters and a "more chapters" link. The same layout serves Elsewhere when a book is opened, and a place's verses.</div>
+  </div></div>
+</div>
+<p style="font-size:12.5px;color:#5D646C;margin-top:10px">Either way, a click on a run opens all its verses in the popover (Mac) or the passage page (phone), and VoiceOver reads "2 Samuel 1:1 to 5".</p>
+</div>

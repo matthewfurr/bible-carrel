@@ -1,0 +1,111 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..700&display=swap" rel="stylesheet">
+<style>
+  .pn { --page:#F5F7F9; --ink:#192028; --ink2:#5D646C; --ink3:#8D9399; --rule:#D3D8DC; --verse:#7A5320; --accent:#247966; --wash:#D1F0E6; --yellow:#F8E18A; --overlay:#FAFCFE; }
+  .opts { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:22px; }
+  .opt { border:2px solid transparent; border-radius:16px; padding:10px; cursor:pointer; background:#eef0f2; }
+  .opt.selected { border-color:#247966; }
+  .opt h3 { margin:4px 6px 2px; font:600 15px -apple-system,system-ui; }
+  .opt p.d { margin:0 6px 10px; font:13px/1.45 -apple-system,system-ui; color:#444; }
+  .phones { display:flex; gap:10px; justify-content:center; }
+  .phone { width:236px; height:480px; border-radius:30px; border:6px solid #1d1d1f; background:var(--page); position:relative; overflow:hidden; font-family:-apple-system,system-ui; }
+  .rd { padding:30px 16px 0; font-family:'Literata',serif; font-size:12.5px; line-height:1.62; color:var(--ink); }
+  .rd .rh { text-align:center; font:600 7px -apple-system,system-ui; letter-spacing:.22em; color:var(--verse); margin-bottom:10px; }
+  .vn { font:500 7px -apple-system,system-ui; position:relative; top:-.5em; color:var(--verse); margin-right:1px; }
+  .hl { background:var(--yellow); border-radius:2px; -webkit-box-decoration-break:clone; box-decoration-break:clone; }
+  .sel { outline:1.5px solid var(--accent); outline-offset:1px; border-radius:3px; }
+  .mm { position:absolute; right:3px; color:var(--accent); font-size:9px; }
+  .dim { position:absolute; inset:0; background:rgba(0,0,0,.12); }
+  .sheet { position:absolute; left:0; right:0; bottom:0; background:#fff; border-radius:18px 18px 0 0; box-shadow:0 -4px 18px rgba(0,0,0,.12); padding:8px 14px 14px; }
+  .grab { width:30px; height:4px; border-radius:2px; background:#c7c7cc; margin:0 auto 8px; }
+  .sbar { display:flex; align-items:center; justify-content:space-between; font-size:11px; margin-bottom:8px; }
+  .sbar b { font-size:12px; }
+  .pill { font-size:10.5px; color:var(--accent); font-weight:600; }
+  .q { font-family:'Literata',serif; font-style:italic; font-size:11px; color:var(--ink); margin-bottom:8px; }
+  .q span { background:var(--yellow); border-radius:2px; }
+  .nb { font-size:11px; line-height:1.45; color:var(--ink); }
+  .nb p { margin:0 0 6px; }
+  .lk { color:var(--accent); text-decoration:underline; text-decoration-thickness:.5px; text-underline-offset:2px; }
+  .acts { display:flex; justify-content:space-around; border-top:1px solid #e5e5ea; margin-top:8px; padding-top:8px; font-size:13px; color:var(--ink2); }
+  .dot { display:inline-block; width:13px; height:13px; border-radius:50%; background:var(--yellow); border:.5px solid var(--rule); vertical-align:middle; }
+  .bubble { position:absolute; left:20px; right:20px; background:#fff; border-radius:12px; box-shadow:0 4px 16px rgba(0,0,0,.18); display:flex; justify-content:space-around; padding:7px 4px; font-size:12px; color:#1d1d1f; }
+  .peek { position:absolute; left:14px; right:14px; background:var(--overlay); border-radius:10px; box-shadow:0 3px 12px rgba(0,0,0,.12); padding:8px 10px; font-size:10.5px; line-height:1.4; color:var(--ink); }
+  .cap { font:11px -apple-system,system-ui; color:#666; text-align:center; margin-top:6px; }
+  .tabbar { position:absolute; left:30px; right:30px; bottom:8px; height:30px; border-radius:15px; background:rgba(240,240,240,.9); }
+</style>
+
+<h2>A note on a verse you tap (iPhone)</h2>
+<p class="subtitle">John 15:5 has a yellow highlight and a note saved from the assistant, with references in it. Today a tap shows the edit bar, and Edit Note opens the raw markdown. Three ways to show the note as a note, with Edit one tap away. Click the closest.</p>
+
+<div class="pn">
+<div class="opts">
+
+<div class="opt" data-choice="sheet-first" onclick="toggleSelect(this)">
+  <h3>A · The note opens first</h3>
+  <p class="d">Tapping a highlight that has a note opens its note at half height, rendered, references as links. Edit is top right; the mark's actions (color, bookmark, Ask, delete) sit along the foot. A tapped reference opens inside the sheet, with Back. A highlight without a note keeps today's edit bar.</p>
+  <div class="phones">
+    <div class="phone">
+      <div class="rd"><div class="rh">JOHN · CHAPTER 15</div><span class="vn">4</span>Remain in me, and I in you. As the branch can’t bear fruit by itself unless it remains in the vine, so neither can you, unless you remain in me. <span class="hl sel"><span class="vn">5</span>I am the vine. You are the branches. He who remains in me and I in him bears much fruit,</span><span class="mm" style="top:118px">▤</span> for apart from me you can do nothing.</div>
+      <div class="dim"></div>
+      <div class="sheet" style="height:260px">
+        <div class="grab"></div>
+        <div class="sbar"><span style="color:#8a8a8e">✕</span><b>John 15:5</b><span class="pill">Edit</span></div>
+        <div class="q"><span>“I am the vine. You are the branches.”</span></div>
+        <div class="nb">
+          <p><b>Q:</b> What does “remain” mean here?</p>
+          <p>“Remain” (<i>menō</i>) is ongoing dependence, the same word as <span class="lk">John 15:4</span> and <span class="lk">1 John 2:6</span>. The fruit is the character of <span class="lk">Galatians 5:22–23</span>, not activity.</p>
+        </div>
+        <div class="acts"><span class="dot"></span><span>🔖</span><span style="color:#7E517A">✦</span><span>🗑</span></div>
+      </div>
+    </div>
+    <div class="phone">
+      <div class="rd" style="opacity:.6"><div class="rh">JOHN · CHAPTER 15</div><span class="vn">4</span>Remain in me, and I in you. As the branch can’t bear fruit by itself unless it remains in the vine…</div>
+      <div class="dim"></div>
+      <div class="sheet" style="height:260px">
+        <div class="grab"></div>
+        <div class="sbar"><span class="pill">‹ John 15:5</span><b>Galatians 5:22–23</b><span></span></div>
+        <div class="nb" style="font-family:'Literata',serif;font-size:11.5px;line-height:1.55"><span class="vn">22</span>But the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faith, <span class="vn">23</span>gentleness, and self-control. Against such things there is no law.</div>
+        <div style="text-align:center;margin-top:14px"><span style="display:inline-block;background:var(--accent);color:#fff;font-size:11px;font-weight:600;padding:6px 14px;border-radius:14px">Open in Read</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="cap">Tap the highlight → the note · tap a reference → the verse, Back to the note</div>
+</div>
+
+<div class="opt" data-choice="bar-plus-peek" onclick="toggleSelect(this)">
+  <h3>B · Edit bar, plus a peek</h3>
+  <p class="d">Today's edit bar stays, and the note's first lines float under the verse as a peek with its links live. Tap the peek to open the full note (read view, Edit top right). Keeps every action one tap away, but two things pop up at once.</p>
+  <div class="phones">
+    <div class="phone">
+      <div class="rd"><div class="rh">JOHN · CHAPTER 15</div><span class="vn">4</span>Remain in me, and I in you. As the branch can’t bear fruit by itself unless it remains in the vine, so neither can you, unless you remain in me. <span class="hl sel"><span class="vn">5</span>I am the vine. You are the branches. He who remains in me and I in him bears much fruit,</span> for apart from me you can do nothing.</div>
+      <div class="bubble" style="top:58px"><span class="dot"></span><span>✎</span><span>🔖</span><span style="color:#7E517A">✦</span><span>🗑</span></div>
+      <div class="peek" style="top:212px"><b>Q:</b> What does “remain” mean here?<br>“Remain” (<i>menō</i>) is ongoing dependence, the same word as <span class="lk">John 15:4</span> and <span class="lk">1 John 2:6</span>… <span style="color:var(--ink3)">More</span></div>
+      <div class="tabbar"></div>
+    </div>
+  </div>
+  <div class="cap">Tap the highlight → bar + peek · tap the peek → the note</div>
+</div>
+
+<div class="opt" data-choice="read-mode-sheet" onclick="toggleSelect(this)">
+  <h3>C · Same bar, the sheet reads first</h3>
+  <p class="d">The smallest change: the tap still shows today's edit bar; its note button becomes Note and opens the sheet in a read view (rendered, links live), with Edit top right. One more tap than A to see the note.</p>
+  <div class="phones">
+    <div class="phone">
+      <div class="rd" style="opacity:.6"><div class="rh">JOHN · CHAPTER 15</div><span class="vn">4</span>Remain in me, and I in you…</div>
+      <div class="dim"></div>
+      <div class="sheet" style="height:300px">
+        <div class="grab"></div>
+        <div class="sbar"><span style="color:#8a8a8e">✕</span><b>John 15:5</b><span class="pill">Edit</span></div>
+        <div class="q"><span>“I am the vine. You are the branches.”</span></div>
+        <div class="nb">
+          <p><b>Q:</b> What does “remain” mean here?</p>
+          <p>“Remain” (<i>menō</i>) is ongoing dependence, the same word as <span class="lk">John 15:4</span> and <span class="lk">1 John 2:6</span>. The fruit is the character of <span class="lk">Galatians 5:22–23</span>, not activity.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cap">Tap the highlight → bar → Note → the note</div>
+</div>
+
+</div>
+</div>

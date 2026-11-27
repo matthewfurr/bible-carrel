@@ -1,0 +1,113 @@
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;1,7..72,400&display=swap" rel="stylesheet">
+<style>
+  .lb-opt { cursor: pointer; border-radius: 16px; padding: 12px; border: 2px solid transparent; margin: 16px 0 28px; max-width: 790px; }
+  .lb-opt.selected { border-color: #247966; background: rgba(36,121,102,.08); }
+  .lb-opt h3 { margin: 12px 2px 4px; font-size: 16px; }
+  .lb-opt p.d { margin: 0 2px; font-size: 13px; line-height: 1.5; opacity: .85; }
+  .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 9px; background: rgba(36,121,102,.15); color: #247966; font-weight: 600; margin-left: 6px; vertical-align: middle; }
+  .lw { display: flex; flex-direction: column; width: 760px; height: 450px; border-radius: 12px; background: #F5F7F9; color: #192028; overflow: hidden; box-shadow: 0 0 0 1px #c9ced3, 0 10px 30px rgba(0,0,0,.18); font-family: -apple-system, "SF Pro Text", sans-serif; }
+  .lw .tb { height: 36px; flex: none; display: flex; align-items: center; gap: 7px; padding: 0 12px; color: #5D646C; font-size: 12px; }
+  .lw .tb i { width: 11px; height: 11px; border-radius: 6px; background: #d5d9dd; display: inline-block; }
+  .lw .tb span { margin-left: 14px; }
+  .lw .bd { flex: 1; display: flex; min-height: 0; }
+  .lside { text-align: left; width: 200px; background: #EDF1F4; padding: 8px 8px; font-size: 12px; overflow: hidden; }
+  .lside .f { height: 24px; border-radius: 6px; background: #FAFCFE; box-shadow: 0 0 0 1px #D3D8DC; color: #8D9399; font-size: 11px; display: flex; align-items: center; padding: 0 8px; margin-bottom: 8px; }
+  .sec { display: flex; justify-content: space-between; font-size: 10px; font-weight: 600; color: #5D646C; letter-spacing: .03em; padding: 6px 6px 4px; }
+  .sec::before { content: "▸"; margin-right: 5px; font-size: 8px; }
+  .sec.open::before { content: "▾"; }
+  .sec span { margin-right: auto; }
+  .sec em { font-style: normal; font-weight: 400; color: #8D9399; }
+  .bk { padding: 4px 8px 4px 20px; border-radius: 6px; }
+  .bk.on { background: #D1F0E6; }
+  .lmain { flex: 1; padding: 18px 0 0; text-align: center; overflow: hidden; }
+  .ttl { font-family: "Literata", Georgia, serif; font-weight: 300; font-size: 30px; }
+  .sub { font-family: "Literata", Georgia, serif; font-style: italic; font-size: 12px; color: #5D646C; margin-top: 2px; }
+  .ic { display: flex; justify-content: center; gap: 30px; margin: 14px 0 14px; font-size: 9px; color: #5D646C; }
+  .ic div::before { content: ""; display: block; width: 30px; height: 30px; margin: 0 auto 4px; border-radius: 11px; border: 1.25px solid #247966; }
+  .grid { display: grid; grid-template-columns: repeat(7, 46px); gap: 6px; justify-content: center; font-family: "Literata", Georgia, serif; font-size: 15px; color: #5D646C; }
+  .grid span { height: 32px; line-height: 32px; border-radius: 9px; position: relative; }
+  .grid span.cur { background: #D1F0E6; color: #192028; }
+  .grid span.m::after { content: ""; position: absolute; left: 50%; bottom: 2px; width: 3px; height: 3px; margin-left: -1.5px; border-radius: 2px; background: #8D9399; }
+  .col { width: 430px; margin: 0 auto; text-align: left; padding-top: 6px; font-size: 12.5px; }
+  .col .sec { padding: 8px 0 4px; border-top: 1px solid #D3D8DC; }
+  .col .sec:first-child { border-top: 0; }
+  .col .bk { padding: 5px 8px 5px 16px; display: flex; justify-content: space-between; }
+  .col .bk::after { content: "›"; color: #8D9399; }
+  .col .bk.on::after { content: "⌄"; }
+  .col .exp { text-align: center; padding: 4px 0 10px; }
+  .col .exp .ic { margin: 10px 0 12px; }
+  .toc { flex: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px 14px; padding: 14px 18px; font-size: 11px; line-height: 1.62; align-content: start; }
+  .toc h5 { margin: 0 0 2px; font-size: 9.5px; font-weight: 600; color: #7A5320; letter-spacing: .12em; }
+  .toc p { margin: 0 0 10px; font-family: "Literata", Georgia, serif; }
+  .toc b { background: #D1F0E6; font-weight: 400; border-radius: 4px; padding: 1px 4px; margin-left: -4px; }
+  .pane { width: 262px; background: #EDF1F4; padding-top: 16px; text-align: center; }
+  .pane .ttl { font-size: 24px; }
+  .pane .grid { grid-template-columns: repeat(5, 40px); font-size: 14px; }
+  .pane .ic { gap: 16px; }
+</style>
+
+<h2>Mac: the front page without the long shelf</h2>
+<p class="subtitle">Today every book’s chapters are stacked in one long scroll. Each option shows one book’s chapters at a time, with the books grouped (Law, History, Gospels and so on). John is the book being read in all three. Click the one you want.</p>
+
+<div class="lb-opt" data-choice="a-sidebar-one-book" onclick="toggleSelect(this)">
+  <div class="lw"><div class="tb"><i></i><i></i><i></i><span>Bible Carrel</span></div><div class="bd">
+    <div class="lside">
+      <div class="f">Books or a reference</div>
+      <div class="sec"><span>LAW</span><em>5</em></div>
+      <div class="sec"><span>HISTORY</span><em>12</em></div>
+      <div class="sec"><span>POETRY &amp; WISDOM</span><em>5</em></div>
+      <div class="sec"><span>MAJOR PROPHETS</span><em>5</em></div>
+      <div class="sec"><span>MINOR PROPHETS</span><em>12</em></div>
+      <div class="sec open"><span>GOSPELS &amp; ACTS</span><em>5</em></div>
+      <div class="bk">Matthew</div><div class="bk">Mark</div><div class="bk">Luke</div><div class="bk on">John</div><div class="bk">Acts</div>
+      <div class="sec"><span>PAUL’S LETTERS</span><em>13</em></div>
+      <div class="sec"><span>GENERAL LETTERS</span><em>8</em></div>
+      <div class="sec"><span>REVELATION</span><em>1</em></div>
+    </div>
+    <div class="lmain">
+      <div class="ttl">John</div><div class="sub">The Gospel According to John</div>
+      <div class="ic"><div>BibleProject</div><div>People</div><div>Places</div><div>About</div></div>
+      <div class="grid"><span>1</span><span class="m">2</span><span class="m">3</span><span>4</span><span>5</span><span class="m">6</span><span>7</span><span>8</span><span>9</span><span class="m">10</span><span>11</span><span>12</span><span>13</span><span class="m">14</span><span class="cur m">15</span><span>16</span><span class="m">17</span><span>18</span><span>19</span><span>20</span><span>21</span></div>
+    </div>
+  </div></div>
+  <h3>A. Grouped sidebar, one book on the page <span class="tag">my pick</span></h3>
+  <p class="d">The sidebar you have, with the books folded into their groups; the group holding your book is open. Click a book and the page shows that book alone: its name, its icons, its chapters. Nothing long to scroll, and the page has room for People, Places and About to open right there later in this project.</p>
+</div>
+
+<div class="lb-opt" data-choice="b-one-column-expanding" onclick="toggleSelect(this)">
+  <div class="lw"><div class="tb"><i></i><i></i><i></i><span>Bible Carrel</span></div><div class="bd">
+    <div class="lmain" style="padding-top:4px"><div class="col">
+      <div class="sec"><span>MINOR PROPHETS</span><em>12</em></div>
+      <div class="sec open"><span>GOSPELS &amp; ACTS</span><em>5</em></div>
+      <div class="bk">Matthew</div><div class="bk">Mark</div><div class="bk">Luke</div>
+      <div class="bk on">John</div>
+      <div class="exp">
+        <div class="ic"><div>BibleProject</div><div>People</div><div>Places</div><div>About</div></div>
+        <div class="grid"><span>1</span><span class="m">2</span><span class="m">3</span><span>4</span><span>5</span><span class="m">6</span><span>7</span><span>8</span><span>9</span><span class="m">10</span><span>11</span><span>12</span><span>13</span><span class="m">14</span><span class="cur m">15</span><span>16</span><span class="m">17</span><span>18</span><span>19</span><span>20</span><span>21</span></div>
+      </div>
+      <div class="bk">Acts</div>
+      <div class="sec"><span>PAUL’S LETTERS</span><em>13</em></div>
+      <div class="sec"><span>GENERAL LETTERS</span><em>8</em></div>
+    </div></div>
+  </div></div>
+  <h3>B. One column that opens in place</h3>
+  <p class="d">No sidebar. Groups open to their books, and a book opens to its icons and chapters under its name, as the iPhone’s Library does; opening another closes the first. Closest to what you described. The page is one narrow column in a wide window, and People, Places and About would need to open somewhere else.</p>
+</div>
+
+<div class="lb-opt" data-choice="c-contents-page" onclick="toggleSelect(this)">
+  <div class="lw"><div class="tb"><i></i><i></i><i></i><span>Bible Carrel</span></div><div class="bd">
+    <div class="toc">
+      <div><h5>LAW</h5><p>Genesis<br>Exodus<br>Leviticus<br>Numbers<br>Deuteronomy</p><h5>HISTORY</h5><p>Joshua<br>Judges<br>Ruth<br>1 Samuel<br>2 Samuel<br>1 Kings<br>2 Kings<br>1 Chronicles<br>2 Chronicles<br>Ezra<br>Nehemiah<br>Esther</p></div>
+      <div><h5>POETRY &amp; WISDOM</h5><p>Job<br>Psalms<br>Proverbs<br>Ecclesiastes<br>Song of Solomon</p><h5>MAJOR PROPHETS</h5><p>Isaiah<br>Jeremiah<br>Lamentations<br>Ezekiel<br>Daniel</p><h5>MINOR PROPHETS</h5><p>Hosea · Joel · Amos<br>Obadiah · Jonah · Micah<br>Nahum · Habakkuk<br>Zephaniah · Haggai<br>Zechariah · Malachi</p></div>
+      <div><h5>GOSPELS &amp; ACTS</h5><p>Matthew<br>Mark<br>Luke<br><b>John</b><br>Acts</p><h5>PAUL’S LETTERS</h5><p>Romans<br>1 Corinthians<br>2 Corinthians<br>Galatians<br>Ephesians<br>Philippians<br>Colossians<br>1 Thessalonians<br>2 Thessalonians<br>1 Timothy · 2 Timothy<br>Titus · Philemon</p></div>
+      <div><h5>GENERAL LETTERS</h5><p>Hebrews<br>James<br>1 Peter<br>2 Peter<br>1 John<br>2 John<br>3 John<br>Jude</p><h5>REVELATION</h5><p>Revelation</p></div>
+    </div>
+    <div class="pane">
+      <div class="ttl">John</div><div class="sub">The Gospel According to John</div>
+      <div class="ic"><div>Video</div><div>People</div><div>Places</div><div>About</div></div>
+      <div class="grid"><span>1</span><span class="m">2</span><span class="m">3</span><span>4</span><span>5</span><span class="m">6</span><span>7</span><span>8</span><span>9</span><span class="m">10</span><span>11</span><span>12</span><span>13</span><span class="m">14</span><span class="cur m">15</span><span>16</span><span class="m">17</span><span>18</span><span>19</span><span>20</span><span>21</span></div>
+    </div>
+  </div></div>
+  <h3>C. A contents page</h3>
+  <p class="d">Every book on one page, set out by group like a printed Bible’s contents, with the chosen book’s chapters in a pane beside it. Nothing scrolls and nothing is folded away. It is the biggest change from today, and at large text sizes the page would have to scroll after all.</p>
+</div>

@@ -1,0 +1,23 @@
+From Verse	To Verse	Votes	#www.openbible.info CC-BY 2026-09-21
+Matt.5.3	Ps.1.1	12
+Matt.5.3	Matt.6.19-Matt.6.21	9
+Matt.5.3	Ps.2.12	7
+Matt.5.3	Matt.5.10	6
+Matt.5.3	Matt.4.17	5
+Matt.5.3	Matt.3.2	4
+Matt.5.3	Matt.6.33	4
+Matt.5.3	Isa.57.15	3
+Matt.5.3	Matt.5.47-Matt.6.4	2
+Matt.5.3	Luke.6.20	1
+Matt.5.3	Jas.2.5	0
+Matt.5.3	Prov.16.19	-3
+Matt.5.3	Matt.5.1-Matt.5.4	1
+Ps.1.1	Matt.5.3	8
+Matt.6.20	Matt.5.3-Matt.5.12	6
+Ps.2.12	Matt.5.1-Matt.5.3	5
+Matt.4.25	Matt.4.23-Matt.5.3	4
+Matt.6.33	Matt.5.1-Matt.5.5	9
+Matt.5.4	Matt.5.3	2
+3John.1.15	Matt.5.3	2
+Ps.1.6	3John.1.15	3
+Mal.4.6	Mal.4.5-Matt.1.1	2

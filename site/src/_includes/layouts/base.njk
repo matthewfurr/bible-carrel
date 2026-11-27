@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title and page.url != "/" %}{{ title }} · {% endif %}{{ site.name }}</title>
+  {%- if description %}
+  <meta name="description" content="{{ description }}">
+  {%- endif %}
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/img/icon-32.png' | url }}">
+  <link rel="apple-touch-icon" href="{{ '/img/icon-180.png' | url }}">
+  <link rel="stylesheet" href="{{ '/css/tokens.css' | url }}">
+  <link rel="stylesheet" href="{{ '/css/site.css' | url }}">
+  <script>{{ appearanceScript | safe }}</script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to the content</a>
+  {% include "header.njk" %}
+  <main id="main">
+    {{ content | safe }}
+  </main>
+  {% include "footer.njk" %}
+</body>
+</html>

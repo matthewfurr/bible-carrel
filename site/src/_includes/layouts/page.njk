@@ -1,0 +1,13 @@
+---
+layout: layouts/base.njk
+---
+<article class="column">
+  {%- if eyebrow %}
+  <p class="eyebrow">{{ eyebrow }}</p>
+  {%- endif %}
+  <h1>{{ title }}</h1>
+  {%- if lede %}
+  <p class="lede">{{ lede }}</p>
+  {%- endif %}
+  {{ content | safe }}
+</article>

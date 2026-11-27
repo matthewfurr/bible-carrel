@@ -1,0 +1,104 @@
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;0,7..72,500;1,7..72,400&display=swap" rel="stylesheet">
+<style>
+  .bc { --page:#F5F7F9; --panel:#EDF1F4; --ink:#192028; --ink2:#5D646C; --ink3:#8D9399; --rule:#D3D8DC; --verse:#7A5320; --acc:#247966; --wash:#D1F0E6; font-family:-apple-system,"SF Pro Text",sans-serif; color:var(--ink); }
+  .win { background:var(--page); border-radius:12px; overflow:hidden; box-shadow:0 0 0 1px #c9ced3,0 10px 30px rgba(0,0,0,.16); }
+  .tb { height:30px; display:flex; align-items:center; gap:6px; padding:0 12px; } .tb i { width:10px; height:10px; border-radius:5px; background:#d5d9dd; }
+  .body { display:flex; } .col { flex:1; padding:6px 26px 22px; }
+  .pane { width:200px; flex:none; background:var(--panel); padding:16px 12px; text-align:center; }
+  .pane .t { font-family:"Literata",Georgia,serif; font-weight:300; font-size:22px; }
+  .pane .ic { display:flex; justify-content:space-around; margin:12px 0; font-size:8.5px; color:var(--ink2); }
+  .pane .ic div::before { content:""; display:block; width:24px; height:24px; margin:0 auto 3px; border-radius:9px; border:1.25px solid var(--acc); }
+  .pane .ic div.on::before { background:var(--wash); }
+  .hdr { display:flex; align-items:baseline; gap:12px; padding:4px 0 8px; border-bottom:1px solid var(--rule); margin-bottom:16px; }
+  .hdr a { color:var(--acc); font-size:12px; font-weight:500; } .hdr b { font-family:"Literata",Georgia,serif; font-weight:400; font-size:17px; }
+  .h1t { font-family:"Literata",Georgia,serif; font-weight:300; font-size:38px; line-height:1.05; }
+  .h1s { font-family:"Literata",Georgia,serif; font-style:italic; font-size:13px; color:var(--ink2); margin:3px 0 16px; }
+  .colo { display:grid; grid-template-columns:96px 1fr; gap:7px 14px; font-size:12.5px; line-height:1.4; }
+  .colo .k { text-align:right; font-size:9.5px; font-weight:600; letter-spacing:.07em; color:var(--ink2); text-transform:uppercase; padding-top:2px; }
+  .colo .sp { grid-column:1 / 3; height:4px; }
+  .ln { color:var(--acc); } .meta { font-size:10.5px; color:var(--ink2); } .num { font-variant-numeric:tabular-nums; }
+  .colo small { color:var(--ink2); font-size:11px; }
+  .lab { font-size:9.5px; font-weight:600; letter-spacing:.07em; color:var(--ink2); text-transform:uppercase; margin:22px 0 6px; }
+  .grp { font-size:8.5px; font-weight:600; letter-spacing:.12em; color:var(--verse); text-transform:uppercase; }
+  .strip { position:relative; height:120px; border-bottom:1px solid var(--rule); margin:4px 0 2px; }
+  .strip .bar { position:absolute; height:5px; border-radius:3px; background:#AEB4BA; }
+  .strip .bar span { position:absolute; left:0; top:-12px; font-size:8.5px; color:var(--ink2); white-space:nowrap; }
+  .strip .ax { position:absolute; bottom:-15px; font-size:9px; color:var(--ink2); transform:translateX(-50%); }
+  .strip .win2 { position:absolute; top:0; bottom:0; border-radius:4px; background:rgba(36,121,102,.09); box-shadow:inset 0 0 0 1px rgba(36,121,102,.35); }
+  .tl { font-size:12px; }
+  .tl .row, .tl .era { display:grid; grid-template-columns:62px 18px 1fr; align-items:baseline; padding:3px 0; }
+  .tl .yr { text-align:right; font-size:10px; color:var(--ink2); padding-right:4px; }
+  .tl .dot { position:relative; height:100%; }
+  .tl .dot::before { content:""; position:absolute; left:8px; top:-6px; bottom:-10px; width:1px; background:var(--rule); }
+  .tl .row .dot::after { content:""; position:absolute; left:5px; top:4px; width:7px; height:7px; border-radius:4px; background:var(--ink2); }
+  .tl .life .dot::after { background:var(--page); box-shadow:0 0 0 1.25px var(--ink2); }
+  .tl .era { padding-top:8px; } .tl .era .grp { grid-column:3; }
+  .tl b { font-weight:500; } .tl .ln { font-size:10.5px; margin-left:6px; }
+  .phone { width:300px; height:600px; border-radius:38px; background:var(--page); box-shadow:0 0 0 7px #1e2227,0 0 0 8px #444,0 10px 30px rgba(0,0,0,.2); overflow:hidden; flex:none; }
+  .phone .bar { height:70px; display:flex; align-items:flex-end; padding:0 14px 8px; font-size:13px; } .phone .bar a { color:var(--acc); }
+  .phone .pb { padding:0 18px; } .phone .h1t { font-size:32px; }
+  .phone .colo { grid-template-columns:78px 1fr; font-size:12.5px; }
+  .row2 { display:flex; gap:26px; align-items:flex-start; }
+  .cost { font-size:13px; line-height:1.5; max-width:900px; margin-top:14px; }
+</style>
+<div class="bc">
+<h2>About, the top of the page: the title from 1, the facts set as in 2</h2>
+<p class="subtitle">Most named moves into the same aligned list, so every fact reads down one edge. The timeline under it is C on the Mac, B on the phone.</p>
+<div class="row2">
+  <div class="win" style="width:700px"><div class="tb"><i></i><i></i><i></i></div><div class="body">
+    <div class="col">
+      <div class="hdr"><a>‹ Contents</a><b>About Genesis</b></div>
+      <div class="h1t">Genesis</div>
+      <div class="h1s">The First Book of Moses</div>
+      <div class="colo">
+        <div class="k">Testament</div><div>Old Testament, the Law</div>
+        <div class="k">Length</div><div class="num">50 chapters, 1,533 verses</div>
+        <div class="k">Attributed to</div><div><span class="ln">Moses</span> <small>(by tradition)</small></div>
+        <div class="k">Spans</div><div>about 4004 to 1635 BC</div>
+        <div class="sp"></div>
+        <div class="k">People</div><div><span class="ln">God</span>, <span class="ln">Jacob</span>, <span class="ln">Abraham</span>, <span class="ln">Joseph</span>, <span class="ln">Isaac</span> <small>and <span class="ln">347 more</span></small></div>
+        <div class="k">Places</div><div><span class="ln">Egypt</span>, <span class="ln">Canaan</span>, <span class="ln">Sodom</span>, <span class="ln">Beersheba</span>, <span class="ln">Bethel</span> <small>and <span class="ln">114 more</span></small></div>
+      </div>
+      <div class="lab">Timeline · 25 lives, 43 events</div>
+      <div class="strip">
+        <div class="win2" style="left:250px;width:60px"></div>
+        <div class="bar" style="left:0;width:170px;top:16px"><span>Adam</span></div>
+        <div class="bar" style="left:24px;width:166px;top:36px"><span>Seth</span></div>
+        <div class="bar" style="left:43px;width:165px;top:56px"><span>Enos</span></div>
+        <div class="bar" style="left:193px;width:95px;top:16px"><span>Noah</span></div>
+        <div class="bar" style="left:284px;width:110px;top:36px"><span>Shem</span></div>
+        <div class="bar" style="left:365px;width:32px;top:56px"><span>Abraham</span></div>
+        <div class="bar" style="left:392px;width:27px;top:76px"><span>Jacob</span></div>
+        <div class="bar" style="left:408px;width:20px;top:96px"><span>Joseph</span></div>
+        <div class="ax" style="left:0">4000 BC</div><div class="ax" style="left:110px">3500</div><div class="ax" style="left:220px">3000</div><div class="ax" style="left:330px">2500</div><div class="ax" style="left:430px">2000</div>
+      </div>
+      <div style="height:20px"></div>
+      <div class="tl">
+        <div class="era"><div class="yr"></div><div class="dot"></div><div class="grp">The Great Flood · 2348 BC, one year</div></div>
+        <div class="row"><div class="yr">2348 BC</div><div class="dot"></div><div><b>The Great Flood begins</b><span class="ln">7:6</span></div></div>
+        <div class="row"><div class="yr">2347 BC</div><div class="dot"></div><div><b>Leaving the Ark</b><span class="ln">8:15</span></div></div>
+      </div>
+    </div>
+    <div class="pane"><div class="t">Genesis</div><div class="ic"><div>Video</div><div>People</div><div>Places</div><div class="on">About</div></div></div>
+  </div></div>
+  <div class="phone"><div class="bar"><a>‹ Genesis</a></div><div class="pb">
+    <div class="h1t">Genesis</div>
+    <div class="h1s">The First Book of Moses</div>
+    <div class="colo">
+      <div class="k">Testament</div><div>Old Testament, the Law</div>
+      <div class="k">Length</div><div>50 chapters, 1,533 verses</div>
+      <div class="k">Attributed to</div><div><span class="ln">Moses</span> <small>(by tradition)</small></div>
+      <div class="k">Spans</div><div>about 4004 to 1635 BC</div>
+      <div class="sp"></div>
+      <div class="k">People</div><div><span class="ln">God</span>, <span class="ln">Jacob</span>, <span class="ln">Abraham</span>, <span class="ln">Joseph</span>, <span class="ln">Isaac</span> <small>and <span class="ln">347 more</span></small></div>
+      <div class="k">Places</div><div><span class="ln">Egypt</span>, <span class="ln">Canaan</span>, <span class="ln">Sodom</span>, <span class="ln">Beersheba</span>, <span class="ln">Bethel</span> <small>and <span class="ln">114 more</span></small></div>
+    </div>
+    <div class="lab">Timeline</div>
+    <div class="tl">
+      <div class="row"><div class="yr">4004 BC</div><div class="dot"></div><div><b>Creation of all things</b><span class="ln">1:1</span></div></div>
+      <div class="row life"><div class="yr"></div><div class="dot"></div><div><b>Adam</b> <span class="meta">lived 930 years</span></div></div>
+    </div>
+  </div></div>
+</div>
+<div class="cost"><b>Cost:</b> the same as 1, small. With dates off the Spans row goes. A book the data says nothing about, such as Romans, which has no events, keeps its title, facts and most named, and has no timeline.</div>
+</div>

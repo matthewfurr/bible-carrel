@@ -1,0 +1,22 @@
+{
+  "name": "bible-carrel-site",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "description": "The static site for Bible Carrel (Eleventy 3).",
+  "scripts": {
+    "build": "eleventy",
+    "dev": "eleventy --serve",
+    "check:links": "node scripts/check-links.mjs _site \"${SITE_PATH_PREFIX:-/}\"",
+    "check:html": "html-validate \"_site/**/*.html\"",
+    "check:contrast": "node scripts/contrast.mjs",
+    "test": "node --test scripts/*.test.mjs",
+    "check": "rm -rf _site && SITE_PATH_PREFIX=/ GUIDE_COMPLETE=1 eleventy && SITE_PATH_PREFIX=/ npm run check:links && rm -rf _site && SITE_PATH_PREFIX=/bible-carrel/ GUIDE_COMPLETE=1 eleventy && SITE_PATH_PREFIX=/bible-carrel/ npm run check:links && npm run check:html && npm run check:contrast && npm test"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "3.1.8",
+    "@11ty/eleventy-img": "7.1.1",
+    "html-validate": "11.23.0"
+  }
+}

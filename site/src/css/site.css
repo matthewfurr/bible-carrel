@@ -1,0 +1,458 @@
+/* The site's look: the Printed page, loosely. Every color, size and gap is a
+   custom property from tokens.css. The only literals here are 0, 1px hairlines,
+   percentages, font weights and the media-query breakpoints below. */
+
+/* Breakpoints (custom properties cannot be used in a media condition):
+   700px  the header's links wrap onto a second line;
+   800px  named by the front page;
+   900px  the guide's sidebar becomes a "Guide contents" disclosure above the article. */
+
+@font-face {
+  font-family: Literata;
+  font-weight: 300;
+  font-display: swap;
+  src: url(../fonts/Literata-Light.woff2) format("woff2");
+}
+@font-face {
+  font-family: Literata;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/Literata-Regular.woff2) format("woff2");
+}
+@font-face {
+  font-family: Literata;
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  src: url(../fonts/Literata-Italic.woff2) format("woff2");
+}
+@font-face {
+  font-family: Literata;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/Literata-Medium.woff2) format("woff2");
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { font-size: 100%; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper-page);
+  color: var(--ink-primary);
+  font-family: var(--serif);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+}
+
+img { max-width: 100%; height: auto; }
+
+::selection { background: var(--accent-wash); color: var(--ink-primary); }
+
+h1, h2, h3 { text-wrap: balance; }
+p, li, dd { text-wrap: pretty; }
+
+a { color: var(--accent); text-underline-offset: var(--space-1); }
+a:hover { text-decoration-thickness: calc(var(--space-1) / 2); }
+
+:focus-visible {
+  outline: calc(var(--space-1) / 2) solid var(--accent);
+  outline-offset: calc(var(--space-1) / 2);
+}
+
+/* The skip link: out of sight until focused, then in the flow above the header, clear of the wordmark. */
+.skip {
+  position: absolute;
+  left: var(--space-4);
+  top: 0;
+  transform: translateY(-100%);
+  padding: var(--space-2) var(--space-4);
+  background: var(--paper-overlay);
+  color: var(--ink-primary);
+  font: 500 var(--text-small) var(--sans);
+  border: 1px solid var(--ink-rule);
+  border-radius: var(--radius-sm);
+  z-index: 1;
+}
+.skip:focus {
+  position: relative;
+  left: auto;
+  display: table;
+  margin: var(--space-2) auto 0;
+  transform: none;
+}
+
+/* Header */
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3) var(--space-5);
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-5);
+  font-family: var(--sans);
+  font-size: var(--text-small);
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-right: auto;
+  color: var(--ink-primary);
+  font: 500 var(--text-lede) var(--serif);
+  text-decoration: none;
+}
+.brand img { width: var(--size-icon); height: var(--size-icon); }
+.site-nav { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-5); }
+.site-nav a { color: var(--ink-secondary); text-decoration: none; }
+.site-nav a:hover { color: var(--ink-primary); text-decoration: underline; }
+/* The current section: primary ink with a verdigris underline, the guide's link on every guide page. */
+.site-nav a[aria-current="page"] {
+  color: var(--ink-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: calc(var(--space-1) / 2);
+}
+
+.appearance {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--size-touch);
+  height: var(--size-touch);
+  padding: 0;
+  background: none;
+  border: 0;
+  border-radius: var(--radius-sm);
+  color: var(--ink-secondary);
+  cursor: pointer;
+}
+.appearance:hover { color: var(--ink-primary); }
+.appearance[hidden] { display: none; }
+.appearance svg { width: var(--size-glyph); height: var(--size-glyph); }
+/* The icon is the appearance a press switches to: the moon while the page is light, the sun
+   while it is dark. The selectors are the ones that show the dark picture below, so it is
+   right before any script runs. */
+.appearance .icon-sun { display: none; }
+:root[data-appearance="dark"] .appearance .icon-moon { display: none; }
+:root[data-appearance="dark"] .appearance .icon-sun { display: block; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-appearance]) .appearance .icon-moon { display: none; }
+  :root:not([data-appearance]) .appearance .icon-sun { display: block; }
+}
+
+@media (max-width: 700px) {
+  .site-nav { order: 3; width: 100%; gap: 0 var(--space-4); }
+  /* At phone widths every link that stands alone reaches the touch size; links inside prose are exempt. */
+  .site-nav a, .more a, .title-links a:not(.button), .guide-pager a, .guide-contents a {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--size-touch);
+  }
+  /* The summary stays a list item, so it keeps its disclosure triangle. */
+  .guide-contents summary { min-height: var(--size-touch); align-content: center; }
+  .guide-pager a { flex-direction: column; align-items: flex-start; justify-content: center; }
+  .guide-pager .guide-next { align-items: flex-end; }
+  .guide-contents a { display: flex; }
+}
+
+/* Footer */
+.site-footer {
+  max-width: var(--page-width);
+  margin: var(--space-8) auto 0;
+  padding: var(--space-5);
+  border-top: 1px solid var(--ink-rule);
+  color: var(--ink-secondary);
+  font: var(--text-small) / var(--leading-body) var(--sans);
+}
+.site-footer p { margin: 0; }
+
+/* A standing page: one article column at the reader's measure */
+.column {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: var(--space-7) var(--space-5) 0;
+}
+.column h1 {
+  margin: var(--space-3) 0 var(--space-2);
+  font: 300 var(--text-title) / var(--leading-tight) var(--serif);
+}
+.column h2 {
+  margin: var(--space-7) 0 var(--space-2);
+  color: var(--ink-primary);
+  font: italic 400 var(--text-heading) / var(--leading-heading) var(--serif);
+}
+.column h3 {
+  margin: var(--space-5) 0 var(--space-1);
+  font: 500 var(--text-lede) / var(--leading-tight) var(--serif);
+}
+.column p, .column ul, .column ol { margin: 0 0 var(--space-3); }
+
+/* The spaced bronze label */
+.eyebrow {
+  margin: 0;
+  color: var(--ink-verse);
+  font: 600 var(--text-label) var(--sans);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}
+
+.lede {
+  margin: 0 0 var(--space-5);
+  color: var(--ink-secondary);
+  font: italic 400 var(--text-lede) / var(--leading-lede) var(--serif);
+}
+
+/* The one filled action: Build, at the top of the front page and at its close */
+.button {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--size-touch);
+  padding: var(--space-3) var(--space-5);
+  background: var(--accent);
+  color: var(--on-accent);
+  font: 600 var(--text-small) var(--sans);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+}
+.button:hover { text-decoration: underline; }
+
+/* Code and keycaps: different kinds of text, so they have a surface */
+code, kbd, pre { font-family: var(--mono); font-size: var(--text-small); }
+code { background: var(--paper-panel); padding: 0 var(--space-1); border-radius: var(--radius-sm); }
+/* Inline code may break anywhere, so a long path never widens the page; a code block scrolls inside itself. */
+code { overflow-wrap: anywhere; }
+pre code { overflow-wrap: normal; }
+pre {
+  margin: 0 0 var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  background: var(--paper-panel);
+  border-radius: var(--radius-sm);
+  overflow-x: auto;
+}
+pre code { background: none; padding: 0; }
+/* Links inside panel surfaces use the primary ink; the accent is checked on the page and
+   the overlay only. */
+code a, pre a { color: var(--ink-primary); text-decoration: underline; }
+kbd {
+  font-family: var(--sans);
+  font-weight: 500;
+  background: var(--paper-overlay);
+  border: 1px solid var(--ink-rule);
+  border-radius: var(--radius-sm);
+  padding: 0 var(--space-1);
+  white-space: nowrap;
+}
+/* A chord (the build wraps adjacent caps in one outer kbd) is drawn as one cap holding its keys. */
+kbd.chord kbd { padding: 0; background: none; border: 0; border-radius: 0; }
+kbd.chord kbd + kbd { margin-left: calc(var(--space-1) / 2); }
+
+/* A shortcut table: rows with a hairline under each, scrolling inside itself */
+.table-scroll { overflow-x: auto; margin: var(--space-3) 0 var(--space-5); }
+.table-scroll table { border-collapse: collapse; width: 100%; font-size: var(--text-body); }
+.table-scroll th, .table-scroll td { padding: var(--space-2) var(--space-3) var(--space-2) 0; border-bottom: 1px solid var(--ink-rule); text-align: left; vertical-align: top; }
+.table-scroll th { color: var(--ink-secondary); font: 600 var(--text-label) var(--sans); letter-spacing: var(--tracking-label); text-transform: uppercase; }
+/* The cell that holds keys is set in the sans; a chord never breaks, but "and" between two may. */
+.table-scroll td:has(kbd) { font-family: var(--sans); }
+.table-scroll td:first-child:has(> code:only-child) { white-space: nowrap; }
+/* Every shortcut: each table's columns at the same positions, whichever column comes first. */
+.guide-shortcuts .table-scroll table { table-layout: fixed; }
+.guide-shortcuts .table-scroll th:first-child { width: 55%; }
+/* The one table with a third column (Where) gives its first column less and splits the rest. */
+.guide-shortcuts .table-scroll table:has(th:nth-child(3)) th:first-child { width: 40%; }
+
+/* A definition list in two aligned columns */
+.aligned {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: var(--space-3) var(--space-5);
+  margin: 0 0 var(--space-5);
+}
+.aligned dt { color: var(--ink-secondary); font-family: var(--sans); font-size: var(--text-small); text-align: right; }
+.aligned dd { margin: 0; }
+@media (max-width: 700px) {
+  .aligned { grid-template-columns: 1fr; gap: 0; }
+  .aligned dt { text-align: left; margin-top: var(--space-3); }
+}
+
+/* The Sources page: a row to each credit, a hairline between, no card */
+.credits { list-style: none; padding: 0; }
+.credits li { padding: var(--space-4) 0; border-top: 1px solid var(--ink-rule); }
+.credits li:last-child { border-bottom: 1px solid var(--ink-rule); }
+.credits p { margin: 0; }
+.credit-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0 var(--space-4); }
+.credit-name { font-weight: 500; }
+.credit-license { color: var(--ink-secondary); font: var(--text-small) / var(--leading-body) var(--sans); }
+.credit-notice { max-width: var(--measure); margin-top: var(--space-1); color: var(--ink-secondary); font-size: var(--text-small); overflow-wrap: anywhere; }
+.credit-address { margin-top: var(--space-1); font: var(--text-small) / var(--leading-body) var(--sans); overflow-wrap: anywhere; }
+
+/* A screenshot is a picture of a window: a hairline edge, rounded corners, a soft shadow */
+.shot { margin: var(--space-6) 0; }
+.shot a { display: block; border-radius: var(--radius-lg); cursor: zoom-in; }
+.shot img {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--ink-rule);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 var(--space-5) var(--space-7) var(--shadow-shot);
+}
+/* A light and a dark picture (each a link): shown by exactly the selectors that apply the dark
+   tokens in tokens.css (a chosen Dark, and System while the system is dark), so the
+   visitor's choice decides and not only the system's. Under a chosen Light,
+   or System on a light system, neither rule matches and the light picture stays. */
+.shot .shot-dark { display: none; }
+:root[data-appearance="dark"] .shot .shot-light { display: none; }
+:root[data-appearance="dark"] .shot .shot-dark { display: block; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-appearance]) .shot .shot-light { display: none; }
+  :root:not([data-appearance]) .shot .shot-dark { display: block; }
+}
+
+/* The guide: a sidebar on the panel surface, held in view and scrolling within itself, and the article at the measure.
+   Below 900px the sidebar becomes a <details> "Guide contents" above the article. */
+.guide {
+  display: grid;
+  grid-template-columns: calc(var(--space-8) * 4) minmax(0, 1fr);
+  gap: 0 var(--space-6);
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 0 var(--space-5);
+}
+.guide-contents { display: none; }
+.guide-side {
+  position: sticky;
+  top: var(--space-5);
+  max-height: calc(var(--viewport-height) - var(--space-5) * 2);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  align-self: start;
+  margin-top: var(--space-5);
+  padding: var(--space-4) var(--space-4) var(--space-3);
+  background: var(--paper-panel);
+  border-radius: var(--radius-sm);
+  font-family: var(--sans);
+  font-size: var(--text-small);
+}
+.guide-group {
+  margin: var(--space-4) 0 var(--space-1);
+  padding-left: var(--space-2);
+  color: var(--ink-verse);
+  font: 600 var(--text-label) var(--sans);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}
+.guide-group:first-child { margin-top: 0; }
+.guide-side ul, .guide-contents ul { list-style: none; margin: 0; padding: 0; }
+.guide-side li, .guide-contents li { padding: var(--space-1) var(--space-2); border-radius: var(--radius-sm); color: var(--ink-secondary); }
+.guide-side a, .guide-contents a { display: block; color: var(--ink-primary); text-decoration: none; }
+.guide-side a:hover, .guide-contents a:hover { text-decoration: underline; }
+.guide-side li:has(a[aria-current="page"]), .guide-contents li:has(a[aria-current="page"]) { background: var(--accent-wash); }
+.guide-side a[aria-current="page"], .guide-contents a[aria-current="page"] { font-weight: 500; }
+
+.guide-article { margin: 0; max-width: var(--measure); padding-left: 0; padding-right: 0; }
+.guide-article table { font-size: var(--text-body); }
+
+.guide-pager {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-3) var(--space-5);
+  margin-top: var(--space-7);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--ink-rule);
+  font-family: var(--sans);
+}
+.guide-pager a { display: flex; flex-direction: column; gap: var(--space-1); text-decoration: none; }
+.guide-pager a:hover span:last-child { text-decoration: underline; }
+.guide-next { margin-left: auto; text-align: right; }
+
+@media (max-width: 900px) {
+  .guide { display: block; }
+  .guide-side { display: none; }
+  .guide-contents {
+    display: block;
+    max-width: var(--measure);
+    margin: var(--space-4) auto 0;
+    padding: var(--space-2) var(--space-4);
+    background: var(--paper-panel);
+    border-radius: var(--radius-sm);
+    font-family: var(--sans);
+  }
+  /* The small size is set inside, so the disclosure's measure is the article's (an em of body text). */
+  .guide-contents summary, .guide-contents nav { font-size: var(--text-small); }
+  .guide-contents summary { cursor: pointer; padding: var(--space-1) 0; color: var(--ink-primary); font-weight: 500; }
+  .guide-article { margin: 0 auto; }
+}
+
+/* The front page. A title block, an optional hero, rows that alternate sides, the
+   sources and the build. A row with no picture is words alone at the reader's
+   measure; 800px is where a row stacks, words first. */
+.home > * {
+  max-width: var(--page-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-5);
+  padding-right: var(--space-5);
+}
+
+.title-block { padding-top: var(--space-7); text-align: center; }
+.title-block h1 {
+  margin: var(--space-3) 0 var(--space-3);
+  font: 300 var(--text-display) / var(--leading-tight) var(--serif);
+}
+.title-block .lede { max-width: var(--measure); margin: 0 auto var(--space-5); }
+.title-links { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: var(--space-3) var(--space-5); margin: 0; font-family: var(--sans); font-size: var(--text-small); }
+.small { margin: var(--space-4) 0 0; color: var(--ink-secondary); font-size: var(--text-small); }
+.hero-shot { margin-top: var(--space-7); }
+.hero-shot .shot { margin: 0; }
+
+.features { padding-top: var(--space-8); }
+.row { display: grid; gap: var(--space-5) var(--space-7); align-items: center; max-width: var(--measure); margin-bottom: var(--space-8); }
+.row:has(.row-shot) { grid-template-columns: minmax(0, 1fr) minmax(0, var(--share-shot)); max-width: none; }
+.row.flip:has(.row-shot) { grid-template-columns: minmax(0, var(--share-shot)) minmax(0, 1fr); }
+/* A row of words alone closes the features: a centered coda at the measure. */
+.row.coda { margin-left: auto; margin-right: auto; }
+.row.coda .eyebrow, .row.coda h2, .row.coda .more { text-align: center; }
+.row.flip .row-words { order: 2; }
+.row h2 { margin: var(--space-2) 0 var(--space-3); font: 400 var(--text-heading) / var(--leading-tight) var(--serif); }
+.row-words p { margin: 0 0 var(--space-3); }
+.row-words .eyebrow { margin: 0; }
+.row-shot .shot { margin: 0; }
+
+/* The small raised bronze figure that opens a sentence, as a verse number does */
+.verse { margin-right: var(--space-1); color: var(--ink-verse); font: 500 var(--text-label) / 0 var(--sans); }
+
+.more { font-family: var(--sans); font-size: var(--text-small); }
+
+/* Two phone pictures side by side, each about a third of the picture column */
+.row-phones { display: flex; justify-content: center; align-items: flex-start; gap: var(--space-5); }
+.row-phones .shot { width: 33%; }
+
+.facts { padding-top: var(--space-7); padding-bottom: var(--space-3); border-top: 1px solid var(--ink-rule); max-width: calc(var(--page-width) - var(--space-8) * 4); }
+.facts .eyebrow, .facts h2, .facts .more, .build { text-align: center; }
+.facts h2 { margin: var(--space-2) 0 var(--space-5); font: 300 var(--text-title) / var(--leading-tight) var(--serif); }
+.facts .aligned { margin-bottom: var(--space-4); }
+.facts small { color: var(--ink-secondary); font: var(--text-small) / var(--leading-body) var(--sans); }
+
+.build { padding-top: var(--space-7); max-width: var(--measure); }
+.build h2 { margin: var(--space-2) 0 var(--space-3); font: 300 var(--text-title) / var(--leading-tight) var(--serif); }
+.build-action { margin: var(--space-5) 0 0; }
+
+@media (max-width: 800px) {
+  .row:has(.row-shot), .row.flip:has(.row-shot) { grid-template-columns: minmax(0, 1fr); }
+  .row.flip .row-words { order: 0; }
+  .row-words { max-width: var(--measure); }
+  .row-phones .shot { width: 40%; }
+}
+@media (max-width: 700px) {
+  .title-block h1 { font-size: var(--text-title); }
+  h1, h2 { overflow-wrap: anywhere; }
+}
+
+/* A phone picture in the guide's article is held to a phone's width, not the column's */
+.shot-phone { max-width: calc(var(--space-8) * 4); }
+
+/* A heading may break a word that cannot fit the screen (large text on a narrow window), so the page never scrolls sideways. */
+h1, h2 { overflow-wrap: break-word; }

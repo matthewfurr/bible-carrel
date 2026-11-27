@@ -1,0 +1,14 @@
+{%- for group in collections.guide %}
+<p class="guide-group">{{ group.group }}</p>
+<ul>
+  {%- for entry in group.pages %}
+  {%- if not entry.exists %}
+  <li>{{ entry.title }}</li>
+  {%- elif entry.slug == currentSlug %}
+  <li><a href="{{ ('/guide/' + entry.slug + '/') | url }}" aria-current="page">{{ entry.title }}</a></li>
+  {%- else %}
+  <li><a href="{{ ('/guide/' + entry.slug + '/') | url }}">{{ entry.title }}</a></li>
+  {%- endif %}
+  {%- endfor %}
+</ul>
+{%- endfor %}

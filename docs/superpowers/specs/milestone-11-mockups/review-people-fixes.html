@@ -1,0 +1,147 @@
+<style>
+  .pg { --ink:#1d1d1f; --ink2:#6e6e73; --ink3:#a1a1a6; --rule:#d9d9de; --acc:#2f7d5b; --wash:#dff0e6; --paper:#f7f7f5;
+        font-family: -apple-system, system-ui; color: var(--ink); }
+  .win { background: var(--paper); border: 1px solid var(--rule); border-radius: 10px; padding: 18px 0; margin: 10px 0 26px; overflow: hidden; }
+  .serif { font-family: "New York", "Iowan Old Style", Georgia, serif; }
+  .t { font-size: 30px; font-weight: 600; margin: 0 0 10px; }
+  .facts { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; font-size: 18px; margin-bottom: 16px; }
+  .facts .k { font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink2); text-align: right; padding-top: 4px; }
+  .a { color: var(--acc); }
+  .para { font-size: 18px; line-height: 1.5; font-style: italic; }
+  .sec { font-size: 15px; font-weight: 600; color: var(--ink2); margin: 22px 0 8px; }
+  .chip { display: inline-block; background: var(--wash); color: var(--acc); border-radius: 99px; padding: 2px 12px; font-size: 16px; white-space: nowrap; }
+  .me { background: var(--wash); border-radius: 6px; padding: 2px 8px; font-weight: 600; color: var(--ink); }
+  .tree { position: relative; font-size: 17px; }
+  .tree .row { display: flex; justify-content: center; gap: 22px; align-items: flex-start; }
+  .col { display: flex; flex-direction: column; align-items: center; gap: 6px; min-width: 70px; position: relative; padding-top: 14px; }
+  .col::before { content: ""; position: absolute; top: 0; left: 50%; height: 12px; border-left: 1px solid var(--rule); }
+  .kids { display: flex; flex-direction: column; align-items: center; line-height: 1.35; padding-top: 6px; border-top: 0; }
+  .bar { border-top: 1px solid var(--rule); margin: 0 30px; }
+  .gp { text-align: center; color: var(--ink3); }
+  .note { font-size: 13px; color: var(--ink2); margin: 2px 0 0; }
+  .label { font-size: 12px; font-style: italic; color: var(--ink2); }
+  .two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 40px; padding: 0 32px; }
+  .one { max-width: 640px; margin: 0 auto; padding: 0 32px; }
+  .wide { padding: 0 32px; }
+  .vl { font-size: 17px; display: grid; grid-template-columns: 2.2em 1fr; gap: 3px 10px; }
+  .vl b { font-weight: 600; text-align: right; color: var(--ink); }
+  .caption { font-size: 14px; color: var(--ink2); }
+  .sel { user-select: text; }
+  .hl { background: #cfe3ff; }
+  .tier { margin-top: 18px; }
+</style>
+
+<div class="pg">
+<h2>People: the fixes you asked for</h2>
+<p class="subtitle">Everything below is at your 18 pt page size. Three of your points have one answer and need no choice: <b>Fewer</b> becomes a chip like "7 siblings", <b>the colon row goes</b>, and <b>the page's text can be selected</b> (the dictionary, the facts, the verse lines' words). Two things are yours to choose.</p>
+
+<h3>1. Where David's other partners go (no more colons)</h3>
+<p class="subtitle">Today "4 more" opens into "Eglah: Ithream · Haggith: …", which reads as a sentence, not a family. Both options below draw them as the tree draws everyone else.</p>
+
+<div class="options">
+ <div class="option" data-choice="partners-a" onclick="toggleSelect(this)">
+  <div class="letter">A</div>
+  <div class="content">
+   <h3>A second row of the tree</h3>
+   <p>"4 more" opens into a second row of partners under the first, each with their children under them, on the same lines. "Fewer ⌃" is a chip at the row's end. Nothing ever scrolls sideways.</p>
+   <div class="win"><div class="wide tree">
+     <div class="row"><span class="chip">7 siblings ⌄</span><span class="me">David</span><span class="a">Abigail</span><span class="a">Zeruiah</span></div>
+     <div class="bar" style="margin-top:10px"></div>
+     <div class="row">
+       <div class="col"><span class="a">Abigail</span><div class="kids a">Daniel</div></div>
+       <div class="col"><span class="a">Abital</span><div class="kids a">Shephatiah</div></div>
+       <div class="col"><span class="a">Ahinoam</span><div class="kids a">Amnon</div></div>
+       <div class="col"><span class="a">Bathsheba</span><div class="kids a">Nathan<br>Shobab<br>Solomon<br>Shammua</div></div>
+       <div class="col"><span class="label">Mother not named</span><div class="kids"><span class="chip">11 ⌄</span></div></div>
+     </div>
+     <div class="bar tier"></div>
+     <div class="row">
+       <div class="col"><span class="a">Eglah</span><div class="kids a">Ithream</div></div>
+       <div class="col"><span class="a">Haggith</span><div class="kids a">Adonijah</div></div>
+       <div class="col"><span class="a">Maacah</span><div class="kids a">Absalom</div></div>
+       <div class="col"><span class="a">Michal</span><div class="kids caption">no children</div></div>
+       <div class="col" style="justify-content:center"><span class="chip">Fewer ⌃</span></div>
+     </div>
+   </div></div>
+   <p><b>Cost:</b> the tree grows taller when opened, not wider.</p>
+  </div>
+ </div>
+
+ <div class="option" data-choice="partners-b" onclick="toggleSelect(this)">
+  <div class="letter">B</div>
+  <div class="content">
+   <h3>No fold while the row fits; A only when it doesn't</h3>
+   <p>With the page using a wide window (choice 2), all eight partners sit on one row and there's no "4 more" at all. In a narrow window it folds, and opens as A does.</p>
+   <div class="win"><div class="wide tree" style="font-size:15px">
+     <div class="row"><span class="chip">7 siblings ⌄</span><span class="me">David</span><span class="a">Abigail</span><span class="a">Zeruiah</span></div>
+     <div class="bar" style="margin-top:10px"></div>
+     <div class="row" style="gap:14px">
+       <div class="col"><span class="a">Abigail</span><div class="kids a">Daniel</div></div>
+       <div class="col"><span class="a">Abital</span><div class="kids a">Shephatiah</div></div>
+       <div class="col"><span class="a">Ahinoam</span><div class="kids a">Amnon</div></div>
+       <div class="col"><span class="a">Bathsheba</span><div class="kids a">Nathan<br>Shobab<br>Solomon<br>Shammua</div></div>
+       <div class="col"><span class="a">Eglah</span><div class="kids a">Ithream</div></div>
+       <div class="col"><span class="a">Haggith</span><div class="kids a">Adonijah</div></div>
+       <div class="col"><span class="a">Maacah</span><div class="kids a">Absalom</div></div>
+       <div class="col"><span class="a">Michal</span></div>
+       <div class="col"><span class="label">Mother not named</span><div class="kids"><span class="chip">11 ⌄</span></div></div>
+     </div>
+   </div></div>
+   <p><b>Cost:</b> none beyond A; it's A plus using the width you have.</p>
+  </div>
+ </div>
+</div>
+
+<h3>2. Using a wide window</h3>
+<p class="subtitle">Today the page stops at about 470 pt, so half your window is empty. Text at 18 pt also needs a wider line than that.</p>
+
+<div class="options">
+ <div class="option" data-choice="wide-a" onclick="toggleSelect(this)">
+  <div class="letter">A</div>
+  <div class="content">
+   <h3>One column at your reading width, centred; the tree uses the whole width</h3>
+   <p>The text keeps the reader's own column width (your Text &amp; Layout setting), centred as the reader is. The family tree, being a drawing, spreads across the full page width, so it folds far less.</p>
+   <div class="win">
+     <div class="one">
+       <div class="t serif">David</div>
+       <div class="facts"><span class="k">Father</span><span class="a">Jesse</span><span class="k">Lived</span><span>about 1085 to 1015 BC</span><span class="k">Named</span><span>18 verses here, 896 in 28 books</span></div>
+       <div class="para serif">Beloved, the eighth and youngest son of Jesse, a citizen of Bethlehem. His father seems to have been a man in humble life…</div>
+       <div class="a" style="margin-top:6px">Show more</div>
+     </div>
+     <div class="wide"><div class="sec">Family</div><div class="tree" style="font-size:15px"><div class="row"><span class="chip">7 siblings ⌄</span><span class="me">David</span><span class="a">Abigail</span><span class="a">Zeruiah</span></div><div class="bar" style="margin-top:8px"></div><div class="row" style="gap:12px"><div class="col a">Abigail</div><div class="col a">Abital</div><div class="col a">Ahinoam</div><div class="col a">Bathsheba</div><div class="col a">Eglah</div><div class="col a">Haggith</div><div class="col a">Maacah</div><div class="col a">Michal</div><div class="col label">Mother not named</div></div></div></div>
+     <div class="one"><div class="sec">In 2 Kings · 18 verses</div><div class="vl"><b>8</b><span class="a">19, 24</span><b>9</b><span class="a">28</span><b>11</b><span class="a">10</span></div></div>
+   </div>
+   <p><b>Cost:</b> on a very wide window there's still space either side of the text, as in the reader. Little to build.</p>
+  </div>
+ </div>
+
+ <div class="option" data-choice="wide-b" onclick="toggleSelect(this)">
+  <div class="letter">B</div>
+  <div class="content">
+   <h3>Two columns when wide: reading on the left, family and verses on the right</h3>
+   <p>Past about twice the reading width, the head and dictionary sit on the left and the family tree and verse lines on the right, each scrolling with the page. Narrower, it's one column as A.</p>
+   <div class="win"><div class="two">
+     <div>
+       <div class="t serif">David</div>
+       <div class="facts"><span class="k">Father</span><span class="a">Jesse</span><span class="k">Lived</span><span>about 1085 to 1015 BC</span><span class="k">Named</span><span>18 verses here, 896 in 28 books</span><span class="k">Family</span><span>8 partners, 21 children</span></div>
+       <div class="para serif">Beloved, the eighth and youngest son of Jesse, a citizen of Bethlehem. His father seems to have been a man in humble life. His mother's name is not recorded…</div>
+       <div class="a" style="margin-top:6px">Show more</div>
+     </div>
+     <div>
+       <div class="sec" style="margin-top:4px">Family</div>
+       <div class="tree" style="font-size:14px"><div class="row"><span class="chip" style="font-size:13px">7 siblings ⌄</span><span class="me">David</span><span class="a">Zeruiah</span></div><div class="bar" style="margin-top:8px"></div><div class="row" style="gap:10px"><div class="col a">Abigail</div><div class="col a">Abital</div><div class="col a">Ahinoam</div><div class="col a">Bathsheba</div><div class="col"><span class="chip" style="font-size:13px">4 more ⌄</span></div></div></div>
+       <div class="sec">In 2 Kings · 18 verses</div>
+       <div class="vl"><b>8</b><span class="a">19, 24</span><b>9</b><span class="a">28</span><b>11</b><span class="a">10</span></div>
+     </div>
+   </div></div>
+   <p><b>Cost:</b> each column is narrower, so David's tree folds more than in A; a second layout to build and test.</p>
+  </div>
+ </div>
+</div>
+
+<h3>Your text size</h3>
+<p class="subtitle">The page's text follows your reading size, as the home page now does: names, facts, the dictionary and the verse lines at 18 pt; small labels (FATHER, section heads, the source line) step down with it. The People list on the left follows too. Same change on About and Places, since they share these parts.</p>
+
+<h3>Selecting text</h3>
+<div class="win"><div class="one"><div class="para serif sel">Beloved, the eighth and youngest son of Jesse, <span class="hl">a citizen of Bethlehem</span>. His father seems to have been a man in humble life…</div><p class="note">The dictionary, the facts' plain values and verse text can be selected and copied with ⌘C. Names that are links stay links.</p></div></div>
+</div>

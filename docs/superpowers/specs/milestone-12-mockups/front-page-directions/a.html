@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mockup A · A page of the book</title>
+<script>if (location.search.includes('dark')) document.documentElement.dataset.appearance = 'dark'</script>
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="mock.css">
+<style>
+/* A: the front page is set as a book. A title page, then one column at the measure.
+   Each feature is a chapter: an italic heading, a drop numeral in place of verse 1,
+   and its sentences running on as numbered verses. Pictures break out wider than the text. */
+.progress { position: sticky; top: 57px; z-index: 2; height: 2px; background: var(--accent); transform-origin: left; transform: scaleX(0.28); }
+@supports (animation-timeline: scroll()) {
+  .progress { animation: grow linear both; animation-timeline: scroll(root); }
+  @keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+}
+.book { padding: var(--space-8) var(--space-5) 0; }
+.chapter { max-width: var(--measure); margin: 0 auto var(--space-8); }
+.chapter h2 { margin-bottom: var(--space-3); color: var(--ink-secondary); font: italic 400 var(--text-heading) / var(--leading-tight) var(--serif); }
+.chapter p { margin: 0; }
+.numeral { float: left; margin: var(--space-1) var(--space-3) 0 0; color: var(--ink-verse); font: 300 var(--text-display) / 0.8 var(--serif); }
+.chapter .shot { width: min(var(--wide), 100vw - var(--space-5) * 2); margin: var(--space-6) 0 0 50%; transform: translateX(-50%); }
+.chapter .phones { display: flex; justify-content: center; gap: var(--space-6); margin-top: var(--space-6); }
+.chapter .phones .shot { width: 14rem; margin: 0; transform: none; }
+.chapter .more { clear: both; margin-top: var(--space-5); }
+.colophon dl { display: grid; grid-template-columns: max-content 1fr; gap: var(--space-2) var(--space-5); margin: var(--space-4) 0 0; }
+.colophon dt { color: var(--ink-secondary); font: var(--text-small) / var(--leading-body) var(--sans); padding-top: var(--space-1); }
+.colophon dd { margin: 0; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="#"><img src="/img/icon-64.png" alt="">Bible Carrel</a>
+  <nav class="site-nav"><a class="first" href="#">Build it</a><a href="#">Guide</a><a href="#">Sources</a><a href="#">Roadmap</a></nav>
+  <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+</header>
+<div class="progress"></div>
+
+<div class="title-page">
+  <p class="label">For Mac and iPhone</p>
+  <h1>Bible Carrel</h1>
+  <p class="sub">A quiet desk for reading through the Bible</p>
+  <p class="links"><a class="button" href="#">Build it from source</a><a href="#">Read the guide ›</a></p>
+  <p class="small">Not in the App Store and not downloadable. You build it yourself from its source, with Xcode.</p>
+</div>
+<div class="hero"><figure class="shot"><img src="/img/KEzPTAcj6D-1600.png" alt="The reader on John 1"></figure></div>
+
+<main class="book">
+  <section class="chapter">
+    <h2>It reads like a printed Bible</h2>
+    <p><span class="numeral">1</span>One chapter at a time, set like a printed page as far as each translation's text allows: paragraphs that indent and poetry that hangs under its first word. <sup class="verse">2</sup>Four page styles, Printed, Lectern, Study and Classic, each in light, sepia and dark.</p>
+    <figure class="shot"><img src="/img/mBvSMODKJM-1600.png" alt="Psalm 23 in the Lectern style"></figure>
+    <p class="more"><a href="#">How the reader works ›</a></p>
+  </section>
+
+  <section class="chapter">
+    <h2>Pencil in the margin</h2>
+    <p><span class="numeral">2</span>Highlight a phrase, not only a verse, in colors you choose. <sup class="verse">2</sup>Write a note beside it, or bookmark the verse. <sup class="verse">3</sup>Every delete can be undone.</p>
+    <figure class="shot"><img src="/img/KEzPTAcj6D-1600.png" alt="The markup menu under John 1:5"></figure>
+    <p class="more"><a href="#">Highlights and bookmarks ›</a></p>
+  </section>
+
+  <section class="chapter">
+    <h2>People, places and each book's story</h2>
+    <p><span class="numeral">3</span>Each of the 66 books opens to the people it names, with a family tree on the Mac. <sup class="verse">2</sup>A map shows its places, and a timeline sets its events in the order of history.</p>
+    <figure class="shot"><img src="/img/J74fnIOqtY-1600.png" alt="The People view for Genesis"></figure>
+    <p class="more"><a href="#">The Library ›</a></p>
+  </section>
+
+  <section class="chapter">
+    <h2>One field finds anything</h2>
+    <p><span class="numeral">4</span>⌘K on the Mac, and the search button on the iPhone, search the Bible, your notes, highlights, bookmarks and conversations at once. <sup class="verse">2</sup>On the Mac the same field goes to a passage and runs commands.</p>
+    <figure class="shot"><img src="/img/UZ96JVKPvq-1600.png" alt="Search over John 1"></figure>
+    <p class="more"><a href="#">Search and ⌘K ›</a></p>
+  </section>
+
+  <section class="chapter">
+    <h2>The same desk in your pocket</h2>
+    <p><span class="numeral">5</span>The iPhone app is the same reader, laid out for the phone. <sup class="verse">2</sup>With iCloud sync set up, it shares your notes with the Mac.</p>
+    <div class="phones">
+      <figure class="shot"><img src="/img/BkAVepJ7y5-800.png" alt="The iPhone reader"></figure>
+      <figure class="shot"><img src="/img/dLBh2FC-rB-800.png" alt="The iPhone Library"></figure>
+    </div>
+    <p class="more"><a href="#">The iPhone app ›</a></p>
+  </section>
+
+  <section class="chapter colophon">
+    <h2>Where it comes from</h2>
+    <dl>
+      <dt>Bible text</dt><dd>World English Bible, King James Version, American Standard Version and five more</dd>
+      <dt>Section headings</dt><dd>Berean Standard Bible</dd>
+      <dt>Cross-references</dt><dd>OpenBible.info</dd>
+      <dt>People and places</dt><dd>Theographic Bible Metadata</dd>
+      <dt>Typefaces</dt><dd>Literata and Source Serif 4</dd>
+    </dl>
+    <p class="more"><a href="#">Every source, with its notice and license ›</a></p>
+  </section>
+</main>
+
+<section class="close">
+  <h2>Build it yourself.</h2>
+  <p>The source is here, and the app builds with Xcode.</p>
+  <a class="button" href="#">Build it from source</a>
+</section>
+<footer class="site-footer">A carrel is a desk for one in a library. · GPL-3.0 · Sources</footer>
+</body>
+</html>

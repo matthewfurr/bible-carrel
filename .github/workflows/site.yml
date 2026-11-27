@@ -1,0 +1,68 @@
+# Not run here: the Swift test that keeps the credits file equal to the app needs macOS and the package.
+name: Site
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'site/**'
+      - '.github/workflows/site.yml'
+      - 'LICENSE'
+      - 'Packages/ScriptureKit/Sources/ScriptureUI/Fonts/OFL-*.txt'
+      - 'Packages/ScriptureKit/Sources/ScriptureUI/Licenses/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deploy at a time; a newer run waits rather than cancelling a deploy in progress.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: site
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+      - id: pages
+        uses: actions/configure-pages@v6
+      - run: npm ci
+      # base_path is "/repo-name" for a project site and "" for a user site; the prefix needs exactly one trailing slash.
+      - name: Build
+        env:
+          BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          GUIDE_COMPLETE: '1'
+          SITE_REPO_URL: ${{ github.server_url }}/${{ github.repository }}
+        run: |
+          SITE_PATH_PREFIX="${BASE_PATH%/}/"
+          echo "SITE_PATH_PREFIX=$SITE_PATH_PREFIX" >> "$GITHUB_ENV"
+          SITE_PATH_PREFIX="$SITE_PATH_PREFIX" npm run build
+      # Not `npm run check`: that rebuilds at fixed prefixes and would replace the build being deployed.
+      - run: npm run check:links
+      - run: npm run check:html
+      - run: npm run check:contrast
+      - run: npm test
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: site/_site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

@@ -1,0 +1,123 @@
+{
+  "version": "KJV",
+  "ID": "NT:MAT(KJV)",
+  "name": "Matthew",
+  "text": [
+    {
+      "ID": "NT:MAT.1",
+      "name": "Matthew 1",
+      "text": [
+        {
+          "ID": "1",
+          "text": "KJV chapter one verse one."
+        },
+        {
+          "ID": "2",
+          "text": "KJV chapter one verse two."
+        },
+        {
+          "ID": "3",
+          "text": "KJV chapter one verse three."
+        }
+      ]
+    },
+    {
+      "ID": "NT:MAT.2",
+      "name": "Matthew 2",
+      "text": [
+        {
+          "ID": "1",
+          "text": "KJV chapter two verse one."
+        },
+        {
+          "ID": "2",
+          "text": "KJV chapter two verse two."
+        },
+        {
+          "ID": "3",
+          "text": "KJV chapter two verse three."
+        }
+      ]
+    },
+    {
+      "ID": "NT:MAT.3",
+      "name": "Matthew 3",
+      "text": [
+        {
+          "ID": "1",
+          "text": "KJV chapter three verse one."
+        },
+        {
+          "ID": "2",
+          "text": "KJV chapter three verse two."
+        },
+        {
+          "ID": "3",
+          "text": "KJV chapter three verse three."
+        }
+      ]
+    },
+    {
+      "ID": "NT:MAT.4",
+      "name": "Matthew 4",
+      "text": [
+        {
+          "ID": "1",
+          "text": "Then was Jesus led up of the Spirit into the wilderness."
+        },
+        {
+          "ID": "2",
+          "text": "And when he had fasted forty days and forty nights, he was afterward an hungred."
+        },
+        {
+          "ID": "3",
+          "text": "And when the tempter came to him, he said."
+        }
+      ]
+    },
+    {
+      "ID": "NT:MAT.5",
+      "name": "Matthew 5",
+      "text": [
+        {
+          "ID": "1",
+          "text": "And seeing the multitudes, he went up into a mountain."
+        },
+        {
+          "ID": "2",
+          "text": "And he opened his mouth, and taught them, saying,"
+        },
+        {
+          "ID": "3",
+          "text": "Blessed are the poor in spirit: for theirs is the kingdom of heaven."
+        },
+        {
+          "ID": "4",
+          "text": "Blessed are they that mourn: for they shall be comforted."
+        },
+        {
+          "ID": "5",
+          "text": "Blessed are the meek: for they shall inherit the earth."
+        }
+      ]
+    },
+    {
+      "ID": "NT:MAT.6",
+      "name": "Matthew 6",
+      "text": [
+        {
+          "ID": "1",
+          "text": "Take heed that ye do not your alms before men."
+        },
+        {
+          "ID": "2",
+          "text": "Therefore when thou doest thine alms, do not sound a trumpet."
+        },
+        {
+          "ID": "3",
+          "text": "But when thou doest alms, let not thy left hand know."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,276 @@
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;0,7..72,500;1,7..72,400&display=swap" rel="stylesheet">
+<style>
+  .bc { --page:#F5F7F9; --panel:#EDF1F4; --over:#FAFCFE; --ink:#192028; --ink2:#5D646C; --ink3:#8D9399; --rule:#D3D8DC; --verse:#7A5320; --acc:#247966; --wash:#D1F0E6;
+        font-family:-apple-system,"SF Pro Text",sans-serif; color:var(--ink); }
+  .bc .serif { font-family:"Literata",Georgia,serif; }
+  .win { background:var(--page); border-radius:12px; overflow:hidden; box-shadow:0 0 0 1px #c9ced3,0 10px 30px rgba(0,0,0,.16); display:flex; flex-direction:column; }
+  .tb { height:30px; display:flex; align-items:center; gap:6px; padding:0 12px; flex:none; }
+  .tb i { width:10px; height:10px; border-radius:5px; background:#d5d9dd; }
+  .body { display:flex; min-height:0; }
+  .col { flex:1; padding:6px 26px 22px; min-width:0; }
+  .pane { width:200px; flex:none; background:var(--panel); padding:16px 12px; text-align:center; }
+  .pane .t { font-family:"Literata",Georgia,serif; font-weight:300; font-size:22px; }
+  .pane .ic { display:flex; justify-content:space-around; margin:12px 0; font-size:8.5px; color:var(--ink2); }
+  .pane .ic div::before { content:""; display:block; width:24px; height:24px; margin:0 auto 3px; border-radius:9px; border:1.25px solid var(--acc); }
+  .pane .ic div.on::before { background:var(--wash); }
+  .pane .g { display:grid; grid-template-columns:repeat(5,28px); gap:5px; justify-content:center; font-family:"Literata",Georgia,serif; font-size:11px; color:var(--ink2); }
+  .pane .g span { height:22px; display:flex; align-items:center; justify-content:center; }
+  .hdr { display:flex; align-items:baseline; gap:12px; padding:4px 0 8px; border-bottom:1px solid var(--rule); margin-bottom:14px; }
+  .hdr a { color:var(--acc); font-size:12px; font-weight:500; }
+  .hdr b { font-family:"Literata",Georgia,serif; font-weight:400; font-size:17px; }
+  .lab { font-size:9.5px; font-weight:600; letter-spacing:.07em; color:var(--ink2); text-transform:uppercase; margin:16px 0 6px; }
+  .grp { font-size:8.5px; font-weight:600; letter-spacing:.12em; color:var(--verse); text-transform:uppercase; }
+  .ln { color:var(--acc); }
+  .foot { font-size:10px; color:var(--ink2); }
+  .meta { font-size:10.5px; color:var(--ink2); }
+  .num { font-variant-numeric:tabular-nums; }
+  /* head 1 */
+  .h1t { font-family:"Literata",Georgia,serif; font-weight:300; font-size:38px; line-height:1.05; }
+  .h1s { font-family:"Literata",Georgia,serif; font-style:italic; font-size:13px; color:var(--ink2); margin-top:3px; }
+  .h1f { font-size:12.5px; color:var(--ink2); margin-top:10px; line-height:1.5; }
+  .named { display:grid; grid-template-columns:62px 1fr; gap:4px 10px; font-size:12.5px; line-height:1.45; }
+  .named .k { font-size:9.5px; font-weight:600; letter-spacing:.07em; color:var(--ink2); text-transform:uppercase; padding-top:2px; }
+  .named small { color:var(--ink3); font-size:10px; }
+  /* head 2 */
+  .colo { display:grid; grid-template-columns:110px 1fr; gap:7px 14px; font-size:12.5px; }
+  .colo .k { text-align:right; font-size:9.5px; font-weight:600; letter-spacing:.07em; color:var(--ink2); text-transform:uppercase; padding-top:2px; }
+  /* timeline B: rail */
+  .tl { position:relative; font-size:12px; }
+  .tl .row { display:grid; grid-template-columns:62px 18px 1fr; align-items:baseline; padding:3px 0; }
+  .tl .yr { text-align:right; font-size:10px; color:var(--ink2); font-variant-numeric:tabular-nums; padding-right:4px; }
+  .tl .dot { position:relative; height:100%; }
+  .tl .dot::before { content:""; position:absolute; left:8px; top:-6px; bottom:-10px; width:1px; background:var(--rule); }
+  .tl .dot::after { content:""; position:absolute; left:5px; top:4px; width:7px; height:7px; border-radius:4px; background:var(--ink2); }
+  .tl .life .dot::after { background:var(--page); box-shadow:0 0 0 1.25px var(--ink2); }
+  .tl .what b { font-weight:500; }
+  .tl .what .ln { font-size:10.5px; margin-left:6px; }
+  .tl .what .meta { display:block; margin-top:1px; }
+  .tl .span { display:inline-block; height:3px; border-radius:2px; background:var(--ink3); vertical-align:middle; margin-left:6px; }
+  .tl .era { display:grid; grid-template-columns:62px 18px 1fr; padding:9px 0 3px; }
+  .tl .era .grp { grid-column:3; }
+  .tl .era .dot::after { display:none; }
+  .tl .gap { display:grid; grid-template-columns:62px 18px 1fr; padding:2px 0; }
+  .tl .gap .t { grid-column:3; font-size:10px; color:var(--ink3); font-style:italic; }
+  .tl .gap .dot::after { display:none; }
+  .tl .gap .dot::before { background:repeating-linear-gradient(var(--rule) 0 2px, transparent 2px 5px); }
+  /* timeline A: proportional lanes */
+  .pa { position:relative; height:470px; font-size:11px; }
+  .pa .axis { position:absolute; left:58px; top:0; bottom:0; width:1px; background:var(--rule); }
+  .pa .tick { position:absolute; left:0; width:52px; text-align:right; font-size:9.5px; color:var(--ink2); font-variant-numeric:tabular-nums; }
+  .pa .bar { position:absolute; width:5px; border-radius:3px; background:#AEB4BA; }
+  .pa .bar span { position:absolute; top:-1px; left:9px; white-space:nowrap; font-size:9.5px; color:var(--ink2); }
+  .pa .ev { position:absolute; left:54px; display:flex; align-items:center; gap:0; }
+  .pa .ev i { width:9px; height:9px; border-radius:5px; background:var(--ink2); box-shadow:0 0 0 2px var(--page); }
+  .pa .ev .lead { height:1px; background:var(--rule); }
+  .pa .ev b { font-weight:500; white-space:nowrap; padding-left:6px; }
+  .pa .ev b em { font-style:normal; color:var(--acc); font-weight:400; font-size:10px; margin-left:5px; }
+  .pa .flood { position:absolute; left:48px; width:21px; border-radius:4px; background:var(--wash); }
+  /* timeline C: horizontal strip */
+  .strip { position:relative; height:150px; border-bottom:1px solid var(--rule); margin:4px 0 2px; }
+  .strip .bar { position:absolute; height:5px; border-radius:3px; background:#AEB4BA; }
+  .strip .bar.on { background:var(--acc); }
+  .strip .bar span { position:absolute; left:0; top:-12px; font-size:8.5px; color:var(--ink2); white-space:nowrap; }
+  .strip .mo { position:absolute; bottom:0; width:1px; height:10px; background:var(--ink2); }
+  .strip .ax { position:absolute; bottom:-15px; font-size:9px; color:var(--ink2); font-variant-numeric:tabular-nums; transform:translateX(-50%); }
+  .strip .win2 { position:absolute; top:0; bottom:0; border-radius:4px; background:rgba(36,121,102,.09); box-shadow:inset 0 0 0 1px rgba(36,121,102,.35); }
+  /* phone */
+  .phone { width:300px; height:600px; border-radius:38px; background:var(--page); box-shadow:0 0 0 7px #1e2227,0 0 0 8px #444,0 10px 30px rgba(0,0,0,.2); overflow:hidden; position:relative; flex:none; }
+  .phone .bar { height:70px; display:flex; align-items:flex-end; padding:0 14px 8px; font-size:13px; }
+  .phone .bar a { color:var(--acc); }
+  .phone .pbody { padding:0 18px; }
+  .phone .h1t { font-size:32px; }
+  .row2 { display:flex; gap:22px; align-items:flex-start; }
+  .cost { font-size:12.5px; line-height:1.5; margin-top:8px; }
+  .cost b { font-weight:600; }
+  .note { font-size:13px; line-height:1.5; max-width:880px; }
+  .option .content { min-width:0; }
+  .options { gap:18px; }
+</style>
+
+<div class="bc">
+<h2>A book's About page: the head and the timeline</h2>
+<p class="subtitle">Genesis, with its real data. Two choices on this page: how the top of the page reads (1 or 2), and which timeline (A, B or C). Click one of each, or tell me in the terminal.</p>
+
+<div class="note" style="margin:6px 0 18px">
+<b>The same in every option:</b> events in the order they happened (your answer). The "Birth of / Lifetime of / Death of" entries fold into one lifetime each, so Genesis's 116 entries come down to 25 lifetimes and 43 events. Eras the data already names (The Great Flood, Sojourn in Canaan and Egypt, Holy Week, the missionary journeys) group their events. "Death of Moses" loses Genesis 34:1, an error in Theographic's own data. With Show dates off: the same order, with no years and no scale.<br>
+<b>What all of this needs from the data:</b> each event's length and era. Theographic has both for every event; today's import leaves them out. That means a rebuilt Bible database, not your notes, so nothing you have stored changes.
+</div>
+
+<h3 style="margin-bottom:4px">The top of the page</h3>
+<div class="options">
+  <div class="option" data-choice="head-1" onclick="toggleSelect(this)">
+    <div class="letter">1</div>
+    <div class="content">
+      <h3>Title page</h3>
+      <div class="win" style="width:640px;margin:8px 0"><div class="tb"><i></i><i></i><i></i></div><div class="body">
+        <div class="col">
+          <div class="hdr"><a>‹ Contents</a><b>About Genesis</b></div>
+          <div class="h1t">Genesis</div>
+          <div class="h1s">The First Book of Moses</div>
+          <div class="h1f">Old Testament · The Law · <span class="num">50</span> chapters · <span class="num">1,533</span> verses<br>Traditionally attributed to <span class="ln">Moses</span> · about 4004 to 1635 BC</div>
+          <div class="lab">Most named</div>
+          <div class="named">
+            <div class="k">People</div><div><span class="ln">God</span>, <span class="ln">Jacob</span>, <span class="ln">Abraham</span>, <span class="ln">Joseph</span>, <span class="ln">Isaac</span> <small>· and <span class="ln">347 more</span></small></div>
+            <div class="k">Places</div><div><span class="ln">Egypt</span>, <span class="ln">Canaan</span>, <span class="ln">Sodom</span>, <span class="ln">Beersheba</span>, <span class="ln">Bethel</span> <small>· and <span class="ln">114 more</span></small></div>
+          </div>
+          <div class="lab">Timeline</div>
+          <div class="meta">(the timeline you choose below)</div>
+        </div>
+        <div class="pane"><div class="t">Genesis</div><div class="ic"><div>Video</div><div>People</div><div>Places</div><div class="on">About</div></div></div>
+      </div></div>
+      <div class="cost"><b>What it is:</b> the book introduced the way the page introduces it: name, subtitle, one line of facts. The five most-named people and places are links into People and Places, and "347 more" opens People.<br><b>Cost:</b> small. One new query (most named), the rest is layout.</div>
+    </div>
+  </div>
+  <div class="option" data-choice="head-2" onclick="toggleSelect(this)">
+    <div class="letter">2</div>
+    <div class="content">
+      <h3>Colophon</h3>
+      <div class="win" style="width:640px;margin:8px 0"><div class="tb"><i></i><i></i><i></i></div><div class="body">
+        <div class="col">
+          <div class="hdr"><a>‹ Contents</a><b>About Genesis</b></div>
+          <div class="colo">
+            <div class="k">Testament</div><div>Old Testament, the Law</div>
+            <div class="k">Length</div><div class="num">50 chapters, 1,533 verses</div>
+            <div class="k">Attributed to</div><div><span class="ln">Moses</span> <span class="meta">(by tradition)</span></div>
+            <div class="k">Spans</div><div>about 4004 to 1635 BC</div>
+            <div class="k">Named</div><div><span class="ln">352 people</span>, <span class="ln">119 places</span></div>
+          </div>
+          <div class="lab">Timeline</div>
+          <div class="meta">(the timeline you choose below)</div>
+        </div>
+        <div class="pane"><div class="t">Genesis</div><div class="ic"><div>Video</div><div>People</div><div>Places</div><div class="on">About</div></div></div>
+      </div></div>
+      <div class="cost"><b>What it is:</b> today's rows, set properly: labels in small capitals aligned on one edge, values beside them, so the eye runs down one line. No most-named.<br><b>Cost:</b> smallest. Layout only.</div>
+    </div>
+  </div>
+</div>
+
+<h3 style="margin:26px 0 4px">The timeline</h3>
+<div class="options">
+
+  <div class="option" data-choice="timeline-a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>To scale, vertical on both</h3>
+      <div class="row2">
+        <div class="win" style="width:520px"><div class="tb"><i></i><i></i><i></i></div><div class="col" style="padding-top:10px">
+          <div class="lab" style="margin-top:0">Timeline · 2400 to 1900 BC</div>
+          <div class="pa">
+            <div class="axis"></div>
+            <div class="tick" style="top:0">2400 BC</div><div class="tick" style="top:90px">2300</div><div class="tick" style="top:180px">2200</div><div class="tick" style="top:270px">2100</div><div class="tick" style="top:360px">2000</div><div class="tick" style="top:450px">1900</div>
+            <div class="flood" style="top:94px;height:10px"></div>
+            <div class="bar" style="left:76px;top:0;height:470px"><span>Shem</span></div>
+            <div class="bar" style="left:90px;top:0;height:362px"><span style="top:30px">Noah</span></div>
+            <div class="bar" style="left:104px;top:98px;height:372px"><span>Arphaxad</span></div>
+            <div class="bar" style="left:118px;top:130px;height:340px"><span>Salah</span></div>
+            <div class="bar" style="left:132px;top:157px;height:313px"><span>Eber</span></div>
+            <div class="bar" style="left:146px;top:187px;height:215px"><span>Peleg</span></div>
+            <div class="bar" style="left:160px;top:248px;height:133px"><span>Nahor</span></div>
+            <div class="bar" style="left:174px;top:275px;height:195px"><span>Terah</span></div>
+            <div class="bar" style="left:188px;top:364px;height:106px"><span>Abraham</span></div>
+            <div class="ev" style="top:89px"><i></i><div class="lead" style="width:150px"></div><b>The Great Flood<em>7:6</em></b></div>
+            <div class="ev" style="top:183px"><i></i><div class="lead" style="width:150px"></div><b>Tower of Babel<em>11:1</em></b></div>
+            <div class="ev" style="top:212px"><i></i><div class="lead" style="width:150px"></div><b>Nimrod's kingdom begins<em>10:8</em></b></div>
+            <div class="ev" style="top:430px"><i></i><div class="lead" style="width:150px"></div><b>Abraham enters Canaan<em>11:31</em></b></div>
+            <div class="ev" style="top:448px"><i></i><div class="lead" style="width:150px"></div><b>Abrahamic Covenant<em>12:1</em></b></div>
+          </div>
+        </div></div>
+        <div class="phone"><div class="bar"><a>‹ Genesis</a></div><div class="pbody">
+          <div class="lab" style="margin-top:4px">Timeline · 2400 to 1900 BC</div>
+          <div class="pa" style="height:440px;transform:scale(.86);transform-origin:top left;width:300px">
+            <div class="axis"></div>
+            <div class="tick" style="top:0">2400 BC</div><div class="tick" style="top:180px">2200</div><div class="tick" style="top:360px">2000</div>
+            <div class="bar" style="left:72px;top:0;height:470px"></div><div class="bar" style="left:82px;top:0;height:362px"></div><div class="bar" style="left:92px;top:98px;height:372px"></div><div class="bar" style="left:102px;top:130px;height:340px"></div><div class="bar" style="left:112px;top:157px;height:313px"></div><div class="bar" style="left:122px;top:187px;height:215px"></div><div class="bar" style="left:132px;top:248px;height:133px"></div><div class="bar" style="left:142px;top:275px;height:195px"></div><div class="bar" style="left:152px;top:364px;height:106px"></div>
+            <div class="ev" style="top:89px"><i></i><div class="lead" style="width:108px"></div><b>The Great Flood</b></div>
+            <div class="ev" style="top:183px"><i></i><div class="lead" style="width:108px"></div><b>Tower of Babel</b></div>
+            <div class="ev" style="top:212px"><i></i><div class="lead" style="width:108px"></div><b>Nimrod's kingdom</b></div>
+            <div class="ev" style="top:430px"><i></i><div class="lead" style="width:108px"></div><b>Abraham enters Canaan</b></div>
+          </div>
+        </div></div>
+      </div>
+      <div class="cost"><b>What it is:</b> a drawn chart where distance is time. Each lifetime is a bar beside the axis, so you see at a glance that Shem outlived Abraham's father. Events sit on the axis, with leaders out to their names.<br><b>Cost:</b> the largest, about twice B. A drawn chart, packing lifetimes into lanes, labels that must not collide (Jacob's twelve children are born within nine years), and a separate list underneath for VoiceOver. Long quiet stretches (Genesis 5 covers about 1,500 years of genealogy) need breaks in the scale. With dates off it has no scale at all, so it falls back to B.</div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="timeline-b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>A rail, one row per event, vertical on both</h3>
+      <div class="row2">
+        <div class="win" style="width:520px"><div class="tb"><i></i><i></i><i></i></div><div class="col" style="padding-top:10px">
+          <div class="lab" style="margin-top:0">Timeline · 25 lives, 43 events</div>
+          <div class="tl">
+            <div class="row"><div class="yr">4004 BC</div><div class="dot"></div><div class="what"><b>Creation of all things</b><span class="ln">1:1</span></div></div>
+            <div class="row"><div class="yr"></div><div class="dot"></div><div class="what"><b>The Fall</b><span class="ln">3:1</span></div></div>
+            <div class="row life"><div class="yr"></div><div class="dot"></div><div class="what"><b>Adam</b><span class="span" style="width:62px"></span><span class="meta">lived 930 years · to 3074 BC</span></div></div>
+            <div class="row"><div class="yr">3875 BC</div><div class="dot"></div><div class="what"><b>Cain kills Abel</b><span class="ln">4:1</span></div></div>
+            <div class="gap"><div class="yr"></div><div class="dot"></div><div class="t">eight lives, Seth to Lamech (Genesis 5) <span class="ln" style="font-style:normal">Show</span></div></div>
+            <div class="row life"><div class="yr">2948 BC</div><div class="dot"></div><div class="what"><b>Noah</b><span class="span" style="width:63px"></span><span class="meta">lived 950 years · to 1998 BC</span></div></div>
+            <div class="era"><div class="yr"></div><div class="dot"></div><div class="grp">The Great Flood · 2348 BC, one year</div></div>
+            <div class="row"><div class="yr">2348 BC</div><div class="dot"></div><div class="what"><b>The Great Flood begins</b><span class="ln">7:6</span></div></div>
+            <div class="row"><div class="yr"></div><div class="dot"></div><div class="what"><b>Water covers the earth</b><span class="ln">7:18</span><span class="meta">150 days</span></div></div>
+            <div class="row"><div class="yr">2347 BC</div><div class="dot"></div><div class="what"><b>Leaving the Ark</b><span class="ln">8:15</span></div></div>
+            <div class="row"><div class="yr">2246 BC</div><div class="dot"></div><div class="what"><b>Tower of Babel</b><span class="ln">11:1</span></div></div>
+            <div class="row life"><div class="yr">1996 BC</div><div class="dot"></div><div class="what"><b>Abraham</b><span class="span" style="width:12px"></span><span class="meta">lived 175 years · to 1821 BC</span></div></div>
+          </div>
+        </div></div>
+        <div class="phone"><div class="bar"><a>‹ Genesis</a></div><div class="pbody">
+          <div class="h1t" style="font-size:30px">Genesis</div>
+          <div class="h1s">The First Book of Moses</div>
+          <div class="lab">Timeline</div>
+          <div class="tl" style="font-size:12.5px">
+            <div class="row"><div class="yr">4004 BC</div><div class="dot"></div><div class="what"><b>Creation of all things</b> <span class="ln">1:1</span></div></div>
+            <div class="row"><div class="yr"></div><div class="dot"></div><div class="what"><b>The Fall</b> <span class="ln">3:1</span></div></div>
+            <div class="row life"><div class="yr"></div><div class="dot"></div><div class="what"><b>Adam</b><span class="meta">lived 930 years</span></div></div>
+            <div class="row"><div class="yr">3875 BC</div><div class="dot"></div><div class="what"><b>Cain kills Abel</b> <span class="ln">4:1</span></div></div>
+            <div class="gap"><div class="yr"></div><div class="dot"></div><div class="t">eight lives, Seth to Lamech</div></div>
+            <div class="row life"><div class="yr">2948 BC</div><div class="dot"></div><div class="what"><b>Noah</b><span class="meta">lived 950 years</span></div></div>
+            <div class="era"><div class="yr"></div><div class="dot"></div><div class="grp">The Great Flood</div></div>
+            <div class="row"><div class="yr">2348 BC</div><div class="dot"></div><div class="what"><b>The Flood begins</b> <span class="ln">7:6</span></div></div>
+            <div class="row"><div class="yr">2347 BC</div><div class="dot"></div><div class="what"><b>Leaving the Ark</b> <span class="ln">8:15</span></div></div>
+          </div>
+        </div></div>
+      </div>
+      <div class="cost"><b>What it is:</b> a line down the page, a dot per event (a ring for a life), the year beside it only when the year changes. A life shows how long it ran and when it ended. A run of lives with no events between them (Genesis 5) folds into one line you can open. An era's events sit under its name.<br><b>Cost:</b> the smallest. One row view and the folding of lives and eras. VoiceOver reads it row by row as it is, and with dates off it loses only the years.</div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="timeline-c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>B, with a to-scale chart across the top on the Mac</h3>
+      <div class="row2">
+        <div class="win" style="width:560px"><div class="tb"><i></i><i></i><i></i></div><div class="col" style="padding-top:10px">
+          <div class="lab" style="margin-top:0">Timeline · 4004 to 1635 BC</div>
+          <div class="strip">
+            <div class="win2" style="left:302px;width:74px"></div>
+            <div class="bar" style="left:0;width:200px;top:16px"><span>Adam</span></div>
+            <div class="bar" style="left:28px;width:196px;top:36px"><span>Seth</span></div>
+            <div class="bar" style="left:51px;width:195px;top:56px"><span>Enos</span></div>
+            <div class="bar" style="left:70px;width:196px;top:76px"><span>Cainan</span></div>
+            <div class="bar" style="left:229px;width:112px;top:16px"><span>Noah</span></div>
+            <div class="bar" style="left:335px;width:129px;top:36px"><span>Shem</span></div>
+            <div class="bar" style="left:362px;width:95px;top:56px"><span>Arphaxad</span></div>
+            <div class="bar" style="left:430px;width:38px;top:76px"><span>Abraham</span></div>
+            <div class="bar" style="left:462px;width:32px;top:96px"><span>Jacob</span></div>
+            <div class="bar" style="left:480px;width:24px;top:116px"><span>Joseph</span></div>
+            <div class="mo" style="left:0"></div><div class="mo" style="left:28px"></div><div class="mo" style="left:356px"></div><div class="mo" style="left:358px"></div><div class="mo" style="left:379px"></div><div class="mo" style="left:448px"></div><div class="mo" style="left:451px"></div><div class="mo" style="left:470px"></div><div class="mo" style="left:488px"></div><div class="mo" style="left:494px"></div><div class="mo" style="left:497px"></div><div class="mo" style="left:503px"></div>
+            <div class="ax" style="left:0">4000 BC</div><div class="ax" style="left:130px">3500</div><div class="ax" style="left:260px">3000</div><div class="ax" style="left:390px">2500</div><div class="ax" style="left:500px">2000</div>
+          </div>
+          <div style="height:22px"></div>
+          <div class="tl">
+            <div class="era"><div class="yr"></div><div class="dot"></div><div class="grp">The Great Flood · 2348 BC, one year</div></div>
+            <div class="row"><div class="yr">2348 BC</div><div class="dot"></div><div class="what"><b>The Great Flood begins</b><span class="ln">7:6</span></div></div>
+            <div class="row"><div class="yr"></div><div class="dot"></div><div class="what"><b>Water covers the earth</b><span class="ln">7:18</span><span class="meta">150 days</span></div></div>
+            <div class="row"><div class="yr">2347 BC</div><div class="dot"></div><div class="what"><b>Leaving the Ark</b><span class="ln">8:15</span></div></div>
+            <div class="row"><div class="yr">2246 BC</div><div class="dot"></div><div class="what"><b>Tower of Babel</b><span class="ln">11:1</span></div></div>
+          </div>
+        </div></div>
+        <div style="font-size:12.5px;color:#5D646C;max-width:220px;line-height:1.5;padding-top:30px">The phone has B alone. A wide chart does not fit its width and would scroll sideways inside a page that scrolls down.</div>
+      </div>
+      <div class="cost"><b>What it is:</b> the whole book at a glance above the list, with every life as a bar to scale and every event as a tick. The shaded band is the part of the list on screen; click anywhere on the chart and the list moves there, and the band follows as you scroll.<br><b>Cost:</b> B plus a chart, between B and A. The chart can be Apple's Swift Charts (range bars), which handles the scale and the axis. Linking it to the list's scroll is the fiddly part. With dates off the chart goes and B remains.</div>
+    </div>
+  </div>
+
+</div>
+</div>

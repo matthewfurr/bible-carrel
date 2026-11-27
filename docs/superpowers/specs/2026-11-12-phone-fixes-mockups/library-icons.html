@@ -1,0 +1,94 @@
+<style>
+  .li { --page:#F5F7F9; --panel:#EDF1F4; --ink:#192028; --ink2:#5D646C; --ink3:#8D9399; --rule:#D3D8DC; --accent:#247966; --wash:#D1F0E6; font-family:-apple-system,system-ui,sans-serif; }
+  .opts { display:grid; grid-template-columns:repeat(auto-fit,minmax(360px,1fr)); gap:20px; }
+  .opt { border:2px solid transparent; border-radius:16px; padding:12px; cursor:pointer; background:#eef0f2; }
+  .opt.selected { border-color:#247966; }
+  .opt h3 { margin:2px 4px 2px; font:600 15px -apple-system,system-ui; }
+  .opt p.d { margin:0 4px 12px; font:13px/1.45 -apple-system,system-ui; color:#444; }
+  .lab { font:600 10px -apple-system,system-ui; letter-spacing:.08em; color:#888; margin:10px 4px 6px; text-transform:uppercase; }
+  .mac { background:var(--page); border-radius:10px; border:1px solid #cfd4d8; padding:20px 10px 18px; text-align:center; position:relative; }
+  .bn { font-family:ui-serif,'New York',Georgia,serif; font-weight:600; font-size:24px; color:var(--ink); }
+  .grid { display:inline-grid; grid-template-columns:repeat(5,44px); gap:6px; margin-top:14px; }
+  .cell { height:32px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-family:ui-serif,Georgia,serif; font-size:14px; color:var(--ink2); }
+  .cell.cur { background:var(--wash); color:var(--ink); }
+  .tiles { display:flex; gap:18px; justify-content:center; margin-top:12px; }
+  .tile { display:flex; flex-direction:column; align-items:center; gap:4px; width:64px; }
+  .ic { width:36px; height:36px; display:flex; align-items:center; justify-content:center; border:1.25px solid var(--accent); color:var(--accent); }
+  .circle .ic { border-radius:50%; }
+  .rr .ic { border-radius:10px; }
+  .ic svg { width:17px; height:17px; }
+  .tile span { font-size:10.5px; color:var(--ink2); white-space:nowrap; }
+  .tile.off .ic { border-color:var(--rule); color:var(--ink3); }
+  .tile.off span { color:var(--ink3); }
+  .menu { position:absolute; left:50%; top:118px; transform:translateX(-118px); text-align:left; background:#fff; border-radius:9px; box-shadow:0 6px 20px rgba(0,0,0,.18); padding:5px 0; font-size:12px; min-width:190px; z-index:2; }
+  .menu div { padding:5px 12px; }
+  .menu div:first-child { background:#247966; color:#fff; }
+  .ph { background:var(--page); border-radius:22px; border:5px solid #1d1d1f; width:270px; margin:0 auto; padding:12px 0 14px; text-align:left; }
+  .ph .row { padding:8px 16px; font-size:14px; color:var(--ink); border-top:1px solid #e8eaec; }
+  .ph .row:first-child { border-top:0; }
+  .ph .tiles { justify-content:flex-start; padding:0 12px; gap:6px; margin:4px 0 10px; }
+  .ph .g { display:grid; grid-template-columns:repeat(5,40px); gap:5px; padding:0 16px 6px; }
+  .ph .g .cell { height:28px; font-size:13px; }
+  .note { font:12px/1.5 -apple-system,system-ui; color:#555; margin-top:14px; }
+</style>
+
+<h2>Reference icons on each book</h2>
+<p class="subtitle">Outlined icons with a label underneath, between the book name and its chapters. BibleProject opens its video straight away when a book has one, or a menu when it has more (John's menu is shown open on the Mac). People, Places and About are placeholders, greyed until they exist. Circle or rounded square?</p>
+
+<div class="li">
+<div class="opts">
+<script>
+</script>
+<div class="opt circle" data-choice="circle" onclick="toggleSelect(this)">
+  <h3>Circle outlines</h3>
+  <p class="d">Softer; reads like a set of round buttons.</p>
+  <div class="lab">Mac shelf</div>
+  <div class="mac"><div class="bn">John</div>
+    <div class="tiles">
+      <div class="tile"><div class="ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="4" width="15" height="12" rx="2.5"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor" stroke="none"/></svg></div><span>BibleProject</span></div>
+      <div class="tile off"><div class="ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7.5" cy="7" r="2.5"/><circle cx="13.5" cy="7.5" r="2"/><path d="M3 16c.5-3 2.5-4.5 4.5-4.5S11.5 13 12 16M12.5 12c2 0 3.8 1.2 4.5 4"/></svg></div><span>People</span></div>
+      <div class="tile off"><div class="ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2.5 5l5-2 5 2 5-2v12l-5 2-5-2-5 2z M7.5 3v12 M12.5 5v12"/></svg></div><span>Places</span></div>
+      <div class="tile off"><div class="ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="10" r="7.5"/><path d="M10 9v5"/><circle cx="10" cy="6.3" r=".6" fill="currentColor"/></svg></div><span>About</span></div>
+    </div>
+    <div class="menu"><div>John 1–12</div><div>John 13–21</div></div>
+    <div class="grid"><div class="cell">1</div><div class="cell">2</div><div class="cell cur">3</div><div class="cell">4</div><div class="cell">5</div><div class="cell">6</div><div class="cell">7</div><div class="cell">8</div><div class="cell">9</div><div class="cell">10</div></div></div>
+  <div class="lab">iPhone Library</div>
+  <div class="ph"><div class="row">Luke</div><div class="row" style="font-weight:600">John</div>
+    <div class="tiles">
+      <div class="tile"><div class="ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="4" width="15" height="12" rx="2.5"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor" stroke="none"/></svg></div><span>BibleProject</span></div>
+      <div class="tile off"><div class="ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7.5" cy="7" r="2.5"/><circle cx="13.5" cy="7.5" r="2"/><path d="M3 16c.5-3 2.5-4.5 4.5-4.5S11.5 13 12 16M12.5 12c2 0 3.8 1.2 4.5 4"/></svg></div><span>People</span></div>
+      <div class="tile off"><div class="ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2.5 5l5-2 5 2 5-2v12l-5 2-5-2-5 2z M7.5 3v12 M12.5 5v12"/></svg></div><span>Places</span></div>
+      <div class="tile off"><div class="ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="10" r="7.5"/><path d="M10 9v5"/><circle cx="10" cy="6.3" r=".6" fill="currentColor"/></svg></div><span>About</span></div>
+    </div>
+    <div class="g"><div class="cell">1</div><div class="cell">2</div><div class="cell cur">3</div><div class="cell">4</div><div class="cell">5</div><div class="cell">6</div><div class="cell">7</div><div class="cell">8</div><div class="cell">9</div><div class="cell">10</div></div>
+    <div class="row">Acts</div></div>
+</div>
+
+<div class="opt rr" data-choice="roundrect" onclick="toggleSelect(this)">
+  <h3>Rounded-square outlines</h3>
+  <p class="d">Matches the chapter cells' rounded rectangles, so the row feels part of the grid.</p>
+  <div class="lab">Mac shelf</div>
+  <div class="mac"><div class="bn">John</div>
+    <div class="tiles">
+      <div class="tile"><div class="ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="4" width="15" height="12" rx="2.5"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor" stroke="none"/></svg></div><span>BibleProject</span></div>
+      <div class="tile off"><div class="ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7.5" cy="7" r="2.5"/><circle cx="13.5" cy="7.5" r="2"/><path d="M3 16c.5-3 2.5-4.5 4.5-4.5S11.5 13 12 16M12.5 12c2 0 3.8 1.2 4.5 4"/></svg></div><span>People</span></div>
+      <div class="tile off"><div class="ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2.5 5l5-2 5 2 5-2v12l-5 2-5-2-5 2z M7.5 3v12 M12.5 5v12"/></svg></div><span>Places</span></div>
+      <div class="tile off"><div class="ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="10" r="7.5"/><path d="M10 9v5"/><circle cx="10" cy="6.3" r=".6" fill="currentColor"/></svg></div><span>About</span></div>
+    </div>
+    <div class="menu"><div>John 1–12</div><div>John 13–21</div></div>
+    <div class="grid"><div class="cell">1</div><div class="cell">2</div><div class="cell cur">3</div><div class="cell">4</div><div class="cell">5</div><div class="cell">6</div><div class="cell">7</div><div class="cell">8</div><div class="cell">9</div><div class="cell">10</div></div></div>
+  <div class="lab">iPhone Library</div>
+  <div class="ph"><div class="row">Luke</div><div class="row" style="font-weight:600">John</div>
+    <div class="tiles">
+      <div class="tile"><div class="ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="4" width="15" height="12" rx="2.5"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor" stroke="none"/></svg></div><span>BibleProject</span></div>
+      <div class="tile off"><div class="ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7.5" cy="7" r="2.5"/><circle cx="13.5" cy="7.5" r="2"/><path d="M3 16c.5-3 2.5-4.5 4.5-4.5S11.5 13 12 16M12.5 12c2 0 3.8 1.2 4.5 4"/></svg></div><span>People</span></div>
+      <div class="tile off"><div class="ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2.5 5l5-2 5 2 5-2v12l-5 2-5-2-5 2z M7.5 3v12 M12.5 5v12"/></svg></div><span>Places</span></div>
+      <div class="tile off"><div class="ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="10" r="7.5"/><path d="M10 9v5"/><circle cx="10" cy="6.3" r=".6" fill="currentColor"/></svg></div><span>About</span></div>
+    </div>
+    <div class="g"><div class="cell">1</div><div class="cell">2</div><div class="cell cur">3</div><div class="cell">4</div><div class="cell">5</div><div class="cell">6</div><div class="cell">7</div><div class="cell">8</div><div class="cell">9</div><div class="cell">10</div></div>
+    <div class="row">Acts</div></div>
+</div>
+
+</div>
+<p class="note">The video icon here stands in for SF Symbols' <code>play.rectangle</code>; People is <code>person.2</code>, Places <code>map</code>, About <code>info.circle</code>. BibleProject's own logo would need their permission (it's their trademark), so the design uses a symbol until that's asked.</p>
+</div>

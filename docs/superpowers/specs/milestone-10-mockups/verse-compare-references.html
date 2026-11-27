@@ -1,0 +1,123 @@
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap" rel="stylesheet">
+<style>
+  .vc-row { display: flex; gap: 26px; flex-wrap: wrap; align-items: flex-start; margin: 18px 0 8px; }
+  .vc-cap { max-width: 760px; font-size: 13px; line-height: 1.5; opacity: .85; margin: 6px 2px 26px; }
+  .vc-h { font-size: 16px; margin: 22px 2px 0; }
+  .mw { position: relative; width: 700px; height: 570px; border-radius: 12px; background: #F5F7F9; color: #192028; overflow: hidden; box-shadow: 0 0 0 1px #c9ced3, 0 10px 30px rgba(0,0,0,.18); font-family: -apple-system, "SF Pro Text", sans-serif; }
+  .mw .tb { height: 36px; display: flex; align-items: center; gap: 7px; padding: 0 12px; color: #5D646C; font-size: 12px; }
+  .mw .tb i { width: 11px; height: 11px; border-radius: 6px; background: #d5d9dd; display: inline-block; }
+  .mw .tb span { margin-left: 14px; }
+  .mw .pg { width: 300px; margin: 0 0 0 44px; font-family: "Literata", Georgia, serif; font-size: 13.5px; line-height: 1.55; }
+  .mw .pg .rh { text-align: center; font: 600 9px -apple-system, sans-serif; letter-spacing: .22em; color: #7A5320; margin: 6px 0 14px; }
+  sup.n { font: 500 8px -apple-system, sans-serif; color: #7A5320; margin-right: 2px; }
+  .sel { background: #B9D5F2; }
+  .pop { position: absolute; left: 362px; top: 70px; width: 316px; border-radius: 12px; background: #FAFCFE; box-shadow: 0 0 0 1px #D3D8DC, 0 10px 28px rgba(0,0,0,.22); padding: 12px 0 10px; font-family: -apple-system, "SF Pro Text", sans-serif; color: #192028; }
+  .pop::before { content: ""; position: absolute; left: -7px; top: 96px; width: 14px; height: 14px; background: #FAFCFE; transform: rotate(45deg); box-shadow: -1px 1px 0 #D3D8DC; }
+  .hd { display: flex; justify-content: space-between; align-items: baseline; padding: 0 14px; }
+  .hd b { font-size: 13px; }
+  .hd span { font-size: 10.5px; color: #5D646C; }
+  .seg { display: flex; margin: 9px 14px 6px; background: #EDF1F4; border-radius: 7px; padding: 2px; font-size: 11px; }
+  .seg span { flex: 1; text-align: center; padding: 4px 0; border-radius: 5px; color: #5D646C; }
+  .seg span.on { background: #FAFCFE; color: #192028; font-weight: 600; box-shadow: 0 0 0 .5px #D3D8DC; }
+  .tr { padding: 7px 14px; }
+  .tr.cur { background: #D1F0E6; margin: 0 6px; padding: 7px 8px; border-radius: 6px; }
+  .tr .l { font-size: 10px; font-weight: 600; color: #5D646C; display: flex; justify-content: space-between; }
+  .tr .l em { font-style: normal; font-weight: 400; }
+  .tr .v { font-family: "Literata", Georgia, serif; font-size: 12.5px; line-height: 1.45; margin-top: 2px; }
+  .gh { display: flex; justify-content: space-between; font-size: 10px; font-weight: 600; color: #5D646C; padding: 8px 14px 2px; }
+  .rf { padding: 5px 14px; }
+  .rf b { font-size: 11.5px; font-weight: 600; }
+  .rf .v { font-family: "Literata", Georgia, serif; font-size: 11.5px; color: #5D646C; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 1px; }
+  .more { font-size: 11px; color: #247966; padding: 5px 14px 0; font-weight: 500; }
+  .ftb { display: flex; gap: 8px; align-items: center; padding: 9px 14px 0; margin-top: 7px; border-top: 1px solid #D3D8DC; font-size: 11px; }
+  .ftb .b { padding: 4px 10px; border-radius: 6px; background: #EDF1F4; }
+  .ftb .ask { background: #F7E4F5; color: #7E517A; font-weight: 600; }
+  .ftb .r { margin-left: auto; color: #5D646C; }
+  .ph { width: 280px; height: 580px; border-radius: 38px; background: #F5F7F9; color: #192028; position: relative; overflow: hidden; box-shadow: 0 0 0 9px #1b1f24, 0 0 0 10px #3a4048; margin: 10px 14px; font-family: -apple-system, "SF Pro Text", sans-serif; }
+  .ph .txt { padding: 58px 22px 0; font-family: "Literata", Georgia, serif; font-size: 15px; line-height: 1.52; opacity: .55; }
+  .ph .sheet { position: absolute; left: 0; right: 0; bottom: 0; top: 150px; background: #FAFCFE; border-radius: 26px 26px 0 0; box-shadow: 0 -4px 24px rgba(0,0,0,.18); padding-top: 8px; }
+  .ph .grab { width: 36px; height: 5px; border-radius: 3px; background: #D3D8DC; margin: 0 auto 10px; }
+  .ph .hd b { font-size: 15px; }
+  .ph .tr .v { font-size: 13.5px; }
+  .ph .rf b { font-size: 13px; } .ph .rf .v { font-size: 12.5px; }
+  .ph .ftb { position: absolute; left: 0; right: 0; bottom: 22px; }
+</style>
+
+<h2>On a verse: compare translations and cross-references</h2>
+<p class="subtitle">John 15:5 is selected and Compare was chosen (the C key on the Mac, or the selection menu on either device). This is the look I propose; the question is in the conversation.</p>
+
+<div class="vc-h">Mac: a popover on the verse, Translations</div>
+<div class="vc-row">
+  <div class="mw">
+    <div class="tb"><i></i><i></i><i></i><span>John 15 — Bible Carrel</span></div>
+    <div class="pg"><div class="rh">JOHN · 15</div><sup class="n">4</sup>Remain in me, and I in you. As the branch can’t bear fruit by itself unless it remains in the vine, so neither can you, unless you remain in me. <span class="sel"><sup class="n">5</sup>I am the vine. You are the branches. He who remains in me and I in him bears much fruit, for apart from me you can do nothing.</span> <sup class="n">6</sup>If a man doesn’t remain in me, he is thrown out as a branch and is withered; and they gather them, throw them into the fire, and they are burned. <sup class="n">7</sup>If you remain in me, and my words remain in you, you will ask whatever you desire, and it will be done for you.</div>
+    <div class="pop">
+      <div class="hd"><b>John 15:5</b><span>4 translations</span></div>
+      <div class="seg"><span class="on">Translations</span><span>References</span></div>
+      <div class="tr cur"><div class="l">WEB<em>reading</em></div><div class="v">I am the vine. You are the branches. He who remains in me and I in him bears much fruit, for apart from me you can do nothing.</div></div>
+      <div class="tr"><div class="l">KJV</div><div class="v">I am the vine, ye are the branches: He that abideth in me, and I in him, the same bringeth forth much fruit: for without me ye can do nothing.</div></div>
+      <div class="tr"><div class="l">ASV</div><div class="v">I am the vine, ye are the branches: He that abideth in me, and I in him, the same beareth much fruit: for apart from me ye can do nothing.</div></div>
+      <div class="tr"><div class="l">CPDV</div><div class="v">I am the vine; you are the branches. Whoever abides in me, and I in him, bears much fruit. For without me, you are able to do nothing.</div></div>
+      <div class="ftb"><span class="b ask">✦ Ask About the Differences</span><span class="b">Copy</span><span class="r">Translations… ⌄</span></div>
+    </div>
+  </div>
+</div>
+<p class="vc-cap">The translation you are reading comes first. A click on another row shows the verse in that translation as a lookup. “Translations…” is a checklist of which ones to compare with; the choice is remembered and travels to your other devices. Ask opens the assistant on this verse with exactly these translations.</p>
+
+<div class="vc-h">Mac: the same popover, References</div>
+<div class="vc-row">
+  <div class="mw" style="height:610px">
+    <div class="tb"><i></i><i></i><i></i><span>John 15 — Bible Carrel</span></div>
+    <div class="pg"><div class="rh">JOHN · 15</div><sup class="n">4</sup>Remain in me, and I in you. As the branch can’t bear fruit by itself unless it remains in the vine, so neither can you, unless you remain in me. <span class="sel"><sup class="n">5</sup>I am the vine. You are the branches. He who remains in me and I in him bears much fruit, for apart from me you can do nothing.</span> <sup class="n">6</sup>If a man doesn’t remain in me, he is thrown out as a branch and is withered; and they gather them, throw them into the fire, and they are burned.</div>
+    <div class="pop">
+      <div class="hd"><b>John 15:5</b><span>sample data</span></div>
+      <div class="seg"><span>Translations</span><span class="on">References</span></div>
+      <div class="gh"><span>THIS VERSE POINTS TO</span><span>23</span></div>
+      <div class="rf"><b>Philippians 4:13</b><div class="v">I can do all things through Christ, who strengthens me.</div></div>
+      <div class="rf"><b>Galatians 5:22–23</b><div class="v">But the fruit of the Spirit is love, joy, peace, patience, kindness…</div></div>
+      <div class="rf"><b>John 15:16</b><div class="v">You didn’t choose me, but I chose you and appointed you, that you should go…</div></div>
+      <div class="rf"><b>2 Corinthians 3:5</b><div class="v">not that we are sufficient of ourselves, to account anything as from ourselves…</div></div>
+      <div class="more">Show all 23</div>
+      <div class="gh"><span>VERSES THAT POINT HERE</span><span>41</span></div>
+      <div class="rf"><b>Hosea 14:8</b><div class="v">…I am like a green cypress tree; from me your fruit is found.</div></div>
+      <div class="rf"><b>Philippians 1:11</b><div class="v">being filled with the fruits of righteousness, which are through Jesus Christ…</div></div>
+      <div class="more">Show all 41</div>
+      <div class="ftb"><span class="b ask">✦ Ask About These</span><span class="r">Cross-references: OpenBible.info</span></div>
+    </div>
+  </div>
+</div>
+<p class="vc-cap">The strongest links come first, by the dataset’s own votes, a few of each kind with the rest behind “Show all”. Each row shows the passage’s opening words in the translation you are reading. A click shows the passage, as a reference in a note does today, with Open to go there.</p>
+
+<div class="vc-h">iPhone: the same, as a sheet</div>
+<div class="vc-row">
+  <div class="ph">
+    <div class="txt">Remain in me, and I in you. As the branch can’t bear fruit by itself unless it remains in the vine, so neither can you…</div>
+    <div class="sheet">
+      <div class="grab"></div>
+      <div class="hd"><b>John 15:5</b><span>4 translations</span></div>
+      <div class="seg"><span class="on">Translations</span><span>References</span></div>
+      <div class="tr cur"><div class="l">WEB<em>reading</em></div><div class="v">I am the vine. You are the branches. He who remains in me and I in him bears much fruit, for apart from me you can do nothing.</div></div>
+      <div class="tr"><div class="l">KJV</div><div class="v">I am the vine, ye are the branches: He that abideth in me, and I in him, the same bringeth forth much fruit: for without me ye can do nothing.</div></div>
+      <div class="tr"><div class="l">ASV</div><div class="v">I am the vine, ye are the branches: He that abideth in me, and I in him, the same beareth much fruit…</div></div>
+      <div class="ftb"><span class="b ask">✦ Ask</span><span class="b">Copy</span><span class="r">Translations… ⌄</span></div>
+    </div>
+  </div>
+  <div class="ph">
+    <div class="txt">Remain in me, and I in you. As the branch can’t bear fruit by itself unless it remains in the vine, so neither can you…</div>
+    <div class="sheet">
+      <div class="grab"></div>
+      <div class="hd"><b>John 15:5</b><span>sample data</span></div>
+      <div class="seg"><span>Translations</span><span class="on">References</span></div>
+      <div class="gh"><span>THIS VERSE POINTS TO</span><span>23</span></div>
+      <div class="rf"><b>Philippians 4:13</b><div class="v">I can do all things through Christ, who strengthens me.</div></div>
+      <div class="rf"><b>Galatians 5:22–23</b><div class="v">But the fruit of the Spirit is love, joy, peace, patience…</div></div>
+      <div class="rf"><b>John 15:16</b><div class="v">You didn’t choose me, but I chose you and appointed you…</div></div>
+      <div class="more">Show all 23</div>
+      <div class="gh"><span>VERSES THAT POINT HERE</span><span>41</span></div>
+      <div class="rf"><b>Hosea 14:8</b><div class="v">…from me your fruit is found.</div></div>
+      <div class="rf"><b>Philippians 1:11</b><div class="v">being filled with the fruits of righteousness…</div></div>
+      <div class="more">Show all 41</div>
+    </div>
+  </div>
+</div>
+<p class="vc-cap">A half-height sheet that pulls up to full. A tapped reference pushes its verses inside the sheet with Open in Read, as a reference in a note does today.</p>

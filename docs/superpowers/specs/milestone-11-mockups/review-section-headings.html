@@ -1,0 +1,51 @@
+<style>
+  .pg { --ink:#1d1d1f; --ink2:#6e6e73; --ink3:#a1a1a6; --rule:#dcdcdf; --acc:#2f7d5b; --wash:#dff0e6; --paper:#f7f7f5; color: var(--ink); font-family: -apple-system, system-ui; }
+  .win { background: var(--paper); border: 1px solid var(--rule); border-radius: 10px; padding: 22px 28px; margin: 10px 0; }
+  .serif { font-family: "New York", "Iowan Old Style", Georgia, serif; }
+  .para { font-size: 17px; line-height: 1.5; font-style: italic; }
+  .a { color: var(--acc); }
+  .cap { font-size: 12px; color: var(--ink2); margin-top: 4px; }
+  .vl { display: grid; grid-template-columns: 3.2em 1fr; gap: 3px 10px; font-size: 16px; }
+  .vl b { font-weight: 600; text-align: right; white-space: nowrap; }
+  .tree { text-align: center; font-size: 16px; line-height: 1.9; }
+  .me { background: var(--wash); border-radius: 6px; padding: 2px 8px; font-weight: 600; }
+  .now { font-size: 13px; font-weight: 600; color: var(--ink2); margin: 22px 0 8px; }
+  .ha { font-size: 22px; font-weight: 600; margin: 30px 0 10px; }
+  .hb { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ink2); border-top: 1px solid var(--rule); padding-top: 12px; margin: 26px 0 10px; }
+  .hc { font-size: 22px; font-weight: 600; border-top: 1px solid var(--rule); padding-top: 14px; margin: 28px 0 10px; }
+  .sub { font-weight: 400; color: var(--ink2); font-size: 15px; margin-left: 8px; font-family: -apple-system, system-ui; }
+</style>
+<div class="pg">
+<h2>Section headings on a person's page</h2>
+<p class="subtitle">Each heading starts at the text column's edge. Today's heading is shown first, then three options. The tree below each heading uses the page's width; the heading stays with the text.</p>
+
+<div class="options">
+ <div class="option" data-choice="now"><div class="letter">–</div><div class="content"><h3>Today</h3>
+  <div class="win"><div class="para serif">…Matthias, who was "numbered with the eleven" (Acts 1:24–26), was chosen by lot.</div><div class="a">Show more</div>
+  <div class="now">Family</div><div class="tree"><span class="a">Haran</span><br><span class="a">Iscah</span>&nbsp;&nbsp;<span class="a">Milcah</span>&nbsp;&nbsp;&nbsp;<span class="me">Lot</span></div>
+  <div class="now">In Genesis · 27 verses</div><div class="vl"><b>Ch 11</b><span class="a">27, 31</span><b>Ch 12</b><span class="a">4–5</span></div></div>
+ </div></div>
+
+ <div class="option" data-choice="a" onclick="toggleSelect(this)"><div class="letter">A</div><div class="content"><h3>Headings that look like headings (page face, larger)</h3><p>The heading is set in the page's own typeface, a step above the text, in full ink, with room above it. No lines. The count moves beside it in grey.</p>
+  <div class="win"><div class="para serif">…Matthias, who was "numbered with the eleven" (Acts 1:24–26), was chosen by lot.</div><div class="a">Show more</div>
+  <div class="ha serif">Family</div><div class="tree"><span class="a">Haran</span><br><span class="a">Iscah</span>&nbsp;&nbsp;<span class="a">Milcah</span>&nbsp;&nbsp;&nbsp;<span class="me">Lot</span></div>
+  <div class="ha serif">In Genesis<span class="sub">27 verses</span></div><div class="vl"><b>Ch 11</b><span class="a">27, 31</span><b>Ch 12</b><span class="a">4–5</span></div></div>
+  <p><b>Cost:</b> none to speak of; the page reads like a chapter of a book.</p>
+ </div></div>
+
+ <div class="option" data-choice="b" onclick="toggleSelect(this)"><div class="letter">B</div><div class="content"><h3>A divider with a small-capitals label</h3><p>A hairline across the text column, the heading under it in small spaced capitals, like the fact labels (FATHER, LIVED).</p>
+  <div class="win"><div class="para serif">…Matthias, who was "numbered with the eleven" (Acts 1:24–26), was chosen by lot.</div><div class="a">Show more</div>
+  <div class="hb">Family</div><div class="tree"><span class="a">Haran</span><br><span class="a">Iscah</span>&nbsp;&nbsp;<span class="a">Milcah</span>&nbsp;&nbsp;&nbsp;<span class="me">Lot</span></div>
+  <div class="hb">In Genesis · 27 verses</div><div class="vl"><b>Ch 11</b><span class="a">27, 31</span><b>Ch 12</b><span class="a">4–5</span></div></div>
+  <p><b>Cost:</b> quieter than A, so the sections are told apart by the lines more than by the words.</p>
+ </div></div>
+
+ <div class="option" data-choice="c" onclick="toggleSelect(this)"><div class="letter">C</div><div class="content"><h3>Both: a divider and a real heading</h3><p>A's heading with a hairline above it, across the text column.</p>
+  <div class="win"><div class="para serif">…Matthias, who was "numbered with the eleven" (Acts 1:24–26), was chosen by lot.</div><div class="a">Show more</div>
+  <div class="hc serif">Family</div><div class="tree"><span class="a">Haran</span><br><span class="a">Iscah</span>&nbsp;&nbsp;<span class="a">Milcah</span>&nbsp;&nbsp;&nbsp;<span class="me">Lot</span></div>
+  <div class="hc serif">In Genesis<span class="sub">27 verses</span></div><div class="vl"><b>Ch 11</b><span class="a">27, 31</span><b>Ch 12</b><span class="a">4–5</span></div></div>
+  <p><b>Cost:</b> the most structure; on a short page the lines can feel like boxes.</p>
+ </div></div>
+</div>
+<p class="subtitle">Whichever you pick goes on every Library page that has these headings (People, Places, a book's About), so they match.</p>
+</div>

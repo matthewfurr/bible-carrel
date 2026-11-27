@@ -1,0 +1,132 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+<style>
+  .tp { --page:#F5F7F9; --ink:#192028; --ink2:#5D646C; --ink3:#8D9399; --rule:#D3D8DC; --accent:#247966; --wash:#D1F0E6; --green:#BCF2BD; --yellow:#F8E18A; --bronze:#9A6B2F; }
+  .tp.dark { --page:#101418; --ink:#E5E8EC; --ink2:#A0A5AB; --ink3:#6D7277; --rule:#292E34; --accent:#73C3AE; --wash:#0A3028; --green:#2E522F; --yellow:#554704; --bronze:#D2A970; }
+  .tp-bar { display:flex; gap:8px; align-items:center; margin:4px 0 16px; }
+  .tp-bar button { font:600 13px -apple-system,system-ui,sans-serif; padding:6px 12px; border-radius:6px; border:1px solid #c9ced3; background:#fff; cursor:pointer; }
+  .tp-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(460px,560px)); justify-content:center; gap:20px; }
+  .tp-card { border-radius:12px; overflow:hidden; cursor:pointer; border:2px solid transparent; background:#e6e9ec; }
+  .tp-card.selected { border-color:#247966; }
+  .tp-meta { padding:12px 18px 14px; font:13px/1.45 -apple-system,system-ui,sans-serif; color:#333; background:#fff; }
+  .tp-meta h3 { margin:0 0 4px; font-size:15px; }
+  .tp-meta ul { margin:6px 0 0; padding-left:18px; }
+  .pg { background:var(--page); color:var(--ink); padding:40px 44px 36px; min-height:560px; }
+  .pg p { margin:0; }
+  .vn { font-family:-apple-system,system-ui,sans-serif; font-weight:500; font-size:0.58em; position:relative; top:-0.68em; margin-right:0.18em; }
+  .hl-g { background:var(--green); border-radius:2px; box-decoration-break:clone; -webkit-box-decoration-break:clone; padding:1px 0; }
+  .bm { float:right; margin-right:-26px; color:var(--accent); font-size:13px; }
+  .it { font-style:italic; }
+
+  /* A — Printed (Literata, like bible-rs) */
+  .a { font-family:'Literata',serif; font-size:18px; line-height:1.68; }
+  .a .bk { text-align:center; font-weight:400; font-size:44px; line-height:1.1; letter-spacing:-0.01em; }
+  .a .sub { text-align:center; font-style:italic; font-size:16px; color:var(--ink2); margin-top:8px; }
+  .a .ch { text-align:center; font:600 11px -apple-system,system-ui,sans-serif; letter-spacing:0.22em; color:var(--bronze); margin:22px 0 22px; }
+  .a .sh { font-style:italic; font-size:17px; color:var(--ink2); margin:0 0 8px; }
+  .a .sh2 { margin-top:18px; }
+  .a .vn { color:var(--bronze); }
+  .a p + p { text-indent:1.5em; }
+
+  /* B — Lectern (Iowan Old Style, drop chapter numeral) */
+  .b { font-family:'Iowan Old Style','Palatino',serif; font-size:18px; line-height:1.6; font-variant-numeric:oldstyle-nums; }
+  .b .bk { text-align:center; font-size:30px; letter-spacing:0.16em; font-variant:small-caps; text-transform:lowercase; }
+  .b .sub { text-align:center; font-style:italic; font-size:15px; color:var(--ink2); margin-top:4px; }
+  .b .orn { text-align:center; color:var(--rule); margin:16px 0 18px; letter-spacing:0.5em; font-size:12px; }
+  .b .sh { text-align:center; font-variant:small-caps; letter-spacing:0.08em; font-size:16px; color:var(--ink2); margin:0 0 10px; }
+  .b .sh2 { margin-top:18px; }
+  .b .drop { float:left; font-size:68px; line-height:0.86; margin:6px 10px 0 0; color:var(--accent); font-variant-numeric:lining-nums; }
+  .b .vn { color:var(--ink2); font-family:'Iowan Old Style',serif; font-weight:400; font-size:0.62em; }
+  .b p + p { text-indent:1.4em; }
+
+  /* C — Study (Source Serif 4, left-aligned, sans headings) */
+  .c { font-family:'Source Serif 4',serif; font-size:18px; line-height:1.62; }
+  .c .lbl { font:600 11px -apple-system,system-ui,sans-serif; letter-spacing:0.14em; color:var(--ink2); text-transform:uppercase; }
+  .c .bk { font-weight:600; font-size:38px; line-height:1.1; margin-top:6px; }
+  .c .bk span { color:var(--ink3); font-weight:400; }
+  .c .rl { height:1px; background:var(--rule); margin:18px 0 20px; }
+  .c .sh { font:600 15px -apple-system,system-ui,sans-serif; color:var(--ink); margin:0 0 6px; }
+  .c .sh2 { margin-top:20px; }
+  .c .vn { color:var(--accent); font-weight:700; font-size:0.6em; top:-0.1em; margin-right:0.3em; }
+  .c p + p { margin-top:10px; }
+
+  /* D — Today's New York, extended */
+  .d { font-family:ui-serif,'New York',Georgia,serif; font-size:18px; line-height:1.45; }
+  .d .bk { font-weight:600; font-size:30px; line-height:1.1; }
+  .d .sub { font-style:italic; font-size:15px; color:var(--ink2); margin-top:4px; }
+  .d .sp { height:22px; }
+  .d .sh { font-weight:600; font-size:17px; margin:0 0 6px; }
+  .d .sh2 { margin-top:16px; }
+  .d .vn { color:var(--ink2); }
+  .d p + p { text-indent:1.4em; }
+</style>
+
+<h2>Four directions for the page</h2>
+<p class="subtitle">John 1 (KJV), with a book title, its subtitle, the chapter, two section headings, a green highlight and a bookmark. Click the one closest to what you want; mixing parts is fine, say which. Fonts here are the real ones except D's (see its note).</p>
+
+<div class="tp" id="tp">
+<div class="tp-bar">
+  <button onclick="document.getElementById('tp').classList.remove('dark')">Light</button>
+  <button onclick="document.getElementById('tp').classList.add('dark')">Dark</button>
+</div>
+
+<div class="tp-grid">
+
+<div class="tp-card" data-choice="a-printed" onclick="toggleSelect(this)">
+  <div class="pg a">
+    <div class="bk">John</div>
+    <div class="sub">The Gospel According to John</div>
+    <div class="ch">CHAPTER 1</div>
+    <div class="sh">The Word Became Flesh</div>
+    <p><span class="bm">▮</span><span class="vn">1</span>In the beginning was the Word, and the Word was with God, and the Word was God. <span class="vn">2</span>The same was in the beginning with God. <span class="vn">3</span>All things were made by him; and without him was not any thing made that was made. <span class="hl-g"><span class="vn">4</span>In him was life; and the life was the light of men. <span class="vn">5</span>And the light shineth in darkness; and the darkness comprehended it not.</span></p>
+    <div class="sh sh2">The Witness of John</div>
+    <p><span class="vn">6</span>There was a man sent from God, whose name <span class="it">was</span> John. <span class="vn">7</span>The same came for a witness, to bear witness of the Light, that all <span class="it">men</span> through him might believe. <span class="vn">8</span>He was not that Light, but <span class="it">was sent</span> to bear witness of that Light.</p>
+  </div>
+  <div class="tp-meta"><h3>A · Printed</h3>Literata (bundled, free licence). The bible-rs look.
+    <ul><li>Large light book title, italic subtitle, spaced CHAPTER label</li><li>Verse numbers and the chapter label in a warm bronze</li><li>Italic section headings</li></ul></div>
+</div>
+
+<div class="tp-card" data-choice="b-lectern" onclick="toggleSelect(this)">
+  <div class="pg b">
+    <div class="bk">John</div>
+    <div class="sub">The Gospel According to John</div>
+    <div class="orn">· · ·</div>
+    <div class="sh">The Word Became Flesh</div>
+    <p><span class="bm">▮</span><span class="drop">1</span>In the beginning was the Word, and the Word was with God, and the Word was God. <span class="vn">2</span>The same was in the beginning with God. <span class="vn">3</span>All things were made by him; and without him was not any thing made that was made. <span class="hl-g"><span class="vn">4</span>In him was life; and the life was the light of men. <span class="vn">5</span>And the light shineth in darkness; and the darkness comprehended it not.</span></p>
+    <div class="sh sh2">The Witness of John</div>
+    <p><span class="vn">6</span>There was a man sent from God, whose name <span class="it">was</span> John. <span class="vn">7</span>The same came for a witness, to bear witness of the Light, that all <span class="it">men</span> through him might believe. <span class="vn">8</span>He was not that Light, but <span class="it">was sent</span> to bear witness of that Light.</p>
+  </div>
+  <div class="tp-meta"><h3>B · Lectern</h3>Iowan Old Style (built into macOS and iOS, the Apple Books face). A printed pew Bible.
+    <ul><li>Book name in spaced small capitals</li><li>The chapter as a large drop numeral in the accent, replacing verse 1's number</li><li>Small-cap centred headings, old-style figures</li></ul></div>
+</div>
+
+<div class="tp-card" data-choice="c-study" onclick="toggleSelect(this)">
+  <div class="pg c">
+    <div class="lbl">The Gospel According to John</div>
+    <div class="bk">John <span>1</span></div>
+    <div class="rl"></div>
+    <div class="sh">The Word Became Flesh</div>
+    <p><span class="bm">▮</span><span class="vn">1</span>In the beginning was the Word, and the Word was with God, and the Word was God. <span class="vn">2</span>The same was in the beginning with God. <span class="vn">3</span>All things were made by him; and without him was not any thing made that was made. <span class="hl-g"><span class="vn">4</span>In him was life; and the life was the light of men. <span class="vn">5</span>And the light shineth in darkness; and the darkness comprehended it not.</span></p>
+    <div class="sh sh2">The Witness of John</div>
+    <p><span class="vn">6</span>There was a man sent from God, whose name <span class="it">was</span> John. <span class="vn">7</span>The same came for a witness, to bear witness of the Light, that all <span class="it">men</span> through him might believe. <span class="vn">8</span>He was not that Light, but <span class="it">was sent</span> to bear witness of that Light.</p>
+  </div>
+  <div class="tp-meta"><h3>C · Study</h3>Source Serif 4 (bundled, free licence). A study Bible: left-aligned and structured.
+    <ul><li>Subtitle as a small label over "John 1", then a hairline</li><li>Section headings in SF Pro semibold, like a study Bible's</li><li>Bold verse numbers in the verdigris accent</li></ul></div>
+</div>
+
+<div class="tp-card" data-choice="d-newyork" onclick="toggleSelect(this)">
+  <div class="pg d">
+    <div class="bk">John 1</div>
+    <div class="sub">The Gospel According to John</div>
+    <div class="sp"></div>
+    <div class="sh">The Word Became Flesh</div>
+    <p><span class="bm">▮</span><span class="vn">1</span>In the beginning was the Word, and the Word was with God, and the Word was God. <span class="vn">2</span>The same was in the beginning with God. <span class="vn">3</span>All things were made by him; and without him was not any thing made that was made. <span class="hl-g"><span class="vn">4</span>In him was life; and the life was the light of men. <span class="vn">5</span>And the light shineth in darkness; and the darkness comprehended it not.</span></p>
+    <div class="sh sh2">The Witness of John</div>
+    <p><span class="vn">6</span>There was a man sent from God, whose name <span class="it">was</span> John. <span class="vn">7</span>The same came for a witness, to bear witness of the Light, that all <span class="it">men</span> through him might believe. <span class="vn">8</span>He was not that Light, but <span class="it">was sent</span> to bear witness of that Light.</p>
+  </div>
+  <div class="tp-meta"><h3>D · Today, extended</h3>New York (the system serif, today's face). The current page with the new parts added and nothing else changed.
+    <ul><li>Same heading and grey verse numbers as now</li><li>Adds the subtitle and semibold section headings</li><li>Renders as New York in Safari; Chrome falls back to Georgia</li></ul></div>
+</div>
+
+</div>
+</div>

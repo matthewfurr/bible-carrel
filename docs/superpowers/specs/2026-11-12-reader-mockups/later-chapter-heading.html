@@ -1,0 +1,64 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..700&display=swap" rel="stylesheet">
+<style>
+  .tp { --page:#F5F7F9; --ink:#192028; --ink2:#5D646C; --ink3:#8D9399; --rule:#D3D8DC; --verse:#7A5320; }
+  .tp.dark { --page:#101418; --ink:#E5E8EC; --ink2:#A0A5AB; --ink3:#6D7277; --rule:#292E34; --verse:#DDB683; }
+  .tp-bar { display:flex; gap:8px; margin:4px 0 16px; }
+  .tp-bar button { font:600 13px -apple-system,system-ui,sans-serif; padding:6px 12px; border-radius:6px; border:1px solid #c9ced3; background:#fff; cursor:pointer; }
+  .tp-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(380px,460px)); gap:20px; justify-content:center; }
+  .tp-card { border-radius:12px; overflow:hidden; cursor:pointer; border:2px solid transparent; background:#e6e9ec; }
+  .tp-card.selected { border-color:#247966; }
+  .tp-meta { padding:12px 18px 14px; font:13px/1.45 -apple-system,system-ui,sans-serif; color:#333; background:#fff; }
+  .tp-meta h3 { margin:0 0 4px; font-size:15px; }
+  .pg { background:var(--page); color:var(--ink); padding:36px 36px 30px; font-family:'Literata',serif; font-size:18px; line-height:1.68; min-height:360px; }
+  .pg p { margin:0; }
+  .vn { font-family:-apple-system,system-ui,sans-serif; font-weight:500; font-size:0.58em; position:relative; top:-0.68em; margin-right:0.18em; color:var(--verse); }
+  .c { text-align:center; }
+  .bk { font-weight:300; font-size:44px; line-height:1.1; letter-spacing:-0.01em; }
+  .bk-s { font-weight:400; font-style:italic; font-size:17px; color:var(--ink2); }
+  .lbl { font:600 11px -apple-system,system-ui,sans-serif; letter-spacing:0.22em; color:var(--verse); }
+  .num { font-weight:300; font-size:52px; line-height:1; }
+  .sh { font-style:italic; font-size:17px; color:var(--ink2); margin:0 0 8px; }
+</style>
+
+<h2>Chapters after the first (Printed style)</h2>
+<p class="subtitle">John 1 opens with the full title, subtitle and CHAPTER 1. What should John 3 open with? Each still opens the book's chapter grid when clicked. The bronze here is the final, darker one.</p>
+
+<div class="tp" id="tp2">
+<div class="tp-bar">
+  <button onclick="document.getElementById('tp2').classList.remove('dark')">Light</button>
+  <button onclick="document.getElementById('tp2').classList.add('dark')">Dark</button>
+</div>
+<div class="tp-grid">
+
+<div class="tp-card" data-choice="repeat" onclick="toggleSelect(this)">
+  <div class="pg">
+    <div class="c bk">John</div>
+    <div class="c lbl" style="margin:18px 0 22px">CHAPTER 3</div>
+    <div class="sh">Jesus and Nicodemus</div>
+    <p><span class="vn">1</span>There was a man of the Pharisees, named Nicodemus, a ruler of the Jews: <span class="vn">2</span>The same came to Jesus by night, and said unto him, Rabbi, we know that thou art a teacher come from God&hellip;</p>
+  </div>
+  <div class="tp-meta"><h3>1 · Title every chapter</h3>The large book title on every chapter, without the subtitle. Steady and familiar; costs the most height.</div>
+</div>
+
+<div class="tp-card" data-choice="numeral" onclick="toggleSelect(this)">
+  <div class="pg">
+    <div class="c bk-s">John</div>
+    <div class="c num" style="margin:4px 0 24px">3</div>
+    <div class="sh">Jesus and Nicodemus</div>
+    <p><span class="vn">1</span>There was a man of the Pharisees, named Nicodemus, a ruler of the Jews: <span class="vn">2</span>The same came to Jesus by night, and said unto him, Rabbi, we know that thou art a teacher come from God&hellip;</p>
+  </div>
+  <div class="tp-meta"><h3>2 · Book small, number large</h3>The book in small italic over a large light chapter numeral. The chapter is what changes, so it is what's big.</div>
+</div>
+
+<div class="tp-card" data-choice="label" onclick="toggleSelect(this)">
+  <div class="pg">
+    <div class="c lbl" style="margin:6px 0 24px">JOHN · CHAPTER 3</div>
+    <div class="sh">Jesus and Nicodemus</div>
+    <p><span class="vn">1</span>There was a man of the Pharisees, named Nicodemus, a ruler of the Jews: <span class="vn">2</span>The same came to Jesus by night, and said unto him, Rabbi, we know that thou art a teacher come from God&hellip;</p>
+  </div>
+  <div class="tp-meta"><h3>3 · Running head only</h3>Just the spaced label, like the top of a printed Bible page. The text starts highest; the title is saved for chapter 1.</div>
+</div>
+
+</div>
+</div>

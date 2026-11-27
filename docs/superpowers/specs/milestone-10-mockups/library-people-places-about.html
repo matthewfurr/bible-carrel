@@ -1,0 +1,130 @@
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;1,7..72,400&display=swap" rel="stylesheet">
+<style>
+  .pw { display: flex; flex-direction: column; width: 780px; height: 500px; border-radius: 12px; background: #F5F7F9; color: #192028; overflow: hidden; box-shadow: 0 0 0 1px #c9ced3, 0 10px 30px rgba(0,0,0,.18); font-family: -apple-system, "SF Pro Text", sans-serif; margin: 12px 0 8px; }
+  .pw .ptb { height: 36px; flex: none; display: flex; align-items: center; gap: 7px; padding: 0 12px; color: #5D646C; font-size: 12px; }
+  .pw .ptb i { width: 11px; height: 11px; border-radius: 6px; background: #d5d9dd; display: inline-block; }
+  .pw .ptb span { margin-left: 14px; }
+  .pbd { flex: 1; display: flex; min-height: 0; }
+  .parea { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+  .phead { display: flex; align-items: baseline; gap: 14px; padding: 6px 20px 10px; border-bottom: 1px solid #D3D8DC; }
+  .phead a { font-size: 12px; color: #247966; font-weight: 500; }
+  .phead b { font-family: "Literata", Georgia, serif; font-weight: 300; font-size: 19px; }
+  .phead em { margin-left: auto; font-style: normal; font-size: 10.5px; color: #8D9399; }
+  .pcols { flex: 1; display: flex; min-height: 0; }
+  .plist { width: 190px; padding: 8px 8px; font-size: 12px; border-right: 1px solid #D3D8DC; overflow: hidden; }
+  .plist div { display: flex; justify-content: space-between; padding: 5px 8px; border-radius: 6px; }
+  .plist div.on { background: #D1F0E6; }
+  .plist span { color: #8D9399; font-size: 10.5px; font-variant-numeric: tabular-nums; }
+  .pdet { flex: 1; padding: 14px 18px; font-size: 12px; line-height: 1.5; overflow: hidden; }
+  .pdet h4 { margin: 0; font-family: "Literata", Georgia, serif; font-weight: 400; font-size: 20px; }
+  .pdet .aka { color: #5D646C; font-size: 11px; margin-bottom: 8px; }
+  .lab { font-size: 9.5px; font-weight: 600; color: #5D646C; letter-spacing: .06em; margin: 12px 0 5px; }
+  .dict { font-family: "Literata", Georgia, serif; font-size: 12px; color: #192028; }
+  .dict small { display: block; font-family: -apple-system, sans-serif; color: #8D9399; font-size: 10px; margin-top: 3px; }
+  .tree { display: flex; flex-direction: column; align-items: center; gap: 0; font-size: 11px; }
+  .tree .gen { display: flex; gap: 10px; }
+  .tree .p { padding: 3px 10px; border-radius: 10px; background: #EDF1F4; }
+  .tree .p.me { background: #D1F0E6; font-weight: 600; }
+  .tree .ln { width: 1px; height: 10px; background: #D3D8DC; }
+  .refs { color: #247966; font-size: 11.5px; }
+  .ppane { width: 210px; background: #EDF1F4; padding-top: 18px; text-align: center; flex: none; }
+  .ppane .t { font-family: "Literata", Georgia, serif; font-weight: 300; font-size: 24px; }
+  .ppane .s { font-family: "Literata", Georgia, serif; font-style: italic; font-size: 10.5px; color: #5D646C; margin-top: 2px; }
+  .ppane .pi { display: flex; justify-content: center; gap: 10px; margin: 12px 0; font-size: 8.5px; color: #5D646C; }
+  .ppane .pi div::before { content: ""; display: block; width: 28px; height: 28px; margin: 0 auto 4px; border-radius: 10px; border: 1.25px solid #247966; }
+  .ppane .pi div.on::before { background: #D1F0E6; }
+  .ppane .pi div.on { color: #192028; font-weight: 600; }
+  .ppane .pg { display: grid; grid-template-columns: repeat(5, 32px); gap: 5px; justify-content: center; font-family: "Literata", Georgia, serif; font-size: 13px; color: #5D646C; }
+  .ppane .pg span { height: 26px; line-height: 26px; border-radius: 8px; }
+  .ppane .pg span.cur { background: #D1F0E6; color: #192028; }
+  .map { flex: 1; position: relative; background: #DCE8EE; overflow: hidden; }
+  .map svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .pin { position: absolute; transform: translate(-50%, -100%); font-size: 10px; text-align: center; color: #192028; white-space: nowrap; }
+  .pin::after { content: ""; display: block; width: 10px; height: 10px; margin: 2px auto 0; border-radius: 5px; background: #247966; box-shadow: 0 0 0 2px #FAFCFE; }
+  .pin.big::after { width: 18px; height: 18px; border-radius: 9px; }
+  .pin.sel { font-weight: 600; } .pin.sel::after { background: #192028; }
+  .mcard { position: absolute; left: 12px; bottom: 12px; width: 230px; background: #FAFCFE; border-radius: 10px; box-shadow: 0 0 0 1px #D3D8DC; padding: 10px 12px; font-size: 11.5px; line-height: 1.45; }
+  .mcard b { font-size: 13px; }
+  .about { flex: 1; padding: 14px 22px; font-size: 12px; line-height: 1.55; overflow: hidden; }
+  .facts { display: grid; grid-template-columns: 110px 1fr; row-gap: 4px; }
+  .facts span { color: #5D646C; }
+  .tl { border-left: 1px solid #D3D8DC; margin-left: 4px; padding-left: 12px; }
+  .tl div { position: relative; padding: 2px 0; }
+  .tl div::before { content: ""; position: absolute; left: -15.5px; top: 9px; width: 6px; height: 6px; border-radius: 3px; background: #8D9399; }
+  .tl span { color: #247966; margin-left: 6px; font-size: 11px; }
+  .cap { max-width: 780px; font-size: 13px; line-height: 1.5; opacity: .88; margin: 0 2px 26px; }
+  .hh { font-size: 16px; margin: 24px 2px 0; }
+  .rings { display: flex; gap: 40px; align-items: flex-start; margin: 12px 2px 6px; font-family: "Literata", Georgia, serif; }
+  .rings .rg { display: grid; grid-template-columns: repeat(5, 40px); gap: 8px; font-size: 15px; color: #5D646C; text-align: center; }
+  .rings .rg span { height: 34px; line-height: 34px; position: relative; border-radius: 9px; }
+  .rings .rg span.d::after { content: ""; position: absolute; left: 50%; bottom: 2px; width: 3px; height: 3px; margin-left: -1.5px; border-radius: 2px; background: #8D9399; }
+  .rings .rg span.r::before { content: ""; position: absolute; left: 50%; top: 50%; width: 30px; height: 30px; margin: -15px 0 0 -15px; border-radius: 50%; padding: 2px; -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }
+  .rings .rg span.r1::before { background: conic-gradient(#E9C84A 0 100%); }
+  .rings .rg span.r2::before { background: conic-gradient(#E9C84A 0 48%, transparent 48% 52%, #7CC98B 52% 98%, transparent 98%); }
+  .rings .rg span.r3::before { background: conic-gradient(#E9C84A 0 31%, transparent 31% 34%, #77BDE6 34% 64%, transparent 64% 67%, #EE96C2 67% 97%, transparent 97%); }
+  .rings p { font: 12px/1.4 -apple-system, sans-serif; margin: 6px 0 0; opacity: .8; }
+</style>
+
+<h2>Library: People, Places and About</h2>
+<p class="subtitle">On the Mac each one takes over the contents half of the front page for the chosen book, with “‹ Contents” to go back; the book and its chapters stay at the right. Names, counts and text here are samples, not the real data.</p>
+
+<div class="hh">People</div>
+<div class="pw"><div class="ptb"><i></i><i></i><i></i><span>Bible Carrel</span></div><div class="pbd">
+  <div class="parea">
+    <div class="phead"><a>‹ Contents</a><b>People in John</b><em>62 named · by mentions</em></div>
+    <div class="pcols">
+      <div class="plist"><div>Jesus<span>241</span></div><div>Peter<span>38</span></div><div>Pilate<span>21</span></div><div>John the Baptist<span>19</span></div><div>Philip<span>12</span></div><div>Lazarus<span>11</span></div><div>Judas Iscariot<span>10</span></div><div>Martha<span>9</span></div><div>Thomas<span>8</span></div><div class="on">John<span>7</span></div><div>Mary Magdalene<span>6</span></div><div>Nicodemus<span>5</span></div><div>Andrew<span>5</span></div></div>
+      <div class="pdet">
+        <h4>John</h4><div class="aka">The apostle · also called the disciple whom Jesus loved</div>
+        <div class="dict">One of the apostles of our Lord, the son of Zebedee and Salome, and brother of James the elder…<small>Easton’s Bible Dictionary, 1897 · Show more</small></div>
+        <div class="lab">FAMILY</div>
+        <div class="tree"><div class="gen"><span class="p">Zebedee</span><span class="p">Salome</span></div><div class="ln"></div><div class="gen"><span class="p">James</span><span class="p me">John</span></div></div>
+        <div class="lab">IN JOHN</div>
+        <div class="refs">13:23 · 19:26 · 20:2 · 21:7 · 21:20 · 21:24</div>
+        <div class="lab">ELSEWHERE</div>
+        <div class="refs">Matthew 4:21 · Mark 1:19 · Luke 5:10 · Acts 3:1 · Galatians 2:9 · Revelation 1:1 · 34 more</div>
+      </div>
+    </div>
+  </div>
+  <div class="ppane"><div class="t">John</div><div class="s">The Gospel According to John</div><div class="pi"><div>BibleProject</div><div class="on">People</div><div>Places</div><div>About</div></div><div class="pg"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span class="cur">15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span></div></div>
+</div></div>
+<p class="cap">Everyone named in the book, most-mentioned first. A person shows a dictionary entry where there is one, the family the data records (each name is a click to that person, so a tree can be walked), and every verse that names them, here and elsewhere; a verse is a click to read it.</p>
+
+<div class="hh">Places</div>
+<div class="pw"><div class="ptb"><i></i><i></i><i></i><span>Bible Carrel</span></div><div class="pbd">
+  <div class="parea">
+    <div class="phead"><a>‹ Contents</a><b>Places in John</b><em>26 places · 25 on the map</em></div>
+    <div class="pcols">
+      <div class="plist"><div>Jerusalem<span>13</span></div><div>Galilee<span>12</span></div><div class="on">Bethany<span>5</span></div><div>Capernaum<span>5</span></div><div>Cana<span>4</span></div><div>Jordan<span>3</span></div><div>Samaria<span>3</span></div><div>Sea of Galilee<span>3</span></div><div>Bethsaida<span>2</span></div><div>Nazareth<span>2</span></div><div>Bethlehem<span>1</span></div><div>Sychar<span>1</span></div><div>Ephraim<span>1</span></div></div>
+      <div class="map">
+        <svg viewBox="0 0 340 430" preserveAspectRatio="none"><path d="M120 0 C100 60 96 120 84 190 C72 260 60 330 30 430 L340 430 L340 0 Z" fill="#EEF0E6"/><path d="M214 96 c10 -4 18 8 14 22 c-3 12 -14 16 -18 4 c-3 -9 -2 -22 4 -26z" fill="#DCE8EE"/><path d="M222 126 C224 190 226 240 226 292" stroke="#C9DCE6" stroke-width="3" fill="none"/><path d="M218 292 c8 -4 14 6 14 30 c0 30 -4 60 -10 60 c-8 0 -10 -40 -10 -62 c0 -14 2 -24 6 -28z" fill="#DCE8EE"/></svg>
+        <div class="pin" style="left:54%;top:26%">Cana</div><div class="pin" style="left:68%;top:22%">Capernaum</div><div class="pin" style="left:50%;top:34%">Nazareth</div><div class="pin" style="left:50%;top:50%">Sychar</div><div class="pin big" style="left:52%;top:71%">Jerusalem</div><div class="pin sel" style="left:60%;top:76%">Bethany</div><div class="pin" style="left:50%;top:83%">Bethlehem</div>
+        <div class="mcard"><b>Bethany</b> · village<br>Named in 5 verses of John.<br><span class="refs">11:1 · 11:18 · 12:1 · 1:28</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="ppane"><div class="t">John</div><div class="s">The Gospel According to John</div><div class="pi"><div>BibleProject</div><div>People</div><div class="on">Places</div><div>About</div></div><div class="pg"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span class="cur">15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span></div></div>
+</div></div>
+<p class="cap">Apple’s map, with a pin for each place the book names; places that share a spot are gathered into one larger pin. The list and the map select each other. The real map needs a connection for its tiles; the list works without one. (The map drawn here is a rough stand-in.)</p>
+
+<div class="hh">About</div>
+<div class="pw" style="height:440px"><div class="ptb"><i></i><i></i><i></i><span>Bible Carrel</span></div><div class="pbd">
+  <div class="parea">
+    <div class="phead"><a>‹ Contents</a><b>About John</b></div>
+    <div class="about">
+      <div class="facts"><span>Place</span><div>New Testament · Gospels &amp; Acts</div><span>Length</span><div>21 chapters · 879 verses</div><span>Writer</span><div>John</div><span>People and places</span><div>62 people · 26 places</div></div>
+      <div class="lab">FROM THE DICTIONARY</div>
+      <div class="dict">The genuineness of this Gospel, i.e., the fact that the apostle John was its author, is beyond all reasonable doubt…<small>Easton’s Bible Dictionary, 1897 · Show more</small></div>
+      <div class="lab">EVENTS</div>
+      <div class="tl"><div>The wedding at Cana<span>2:1–11</span></div><div>Jesus clears the temple<span>2:13–22</span></div><div>Nicodemus comes by night<span>3:1–21</span></div><div>The feeding of the five thousand<span>6:1–15</span></div><div>Lazarus is raised<span>11:1–44</span></div><div>The crucifixion<span>19:16–37</span></div></div>
+    </div>
+  </div>
+  <div class="ppane"><div class="t">John</div><div class="s">The Gospel According to John</div><div class="pi"><div>BibleProject</div><div>People</div><div>Places</div><div class="on">About</div></div><div class="pg"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span class="cur">15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span></div></div>
+</div></div>
+<p class="cap">The plain facts, the dictionary’s entry on the book, and the events the data places in it, each a click to its passage. Whether events and people carry dates is the question in the conversation.</p>
+
+<div class="hh">A separate small thing: chapter marks</div>
+<div class="rings">
+  <div><div class="rg"><span>1</span><span class="d">2</span><span class="d">3</span><span>4</span><span>5</span><span class="d">6</span><span>7</span><span>8</span><span>9</span><span class="d">10</span></div><p>Today: a dot under a chapter with any mark.</p></div>
+  <div><div class="rg"><span>1</span><span class="r r1">2</span><span class="r r2">3</span><span>4</span><span>5</span><span class="r r3">6</span><span>7</span><span>8</span><span>9</span><span class="r r1">10</span></div><p>Rings: a thin ring in the colours you used there.</p></div>
+</div>

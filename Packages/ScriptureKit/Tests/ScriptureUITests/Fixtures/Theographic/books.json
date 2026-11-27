@@ -1,0 +1,36 @@
+[
+ {
+  "id": "recB00000000001",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "osisName": "Gen",
+   "bookName": "Genesis",
+   "writers": [
+    "moses_2108"
+   ]
+  }
+ },
+ {
+  "id": "recB00000000002",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "osisName": "Ps",
+   "bookName": "Psalms",
+   "writers": [
+    "david_994",
+    "solomon_2762"
+   ]
+  }
+ },
+ {
+  "id": "recB00000000003",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "fields": {
+   "osisName": "Matt",
+   "bookName": "Matthew",
+   "writers": [
+    "matthew_1971"
+   ]
+  }
+ }
+]

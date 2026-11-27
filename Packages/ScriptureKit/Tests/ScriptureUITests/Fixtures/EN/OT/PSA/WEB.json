@@ -1,0 +1,23 @@
+{
+  "version": "WEB",
+  "ID": "OT:PSA(WEB)",
+  "name": "Psalms",
+  "text": [
+    {
+      "ID": "OT:PSA.1",
+      "name": "Psalm 1",
+      "text": [
+        {"ID": "1", "text": "Psalm one verse one."},
+        {"ID": "2", "text": "Psalm one verse two."}
+      ]
+    },
+    {
+      "ID": "OT:PSA.2",
+      "name": "Psalm 2",
+      "text": [
+        {"ID": "1", "text": "Psalm two verse one."},
+        {"ID": "2", "text": "Psalm two verse two."}
+      ]
+    }
+  ]
+}

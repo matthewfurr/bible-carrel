@@ -1,0 +1,61 @@
+<style>
+  .kv-h { font-size: 16px; margin: 24px 2px 0; }
+  .kv-cap { max-width: 760px; font-size: 13px; line-height: 1.5; opacity: .88; margin: 4px 2px 22px; }
+  .kw { display: flex; width: 760px; height: 400px; border-radius: 12px; background: #F5F7F9; color: #192028; overflow: hidden; box-shadow: 0 0 0 1px #c9ced3, 0 10px 30px rgba(0,0,0,.18); font-family: -apple-system, "SF Pro Text", sans-serif; margin: 12px 0 8px; position: relative; }
+  .kpage { flex: 1; padding: 46px 40px 0; font-family: Georgia, serif; font-size: 13.5px; line-height: 1.6; opacity: .5; }
+  .kcol { width: 300px; background: #EDF1F4; padding: 44px 12px 0; font-size: 12px; }
+  .kcol h5 { margin: 0 0 8px 8px; font-size: 13px; font-weight: 600; }
+  .krow { padding: 10px; border-radius: 6px; line-height: 1.45; }
+  .krow.on { background: #D1F0E6; }
+  .kref { display: flex; align-items: center; gap: 7px; font-size: 11px; font-weight: 600; color: #5D646C; }
+  .kref i { width: 10px; height: 10px; border-radius: 5px; background: #F8E18A; box-shadow: 0 0 0 .5px #b9a45a; }
+  .kref span { margin-left: auto; font-weight: 400; color: #8D9399; font-size: 10px; }
+  .kq { font-family: Georgia, serif; font-style: italic; color: #5D646C; margin: 5px 0; }
+  .kver { display: inline-flex; align-items: center; gap: 5px; margin-top: 7px; font-size: 11px; color: #5D646C; padding: 2px 8px 2px 6px; border-radius: 9px; background: #FAFCFE; }
+  .kver::before { content: ""; width: 9px; height: 10px; border: 1.2px solid #5D646C; border-radius: 2px; box-shadow: 3px -3px 0 -1px #FAFCFE, 3px -3px 0 0 #5D646C; margin-right: 3px; }
+  .kpop { position: absolute; right: 320px; top: 110px; width: 330px; border-radius: 12px; background: #FAFCFE; box-shadow: 0 0 0 1px #D3D8DC, 0 10px 28px rgba(0,0,0,.22); padding: 14px; font-size: 12px; line-height: 1.5; }
+  .kpop b.t { font-size: 13px; }
+  .kpop .w { color: #5D646C; font-size: 11px; margin: 2px 0 10px; }
+  .kv { padding: 9px 0; border-top: 1px solid #D3D8DC; }
+  .kv .l { font-size: 10px; font-weight: 600; color: #5D646C; letter-spacing: .04em; display: flex; justify-content: space-between; }
+  .kv .l em { font-style: normal; font-weight: 400; color: #8D9399; }
+  .kv .b { margin: 4px 0 7px; }
+  .kb { display: inline-block; padding: 3px 10px; border-radius: 6px; background: #EDF1F4; margin-right: 6px; font-size: 11px; }
+  .kb.p { background: #247966; color: #fff; }
+</style>
+
+<h2>When one note was changed on two devices</h2>
+<p class="subtitle">A note on John 15:5 was edited on the iPhone and on the Mac before they synced. iCloud keeps one; the app keeps the other too. This is how you would see and settle it. The notes are made up.</p>
+
+<div class="kv-h">Mac: a quiet mark on the note, and both versions side by side</div>
+<div class="kw">
+  <div class="kpage">I am the vine. You are the branches. He who remains in me and I in him bears much fruit, for apart from me you can do nothing. If a man doesn’t remain in me, he is thrown out as a branch and is withered…</div>
+  <div class="kcol">
+    <h5>Notes</h5>
+    <div class="krow on">
+      <div class="kref"><i></i>John 15:5<span>Today</span></div>
+      <div class="kq">“apart from me you can do nothing”</div>
+      Fruit is the result of staying, not of trying harder. Ask on Tuesday how this fits with verse 2.
+      <div><span class="kver">2 versions</span></div>
+    </div>
+    <div class="krow">
+      <div class="kref"><i style="background:#BCF2BD"></i>John 15:9<span>Sunday</span></div>
+      <div class="kq">“Remain in my love”</div>
+      The same word again.
+    </div>
+  </div>
+  <div class="kpop">
+    <b class="t">Two versions of this note</b>
+    <div class="w">It was changed on two devices before they synced. Nothing was lost.</div>
+    <div class="kv">
+      <div class="l"><span>THIS VERSION · IPHONE</span><em>Today 8:14 am</em></div>
+      <div class="b">Fruit is the result of staying, not of trying harder. Ask on Tuesday how this fits with verse 2.</div>
+    </div>
+    <div class="kv">
+      <div class="l"><span>KEPT VERSION · MAC</span><em>Yesterday 9:40 pm</em></div>
+      <div class="b">Fruit is the result of staying, not of trying harder. Compare Galatians 5:22.</div>
+      <span class="kb p">Use This One</span><span class="kb">Keep Both in the Note</span><span class="kb">Discard</span>
+    </div>
+  </div>
+</div>
+<p class="kv-cap">The note shows the version iCloud kept, with a small “2 versions” mark, never an alert and never red. Clicking the mark shows both, each with its device and time. <b>Use This One</b> swaps them (the other becomes the kept one, so nothing is thrown away by choosing). <b>Keep Both in the Note</b> puts the kept text under the current text in one note. <b>Discard</b> removes the kept version and can be undone. The same mark and the same three choices are on the iPhone’s note sheet and in the Notes Browser, which also gets a filter showing only notes with a kept version.</p>

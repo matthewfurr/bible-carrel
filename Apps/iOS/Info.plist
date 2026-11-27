@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CloudKitContainer</key>
+	<string>$(CLOUDKIT_CONTAINER)</string>
+	<key>CloudKitEnvironment</key>
+	<string>$(CLOUDKIT_ENVIRONMENT)</string>
+	<key>PassageURLScheme</key>
+	<string>$(PASSAGE_URL_SCHEME)</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).passage</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>$(PASSAGE_URL_SCHEME)</string>
+			</array>
+		</dict>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
+</dict>
+</plist>

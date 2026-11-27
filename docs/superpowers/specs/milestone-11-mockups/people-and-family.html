@@ -1,0 +1,232 @@
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;0,7..72,500;1,7..72,400&display=swap" rel="stylesheet">
+<style>
+  .bc { --page:#F5F7F9; --panel:#EDF1F4; --ink:#192028; --ink2:#5D646C; --ink3:#8D9399; --rule:#D3D8DC; --verse:#7A5320; --acc:#247966; --wash:#D1F0E6; font-family:-apple-system,"SF Pro Text",sans-serif; color:var(--ink); }
+  .win { background:var(--page); border-radius:12px; overflow:hidden; box-shadow:0 0 0 1px #c9ced3,0 10px 30px rgba(0,0,0,.16); }
+  .tb { height:30px; display:flex; align-items:center; gap:6px; padding:0 12px; } .tb i { width:10px; height:10px; border-radius:5px; background:#d5d9dd; }
+  .hdr { display:flex; align-items:baseline; gap:12px; padding:4px 20px 8px; border-bottom:1px solid var(--rule); }
+  .hdr a { color:var(--acc); font-size:12px; font-weight:500; } .hdr b { font-family:"Literata",Georgia,serif; font-weight:400; font-size:17px; } .hdr em { margin-left:auto; font-style:normal; font-size:10.5px; color:var(--ink2); }
+  .two { display:flex; }
+  .list { width:170px; flex:none; padding:8px; font-size:12px; border-right:1px solid var(--rule); }
+  .list .sort { display:flex; gap:0; margin:2px 4px 8px; border-radius:6px; background:var(--panel); padding:2px; font-size:10.5px; }
+  .list .sort span { flex:1; text-align:center; padding:3px 0; border-radius:5px; color:var(--ink2); }
+  .list .sort span.on { background:#fff; color:var(--ink); box-shadow:0 0 0 .5px #c9ced3; }
+  .list .r { display:flex; justify-content:space-between; padding:4px 8px; border-radius:6px; }
+  .list .r.on { background:var(--wash); } .list .r span { color:var(--ink2); font-variant-numeric:tabular-nums; font-size:11px; }
+  .page { flex:1; padding:16px 22px 20px; min-width:0; }
+  .h1t { font-family:"Literata",Georgia,serif; font-weight:300; font-size:34px; line-height:1.05; }
+  .h1s { font-family:"Literata",Georgia,serif; font-style:italic; font-size:13px; color:var(--ink2); margin:3px 0 12px; }
+  .colo { display:grid; grid-template-columns:84px 1fr; gap:6px 14px; font-size:12.5px; line-height:1.4; }
+  .colo .k { text-align:right; font-size:9.5px; font-weight:600; letter-spacing:.07em; color:var(--ink2); text-transform:uppercase; padding-top:2px; }
+  .colo small { color:var(--ink2); font-size:11px; }
+  .dict { font-family:"Literata",Georgia,serif; font-size:12px; line-height:1.5; margin-top:12px; }
+  .dict a { color:var(--acc); font-family:-apple-system,sans-serif; font-size:11px; }
+  .lab { font-size:9.5px; font-weight:600; letter-spacing:.07em; color:var(--ink2); text-transform:uppercase; margin:18px 0 8px; }
+  .ln { color:var(--acc); } .meta { font-size:10.5px; color:var(--ink2); }
+  svg text { font-family:-apple-system,"SF Pro Text",sans-serif; }
+  .o { font-size:12px; }
+  .o .gen { display:grid; grid-template-columns:18px 1fr; align-items:baseline; }
+  .o .rail { position:relative; height:100%; }
+  .o .rail::before { content:""; position:absolute; left:8px; top:-4px; bottom:-8px; width:1px; background:var(--rule); }
+  .o .rail::after { content:""; position:absolute; left:5px; top:5px; width:7px; height:7px; border-radius:4px; background:var(--page); box-shadow:0 0 0 1.25px var(--ink2); }
+  .o .gen.me .rail::after { background:var(--acc); box-shadow:none; }
+  .o .gen > div:last-child { padding:3px 0; }
+  .o .who { color:var(--acc); }
+  .o .me .who { color:var(--ink); font-weight:600; }
+  .o .rel { font-size:10px; color:var(--ink2); margin-left:4px; }
+  .o .sib { font-size:11.5px; color:var(--ink2); margin-top:2px; line-height:1.5; }
+  .o .sib .who { font-size:11.5px; }
+  .hh .rel { font-size:10px; color:var(--ink2); margin-left:5px; }
+  .hh { font-size:12px; margin-left:18px; border-left:1px solid var(--rule); padding-left:12px; }
+  .hh .m { padding:4px 0 1px; }
+  .hh .kids { font-size:11.5px; line-height:1.5; padding-left:12px; position:relative; }
+  .hh .kids::before { content:""; position:absolute; left:2px; top:-2px; height:10px; width:7px; border-left:1px solid var(--rule); border-bottom:1px solid var(--rule); }
+  .grp { font-size:8.5px; font-weight:600; letter-spacing:.12em; color:var(--verse); text-transform:uppercase; }
+  .phone { width:300px; height:600px; border-radius:38px; background:var(--page); box-shadow:0 0 0 7px #1e2227,0 0 0 8px #444,0 10px 30px rgba(0,0,0,.2); overflow:hidden; flex:none; position:relative; }
+  .phone .bar { height:70px; display:flex; align-items:flex-end; padding:0 14px 8px; font-size:13px; } .phone .bar a { color:var(--acc); }
+  .phone .pb { padding:0 18px; }
+  .row2 { display:flex; gap:24px; align-items:flex-start; }
+  .cost { font-size:12.5px; line-height:1.5; margin-top:10px; max-width:900px; }
+  .note { font-size:13px; line-height:1.5; max-width:900px; }
+</style>
+<div class="bc">
+<h2>People: a person's page and the family tree</h2>
+<p class="subtitle">David, from 2 Samuel, with the real data. One proposal for the page itself (it follows the About page you approved), then three family trees to choose from (A, B or C).</p>
+
+<h3 style="margin:6px 0 4px">The page (one proposal)</h3>
+<div class="win" style="width:820px"><div class="tb"><i></i><i></i><i></i></div>
+  <div class="hdr"><a>‹ Contents</a><b>People in 2 Samuel</b><em>169 named</em></div>
+  <div class="two">
+    <div class="list">
+      <div class="sort"><span class="on">Most named</span><span>A to Z</span></div>
+      <div class="r on">David<span>226</span></div><div class="r">God<span>158</span></div><div class="r">Joab<span>84</span></div><div class="r">Absalom<span>83</span></div><div class="r">Abner<span>40</span></div><div class="r">Judah<span>27</span></div><div class="r">Saul<span>23</span></div><div class="r">Amnon<span>20</span></div><div class="r">Uriah<span>19</span></div><div class="r">Jonathan<span>17</span></div><div class="r">Abishai<span>15</span></div>
+    </div>
+    <div class="page">
+      <div class="h1t">David</div>
+      <div class="h1s" style="margin-bottom:12px"></div>
+      <div class="colo">
+        <div class="k">Father</div><div><span class="ln">Jesse</span></div>
+        <div class="k">Lived</div><div>about 1085 to 1015 BC</div>
+        <div class="k">Named</div><div>226 verses here, 896 in 28 books</div>
+        <div class="k">Family</div><div>8 partners, 21 children <small>(below)</small></div>
+      </div>
+      <div class="dict">Beloved, the eighth and youngest son of Jesse, a citizen of Bethlehem. His father seems to have been a man in humble life. His mother's name is not recorded… <a>Show more</a></div>
+      <div class="lab">Family</div>
+      <div class="meta">(the tree you choose below)</div>
+      <div class="lab">In 2 Samuel · 226 verses</div>
+      <div class="meta"><span class="ln">1:1, 1:2, 1:3, 1:4, 1:5 …</span></div>
+    </div>
+  </div>
+</div>
+<div class="cost"><b>What changes:</b> the name set like the book's title, the facts in the same aligned list as About, and a choice above the list: Most named or A to Z (Places gets the same control). Under the name, the data's own label where it has one ("son of Boaz", "father of Abijah"); David has none. The data records fathers and mothers but nobody's sex, so the app never writes "son" or "daughter" itself. <b>Cost:</b> small, mostly reuse of About's pieces.</div>
+
+<h3 style="margin:28px 0 4px">The family tree</h3>
+<div class="note">What the data can and cannot say: who is a parent, partner, sibling, half-sibling or child. It does not record anyone's sex or birth order, so the tree cannot say "brother" or "eldest". It records the mother of 10 of David's 21 children. Grandparents are reached by walking up through a parent.</div>
+<div class="options" style="margin-top:12px">
+
+<div class="option" data-choice="tree-a" onclick="toggleSelect(this)"><div class="letter">A</div><div class="content">
+  <h3>A classic tree, on both</h3>
+  <div class="row2">
+  <div class="win" style="width:580px;padding:10px 14px 14px"><div class="lab" style="margin-top:0">Family</div>
+  <svg width="550" height="330" viewBox="0 0 550 330">
+    <g font-size="11" text-anchor="middle" fill="#192028">
+      <text x="275" y="14" fill="#8D9399">Obed</text>
+      <line x1="275" y1="19" x2="275" y2="32" stroke="#D3D8DC"/>
+      <text x="275" y="45" fill="#247966">Jesse</text>
+      <line x1="275" y1="50" x2="275" y2="64" stroke="#D3D8DC"/>
+      <line x1="26" y1="64" x2="425" y2="64" stroke="#D3D8DC"/>
+      <line x1="425" y1="64" x2="530" y2="64" stroke="#D3D8DC" stroke-dasharray="3 3"/>
+      <g fill="#247966">
+        <line x1="26" y1="64" x2="26" y2="74" stroke="#D3D8DC"/><text x="26" y="86">Eliab</text>
+        <line x1="85" y1="64" x2="85" y2="74" stroke="#D3D8DC"/><text x="85" y="86">Abinadab</text>
+        <line x1="144" y1="64" x2="144" y2="74" stroke="#D3D8DC"/><text x="144" y="86">Shammah</text>
+        <line x1="203" y1="64" x2="203" y2="74" stroke="#D3D8DC"/><text x="203" y="86">Nethaneel</text>
+        <line x1="335" y1="64" x2="335" y2="74" stroke="#D3D8DC"/><text x="335" y="86">Raddai</text>
+        <line x1="386" y1="64" x2="386" y2="74" stroke="#D3D8DC"/><text x="386" y="86">Ozem</text>
+        <line x1="425" y1="64" x2="425" y2="74" stroke="#D3D8DC"/><text x="425" y="86">Elihu</text>
+        <line x1="475" y1="64" x2="475" y2="74" stroke="#D3D8DC" stroke-dasharray="3 3"/><text x="475" y="86">Zeruiah</text>
+        <line x1="530" y1="64" x2="530" y2="74" stroke="#D3D8DC" stroke-dasharray="3 3"/><text x="530" y="86">Abigail</text>
+      </g>
+      <line x1="275" y1="64" x2="275" y2="72" stroke="#D3D8DC"/>
+      <rect x="248" y="72" width="54" height="20" rx="6" fill="#D1F0E6"/><text x="275" y="86" font-weight="600">David</text>
+      <line x1="275" y1="92" x2="275" y2="112" stroke="#D3D8DC"/>
+      <line x1="40" y1="112" x2="515" y2="112" stroke="#D3D8DC"/>
+      <g fill="#247966">
+        <line x1="40" y1="112" x2="40" y2="122" stroke="#D3D8DC"/><text x="40" y="134">Bathsheba</text>
+        <line x1="108" y1="112" x2="108" y2="122" stroke="#D3D8DC"/><text x="108" y="134">Ahinoam</text>
+        <line x1="172" y1="112" x2="172" y2="122" stroke="#D3D8DC"/><text x="172" y="134">Abigail</text>
+        <line x1="234" y1="112" x2="234" y2="122" stroke="#D3D8DC"/><text x="234" y="134">Maacah</text>
+        <line x1="296" y1="112" x2="296" y2="122" stroke="#D3D8DC"/><text x="296" y="134">Haggith</text>
+        <line x1="356" y1="112" x2="356" y2="122" stroke="#D3D8DC"/><text x="356" y="134">Abital</text>
+        <line x1="412" y1="112" x2="412" y2="122" stroke="#D3D8DC"/><text x="412" y="134">Eglah</text>
+        <line x1="470" y1="112" x2="470" y2="122" stroke="#D3D8DC"/><text x="470" y="134">Michal</text>
+      </g>
+      <text x="275" y="106" font-size="9" fill="#5D646C" text-anchor="start" dx="6">partners</text>
+      <g fill="#247966" font-size="10.5">
+        <line x1="40" y1="140" x2="40" y2="150" stroke="#D3D8DC"/>
+        <text x="40" y="162">Shammua</text><text x="40" y="177">Shobab</text><text x="40" y="192">Nathan</text><text x="40" y="207">Solomon</text>
+        <line x1="108" y1="140" x2="108" y2="150" stroke="#D3D8DC"/><text x="108" y="162">Amnon</text>
+        <line x1="172" y1="140" x2="172" y2="150" stroke="#D3D8DC"/><text x="172" y="162">Daniel</text>
+        <line x1="234" y1="140" x2="234" y2="150" stroke="#D3D8DC"/><text x="234" y="162">Absalom</text>
+        <line x1="296" y1="140" x2="296" y2="150" stroke="#D3D8DC"/><text x="296" y="162">Adonijah</text>
+        <line x1="356" y1="140" x2="356" y2="150" stroke="#D3D8DC"/><text x="356" y="162">Shephatiah</text>
+        <line x1="412" y1="140" x2="412" y2="150" stroke="#D3D8DC"/><text x="412" y="162">Ithream</text>
+      </g>
+      <line x1="10" y1="232" x2="540" y2="232" stroke="#D3D8DC" stroke-dasharray="2 3"/>
+      <text x="10" y="252" text-anchor="start" font-size="9" fill="#5D646C" letter-spacing=".7">CHILDREN, MOTHER NOT NAMED</text>
+      <g fill="#247966" font-size="10.5" text-anchor="start">
+        <text x="10" y="272">Eliphalet · Elpalet · Elishua · Tamar · Eliada · Ibhar · Jerimoth · Japhia</text>
+        <text x="10" y="288">Elishama · Nepheg · Nogah</text>
+      </g>
+      <text x="10" y="318" text-anchor="start" font-size="9.5" fill="#8D9399">Dashed: half-sisters. Obed is Jesse's father.</text>
+    </g>
+  </svg></div>
+  <div class="phone"><div class="bar"><a>‹ 2 Samuel</a></div><div class="pb">
+    <div class="lab" style="margin-top:4px">Family · scrolls sideways ⟷</div>
+    <div style="overflow:hidden;width:264px;border-right:1px dashed #D3D8DC">
+    <svg width="420" height="250" viewBox="0 0 420 250"><g font-size="12" text-anchor="middle" fill="#247966">
+      <text x="150" y="16">Jesse</text><line x1="150" y1="22" x2="150" y2="36" stroke="#D3D8DC"/><line x1="20" y1="36" x2="400" y2="36" stroke="#D3D8DC"/>
+      <text x="30" y="58">Eliab</text><text x="95" y="58">Abinadab</text><rect x="122" y="44" width="56" height="20" rx="6" fill="#D1F0E6"/><text x="150" y="58" fill="#192028" font-weight="600">David</text><text x="215" y="58">Shammah</text><text x="285" y="58">Nethaneel</text><text x="355" y="58">Raddai</text>
+      <line x1="150" y1="64" x2="150" y2="84" stroke="#D3D8DC"/><line x1="40" y1="84" x2="410" y2="84" stroke="#D3D8DC"/>
+      <text x="40" y="104">Bathsheba</text><text x="115" y="104">Ahinoam</text><text x="185" y="104">Abigail</text><text x="255" y="104">Maacah</text><text x="325" y="104">Haggith</text><text x="395" y="104">Abital</text>
+      <g font-size="11"><text x="40" y="130">Shammua</text><text x="40" y="146">Shobab</text><text x="40" y="162">Nathan</text><text x="40" y="178">Solomon</text><text x="115" y="130">Amnon</text><text x="185" y="130">Daniel</text><text x="255" y="130">Absalom</text><text x="325" y="130">Adonijah</text></g>
+    </g></svg></div>
+  </div></div>
+  </div>
+  <div class="cost"><b>What it is:</b> what a family tree looks like on paper: generations top to bottom, joined by lines. The person's siblings hang from the parent, partners from the person, and children from their mother where the data names her. Children whose mother is not named sit together underneath. Every name is a link that walks the tree.<br><b>Cost:</b> the largest. It needs a layout of our own that draws the connecting lines, scrolls sideways when a family is wider than the column (on the phone that is most families), and gives VoiceOver its own reading order. David's tree is about the widest the data has; Jacob's (4 partners, 13 children) fits.</div>
+</div></div>
+
+<div class="option" data-choice="tree-b" onclick="toggleSelect(this)"><div class="letter">B</div><div class="content">
+  <h3>Line and household, vertical on both</h3>
+  <div class="row2">
+  <div class="win" style="width:460px;padding:10px 18px 16px"><div class="lab" style="margin-top:0">Family</div>
+    <div class="o">
+      <div class="gen"><div class="rail"></div><div><span class="who">Obed</span><span class="rel">grandfather</span></div></div>
+      <div class="gen"><div class="rail"></div><div><span class="who">Jesse</span><span class="rel">father</span>
+        <div class="sib">Siblings: <span class="who">Eliab</span>, <span class="who">Abinadab</span>, <span class="who">Shammah</span>, <span class="who">Nethaneel</span>, <span class="who">Raddai</span>, <span class="who">Ozem</span>, <span class="who">Elihu</span><br>Half-siblings: <span class="who">Zeruiah</span>, <span class="who">Abigail</span></div></div></div>
+      <div class="gen me"><div class="rail"></div><div><span class="who">David</span></div></div>
+    </div>
+    <div class="hh">
+      <div class="m"><span class="ln">Bathsheba</span><span class="rel">partner</span></div><div class="kids"><span class="ln">Shammua</span>, <span class="ln">Shobab</span>, <span class="ln">Nathan</span>, <span class="ln">Solomon</span></div>
+      <div class="m"><span class="ln">Ahinoam</span><span class="rel">partner</span></div><div class="kids"><span class="ln">Amnon</span></div>
+      <div class="m"><span class="ln">Abigail</span><span class="rel">partner</span></div><div class="kids"><span class="ln">Daniel</span></div>
+      <div class="m"><span class="ln">Maacah</span><span class="rel">partner</span></div><div class="kids"><span class="ln">Absalom</span></div>
+      <div class="m"><span class="ln">Haggith</span>, <span class="ln">Abital</span>, <span class="ln">Eglah</span> <span class="rel">partners, one child each</span></div><div class="kids"><span class="ln">Adonijah</span>, <span class="ln">Shephatiah</span>, <span class="ln">Ithream</span></div>
+      <div class="m"><span class="ln">Michal</span><span class="rel">partner, no children named</span></div>
+      <div class="m"><span class="meta" style="font-style:italic">Mother not named</span></div><div class="kids"><span class="ln">Eliphalet</span>, <span class="ln">Elpalet</span>, <span class="ln">Elishua</span>, <span class="ln">Tamar</span>, <span class="ln">Eliada</span>, <span class="ln">Ibhar</span>, <span class="ln">Jerimoth</span>, <span class="ln">Japhia</span>, <span class="ln">Elishama</span>, <span class="ln">Nepheg</span>, <span class="ln">Nogah</span></div>
+    </div>
+  </div>
+  <div class="phone"><div class="bar"><a>‹ 2 Samuel</a></div><div class="pb">
+    <div class="lab" style="margin-top:4px">Family</div>
+    <div class="o">
+      <div class="gen"><div class="rail"></div><div><span class="who">Obed</span><span class="rel">grandfather</span></div></div>
+      <div class="gen"><div class="rail"></div><div><span class="who">Jesse</span><span class="rel">father</span><div class="sib">Siblings: <span class="who">Eliab</span>, <span class="who">Abinadab</span>, <span class="who">Shammah</span> and 4 more · Half-siblings: <span class="who">Zeruiah</span>, <span class="who">Abigail</span></div></div></div>
+      <div class="gen me"><div class="rail"></div><div><span class="who">David</span></div></div>
+    </div>
+    <div class="hh">
+      <div class="m"><span class="ln">Bathsheba</span></div><div class="kids"><span class="ln">Shammua</span>, <span class="ln">Shobab</span>, <span class="ln">Nathan</span>, <span class="ln">Solomon</span></div>
+      <div class="m"><span class="ln">Ahinoam</span></div><div class="kids"><span class="ln">Amnon</span></div>
+      <div class="m"><span class="ln">Abigail</span></div><div class="kids"><span class="ln">Daniel</span></div>
+      <div class="m"><span class="meta">and 5 more partners</span></div>
+    </div>
+  </div></div>
+  </div>
+  <div class="cost"><b>What it is:</b> the line of descent read downwards, as the Bible's genealogies read (grandfather, father, the person), with the siblings at the father's level, then the household: each partner with her children under her. It uses the timeline's rail, so the two read as one system.<br><b>Cost:</b> the smallest. Rows and the rail from the About project; nothing scrolls sideways; VoiceOver reads it in order as it stands.</div>
+</div></div>
+
+<div class="option" data-choice="tree-c" onclick="toggleSelect(this)"><div class="letter">C</div><div class="content">
+  <h3>A classic tree on the Mac that never scrolls sideways; B on the phone</h3>
+  <div class="win" style="width:580px;padding:10px 14px 14px"><div class="lab" style="margin-top:0">Family</div>
+  <svg width="550" height="235" viewBox="0 0 550 235"><g font-size="11" text-anchor="middle" fill="#192028">
+    <text x="275" y="14" fill="#8D9399">Obed</text><line x1="275" y1="19" x2="275" y2="32" stroke="#D3D8DC"/>
+    <text x="275" y="45" fill="#247966">Jesse</text><line x1="275" y1="50" x2="275" y2="64" stroke="#D3D8DC"/>
+    <line x1="150" y1="64" x2="400" y2="64" stroke="#D3D8DC"/>
+    <line x1="150" y1="64" x2="150" y2="72" stroke="#D3D8DC"/>
+    <rect x="96" y="72" width="108" height="20" rx="10" fill="#EDF1F4"/><text x="150" y="86" fill="#247966">7 siblings ▾</text>
+    <line x1="400" y1="64" x2="400" y2="72" stroke="#D3D8DC" stroke-dasharray="3 3"/>
+    <rect x="346" y="72" width="108" height="20" rx="10" fill="#EDF1F4"/><text x="400" y="86" fill="#247966">2 half-siblings ▾</text>
+    <line x1="275" y1="64" x2="275" y2="72" stroke="#D3D8DC"/>
+    <rect x="248" y="72" width="54" height="20" rx="6" fill="#D1F0E6"/><text x="275" y="86" font-weight="600">David</text>
+    <line x1="275" y1="92" x2="275" y2="112" stroke="#D3D8DC"/><line x1="40" y1="112" x2="510" y2="112" stroke="#D3D8DC"/>
+    <g fill="#247966">
+      <line x1="40" y1="112" x2="40" y2="122" stroke="#D3D8DC"/><text x="40" y="134">Bathsheba</text>
+      <line x1="120" y1="112" x2="120" y2="122" stroke="#D3D8DC"/><text x="120" y="134">Ahinoam</text>
+      <line x1="196" y1="112" x2="196" y2="122" stroke="#D3D8DC"/><text x="196" y="134">Abigail</text>
+      <line x1="272" y1="112" x2="272" y2="122" stroke="#D3D8DC"/><text x="272" y="134">Maacah</text>
+      <line x1="350" y1="112" x2="350" y2="122" stroke="#D3D8DC"/><text x="350" y="134">Haggith</text>
+      <line x1="430" y1="112" x2="430" y2="122" stroke="#D3D8DC"/><rect x="390" y="122" width="80" height="18" rx="9" fill="#EDF1F4"/><text x="430" y="135">3 more ▾</text>
+      <line x1="510" y1="112" x2="510" y2="122" stroke="#D3D8DC"/><text x="510" y="134" fill="#5D646C" font-style="italic" font-size="10">not named</text>
+    </g>
+    <g fill="#247966" font-size="10.5">
+      <line x1="40" y1="140" x2="40" y2="150" stroke="#D3D8DC"/><text x="40" y="162">Shammua</text><text x="40" y="177">Shobab</text><text x="40" y="192">Nathan</text><text x="40" y="207">Solomon</text>
+      <line x1="120" y1="140" x2="120" y2="150" stroke="#D3D8DC"/><text x="120" y="162">Amnon</text>
+      <line x1="196" y1="140" x2="196" y2="150" stroke="#D3D8DC"/><text x="196" y="162">Daniel</text>
+      <line x1="272" y1="140" x2="272" y2="150" stroke="#D3D8DC"/><text x="272" y="162">Absalom</text>
+      <line x1="350" y1="140" x2="350" y2="150" stroke="#D3D8DC"/><text x="350" y="162">Adonijah</text>
+      <line x1="510" y1="140" x2="510" y2="150" stroke="#D3D8DC"/><rect x="474" y="150" width="72" height="18" rx="9" fill="#EDF1F4"/><text x="510" y="163">11 ▾</text>
+    </g>
+  </g></svg></div>
+  <div class="cost"><b>What it is:</b> A's tree, kept inside the column: when a generation is too wide, the overflow folds into a count you open in place (siblings, the last partners, the children whose mother is not named). The phone gets B, since a drawn tree at phone width folds almost everything.<br><b>Cost:</b> between B and A, nearer A. The same drawn layout as A, without sideways scrolling but with folding and its open and closed states, plus B for the phone.</div>
+</div></div>
+
+</div>
+</div>

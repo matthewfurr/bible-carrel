@@ -1,0 +1,187 @@
+<style>
+  .ph { width: 264px; height: 548px; border-radius: 42px; background: #F5F7F9; color: #192028;
+        position: relative; overflow: hidden; box-shadow: 0 0 0 7px #1b1f24, 0 14px 30px rgba(0,0,0,.28);
+        font-family: -apple-system, "SF Pro Text", system-ui, sans-serif; text-align: left; flex: none; zoom: .86; }
+  .ph .island { position: absolute; top: 10px; left: 50%; width: 76px; height: 22px; margin-left: -38px;
+        border-radius: 12px; background: #0c0e10; z-index: 9; }
+  .ph .top { position: absolute; top: 40px; left: 12px; right: 12px; height: 34px; display: flex; align-items: center;
+        justify-content: space-between; z-index: 4; }
+  .ph .title { position: absolute; left: 0; right: 0; text-align: center; pointer-events: none;
+        font-family: "New York", ui-serif, Georgia, serif; font-weight: 600; font-size: 15px; }
+  .glass { background: rgba(255,255,255,.72); -webkit-backdrop-filter: blur(14px) saturate(1.7);
+        backdrop-filter: blur(14px) saturate(1.7); border: 1px solid rgba(255,255,255,.85);
+        box-shadow: 0 4px 14px rgba(25,32,40,.14), inset 0 0 0 .5px rgba(25,32,40,.06); }
+  .ph .rb { width: 34px; height: 34px; border-radius: 17px; display: flex; align-items: center; justify-content: center; }
+  .ph svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.7;
+        stroke-linecap: round; stroke-linejoin: round; }
+  .ph .body { position: absolute; inset: 82px 0 0 0; padding: 0 18px; }
+  .ph h4 { font-family: "New York", ui-serif, Georgia, serif; font-size: 25px; font-weight: 600; margin: 0 0 10px; color: #192028; }
+  .ph .chips { display: flex; gap: 6px; margin-bottom: 8px; }
+  .ph .chip { font-size: 10.5px; font-weight: 600; padding: 5px 9px; border-radius: 12px; background: #EDF1F4; color: #192028; white-space: nowrap; }
+  .ph .chip.on { background: #D1F0E6; color: #1b6253; }
+  .ph .chip.ask { background: #F7E4F5; color: #7E517A; }
+  .ph .chip i { font-style: normal; opacity: .6; margin-left: 3px; }
+  .ph .sec { font-size: 10px; font-weight: 600; color: #5D646C; margin: 12px 0 2px; letter-spacing: .02em; }
+  .ph .row { display: flex; gap: 9px; padding: 9px 0; border-bottom: 1px solid #D3D8DC; }
+  .ph .row .cb { width: 3px; border-radius: 2px; flex: none; }
+  .ph .row .c { flex: 1; min-width: 0; }
+  .ph .row .hd { display: flex; justify-content: space-between; font-size: 11px; font-weight: 600; }
+  .ph .row .hd span { font-weight: 400; color: #8D9399; font-size: 10px; }
+  .ph .row .q { font-family: "New York", ui-serif, Georgia, serif; font-style: italic; font-size: 12px; line-height: 1.4; margin-top: 2px; }
+  .ph .row .n { font-size: 11.5px; line-height: 1.4; color: #5D646C; margin-top: 3px; }
+  .ph .row .t { font-size: 12px; line-height: 1.35; }
+  .ph .bar { position: absolute; bottom: 16px; left: 14px; right: 14px; display: flex; gap: 8px; align-items: center; z-index: 6; }
+  .ph .tabs { flex: 1; height: 52px; border-radius: 26px; display: flex; align-items: center; padding: 4px; }
+  .ph .tab { flex: 1; height: 44px; border-radius: 22px; display: flex; flex-direction: column;
+        align-items: center; justify-content: center; gap: 1px; font-size: 9px; font-weight: 600; color: #192028; }
+  .ph .tab.on { color: #247966; background: rgba(25,32,40,.07); }
+  .ph .srch { width: 52px; height: 52px; border-radius: 26px; display: flex; align-items: center; justify-content: center; flex: none; }
+  .ph .comp { position: absolute; left: 14px; right: 14px; bottom: 76px; height: 44px; border-radius: 22px; z-index: 6;
+        display: flex; align-items: center; justify-content: space-between; padding: 0 6px 0 16px; font-size: 13px; color: #8D9399; }
+  .ph .send { width: 32px; height: 32px; border-radius: 16px; background: #7E517A; color: #fff; display: flex; align-items: center; justify-content: center; }
+  .ph .send svg { width: 16px; height: 16px; stroke-width: 2.2; }
+  .ph .qn { font-size: 13.5px; font-weight: 600; line-height: 1.35; margin: 4px 0 2px; }
+  .ph .att { font-size: 10px; font-weight: 600; color: #7E517A; }
+  .ph .ans { font-size: 12.5px; line-height: 1.5; margin-top: 8px; }
+  .ph .ans p { margin: 0 0 7px; }
+  .ph .ref { color: #7E517A; font-weight: 600; }
+  .ph .ref.on { background: #F7E4F5; border-radius: 3px; padding: 0 2px; }
+  .ph .prov { font-size: 10px; color: #8D9399; }
+  .ph .dim { position: absolute; inset: 0; background: rgba(16,20,24,.16); z-index: 7; }
+  .ph .sheet { position: absolute; left: 6px; right: 6px; bottom: 6px; height: 214px; border-radius: 34px; z-index: 8;
+        background: rgba(250,252,254,.96); border: 1px solid rgba(255,255,255,.9); box-shadow: 0 -6px 24px rgba(25,32,40,.18); padding: 0 20px; }
+  .ph .grab { width: 34px; height: 4px; border-radius: 2px; background: #c3c9ce; margin: 7px auto 12px; }
+  .ph .sheet .sh { display: flex; justify-content: space-between; align-items: baseline; font-size: 14px; font-weight: 600; }
+  .ph .sheet .sh span { font-size: 10px; color: #8D9399; font-weight: 500; }
+  .ph .sheet .v { font-family: "New York", ui-serif, Georgia, serif; font-size: 14px; line-height: 1.55; margin-top: 8px; }
+  .ph .sheet .v sup { font-family: -apple-system, system-ui, sans-serif; font-size: 8px; color: #8D9399; margin-right: 2px; }
+  .ph .go { position: absolute; left: 20px; right: 20px; bottom: 18px; height: 40px; border-radius: 20px; background: #247966; color: #fff;
+        font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; }
+  .steps { display: flex; gap: 22px; justify-content: center; align-items: flex-start; flex-wrap: wrap; padding: 26px 0 8px; }
+  .step { width: 228px; }
+  .step p { font-size: .82rem; margin-top: 18px; text-align: left; }
+  .step b { font-weight: 600; }
+</style>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="i-read" viewBox="0 0 24 24"><path d="M12 6.500C9.500 4.800 6.500 4.600 3.500 5.400v12.800c3-.8 6-.6 8.500 1.100M12 6.500c2.500-1.700 5.500-1.900 8.500-1.100v12.800c-3-.8-6-.6-8.500 1.100M12 6.500v12.800"/></symbol>
+    <symbol id="i-notes" viewBox="0 0 24 24"><path d="M6 3.500h12a1.500 1.500 0 0 1 1.500 1.500v14a1.500 1.500 0 0 1-1.500 1.500H6A1.500 1.500 0 0 1 4.500 19V5A1.500 1.500 0 0 1 6 3.500zM8.500 8.500h7M8.500 12h7M8.500 15.500h4"/></symbol>
+    <symbol id="i-ask" viewBox="0 0 24 24"><path d="M5 4.500h14A1.500 1.500 0 0 1 20.500 6v9a1.500 1.500 0 0 1-1.500 1.500h-7l-4.500 3.500v-3.500H5A1.500 1.500 0 0 1 3.500 15V6A1.500 1.500 0 0 1 5 4.500z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.500" cy="10.500" r="6"/><path d="M15 15l5 5"/></symbol>
+    <symbol id="i-more" viewBox="0 0 24 24"><circle cx="6" cy="12" r=".9"/><circle cx="12" cy="12" r=".9"/><circle cx="18" cy="12" r=".9"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="M14.500 5.500L8 12l6.500 6.500"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5.500M6.500 11L12 5.500l5.500 5.500"/></symbol>
+  </defs>
+</svg>
+
+<h2>The Notes and Ask tabs</h2>
+<p class="subtitle">My proposal for the two screens you'd reach for in group time. Nothing to pick here; tell me in the chat what's wrong or missing.</p>
+
+<div class="steps">
+
+  <div class="step">
+    <div class="ph">
+      <div class="island"></div>
+      <div class="top"><div></div><div class="rb glass"><svg><use href="#i-more"/></svg></div></div>
+      <div class="body">
+        <h4>Notes</h4>
+        <div class="chips">
+          <div class="chip on">Past week<i>▾</i></div>
+          <div class="chip">Everything<i>▾</i></div>
+          <div class="chip">Newest<i>▾</i></div>
+        </div>
+        <div class="sec">Thursday</div>
+        <div class="row"><div class="cb" style="background:#EBCB5E"></div><div class="c">
+          <div class="hd">John 15:4 <span>Nov 5</span></div>
+          <div class="q">Abide in me, and I in you.</div>
+          <div class="n">Abiding comes before bearing. The branch doesn't strain; it stays.</div></div></div>
+        <div class="row"><div class="cb" style="background:#E6A1AC"></div><div class="c">
+          <div class="hd">John 15:5 <span>Nov 5</span></div>
+          <div class="q">for without me ye can do nothing.</div></div></div>
+        <div class="sec">Tuesday</div>
+        <div class="row"><div class="cb" style="background:#9FCF9E"></div><div class="c">
+          <div class="hd">John 14:27 <span>Nov 3</span></div>
+          <div class="q">Peace I leave with you, my peace I give unto you</div>
+          <div class="n">Given, not earned. Ask the group what "not as the world giveth" rules out.</div></div></div>
+        <div class="row"><div class="cb" style="background:#9CC0E8"></div><div class="c">
+          <div class="hd">John 13:34 <span>Nov 2</span></div>
+          <div class="q">A new commandment I give unto you, That ye love one another</div></div></div>
+      </div>
+      <div class="bar">
+        <div class="tabs glass">
+          <div class="tab"><svg><use href="#i-read"/></svg>Read</div>
+          <div class="tab on"><svg><use href="#i-notes"/></svg>Notes</div>
+          <div class="tab"><svg><use href="#i-ask"/></svg>Ask</div>
+        </div>
+        <div class="srch glass"><svg><use href="#i-search"/></svg></div>
+      </div>
+    </div>
+    <p><b>Notes.</b> Everything you've marked, newest first. Three menus narrow it: how far back (week, month, three months, year, any time), what kind (notes, highlights, bookmarks, conversations), and newest or Bible order. Tapping a row opens the chapter at that verse.</p>
+  </div>
+
+  <div class="step">
+    <div class="ph">
+      <div class="island"></div>
+      <div class="top"><div></div><div class="rb glass"><svg><use href="#i-more"/></svg></div></div>
+      <div class="body">
+        <h4>Ask</h4>
+        <div class="chips"><div class="chip ask">About John 15<i>✕</i></div></div>
+        <div class="sec">Prompts</div>
+        <div class="row"><div class="c"><div class="t">Study this chapter</div></div></div>
+        <div class="row"><div class="c"><div class="t">Trace the key words</div></div></div>
+        <div class="sec">Recent</div>
+        <div class="row"><div class="c">
+          <div class="hd">What does "abide" mean in the Greek? <span>Today</span></div>
+          <div class="n">John 15</div></div></div>
+        <div class="row"><div class="c">
+          <div class="hd">Who is the Comforter? <span>Tue</span></div>
+          <div class="n">John 14</div></div></div>
+        <div class="row"><div class="c">
+          <div class="hd">Why wash feet before the meal? <span>Mon</span></div>
+          <div class="n">John 13</div></div></div>
+      </div>
+      <div class="comp glass">Ask a question<div class="send"><svg><use href="#i-up"/></svg></div></div>
+      <div class="bar">
+        <div class="tabs glass">
+          <div class="tab"><svg><use href="#i-read"/></svg>Read</div>
+          <div class="tab"><svg><use href="#i-notes"/></svg>Notes</div>
+          <div class="tab on"><svg><use href="#i-ask"/></svg>Ask</div>
+        </div>
+        <div class="srch glass"><svg><use href="#i-search"/></svg></div>
+      </div>
+    </div>
+    <p><b>Ask.</b> The question field is ready the moment you land. It starts out about the chapter you were reading; tap the ✕ and the question is about anything. Your prompt templates and past conversations sit below.</p>
+  </div>
+
+  <div class="step">
+    <div class="ph">
+      <div class="island"></div>
+      <div class="top">
+        <div class="rb glass"><svg><use href="#i-back"/></svg></div>
+        <div class="title">Ask</div>
+        <div class="rb glass"><svg><use href="#i-more"/></svg></div>
+      </div>
+      <div class="body" style="top:88px">
+        <div class="att">John 15</div>
+        <div class="qn">What does "abide" mean in the Greek?</div>
+        <div class="ans">
+          <p>The word is <i>menō</i>: to remain, stay, or dwell. John uses it about forty times.</p>
+          <p>Early on it is plain staying: the Spirit remains on Jesus (<span class="ref">John 1:32</span>). By chapter 15 it means a settled life in him, and John later makes it the test of a disciple (<span class="ref on">1 John 2:6</span>).</p>
+        </div>
+        <div class="prov">On-device</div>
+      </div>
+      <div class="dim"></div>
+      <div class="sheet">
+        <div class="grab"></div>
+        <div class="sh">1 John 2:6 <span>KJV</span></div>
+        <div class="v"><sup>6</sup>He that saith he abideth in him ought himself also so to walk, even as he walked.</div>
+        <div class="go">Open in Read</div>
+      </div>
+    </div>
+    <p><b>An answer.</b> Every reference in the answer is a link. Tapping one slides the verse up so you can read it aloud without losing the answer; Open in Read takes you to the chapter.</p>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top:1rem">Search (the round button) covers both the Bible and your notes: type "John 15" to jump, or a word to find it in the text and in what you've written. Sample text is the King James Version.</p>

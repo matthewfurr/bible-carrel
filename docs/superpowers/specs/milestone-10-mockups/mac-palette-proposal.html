@@ -1,0 +1,120 @@
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap" rel="stylesheet">
+<style>
+  .pk-opt { cursor: pointer; border-radius: 16px; padding: 12px; border: 2px solid transparent; margin: 16px 0 26px; max-width: 760px; }
+  .pk-opt.selected { border-color: #247966; background: rgba(36,121,102,.08); }
+  .pk-opt h3, .pk-fix h3 { margin: 12px 2px 4px; font-size: 16px; }
+  .pk-opt p.d, .pk-fix p.d { margin: 0 2px; font-size: 13px; line-height: 1.5; opacity: .85; }
+  .pk-fix { max-width: 760px; padding: 12px; margin: 16px 0 26px; }
+  .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 9px; background: rgba(36,121,102,.15); color: #247966; font-weight: 600; margin-left: 6px; vertical-align: middle; }
+  .w { position: relative; height: 520px; border-radius: 12px; background: #F5F7F9; color: #192028; overflow: hidden; box-shadow: 0 0 0 1px #c9ced3, 0 10px 30px rgba(0,0,0,.18); font-family: -apple-system, "SF Pro Text", sans-serif; }
+  .w.tall { height: 470px; }
+  .w .tb { height: 36px; display: flex; align-items: center; gap: 7px; padding: 0 12px; color: #5D646C; font-size: 12px; }
+  .w .tb i { width: 11px; height: 11px; border-radius: 6px; background: #d5d9dd; display: inline-block; }
+  .w .tb span { margin-left: 14px; }
+  .w .pg { width: 400px; margin: 0 auto; font-family: "Literata", Georgia, serif; font-size: 13.5px; line-height: 1.55; }
+  .w .pg .rh { text-align: center; font: 600 9px -apple-system, sans-serif; letter-spacing: .22em; color: #7A5320; margin: 6px 0 14px; }
+  .w .pg sup { font: 500 8px -apple-system, sans-serif; color: #7A5320; margin-right: 2px; }
+  .w .pg .mk { background: #F8E18A; border-radius: 2px; }
+  .dim { position: absolute; inset: 0; background: rgba(0,0,0,.2); }
+  .pal { position: absolute; left: 50%; top: 44px; transform: translateX(-50%); width: 500px; border-radius: 12px; background: #FAFCFE; box-shadow: 0 0 0 1px #D3D8DC, 0 8px 24px rgba(0,0,0,.2); overflow: hidden; }
+  .pal.old { background: rgba(214,219,224,.82); }
+  .pal .fld { display: flex; align-items: center; gap: 9px; padding: 12px 15px; font-size: 16px; color: #8D9399; border-bottom: 1px solid #D3D8DC; }
+  .pal .fld b { color: #192028; font-weight: 400; }
+  .pal .fld svg { width: 16px; height: 16px; stroke: #5D646C; fill: none; stroke-width: 1.7; stroke-linecap: round; flex: none; }
+  .chips { display: flex; gap: 6px; padding: 8px 15px 2px; font-size: 10.5px; }
+  .chips span { padding: 3px 9px; border-radius: 10px; background: #EDF1F4; color: #5D646C; }
+  .chips span.on { background: #D1F0E6; color: #192028; font-weight: 600; }
+  .chips span.sc { margin-left: auto; }
+  .gh { display: flex; justify-content: space-between; font-size: 10px; font-weight: 600; color: #5D646C; padding: 9px 15px 3px; }
+  .row { display: flex; align-items: center; gap: 10px; padding: 6px 9px; margin: 0 6px; border-radius: 6px; font-size: 12.5px; }
+  .row.on { background: #D1F0E6; }
+  .row svg { width: 15px; height: 15px; stroke: #5D646C; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+  .row.on svg { stroke: #247966; }
+  .row .t { flex: 1; min-width: 0; }
+  .row .t small { display: block; color: #5D646C; font-size: 10.5px; margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .row .t .q { font-family: "Literata", Georgia, serif; font-size: 12px; color: #192028; display: block; margin-top: 1px; }
+  .row .t b { font-weight: 600; color: #192028; }
+  .row .k { display: flex; gap: 3px; color: #8D9399; font-size: 10.5px; }
+  kbd { font: 500 10px -apple-system, sans-serif; min-width: 11px; text-align: center; padding: 2px 5px; border-radius: 4px; background: #EDF1F4; color: #192028; }
+  .ft { display: flex; gap: 16px; align-items: center; padding: 8px 15px; margin-top: 6px; border-top: 1px solid #D3D8DC; font-size: 10.5px; color: #5D646C; }
+  .ft span { display: flex; gap: 4px; align-items: center; }
+</style>
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="p-s" viewBox="0 0 20 20"><circle cx="9" cy="9" r="5"/><path d="M13 13l4 4"/></symbol>
+  <symbol id="p-clock" viewBox="0 0 20 20"><circle cx="10" cy="10" r="7"/><path d="M10 6v4l3 2"/></symbol>
+  <symbol id="p-book" viewBox="0 0 20 20"><path d="M4 4h5a2 2 0 0 1 2 2v10a2 2 0 0 0-2-2H4zM16 4h-3a2 2 0 0 0-2 2"/><path d="M11 16a2 2 0 0 1 2-2h3V4"/></symbol>
+  <symbol id="p-note" viewBox="0 0 20 20"><rect x="4" y="3" width="12" height="14" rx="2"/><path d="M7 7h6M7 10h6M7 13h3"/></symbol>
+  <symbol id="p-cmd" viewBox="0 0 20 20"><path d="M7 7h6v6H7zM7 7H5.500A1.500 1.500 0 1 1 7 5.500zM13 7V5.500A1.500 1.500 0 1 1 14.500 7zM13 13h1.500A1.500 1.500 0 1 1 13 14.500zM7 13v1.500A1.500 1.500 0 1 1 5.500 13z"/></symbol>
+  <symbol id="p-quote" viewBox="0 0 20 20"><path d="M4 6h12M4 10h8M4 14h10"/></symbol>
+  <symbol id="p-go" viewBox="0 0 20 20"><path d="M4 10h11M11 6l4 4-4 4"/></symbol>
+</svg>
+
+<h2>⌘K: what I propose</h2>
+<p class="subtitle">Two pictures to choose between (how the window behind it looks), then one picture of the panel after typing. Click A or B; tell me in the conversation what to add or drop.</p>
+
+<div class="pk-opt" data-choice="a-no-dim" onclick="toggleSelect(this)">
+  <div class="w">
+    <div class="tb"><i></i><i></i><i></i><span>John 15 — Bible Carrel</span></div>
+    <div class="pg"><div class="rh">JOHN · 15</div><sup>4</sup><span class="mk">Remain in me, and I in you.</span> As the branch can’t bear fruit by itself unless it remains in the vine, so neither can you, unless you remain in me. <sup>5</sup>I am the vine. You are the branches. He who remains in me and I in him bears much fruit, for apart from me you can do nothing. <sup>6</sup>If a man doesn’t remain in me, he is thrown out as a branch and is withered; and they gather them, throw them into the fire, and they are burned. <sup>7</sup>If you remain in me, and my words remain in you, you will ask whatever you desire, and it will be done for you. <sup>8</sup>In this my Father is glorified, that you bear much fruit; and so you will be my disciples.</div>
+    <div class="pal">
+      <div class="fld"><svg><use href="#p-s"/></svg>Go to a passage, search, or run a command</div>
+      <div class="gh"><span>RECENT</span></div>
+      <div class="row on"><svg><use href="#p-clock"/></svg><div class="t">Romans 8<small>Read yesterday · ESV</small></div><div class="k"><kbd>↩</kbd></div></div>
+      <div class="row"><svg><use href="#p-note"/></svg><div class="t">John 15:4<small>Note · “Abiding is not a feeling, it is where you stay…”</small></div></div>
+      <div class="row"><svg><use href="#p-s"/></svg><div class="t">remain in me<small>Search · 12 verses</small></div></div>
+      <div class="row"><svg><use href="#p-clock"/></svg><div class="t">Psalm 23<small>Looked up Tuesday · KJV</small></div></div>
+      <div class="gh"><span>COMMANDS</span></div>
+      <div class="row"><svg><use href="#p-book"/></svg><div class="t">Library</div><div class="k"><kbd>⇧</kbd><kbd>⌘</kbd><kbd>H</kbd></div></div>
+      <div class="row"><svg><use href="#p-note"/></svg><div class="t">Notes Window</div><div class="k"><kbd>⇧</kbd><kbd>⌘</kbd><kbd>N</kbd></div></div>
+      <div class="row"><svg><use href="#p-cmd"/></svg><div class="t">Ask the Assistant</div><div class="k"><kbd>⇧</kbd><kbd>⌘</kbd><kbd>A</kbd></div></div>
+      <div class="row"><svg><use href="#p-cmd"/></svg><div class="t">Switch Translation…</div><div class="k">›</div></div>
+      <div class="ft"><span><kbd>↩</kbd> Open</span><span><kbd>↑</kbd><kbd>↓</kbd> Move</span><span><kbd>⇥</kbd> Narrow</span><span style="margin-left:auto"><kbd>esc</kbd> Close</span></div>
+    </div>
+  </div>
+  <h3>A. Nothing dims <span class="tag">my pick</span></h3>
+  <p class="d">The panel is a solid, bright sheet of paper with its shadow, floating over the page as Raycast and Spotlight do. The page behind stays exactly as it was. A click outside still closes it.</p>
+</div>
+
+<div class="pk-opt" data-choice="b-dim-page-only" onclick="toggleSelect(this)">
+  <div class="w">
+    <div class="tb"><i></i><i></i><i></i><span>John 15 — Bible Carrel</span></div>
+    <div class="pg"><div class="rh">JOHN · 15</div><sup>4</sup><span class="mk">Remain in me, and I in you.</span> As the branch can’t bear fruit by itself unless it remains in the vine, so neither can you, unless you remain in me. <sup>5</sup>I am the vine. You are the branches. He who remains in me and I in him bears much fruit, for apart from me you can do nothing. <sup>6</sup>If a man doesn’t remain in me, he is thrown out as a branch and is withered; and they gather them, throw them into the fire, and they are burned. <sup>7</sup>If you remain in me, and my words remain in you, you will ask whatever you desire, and it will be done for you. <sup>8</sup>In this my Father is glorified, that you bear much fruit; and so you will be my disciples.</div>
+    <div class="dim"></div>
+    <div class="pal">
+      <div class="fld"><svg><use href="#p-s"/></svg>Go to a passage, search, or run a command</div>
+      <div class="gh"><span>RECENT</span></div>
+      <div class="row on"><svg><use href="#p-clock"/></svg><div class="t">Romans 8<small>Read yesterday · ESV</small></div><div class="k"><kbd>↩</kbd></div></div>
+      <div class="row"><svg><use href="#p-note"/></svg><div class="t">John 15:4<small>Note · “Abiding is not a feeling, it is where you stay…”</small></div></div>
+      <div class="row"><svg><use href="#p-s"/></svg><div class="t">remain in me<small>Search · 12 verses</small></div></div>
+      <div class="row"><svg><use href="#p-clock"/></svg><div class="t">Psalm 23<small>Looked up Tuesday · KJV</small></div></div>
+      <div class="gh"><span>COMMANDS</span></div>
+      <div class="row"><svg><use href="#p-book"/></svg><div class="t">Library</div><div class="k"><kbd>⇧</kbd><kbd>⌘</kbd><kbd>H</kbd></div></div>
+      <div class="row"><svg><use href="#p-note"/></svg><div class="t">Notes Window</div><div class="k"><kbd>⇧</kbd><kbd>⌘</kbd><kbd>N</kbd></div></div>
+      <div class="row"><svg><use href="#p-cmd"/></svg><div class="t">Ask the Assistant</div><div class="k"><kbd>⇧</kbd><kbd>⌘</kbd><kbd>A</kbd></div></div>
+      <div class="row"><svg><use href="#p-cmd"/></svg><div class="t">Switch Translation…</div><div class="k">›</div></div>
+      <div class="ft"><span><kbd>↩</kbd> Open</span><span><kbd>↑</kbd><kbd>↓</kbd> Move</span><span><kbd>⇥</kbd> Narrow</span><span style="margin-left:auto"><kbd>esc</kbd> Close</span></div>
+    </div>
+  </div>
+  <h3>B. The page dims, the panel does not</h3>
+  <p class="d">Today’s dimming stays, but the panel becomes solid and bright so it stands out from it. Today the panel is see-through, which is why it looks dimmed along with everything else.</p>
+</div>
+
+<div class="pk-fix">
+  <div class="w tall">
+    <div class="tb"><i></i><i></i><i></i><span>John 15 — Bible Carrel</span></div>
+    <div class="pg"><div class="rh">JOHN · 15</div><sup>4</sup><span class="mk">Remain in me, and I in you.</span> As the branch can’t bear fruit by itself unless it remains in the vine, so neither can you, unless you remain in me. <sup>5</sup>I am the vine. You are the branches. He who remains in me and I in him bears much fruit, for apart from me you can do nothing.</div>
+    <div class="pal">
+      <div class="fld"><svg><use href="#p-s"/></svg><b>remain fruit</b></div>
+      <div class="chips"><span class="on">All</span><span>Passages</span><span>Scripture</span><span>Your notes</span><span>Commands</span><span class="sc">Whole Bible ⌄</span></div>
+      <div class="gh"><span>YOUR NOTES</span><span>1</span></div>
+      <div class="row on"><svg><use href="#p-note"/></svg><div class="t">John 15:4<small>“…to <b>remain</b> is to keep bearing <b>fruit</b> when nothing seems to grow”</small></div><div class="k"><kbd>↩</kbd></div></div>
+      <div class="gh"><span>SCRIPTURE · WEB</span><span>4</span></div>
+      <div class="row"><svg><use href="#p-quote"/></svg><div class="t">John 15:4<span class="q">…As the branch can’t bear <b>fruit</b> by itself unless it <b>remains</b> in the vine…</span></div></div>
+      <div class="row"><svg><use href="#p-quote"/></svg><div class="t">John 15:5<span class="q">…He who <b>remains</b> in me and I in him bears much <b>fruit</b>…</span></div></div>
+      <div class="row"><svg><use href="#p-quote"/></svg><div class="t">John 15:16<span class="q">…that you should go and bear <b>fruit</b>, and that your <b>fruit</b> should <b>remain</b>…</span></div></div>
+      <div class="ft"><span><kbd>↩</kbd> Show verse</span><span><kbd>↑</kbd><kbd>↓</kbd> Move</span><span><kbd>⇥</kbd> Narrow</span><span style="margin-left:auto"><kbd>esc</kbd> Close</span></div>
+    </div>
+  </div>
+  <h3>After typing (not a choice, part of the proposal)</h3>
+  <p class="d">The same grouped results as today, with three additions: chips under the field to narrow to one kind (Tab steps through them, as the phone’s search already has); a place to limit a word search to the Old or New Testament or one book; and a foot that says what Return will do with the selected row. “remain fruit” finds verses with both words in any order, which is the better search from your list.</p>
+</div>

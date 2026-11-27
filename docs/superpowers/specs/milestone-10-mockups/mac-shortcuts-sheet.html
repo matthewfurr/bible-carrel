@@ -1,0 +1,120 @@
+<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,300;7..72,400&display=swap" rel="stylesheet">
+<style>
+  .ks-opt { cursor: pointer; border-radius: 16px; padding: 12px; border: 2px solid transparent; margin: 18px 0 30px; max-width: 760px; }
+  .ks-opt.selected { border-color: #247966; background: rgba(36,121,102,.08); }
+  .ks-opt h3 { margin: 12px 2px 4px; font-size: 16px; }
+  .ks-opt p.d { margin: 0 2px; font-size: 13px; line-height: 1.5; opacity: .85; }
+  .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 9px; background: rgba(36,121,102,.15); color: #247966; font-weight: 600; margin-left: 6px; vertical-align: middle; }
+  .win { position: relative; height: 430px; border-radius: 12px; background: #F5F7F9; color: #192028; overflow: hidden; box-shadow: 0 0 0 1px #c9ced3, 0 10px 30px rgba(0,0,0,.18);
+         font-family: -apple-system, "SF Pro Text", sans-serif; }
+  .win .tb { height: 38px; display: flex; align-items: center; gap: 7px; padding: 0 12px; color: #5D646C; font-size: 12px; }
+  .win .tb i { width: 11px; height: 11px; border-radius: 6px; background: #d5d9dd; display: inline-block; }
+  .win .tb span { margin-left: 14px; }
+  .win .page { padding: 4px 0 0; width: 380px; margin: 0 auto; font-family: "Literata", Georgia, serif; font-size: 13.5px; line-height: 1.55; }
+  .win .page .rh { text-align: center; font: 600 9px -apple-system, sans-serif; letter-spacing: .22em; color: #7A5320; margin: 6px 0 14px; }
+  .win .page sup { font: 500 8px -apple-system, sans-serif; color: #7A5320; margin-right: 2px; }
+  .win .page .sel { background: #B9D5F2; }
+  .dim { position: absolute; inset: 0; background: rgba(0,0,0,.2); }
+  .sheet { position: absolute; left: 50%; top: 26px; transform: translateX(-50%); width: 660px; border-radius: 14px; background: #EDF1F4; box-shadow: 0 18px 50px rgba(0,0,0,.3); padding: 16px 20px 14px; }
+  .sheet .hd { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+  .sheet .hd b { font-size: 14px; }
+  .sheet .hd .f { width: 170px; height: 24px; border-radius: 6px; background: #FAFCFE; box-shadow: 0 0 0 1px #D3D8DC; font-size: 11.5px; color: #8D9399; display: flex; align-items: center; padding: 0 8px; }
+  .cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 22px; }
+  .g { font-size: 10px; font-weight: 600; color: #5D646C; letter-spacing: .04em; margin: 10px 0 5px; }
+  .g:first-child { margin-top: 0; }
+  .r { display: flex; justify-content: space-between; align-items: center; font-size: 11.5px; padding: 3.5px 0; }
+  .r span.k { display: flex; gap: 3px; }
+  kbd { font: 500 10.5px -apple-system, sans-serif; min-width: 12px; text-align: center; padding: 2px 5px; border-radius: 4px; background: #FAFCFE; color: #192028; }
+  .ft { margin-top: 12px; display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: #5D646C; }
+  .ft .btn { padding: 4px 14px; border-radius: 6px; background: #247966; color: #fff; font-weight: 500; }
+  .side { position: absolute; right: 14px; top: 46px; bottom: 14px; width: 250px; border-radius: 10px; background: #EDF1F4; box-shadow: 0 0 0 1px #c9ced3, 0 10px 26px rgba(0,0,0,.2); overflow: hidden; }
+  .side .tb { height: 30px; font-weight: 600; color: #192028; }
+  .side .in { padding: 4px 14px 0; }
+  .side .more { text-align: center; color: #8D9399; font-size: 10.5px; margin-top: 8px; }
+</style>
+
+<h2>Mac: where should the list of shortcuts appear?</h2>
+<p class="subtitle">⌘/ (or Help › Keyboard Shortcuts) opens it. Both hold every shortcut in the app, grouped the same way. Click the one you want.</p>
+
+<div class="ks-opt" data-choice="a-sheet" onclick="toggleSelect(this)">
+  <div class="win">
+    <div class="tb"><i></i><i></i><i></i><span>John 15 — Bible Carrel</span></div>
+    <div class="page"><div class="rh">JOHN · 15</div><sup>4</sup>Remain in me, and I in you. As the branch can’t bear fruit by itself unless it remains in the vine, so neither can you, unless you remain in me. <span class="sel"><sup>5</sup>I am the vine. You are the branches. He who remains in me and I in him bears much fruit, for apart from me you can do nothing.</span> <sup>6</sup>If a man doesn’t remain in me, he is thrown out as a branch and is withered; and they gather them, throw them into the fire, and they are burned. <sup>7</sup>If you remain in me, and my words remain in you, you will ask whatever you desire, and it will be done for you.</div>
+    <div class="dim"></div>
+    <div class="sheet">
+      <div class="hd"><b>Keyboard Shortcuts</b><div class="f">Filter</div></div>
+      <div class="cols">
+        <div>
+          <div class="g">GO</div>
+          <div class="r">Go to anything<span class="k"><kbd>⌘</kbd><kbd>K</kbd></span></div>
+          <div class="r">Back, forward<span class="k"><kbd>⌘</kbd><kbd>[</kbd><kbd>]</kbd></span></div>
+          <div class="r">Previous, next chapter<span class="k"><kbd>←</kbd><kbd>→</kbd></span></div>
+          <div class="r">Library<span class="k"><kbd>⇧</kbd><kbd>⌘</kbd><kbd>H</kbd></span></div>
+          <div class="g">VIEW</div>
+          <div class="r">Text &amp; Layout<span class="k"><kbd>⌘</kbd><kbd>T</kbd></span></div>
+          <div class="r">Notes column<span class="k"><kbd>⌥</kbd><kbd>⌘</kbd><kbd>N</kbd></span></div>
+          <div class="r">Notes window<span class="k"><kbd>⇧</kbd><kbd>⌘</kbd><kbd>N</kbd></span></div>
+          <div class="r">Settings<span class="k"><kbd>⌘</kbd><kbd>,</kbd></span></div>
+          <div class="r">These shortcuts<span class="k"><kbd>⌘</kbd><kbd>/</kbd></span></div>
+        </div>
+        <div>
+          <div class="g">VERSES</div>
+          <div class="r">Next, previous verse<span class="k"><kbd>J</kbd><kbd>K</kbd></span></div>
+          <div class="r">Extend by a verse<span class="k"><kbd>⇧</kbd><kbd>J</kbd><kbd>K</kbd></span></div>
+          <div class="r">Highlight in a colour<span class="k"><kbd>1</kbd>–<kbd>9</kbd></span></div>
+          <div class="r">Remove highlight<span class="k"><kbd>0</kbd></span></div>
+          <div class="r">Add or edit note<span class="k"><kbd>N</kbd></span></div>
+          <div class="r">Bookmark<span class="k"><kbd>B</kbd></span></div>
+          <div class="r">Compare translations<span class="k"><kbd>C</kbd></span></div>
+          <div class="r">Cross-references<span class="k"><kbd>R</kbd></span></div>
+          <div class="r">Copy<span class="k"><kbd>⌘</kbd><kbd>C</kbd></span></div>
+          <div class="r">Clear selection<span class="k"><kbd>esc</kbd></span></div>
+        </div>
+        <div>
+          <div class="g">NOTES COLUMN</div>
+          <div class="r">Move between notes<span class="k"><kbd>↑</kbd><kbd>↓</kbd></span></div>
+          <div class="r">Edit, finish<span class="k"><kbd>↩</kbd><kbd>⌘</kbd><kbd>↩</kbd></span></div>
+          <div class="r">Delete, undo<span class="k"><kbd>⌫</kbd><kbd>⌘</kbd><kbd>Z</kbd></span></div>
+          <div class="r">Export notes<span class="k"><kbd>⇧</kbd><kbd>⌘</kbd><kbd>E</kbd></span></div>
+          <div class="g">ASSISTANT</div>
+          <div class="r">Show assistant<span class="k"><kbd>⇧</kbd><kbd>⌘</kbd><kbd>A</kbd></span></div>
+          <div class="r">New conversation<span class="k"><kbd>⌃</kbd><kbd>⌘</kbd><kbd>N</kbd></span></div>
+          <div class="r">Try again<span class="k"><kbd>⌘</kbd><kbd>R</kbd></span></div>
+          <div class="r">Copy last reply<span class="k"><kbd>⇧</kbd><kbd>⌘</kbd><kbd>C</kbd></span></div>
+          <div class="r">Stop answering<span class="k"><kbd>⌘</kbd><kbd>.</kbd></span></div>
+        </div>
+      </div>
+      <div class="ft"><span>Press ⌘/ any time to see this.</span><span class="btn">Done</span></div>
+    </div>
+  </div>
+  <h3>A. A sheet over the reader <span class="tag">my pick</span></h3>
+  <p class="d">Everything at a glance in three columns, with a field to filter. It comes down over the window you are in and goes away with Esc, Done or ⌘/ again. While it is up you cannot use the reader.</p>
+</div>
+
+<div class="ks-opt" data-choice="b-window" onclick="toggleSelect(this)">
+  <div class="win">
+    <div class="tb"><i></i><i></i><i></i><span>John 15 — Bible Carrel</span></div>
+    <div class="page" style="margin-left:60px"><div class="rh">JOHN · 15</div><sup>4</sup>Remain in me, and I in you. As the branch can’t bear fruit by itself unless it remains in the vine, so neither can you, unless you remain in me. <span class="sel"><sup>5</sup>I am the vine. You are the branches. He who remains in me and I in him bears much fruit, for apart from me you can do nothing.</span> <sup>6</sup>If a man doesn’t remain in me, he is thrown out as a branch and is withered; and they gather them, throw them into the fire, and they are burned. <sup>7</sup>If you remain in me, and my words remain in you, you will ask whatever you desire, and it will be done for you.</div>
+    <div class="side">
+      <div class="tb"><i></i><i></i><i></i><span style="margin-left:8px">Keyboard Shortcuts</span></div>
+      <div class="in">
+        <div class="g">VERSES</div>
+        <div class="r">Next, previous verse<span class="k"><kbd>J</kbd><kbd>K</kbd></span></div>
+        <div class="r">Extend by a verse<span class="k"><kbd>⇧</kbd><kbd>J</kbd><kbd>K</kbd></span></div>
+        <div class="r">Highlight in a colour<span class="k"><kbd>1</kbd>–<kbd>9</kbd></span></div>
+        <div class="r">Remove highlight<span class="k"><kbd>0</kbd></span></div>
+        <div class="r">Add or edit note<span class="k"><kbd>N</kbd></span></div>
+        <div class="r">Bookmark<span class="k"><kbd>B</kbd></span></div>
+        <div class="r">Compare translations<span class="k"><kbd>C</kbd></span></div>
+        <div class="r">Cross-references<span class="k"><kbd>R</kbd></span></div>
+        <div class="g">GO</div>
+        <div class="r">Go to anything<span class="k"><kbd>⌘</kbd><kbd>K</kbd></span></div>
+        <div class="r">Back, forward<span class="k"><kbd>⌘</kbd><kbd>[</kbd><kbd>]</kbd></span></div>
+        <div class="r">Previous, next chapter<span class="k"><kbd>←</kbd><kbd>→</kbd></span></div>
+        <div class="more">scrolls on: View, Notes column, Assistant</div>
+      </div>
+    </div>
+  </div>
+  <h3>B. A small window of its own</h3>
+  <p class="d">A narrow list you can leave open beside the reader while you learn the keys, and close when you know them. The reader stays usable. It is one more window to place, and with AeroSpace it would be tiled like any other.</p>
+</div>

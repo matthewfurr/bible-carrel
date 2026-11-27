@@ -1,0 +1,11 @@
+.build/
+Build/
+*.sqlite
+*.sqlite-*
+.DS_Store
+.superpowers/
+xcuserdata/
+*.xcworkspace/xcuserdata/
+DerivedData/
+site/_site/
+site/node_modules/

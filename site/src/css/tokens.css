@@ -1,0 +1,97 @@
+/* The site's tokens. DESIGN.md section 2 by name (a hyphen for the dot), then the
+   ladders. Nothing else in the site names a color, a size or a gap: site.css
+   uses these properties and no literal. scripts/contrast.mjs reads the two
+   palettes below, so keep each hex on its own declaration. */
+
+/* Light (the default) and the ladders. */
+:root {
+  color-scheme: light;
+
+  --paper-page: #F5F7F9;
+  --paper-panel: #EDF1F4;
+  --paper-overlay: #FAFCFE;
+  --ink-primary: #192028;
+  --ink-secondary: #5D646C;
+  --ink-tertiary: #8D9399;
+  --ink-rule: #D3D8DC;
+  --ink-verse: #7A5320;
+  --accent: #247966;
+  --accent-wash: #D1F0E6;
+  --on-accent: #FFFFFF;
+  --shadow-shot: rgb(25 32 40 / 0.14);
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  --text-label: 0.75rem;
+  --text-small: 0.875rem;
+  --text-body: 1.125rem;
+  --text-lede: 1.3125rem;
+  --text-heading: 1.875rem;
+  --text-title: 2.875rem;
+  --text-display: 4.75rem;
+
+  --leading-body: 1.6;
+  --leading-tight: 1.15;
+  --leading-lede: 1.45;
+  --leading-heading: 1.3;
+  --tracking-label: 0.2em;
+  --measure: 38em;
+  --size-icon: 2rem;
+  --size-glyph: 1.5rem;
+  --size-touch: 2.75rem;
+  --page-width: 65rem;
+  --share-shot: 1.6fr;
+  --viewport-height: 100vh;
+
+  --radius-sm: 6px;
+  --radius-lg: 11px;
+
+  --serif: Literata, Georgia, serif;
+  --sans: -apple-system, "SF Pro Text", system-ui, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+/* Dark, when the visitor's choice is System and the system is dark. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-appearance]) {
+    color-scheme: dark;
+
+    --paper-page: #101418;
+    --paper-panel: #191D22;
+    --paper-overlay: #22272D;
+    --ink-primary: #E5E8EC;
+    --ink-secondary: #A0A5AB;
+    --ink-tertiary: #6D7277;
+    --ink-rule: #292E34;
+    --ink-verse: #DDB683;
+    --accent: #73C3AE;
+    --accent-wash: #0A3028;
+    --on-accent: #101418;
+    --shadow-shot: rgb(0 0 0 / 0.5);
+  }
+}
+
+/* Dark, chosen. */
+:root[data-appearance="dark"] {
+  color-scheme: dark;
+
+  --paper-page: #101418;
+  --paper-panel: #191D22;
+  --paper-overlay: #22272D;
+  --ink-primary: #E5E8EC;
+  --ink-secondary: #A0A5AB;
+  --ink-tertiary: #6D7277;
+  --ink-rule: #292E34;
+  --ink-verse: #DDB683;
+  --accent: #73C3AE;
+  --accent-wash: #0A3028;
+  --on-accent: #101418;
+  --shadow-shot: rgb(0 0 0 / 0.5);
+}
