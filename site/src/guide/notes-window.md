@@ -32,9 +32,9 @@ If two devices change the same note before they have synced, the app keeps both 
 
 Three choices settle it:
 
-- **Use This One.** The note takes these words, and the other text is kept.
-- **Keep Both in the Note.** The kept text goes under the note's.
-- **Discard.** The version is removed. Edit › Undo brings it back.
+- **Use This One** gives the note these words and keeps the other text.
+- **Keep Both in the Note** puts the kept text under the note's.
+- **Discard** removes the version. Edit › Undo brings it back.
 
 If you delete a note on one device and edit it on another, the edited text stays as a kept version with no note. It is listed only under Kept versions. Restore as a Note puts it back on its passage, and Discard removes it.
 

@@ -3,13 +3,13 @@ title: The study assistant
 lede: Ask about a passage, a chapter or a book, and keep the answers as notes.
 ---
 
-The assistant answers beside the page, in the inspector on the right where the notes column sits. There are three ways in.
+The assistant answers beside the page, in the inspector on the right where the notes column sits.
 
 ## Three ways in
 
-- **Ask About This Passage.** In the markup menu, it opens the assistant on the selected words with the selection prompts under About the passage: Explain this passage, Define the words and Compare translations. Click one to send it, or type a question.
-- **Ask About This Chapter.** Right-click the running head and choose it to open the assistant on the chapter in view with the chapter prompts. Each is a tile with its title over a sentence on what comes back. Prompts you add are listed last, under Your prompts.
-- **<kbd>⇧</kbd><kbd>⌘</kbd><kbd>A</kbd>.** The shortcut, the Assistant button in the toolbar, Assistant › Show Assistant and "Ask the Assistant" in <kbd>⌘</kbd><kbd>K</kbd> all open it on the selection when text is selected. Otherwise they reopen the open conversation, or ask "Include where you are?" with buttons for the chapter, the book and No context.
+- **Ask About This Passage**, in the markup menu, opens the assistant on the selected words with the selection prompts under About the passage: Explain this passage, Define the words and Compare translations. Click one to send it, or type a question.
+- **Ask About This Chapter**, from a right-click on the running head, opens the assistant on the chapter in view with the chapter prompts. Each is a tile with its title over a sentence on what comes back. Prompts you add are listed last, under Your prompts.
+- **<kbd>⇧</kbd><kbd>⌘</kbd><kbd>A</kbd>**, the Assistant button in the toolbar, Assistant › Show Assistant and "Ask the Assistant" in <kbd>⌘</kbd><kbd>K</kbd> all open it on the selection when text is selected. Otherwise they reopen the open conversation, or ask "Include where you are?" with buttons for the chapter, the book and No context.
 
 The chapter prompts come in three sections:
 

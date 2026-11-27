@@ -135,3 +135,17 @@ Checked: `npm --prefix site run check` passes with the new pairs (primary ink an
 29. The notes sit level with their passages, where the mockup stacked them at the top of the column: with eight passages the column would otherwise be empty for most of the page.
 30. Passages 1 and 2 both show John 1 (the reader, then the reader with the markup menu open). Left as it is: each is the right picture for its passage.
 
+
+## The wording pass, 2026-11-27
+
+Matt: "Not yet. Run it though /avoid-ai-writing:avoid-ai-writing this time and apply the changes." The skill's detector ran over the 21 pages in `site/src` and found nothing real: its "placeholder" hits are the guide's own link labels such as "[Your place]", and the rest were bold counts and one low vocabulary score on the shortcut tables. Claude then read every page against the skill's catalog. Six places changed (commit `2d87454`, applied by a Sonnet implementer):
+
+- Front page, two notes that restated their own quote: "The same desk in your pocket." is now "Its tabs are Read, Plan, Notes and Ask, with Search beside them."; "Yours to keep." is now "The app keeps the newest seven daily backups."
+- Three lists whose bold label ended in a period before its explanation: Build › If the build fails (a colon now), the Notes window's three choices and the assistant's three ways in (the label is now the sentence's subject, as on Verse panels).
+- The assistant page no longer says "There are three ways in." straight before the heading "Three ways in".
+- Reading plans › Ticks: "Nothing ticks by itself, nothing counts as behind, and a week ... with nothing ticked ..." is now "The app does not tick a reading for you or count you as behind: a week that passed with nothing ticked looks like any other."
+- Build, last line: "has everything else a developer needs:" is now "covers".
+
+Checked: `npm --prefix site run check` passes (22 tests); the skill's preservation validator passes on all five files; the detector's findings are unchanged.
+
+31. Left as they are, each a judgment call: the front page's "Nothing counts as behind." and the tagline's "quiet"; "Nothing alerts you and nothing is red" on the Notes window page; the two bold warnings under Sync and backups › Two rules; "two panels are one action away" on Verse panels; and the em dash in the Copy with Reference example, which is the app's own output.

@@ -54,7 +54,7 @@ In the reader, the This Week button in the toolbar (a calendar) shows the same i
 
 ## Ticks
 
-A circle ticks and unticks a reading. Nothing ticks by itself, nothing counts as behind, and a week that passed with nothing ticked looks like any other.
+A circle ticks and unticks a reading. The app does not tick a reading for you or count you as behind: a week that passed with nothing ticked looks like any other.
 
 ## On the iPhone
 

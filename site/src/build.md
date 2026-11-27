@@ -118,11 +118,11 @@ Once it runs, start with [Your first chapter]({{ '/guide/first-chapter/' | url }
 
 ## If the build fails
 
-- **"Could not open" when the app starts.** The app says "The Bible text is missing from the app." Run `bash Scripts/build-bible.sh`, then build the app again.
-- **The script stops on a digest.** A message such as "eBible changed …; check it and re-pin the digest" means a source changed its file since it was pinned. The script stops rather than use a file it has not checked.
-- **"Could not download …".** Check your connection. The script keeps each source once it has downloaded all of it, so running it again skips those and fetches the rest.
-- **Warnings about Sirach and the stray `NAH` folder.** These are expected, and the database is still written.
-- **`swift` not found, or the wrong toolchain.** The script uses `/Applications/Xcode.app` when `xcode-select` points at the Command Line Tools. Install Xcode there, or set `DEVELOPER_DIR` to your Xcode.
+- **"Could not open" when the app starts:** the app says "The Bible text is missing from the app." Run `bash Scripts/build-bible.sh`, then build the app again.
+- **The script stops on a digest:** a message such as "eBible changed …; check it and re-pin the digest" means a source changed its file since it was pinned. The script stops rather than use a file it has not checked.
+- **"Could not download …":** check your connection. The script keeps each source once it has downloaded all of it, so running it again skips those and fetches the rest.
+- **Warnings about Sirach and the stray `NAH` folder:** these are expected, and the database is still written.
+- **`swift` not found, or the wrong toolchain:** the script uses `/Applications/Xcode.app` when `xcode-select` points at the Command Line Tools. Install Xcode there, or set `DEVELOPER_DIR` to your Xcode.
 
 ## What was checked
 
@@ -135,4 +135,4 @@ The builds that were run for this page used the commands above with a different 
 - `Scripts/` holds the download and build scripts.
 - `site/` is this site.
 
-The README.md at the top of the repository{% if site.repoUrl %} ([read it]({{ site.repoUrl }}#readme)){% endif %} has everything else a developer needs: the tests, the sync design, the launch arguments for testing and the full feature notes.
+The README.md at the top of the repository{% if site.repoUrl %} ([read it]({{ site.repoUrl }}#readme)){% endif %} covers the tests, the sync design, the launch arguments for testing and the full feature notes.
