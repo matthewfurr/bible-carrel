@@ -20,7 +20,7 @@ A verse with a note or a bookmark carries a mark in the right margin. Tap a note
 
 {% shot "phone-switcher", "The foot of Psalm 1 on the iPhone, with links to the previous and next chapters and a card for the start of Psalm 2 below them", "lazy", "(min-width: 900px) 16rem, 50vw", "shot-phone" %}
 
-For the book thumb, which is the right edge of the screen, and the chapter switcher, which waits past each end of the page, see [The reader]({{ '/guide/reader/' | url }}).
+For the book thumb, which is the right edge of the screen, and the chapter switcher, which is past each end of the page, see [The reader]({{ '/guide/reader/' | url }}).
 
 ## The markup menu
 

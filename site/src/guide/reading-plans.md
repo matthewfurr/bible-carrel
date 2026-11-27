@@ -9,7 +9,7 @@ Before you make the first plan, build the same version of the app for every devi
 
 ## The Reading Plan window
 
-On the Mac, plans live in the Reading Plan window. Open it with View › Reading Plan (<kbd>⌥</kbd><kbd>⌘</kbd><kbd>P</kbd>), with "Reading Plan" in <kbd>⌘</kbd><kbd>K</kbd>, or with The whole plan on Home.
+On the Mac, plans are in the Reading Plan window. Open it with View › Reading Plan (<kbd>⌥</kbd><kbd>⌘</kbd><kbd>P</kbd>), with "Reading Plan" in <kbd>⌘</kbd><kbd>K</kbd>, or with The whole plan on Home.
 
 {% shot "reading-plan", "The Reading Plan window with five weeks listed down the side and Week 2 chosen, showing its three readings with one ticked", "lazy", "(min-width: 65rem) 43rem, 100vw" %}
 
@@ -62,7 +62,7 @@ The Plan tab sits between Read and Notes. It shows this week at the head, and th
 
 {% shot "phone-plan", "The Plan tab on the iPhone, with this week's three readings, one ticked, above the weeks that follow", "lazy", "(min-width: 900px) 16rem, 50vw", "shot-phone" %}
 
-## Where plans live
+## Where plans are kept
 
 A plan syncs through iCloud as a whole, and each tick syncs on its own. Ticks made on two devices both stay, and the same reading ticked twice is one tick. Which plan you follow syncs too. If a plan is edited on two devices at once, the later edit wins.
 

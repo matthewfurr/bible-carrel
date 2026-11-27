@@ -3,7 +3,7 @@ title: Verse panels
 lede: Compare a verse across translations, or follow where it points.
 ---
 
-Select a verse, or a run of verses in one chapter, and two panels are one action away. On the Mac they are in the markup menu, and on the keys <kbd>C</kbd> and <kbd>R</kbd>. On the iPhone they are behind the chevron of the markup menu. The panels are separate, and neither moves your place: a row opens as a lookup, and Back returns you.
+Select a verse, or a run of verses in one chapter, to open either of two panels. On the Mac they are in the markup menu, and on the keys <kbd>C</kbd> and <kbd>R</kbd>. On the iPhone they are behind the chevron of the markup menu. The panels are separate, and neither moves your place: a row opens as a lookup, and Back returns you.
 
 The panels name translations by their abbreviations: ESV, NASB, AMP, ERV, ASV, KJV, WEB and CPDV. The [Sources]({{ '/sources/' | url }}) page gives each one's full name.
 

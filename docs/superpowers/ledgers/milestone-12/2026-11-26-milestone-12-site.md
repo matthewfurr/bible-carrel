@@ -149,3 +149,20 @@ Matt: "Not yet. Run it though /avoid-ai-writing:avoid-ai-writing this time and a
 Checked: `npm --prefix site run check` passes (22 tests); the skill's preservation validator passes on all five files; the detector's findings are unchanged.
 
 31. Left as they are, each a judgment call: the front page's "Nothing counts as behind." and the tagline's "quiet"; "Nothing alerts you and nothing is red" on the Notes window page; the two bold warnings under Sync and backups › Two rules; "two panels are one action away" on Verse panels; and the em dash in the Copy with Reference example, which is the app's own output.
+
+## A second wording pass, the same day
+
+Matt: "Now with /no-ai-slop ." Claude read the same 21 pages against that skill's rules, which weigh different things (contrasts of the "X, not Y" kind, lines any product could carry, things doing a person's verbs, passives). Nine edits on seven pages (commit `2db2f2b`, applied by a Sonnet implementer):
+
+- Roadmap: "These are plans, not promises." is gone from the page and its description, and the sentence that says it in facts stays ("None of these has a date, and any of them can change or be dropped."). "The NIV is possible only if a route opens." is now "The NIV would need permission from Biblica, its publisher, which the project does not have." (the online-translations handover of 2026-11-12 is the source). Paul's journeys ends "so you could trace a journey from place to place."
+- Verse panels: "two panels are one action away" is now "to open either of two panels".
+- Reading plans: "plans live in" is "plans are in", and the heading "Where plans live" is "Where plans are kept", as on Notes.
+- The iPhone app: the chapter switcher "is" past each end of the page, where it "waited".
+- The Library › Dates: "Lengths stay." is now 'Lengths, such as "lived 930 years", stay.'
+- Front page: "A backup is taken once a day" is now "The app takes a backup once a day".
+- Build › If the build fails: each explanation after its label's colon starts with a capital, since most run to more than one sentence.
+
+Checked: `npm --prefix site run check` exits 0 (links resolve at both paths, HTML validation prints no errors, every contrast pair passes, 22 tests).
+
+32. Left as they are under this skill, each a judgment call: "Not in the App Store and not downloadable." under the title (a visitor's first question, answered first); "Highlight a phrase, not only a verse" (the difference from highlighting whole verses is the point); the factual "X, not Y" lines in the guide (letters not meaning, iCloud Keychain not iCloud); the short sections under their own headings, which the guide keeps so a page can be scanned and linked; and the guide's habitual verbs (holds, carries, sits).
+33. The two skills disagree on the letter after a label's colon. The Build list follows the second (a capital), because full sentences follow; the Notes window's Sort list keeps its lowercase fragments.

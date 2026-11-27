@@ -45,7 +45,7 @@ About gives the book's name and subtitle, then its facts: Testament and group, c
 
 ## Dates
 
-The years follow a traditional chronology, Ussher's as worked out by Floyd Nolen Jones, which puts Creation at 4004 BC. A notice says so the first time a year is shown. Turn off Show dates in Settings › General, under Library, to hide every year, along with the chart and the spans. Lengths stay.
+The years follow a traditional chronology, Ussher's as worked out by Floyd Nolen Jones, which puts Creation at 4004 BC. A notice says so the first time a year is shown. Turn off Show dates in Settings › General, under Library, to hide every year, along with the chart and the spans. Lengths, such as "lived 930 years", stay.
 
 ## By name and coming back
 

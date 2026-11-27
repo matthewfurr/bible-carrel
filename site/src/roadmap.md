@@ -3,15 +3,15 @@ layout: layouts/page.njk
 title: Roadmap
 eyebrow: What comes next
 lede: Five pieces of work are planned.
-description: What Bible Carrel plans to build next. These are plans, not promises.
+description: What Bible Carrel plans to build next. None of it has a date, and any of it can change or be dropped.
 permalink: /roadmap/
 ---
 
-These are plans, not promises. None has a date, and any of them can change or be dropped.
+None of these has a date, and any of them can change or be dropped.
 
 ## Translations from their publishers
 
-The ESV, the NLT (New Living Translation) and the NTV (Nueva Traducción Viviente, its Spanish counterpart) would come from their publishers' own services, using your own key and within each publisher's terms, with their own section headings. The ESV fetched this way would replace the copy the build downloads today, so fewer texts under copyright would come with the build. The NIV is possible only if a route opens.
+The ESV, the NLT (New Living Translation) and the NTV (Nueva Traducción Viviente, its Spanish counterpart) would come from their publishers' own services, using your own key and within each publisher's terms, with their own section headings. The ESV fetched this way would replace the copy the build downloads today, so fewer texts under copyright would come with the build. The NIV would need permission from Biblica, its publisher, which the project does not have.
 
 ## Opening your notes in an older build
 
@@ -23,7 +23,7 @@ A year through the Bible, the Gospels in a month and the like would come with th
 
 ## Paul's journeys
 
-Paul's journeys and other routes would be drawn on the Places map in the Library, so you could follow the way that led someone to a place.
+Paul's journeys and other routes would be drawn on the Places map in the Library, so you could trace a journey from place to place.
 
 ## The iPad
 
