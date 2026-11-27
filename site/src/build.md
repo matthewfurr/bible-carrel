@@ -136,3 +136,5 @@ The builds that were run for this page used the commands above with a different 
 - `site/` is this site.
 
 The README.md at the top of the repository{% if site.repoUrl %} ([read it]({{ site.repoUrl }}#readme)){% endif %} covers the tests, the sync design, the launch arguments for testing and the full feature notes.
+
+If a step on this page does not work for you, [report it]({{ '/contribute/' | url }}).

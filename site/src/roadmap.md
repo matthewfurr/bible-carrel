@@ -31,3 +31,5 @@ The iPhone app is laid out for the phone only. An iPad version would be laid out
 {% if site.repoUrl %}
 Everything else that has been set aside is listed in [the backlog]({{ site.repoUrl }}/blob/main/docs/BACKLOG.md).
 {% endif %}
+
+If something you want is not on this page, [suggest it]({{ '/contribute/' | url }}).

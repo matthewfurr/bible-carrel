@@ -301,6 +301,10 @@ No test touches real iCloud, the real Keychain, the iCloud key-value store, the 
 - `Scripts/` — fetch and build scripts, `install-app.sh` and `install-phone.sh`.
 - `docs/superpowers/` — design specs and implementation plans.
 
+## Contributing
+
+Ideas, bug reports and pull requests are welcome. See `CONTRIBUTING.md`.
+
 ## License
 
 Bible Carrel's own code is © 2026 Matthew Furr and is free software under the GNU General Public License, version 3; the text is in `LICENSE`. It comes with no warranty. What the app is built from keeps its own license: the Bible texts and study data that the build scripts fetch (Acknowledgements, below), the typefaces (SIL Open Font License 1.1), GRDB.swift (MIT), the test fixtures (public-domain KJV, WEB and BSB text; samples of OpenBible.info's cross-references, CC BY 4.0, and of Theographic Bible Metadata, CC BY-SA 4.0), and the impeccable-swift skill in `.claude/skills/` with the checkers drawn from it in `tools/` (Apache License 2.0; see its `LICENSE`, `NOTICE.md` and `SOURCE.md`).

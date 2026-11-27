@@ -11,6 +11,7 @@
     <a href="{{ '/guide/first-chapter/' | url }}"{% if here.startsWith("/guide/") %} aria-current="page"{% endif %}>Guide</a>
     <a href="{{ '/sources/' | url }}"{% if here == "/sources/" %} aria-current="page"{% endif %}>Sources</a>
     <a href="{{ '/roadmap/' | url }}"{% if here == "/roadmap/" %} aria-current="page"{% endif %}>Roadmap</a>
+    <a href="{{ '/contribute/' | url }}"{% if here == "/contribute/" %} aria-current="page"{% endif %}>Contribute</a>
     {%- if site.repoUrl %}
     <a href="{{ site.repoUrl }}">GitHub</a>
     {%- endif %}
