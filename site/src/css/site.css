@@ -4,8 +4,8 @@
 
 /* Breakpoints (custom properties cannot be used in a media condition):
    700px  the header's links wrap onto a second line;
-   800px  named by the front page;
-   900px  the guide's sidebar becomes a "Guide contents" disclosure above the article. */
+   900px  the guide's sidebar becomes a "Guide contents" disclosure above the article, and the
+          front page's Notes column folds into the text, each note after its paragraph. */
 
 @font-face {
   font-family: Literata;
@@ -386,9 +386,13 @@ kbd.chord kbd + kbd { margin-left: calc(var(--space-1) / 2); }
   .guide-article { margin: 0 auto; }
 }
 
-/* The front page. A title block, an optional hero, rows that alternate sides, the
-   sources and the build. A row with no picture is words alone at the reader's
-   measure; 800px is where a row stacks, words first. */
+/* The front page: a title block, the reader, the sources and the build. The reader is
+   laid out as the app's window is: a text column of passages and, beside it, a Notes
+   column on the panel surface. Each passage is a grid row of its own, so its note sits
+   level with its heading and stays in view (sticky, within the passage's margin cell)
+   while the passage scrolls past. The margin cells stack with no gap, so the panel runs
+   unbroken down the reader. Below 900px there is no column: each note follows its
+   paragraph as a row between two hairlines. */
 .home > * {
   max-width: var(--page-width);
   margin-left: auto;
@@ -405,30 +409,101 @@ kbd.chord kbd + kbd { margin-left: calc(var(--space-1) / 2); }
 .title-block .lede { max-width: var(--measure); margin: 0 auto var(--space-5); }
 .title-links { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: var(--space-3) var(--space-5); margin: 0; font-family: var(--sans); font-size: var(--text-small); }
 .small { margin: var(--space-4) 0 0; color: var(--ink-secondary); font-size: var(--text-small); }
-.hero-shot { margin-top: var(--space-7); }
-.hero-shot .shot { margin: 0; }
 
-.features { padding-top: var(--space-8); }
-.row { display: grid; gap: var(--space-5) var(--space-7); align-items: center; max-width: var(--measure); margin-bottom: var(--space-8); }
-.row:has(.row-shot) { grid-template-columns: minmax(0, 1fr) minmax(0, var(--share-shot)); max-width: none; }
-.row.flip:has(.row-shot) { grid-template-columns: minmax(0, var(--share-shot)) minmax(0, 1fr); }
-/* A row of words alone closes the features: a centered coda at the measure. */
-.row.coda { margin-left: auto; margin-right: auto; }
-.row.coda .eyebrow, .row.coda h2, .row.coda .more { text-align: center; }
-.row.flip .row-words { order: 2; }
-.row h2 { margin: var(--space-2) 0 var(--space-3); font: 400 var(--text-heading) / var(--leading-tight) var(--serif); }
-.row-words p { margin: 0 0 var(--space-3); }
-.row-words .eyebrow { margin: 0; }
-.row-shot .shot { margin: 0; }
+.home > .reader {
+  max-width: var(--reader-width);
+  margin-top: var(--space-7);
+  margin-bottom: var(--space-8);
+  padding-left: 0;
+  padding-right: 0;
+  border-top: 1px solid var(--ink-rule);
+}
+.reader-head, .passage {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--notes-width);
+}
+.notes-head {
+  grid-column: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 0;
+  padding: var(--space-5) var(--space-6) var(--space-3);
+  background: var(--paper-panel);
+  border-left: 1px solid var(--ink-rule);
+  border-bottom: 1px solid var(--ink-rule);
+  font: 600 var(--text-body) var(--sans);
+}
+.notes-count { color: var(--ink-secondary); font: var(--text-small) var(--sans); }
+
+.passage {
+  grid-template-rows: auto auto 1fr;
+  grid-template-areas: "head margin" "text margin" "shot margin";
+}
+.passage > h2, .passage > p, .passage > .shot, .passage > .phones { padding-left: var(--space-6); padding-right: var(--space-6); }
+.passage > h2 {
+  grid-area: head;
+  margin: var(--space-7) 0 var(--space-3);
+  color: var(--ink-secondary);
+  font: italic 400 var(--text-lede) / var(--leading-lede) var(--serif);
+}
+.passage:first-of-type > h2 { margin-top: var(--space-5); }
+.passage > p {
+  grid-area: text;
+  /* The measure is in the paragraph's own (lede) em; the padding is added to it. */
+  max-width: calc(var(--measure-page) + var(--space-6) * 2);
+  margin: 0 0 var(--space-5);
+  font-size: var(--text-lede);
+  line-height: var(--leading-page);
+}
+.passage > .shot, .passage > .phones { grid-area: shot; margin: 0; }
+.passage:last-of-type > :is(.shot, .phones, p) { margin-bottom: var(--space-7); }
+
+mark { color: var(--ink-primary); -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.hl-yellow { background: var(--mark-yellow); }
+.hl-green { background: var(--mark-green); }
+.hl-blue { background: var(--mark-blue); }
+.hl-rose { background: var(--mark-rose); }
+.hl-orange { background: var(--mark-orange); }
+
+.margin {
+  grid-area: margin;
+  padding: var(--space-5) var(--space-6) 0;
+  background: var(--paper-panel);
+  border-left: 1px solid var(--ink-rule);
+}
+.passage:not(:first-of-type) > .margin { padding-top: var(--space-7); }
+.note {
+  position: sticky;
+  top: var(--space-5);
+  padding-bottom: var(--space-5);
+  border-bottom: 1px solid var(--ink-rule);
+}
+.note p { margin: 0; }
+.note-ref {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font: 600 var(--text-small) / var(--leading-body) var(--sans);
+}
+.dot { flex: none; width: var(--space-3); height: var(--space-3); border-radius: 50%; }
+.note .note-quote {
+  margin: var(--space-2) 0;
+  color: var(--ink-secondary);
+  font: italic 400 var(--text-body) / var(--leading-lede) var(--serif);
+}
+.note-body { font: var(--text-small) / var(--leading-body) var(--sans); }
+/* The accent never carries text on the panel: a link in a note is primary ink, underlined. */
+.note-body a { color: var(--ink-primary); text-decoration: underline; }
+
+/* Two phone pictures side by side, each at most a phone's width */
+.phones { display: flex; align-items: flex-start; gap: var(--space-5); }
+.phones .shot { flex: 1 1 0; min-width: 0; max-width: var(--phone-width); margin: 0; }
 
 /* The small raised bronze figure that opens a sentence, as a verse number does */
 .verse { margin-right: var(--space-1); color: var(--ink-verse); font: 500 var(--text-label) / 0 var(--sans); }
 
 .more { font-family: var(--sans); font-size: var(--text-small); }
-
-/* Two phone pictures side by side, each about a third of the picture column */
-.row-phones { display: flex; justify-content: center; align-items: flex-start; gap: var(--space-5); }
-.row-phones .shot { width: 33%; }
 
 .facts { padding-top: var(--space-7); padding-bottom: var(--space-3); border-top: 1px solid var(--ink-rule); max-width: calc(var(--page-width) - var(--space-8) * 4); }
 .facts .eyebrow, .facts h2, .facts .more, .build { text-align: center; }
@@ -440,14 +515,19 @@ kbd.chord kbd + kbd { margin-left: calc(var(--space-1) / 2); }
 .build h2 { margin: var(--space-2) 0 var(--space-3); font: 300 var(--text-title) / var(--leading-tight) var(--serif); }
 .build-action { margin: var(--space-5) 0 0; }
 
-@media (max-width: 800px) {
-  .row:has(.row-shot), .row.flip:has(.row-shot) { grid-template-columns: minmax(0, 1fr); }
-  .row.flip .row-words { order: 0; }
-  .row-words { max-width: var(--measure); }
-  .row-phones .shot { width: 40%; }
+@media (max-width: 900px) {
+  .reader-head { display: none; }
+  .passage { display: block; }
+  .passage > h2, .passage > p, .passage > .shot, .passage > .phones { padding-left: var(--space-5); padding-right: var(--space-5); }
+  .passage > p { max-width: calc(var(--measure-page) + var(--space-5) * 2); }
+  .margin { margin: 0 var(--space-5) var(--space-5); padding: 0; background: none; border-left: 0; }
+  .passage:not(:first-of-type) > .margin { padding-top: 0; }
+  .note { position: static; padding: var(--space-4) 0; border-top: 1px solid var(--ink-rule); }
 }
 @media (max-width: 700px) {
   .title-block h1 { font-size: var(--text-title); }
+  /* At a phone's width the lede size leaves too few words to a line; the passage is set at the body size. */
+  .passage > p { font-size: var(--text-body); }
   h1, h2 { overflow-wrap: anywhere; }
 }
 

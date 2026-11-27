@@ -29,7 +29,7 @@ The site works under any base path. The build reads two environment variables:
 
 - `src/css/tokens.css` holds every color, size and gap as a custom property; `src/css/site.css` uses them and names no value of its own (the only literals are `0`, `1px` hairlines, percentages, font weights and the breakpoints below).
 - The tokens are `DESIGN.md` section 2's, by name with a hyphen for the dot: `--paper-page`, `--paper-panel`, `--paper-overlay`, `--ink-primary`, `--ink-secondary`, `--ink-tertiary`, `--ink-rule`, `--ink-verse`, `--accent`, `--accent-wash`. The values are the light and dark sets of that section. `--on-accent` is the text on the filled button. Then the ladders: `--space-1` to `--space-8` (4 to 64 px, `AppSpacing`'s), `--text-label` to `--text-display` in `rem`, `--measure`, `--radius-sm`, `--radius-lg`, `--serif`, `--sans`, `--mono`.
-- Links inside panel surfaces use the primary ink, and the accent never carries text on the panel surface. So `contrast-pairs.json` has accent on the page and the overlay only.
+- Links inside panel surfaces use the primary ink, and the accent never carries text on the panel surface. So `contrast-pairs.json` has accent on the page and the overlay only. The front page's highlights (`mark-*`, the app's five default colors) are checked under the primary ink and under the bronze verse figures.
 - Appearance: `prefers-color-scheme` chooses light or dark until the visitor presses the header's icon button; a `data-appearance` attribute on `<html>` (`light` or `dark`) then overrides it, and the choice is kept in `localStorage` under `appearance`. The button shows the appearance a press switches to (the moon while the page is light, the sun while it is dark), decided in CSS by the same selectors as the dark picture, and is revealed by the script, so with scripting off the page simply follows the system. The pure functions that read, work out and apply the choice live in `scripts/appearance-core.mjs` (tested by `scripts/appearance.test.mjs`); `src/js/appearance.js` wires them to the page; the build inlines both in every page's `<head>`, so a chosen appearance applies before the first paint.
 - Breakpoints (literals in `@media`, since custom properties cannot be used there): 700 px, where the header's links wrap onto a second line and a two-column list stacks; 900 px, where the guide's sidebar becomes a "Guide contents" disclosure above the article; 800 px is named by the page that uses it.
 - Screenshots go in `src/img/shots/<name>.png` (and `<name>-dark.png` for a dark twin) and are placed with `{% shot "name", "Alt text" %}`. A missing file or empty alt text fails the build.
@@ -149,6 +149,16 @@ light    accent on paper-overlay                    5.10  4.5  ok
 light    ink-primary on accent-wash                13.54  4.5  ok
 light    on-accent on accent                        5.25  4.5  ok
 light    ink-primary on paper-page                 15.29  3    ok
+light    ink-primary on mark-yellow                12.61  4.5  ok
+light    ink-primary on mark-green                 12.96  4.5  ok
+light    ink-primary on mark-blue                  12.53  4.5  ok
+light    ink-primary on mark-rose                  12.00  4.5  ok
+light    ink-primary on mark-orange                11.57  4.5  ok
+light    ink-verse on mark-yellow                   5.23  4.5  ok
+light    ink-verse on mark-green                    5.37  4.5  ok
+light    ink-verse on mark-blue                     5.19  4.5  ok
+light    ink-verse on mark-rose                     4.97  4.5  ok
+light    ink-verse on mark-orange                   4.79  4.5  ok
 dark     ink-primary on paper-page                 15.05  4.5  ok
 dark     ink-primary on paper-panel                13.78  4.5  ok
 dark     ink-primary on paper-overlay              12.24  4.5  ok
@@ -163,6 +173,16 @@ dark     accent on paper-overlay                    7.27  4.5  ok
 dark     ink-primary on accent-wash                11.65  4.5  ok
 dark     on-accent on accent                        8.94  4.5  ok
 dark     ink-primary on paper-page                 15.05  3    ok
+dark     ink-primary on mark-yellow                 7.46  4.5  ok
+dark     ink-primary on mark-green                  7.23  4.5  ok
+dark     ink-primary on mark-blue                   7.38  4.5  ok
+dark     ink-primary on mark-rose                   7.84  4.5  ok
+dark     ink-primary on mark-orange                 7.67  4.5  ok
+dark     ink-verse on mark-yellow                   4.85  4.5  ok
+dark     ink-verse on mark-green                    4.69  4.5  ok
+dark     ink-verse on mark-blue                     4.79  4.5  ok
+dark     ink-verse on mark-rose                     5.09  4.5  ok
+dark     ink-verse on mark-orange                   4.98  4.5  ok
 contrast: every pair meets its minimum in both palettes
 ```
 
@@ -176,7 +196,7 @@ Before publishing, search the tree for anything that should stay private (an ema
 URL=https://github.com/matthewfurr/bible-carrel.git
 git fetch "$URL" main
 COMMIT=$(git commit-tree "<ref>^{tree}" -p FETCH_HEAD -m "<what changed>")
-git push "$URL" "$COMMIT:refs/heads/main"
+git push "$URL" "${COMMIT}:refs/heads/main"
 ```
 
 The first publication had no `-p FETCH_HEAD`. A push that changes anything under `site/` runs `.github/workflows/site.yml`, which builds, checks and deploys the site to GitHub Pages.

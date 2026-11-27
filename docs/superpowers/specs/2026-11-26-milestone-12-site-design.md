@@ -114,13 +114,17 @@ Every other guide page covers the Mac first and gives the iPhone's way under an 
 
 ### 4.4 The front page
 
-As mockup A, top to bottom:
+**As rebuilt on 2026-11-26 after the critique: "the page and its margin" (Matt chose mockup C of three, `milestone-12-mockups/front-page-directions/c.html`).** The front page is laid out as the app's reader is: a column of text with a notes column on the panel surface beside it. Top to bottom:
 
-1. **Title.** The bronze label "For Mac and iPhone", "Bible Carrel" in Literata Light, one italic sentence saying what it is, then two ways on: **Build it from source** (the page's filled button; Matt, 2026-11-26, after the critique: building is the one thing a visitor can do) and **Read the guide** (a link). Under them, one small line that says plainly it is not in the App Store and is built from source.
-2. **The hero screenshot** (shot 1 in section 5.3), full width of the column.
-3. **Features,** each a row of words beside a picture, sides alternating, each with a bronze label, a heading in Literata and one to three sentences numbered like verses (small raised bronze figures). In this order: The page · Marks and notes · The Library · Search and ⌘K · Reading plans · The study assistant · On the iPhone · Yours to keep (sync, backups, export). Each ends with a link to its guide page. On a narrow screen a row stacks, words first.
-4. **The sources,** as an aligned two-column list (what, then whose and under what licence), five or six lines, with a link to the full Sources page.
+1. **Title.** The bronze label "For Mac and iPhone", "Bible Carrel" in Literata Light, one italic line saying what it is, then two ways on: **Build it from source** (the page's filled button; Matt, 2026-11-26, after the critique: building is the one thing a visitor can do) and **Read the guide** (a link). Under them, one small line that says plainly it is not in the App Store and is built from source.
+2. **The page.** Eight passages down the text column, in this order: The page · Marks and notes · The Library · Search and ⌘K · Reading plans · The study assistant · On the iPhone · Keeping what you make. Each has an italic heading in the app's section-heading style, one paragraph whose sentences are numbered like verses (the numbers run on from passage to passage, as verses do through a chapter), one phrase in it highlighted in one of the app's five default highlight colors, and its picture below, linked to its full size. The last passage has no picture.
+3. **The margin.** A notes column beside the text, headed "Notes" with its count. Each passage has one note there, level with it: a dot in the highlight's color and the passage's name, the highlighted phrase in italic, one plain sentence, and the link to that part of the guide. Below 900px there is no column, and each note follows its paragraph as a row between hairlines.
+4. **The sources,** as an aligned two-column list (what, then whose and under what license), with a link to the full Sources page.
 5. **Build it,** two or three sentences and the same filled button to the Build page.
+
+**Pictures on the front page (Matt, 2026-11-26): "Don't use any sepia screenshots unless it is specific to showing that sepia is an option. But it is not what I want the leading screenshot to be."** The first picture is the Printed reader (`reader-hero`, with its dark twin). `reader-lectern-sepia` is not on the front page; it stays in the guide's Page styles page, beside the sentence that names Sepia as an appearance.
+
+The first build's front page, mockup A of the first three, was rows of words beside pictures on alternating sides, each under a bronze label. The critique found that structure generic, and its pictures too small to read.
 
 ### 4.5 The roadmap page
 

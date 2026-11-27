@@ -7,7 +7,7 @@
   {%- set here = page.url or "" %}
   <nav class="site-nav" aria-label="Site">
     <a href="{{ '/build/' | url }}"{% if here == "/build/" %} aria-current="page"{% endif %}>Build it</a>
-    <a href="{{ '/#features' | url }}">Features</a>
+    <a href="{{ '/#reader' | url }}">Features</a>
     <a href="{{ '/guide/first-chapter/' | url }}"{% if here.startsWith("/guide/") %} aria-current="page"{% endif %}>Guide</a>
     <a href="{{ '/sources/' | url }}"{% if here == "/sources/" %} aria-current="page"{% endif %}>Sources</a>
     <a href="{{ '/roadmap/' | url }}"{% if here == "/roadmap/" %} aria-current="page"{% endif %}>Roadmap</a>

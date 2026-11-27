@@ -122,3 +122,16 @@ Matt, asked why the repository was private: "I asked for it so we could publish 
 
 26. The repository's privacy on creation (ruling 16) was read by Matt as holding back; he had asked for the repository in order to publish it. Claude read those words as his go-ahead to publish, and said so before starting, with the offer to stop before the push if he wanted to look first.
 27. The public commit's address is GitHub's no-reply address, since he named none; it is one commit and can be made again with another.
+
+## The front page rebuilt, the same day
+
+Matt chose mockup C, "the page and its margin", and added: "Don't use any sepia screenshots unless it is specific to showing that sepia is an option. But it is not what I want the leading screenshot to be." (The mockup had led with the Lectern picture on Sepia paper, a placeholder Claude chose badly.)
+
+Built (Opus) in `7eadb44`: the feature rows and their labels are gone; the page is the reader, eight passages in a text column, each with one phrase highlighted in the app's five default highlight colors and its picture at the column's width, and a Notes column on the panel beside it with one note level with each passage, which stays in view while its passage scrolls. Below 900px each note follows its paragraph as a row between hairlines. The first picture is the Printed reader with its dark twin. The Sepia picture is off the front page and, in the guide's Page styles page, moved beside a sentence that names Sepia as an appearance. Section 4.4 of the spec describes the page as built.
+
+Checked: `npm --prefix site run check` passes with the new pairs (primary ink and the verse bronze on each highlight, light and dark; the lowest is the bronze on Green in dark, 4.69:1). The page was looked at by the implementer at 1440, 1280, 1024, 768, 375 and 320px in light and at 1440 in dark, and by Claude at 1280 and 375 in light and at 1024 in dark. No sideways scroll at 320 or 375.
+
+28. The verse figures run 1 to 14 down the page, one for each sentence that had a figure before; the brief's "16" was a miscount.
+29. The notes sit level with their passages, where the mockup stacked them at the top of the column: with eight passages the column would otherwise be empty for most of the page.
+30. Passages 1 and 2 both show John 1 (the reader, then the reader with the markup menu open). Left as it is: each is the right picture for its passage.
+

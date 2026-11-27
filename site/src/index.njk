@@ -3,126 +3,135 @@ layout: layouts/base.njk
 title: Bible Carrel
 description: Bible Carrel is a native app for Mac and iPhone for reading through the Bible with highlights, notes, bookmarks and a study assistant.
 ---
-{#- Every picture is named here; a missing file fails the build. The "Yours to keep" row is words alone, set as a centered coda. #}
-{%- set heroSizes = "(min-width: 65rem) 60rem, 100vw" %}
-{%- set rowSizes = "(min-width: 800px) 36rem, 100vw" %}
-{%- set phoneSizes = "(min-width: 800px) 10rem, 33vw" %}
+{#- The front page is laid out as the app's reader: a text column of passages and, beside it, a Notes column on the panel.
+    Each passage is one section holding its heading, its paragraph, its note and its picture, in that order, so a screen
+    reader hears the note after the passage at every width. Every picture is named here; a missing file fails the build.
+    The verse figures run on from passage to passage, as verses run through a chapter. #}
+{%- set shotSizes = "(min-width: 80rem) 55rem, (min-width: 900px) calc(100vw - 25rem), 100vw" %}
+{%- set phoneSizes = "(min-width: 900px) 24rem, 50vw" %}
 <div class="home">
   <div class="title-block">
     <p class="eyebrow">For Mac and iPhone</p>
     <h1>Bible Carrel</h1>
-    <p class="lede">A quiet desk for reading through the Bible: the page set like print, your highlights and notes in its margin, and a study assistant at your elbow.</p>
+    <p class="lede">A quiet desk for reading through the Bible</p>
     <p class="title-links">
       <a class="button" href="{{ '/build/' | url }}">Build it from source</a>
       <a href="{{ '/guide/first-chapter/' | url }}">Read the guide ›</a>
     </p>
     <p class="small">Not in the App Store and not downloadable. You build it yourself from its source, with Xcode.</p>
-    <div class="hero-shot">
-      {% shot "reader-hero", "The reader on John 1 in the Printed style, opening on the book's title, with one phrase highlighted in yellow and the notes column open with two notes", "eager", heroSizes %}
-    </div>
   </div>
 
-  <section class="features" id="features" aria-label="Features">
-    <div class="row">
-      <div class="row-words">
-        <p class="eyebrow">The page</p>
-        <h2>It reads like a printed Bible.</h2>
-        <p><sup class="verse" aria-hidden="true">1</sup>One chapter at a time, set like a printed page as far as each translation's text allows: paragraphs that indent and poetry that hangs under its first word.</p>
-        <p><sup class="verse" aria-hidden="true">2</sup>Four page styles (Printed, Lectern, Study and Classic), in System, Light, Sepia and Dark.</p>
-        <p class="more"><a href="{{ '/guide/reader/' | url }}">How the reader works ›</a></p>
-      </div>
-      <div class="row-shot">
-        {% shot "reader-lectern-sepia", "Psalm 23 in the Lectern page style on Sepia paper, opening on a large drop numeral, with each line of poetry on its own line", "", rowSizes %}
-      </div>
+  <div class="reader" id="reader">
+    <div class="reader-head">
+      <p class="notes-head">Notes <span class="notes-count">8</span></p>
     </div>
 
-    <div class="row flip">
-      <div class="row-words">
-        <p class="eyebrow">Marks and notes</p>
-        <h2>Pencil in the margin.</h2>
-        <p><sup class="verse" aria-hidden="true">1</sup>Highlight a phrase, not only a verse, in colors you choose. Write a note beside it, or bookmark the verse.</p>
-        <p><sup class="verse" aria-hidden="true">2</sup>Every delete can be undone.</p>
-        <p class="more"><a href="{{ '/guide/highlights/' | url }}">Highlights and bookmarks ›</a></p>
+    <section class="passage">
+      <h2>The page</h2>
+      <p><sup class="verse" aria-hidden="true">1</sup>One chapter at a time, <mark class="hl-yellow">set like a printed page</mark> as far as each translation's text allows: paragraphs that indent and poetry that hangs under its first word. <sup class="verse" aria-hidden="true">2</sup>Four page styles (Printed, Lectern, Study and Classic), in System, Light, Sepia and Dark.</p>
+      <div class="margin">
+        <div class="note">
+          <p class="note-ref"><span class="dot hl-yellow"></span>The page</p>
+          <p class="note-quote">set like a printed page</p>
+          <p class="note-body">Paragraphs and poetry as each translation gives them. <a href="{{ '/guide/reader/' | url }}">How the reader works ›</a></p>
+        </div>
       </div>
-      <div class="row-shot">
-        {% shot "markup-menu", "The markup menu open under verse 5 of John 1, with a row of color swatches above Add Note, Bookmark Verse, Compare Translations, Cross-References and the copy commands", "", rowSizes %}
-      </div>
-    </div>
+      {% shot "reader-hero", "The reader on John 1 in the Printed style, opening on the book's title, with one phrase highlighted in yellow and the notes column open with two notes", "eager", shotSizes %}
+    </section>
 
-    <div class="row">
-      <div class="row-words">
-        <p class="eyebrow">The Library</p>
-        <h2>People, places and each book's story.</h2>
-        <p><sup class="verse" aria-hidden="true">1</sup>Each of the 66 books opens to the people it names, with a family tree on the Mac, a map of its places, and a timeline in the order of history.</p>
-        <p class="more"><a href="{{ '/guide/library/' | url }}">The Library ›</a></p>
+    <section class="passage">
+      <h2>Marks and notes</h2>
+      <p><sup class="verse" aria-hidden="true">3</sup><mark class="hl-green">Highlight a phrase, not only a verse</mark>, in colors you choose. Write a note beside it, or bookmark the verse. <sup class="verse" aria-hidden="true">4</sup>Every delete can be undone.</p>
+      <div class="margin">
+        <div class="note">
+          <p class="note-ref"><span class="dot hl-green"></span>Marks and notes</p>
+          <p class="note-quote">Highlight a phrase, not only a verse</p>
+          <p class="note-body">A note sits in a column beside what it marks, as this one does. <a href="{{ '/guide/highlights/' | url }}">Highlights and bookmarks ›</a></p>
+        </div>
       </div>
-      <div class="row-shot">
-        {% shot "people", "The People view for Genesis, with Jacob chosen from the list of names and his family drawn as a tree of parents, partners and children", "", rowSizes %}
-      </div>
-    </div>
+      {% shot "markup-menu", "The markup menu open under verse 5 of John 1, with a row of color swatches above Add Note, Bookmark Verse, Compare Translations, Cross-References and the copy commands", "", shotSizes %}
+    </section>
 
-    <div class="row flip">
-      <div class="row-words">
-        <p class="eyebrow">Search and ⌘K</p>
-        <h2>One field finds anything.</h2>
-        <p><sup class="verse" aria-hidden="true">1</sup><kbd>⌘K</kbd> on the Mac, and the search button on the iPhone, search the Bible, your notes, highlights, bookmarks and conversations at once.</p>
-        <p><sup class="verse" aria-hidden="true">2</sup>On the Mac the same field goes to a passage and runs commands.</p>
-        <p class="more"><a href="{{ '/guide/search/' | url }}">Search and ⌘K ›</a></p>
+    <section class="passage">
+      <h2>The Library</h2>
+      <p><sup class="verse" aria-hidden="true">5</sup>Each of the 66 books opens to <mark class="hl-blue">the people it names</mark>, with a family tree on the Mac, a map of its places, and a timeline in the order of history.</p>
+      <div class="margin">
+        <div class="note">
+          <p class="note-ref"><span class="dot hl-blue"></span>The Library</p>
+          <p class="note-quote">the people it names</p>
+          <p class="note-body">People, places and a timeline for each of the 66 books. <a href="{{ '/guide/library/' | url }}">The Library ›</a></p>
+        </div>
       </div>
-      <div class="row-shot">
-        {% shot "search", "The search field open over John 1 with two words typed and a list of Scripture results with the matched words underlined", "", rowSizes %}
-      </div>
-    </div>
+      {% shot "people", "The People view for Genesis, with Jacob chosen from the list of names and his family drawn as a tree of parents, partners and children", "", shotSizes %}
+    </section>
 
-    <div class="row">
-      <div class="row-words">
-        <p class="eyebrow">Reading plans</p>
-        <h2>Your group's plan, week by week.</h2>
-        <p><sup class="verse" aria-hidden="true">1</sup>A plan is a table of weeks and their readings, for a group that meets weekly. Import one from a text file or a PDF, or type it in.</p>
-        <p><sup class="verse" aria-hidden="true">2</sup>Tick a reading when you have read it. Nothing counts as behind.</p>
-        <p class="more"><a href="{{ '/guide/reading-plans/' | url }}">Reading plans ›</a></p>
+    <section class="passage">
+      <h2>Search and ⌘K</h2>
+      <p><sup class="verse" aria-hidden="true">6</sup><kbd>⌘K</kbd> on the Mac, and the search button on the iPhone, <mark class="hl-rose">search the Bible, your notes, highlights, bookmarks and conversations at once</mark>. <sup class="verse" aria-hidden="true">7</sup>On the Mac the same field goes to a passage and runs commands.</p>
+      <div class="margin">
+        <div class="note">
+          <p class="note-ref"><span class="dot hl-rose"></span>Search and ⌘K</p>
+          <p class="note-quote">search the Bible, your notes, highlights, bookmarks and conversations at once</p>
+          <p class="note-body">One field, on both apps. <a href="{{ '/guide/search/' | url }}">Search and ⌘K ›</a></p>
+        </div>
       </div>
-      <div class="row-shot">
-        {% shot "reading-plan", "The reading plan window with five weeks listed down the side and Week 2 chosen, showing its three readings with one ticked", "", rowSizes %}
-      </div>
-    </div>
+      {% shot "search", "The search field open over John 1 with two words typed and a list of Scripture results with the matched words underlined", "", shotSizes %}
+    </section>
 
-    <div class="row flip">
-      <div class="row-words">
-        <p class="eyebrow">The study assistant</p>
-        <h2>Ask beside the page.</h2>
-        <p><sup class="verse" aria-hidden="true">1</sup>Ask about a passage or a chapter in the column beside the reader.</p>
-        <p><sup class="verse" aria-hidden="true">2</sup>Apple's on-device model answers by default, on a Mac with Apple Intelligence turned on. Claude, OpenAI or your own endpoint can answer if you add a key.</p>
-        <p class="more"><a href="{{ '/guide/assistant/' | url }}">The study assistant ›</a></p>
+    <section class="passage">
+      <h2>Reading plans</h2>
+      <p><sup class="verse" aria-hidden="true">8</sup>A plan is <mark class="hl-orange">a table of weeks and their readings</mark>, for a group that meets weekly. Import one from a text file or a PDF, or type it in. <sup class="verse" aria-hidden="true">9</sup>Tick a reading when you have read it. Nothing counts as behind.</p>
+      <div class="margin">
+        <div class="note">
+          <p class="note-ref"><span class="dot hl-orange"></span>Reading plans</p>
+          <p class="note-quote">a table of weeks and their readings</p>
+          <p class="note-body">For a group that reads together and meets each week. <a href="{{ '/guide/reading-plans/' | url }}">Reading plans ›</a></p>
+        </div>
       </div>
-      <div class="row-shot">
-        {% shot "assistant", "The assistant open beside Psalm 1, with the prompt Name the key themes sent and a numbered reply marked On-device", "", rowSizes %}
-      </div>
-    </div>
+      {% shot "reading-plan", "The reading plan window with five weeks listed down the side and Week 2 chosen, showing its three readings with one ticked", "", shotSizes %}
+    </section>
 
-    <div class="row">
-      <div class="row-words">
-        <p class="eyebrow">On the iPhone</p>
-        <h2>The same desk in your pocket.</h2>
-        <p><sup class="verse" aria-hidden="true">1</sup>The iPhone app is the same reader, laid out for the phone. With iCloud sync set up, it shares your notes with the Mac.</p>
-        <p class="more"><a href="{{ '/guide/iphone/' | url }}">The iPhone app ›</a></p>
+    <section class="passage">
+      <h2>The study assistant</h2>
+      <p><sup class="verse" aria-hidden="true">10</sup><mark class="hl-yellow">Ask about a passage or a chapter</mark> in the column beside the reader. <sup class="verse" aria-hidden="true">11</sup>Apple's on-device model answers by default, on a Mac with Apple Intelligence turned on. Claude, OpenAI or your own endpoint can answer if you add a key.</p>
+      <div class="margin">
+        <div class="note">
+          <p class="note-ref"><span class="dot hl-yellow"></span>The study assistant</p>
+          <p class="note-quote">Ask about a passage or a chapter</p>
+          <p class="note-body">Answers appear in a column beside the page you are reading. <a href="{{ '/guide/assistant/' | url }}">The study assistant ›</a></p>
+        </div>
       </div>
-      <div class="row-shot row-phones">
+      {% shot "assistant", "The assistant open beside Psalm 1, with the prompt Name the key themes sent and a numbered reply marked On-device", "", shotSizes %}
+    </section>
+
+    <section class="passage">
+      <h2>On the iPhone</h2>
+      <p><sup class="verse" aria-hidden="true">12</sup>The iPhone app is <mark class="hl-green">the same reader, laid out for the phone</mark>. With iCloud sync set up, it shares your notes with the Mac.</p>
+      <div class="margin">
+        <div class="note">
+          <p class="note-ref"><span class="dot hl-green"></span>On the iPhone</p>
+          <p class="note-quote">the same reader, laid out for the phone</p>
+          <p class="note-body">The same desk in your pocket. <a href="{{ '/guide/iphone/' | url }}">The iPhone app ›</a></p>
+        </div>
+      </div>
+      <div class="phones">
         {% shot "phone-reader", "The iPhone reader on John 1 with one highlighted phrase and a mark in the right margin for its note, above the Read, Plan, Notes and Ask tabs", "", phoneSizes %}
         {% shot "phone-library", "The iPhone Library on the New Testament tab, with John's chapters under its BibleProject, People, Places and About buttons", "", phoneSizes %}
       </div>
-    </div>
+    </section>
 
-    <div class="row coda">
-      <div class="row-words">
-        <p class="eyebrow">Keeping what you make</p>
-        <h2>Yours to keep.</h2>
-        <p><sup class="verse" aria-hidden="true">1</sup>What you make stays on your device. With sync off, as in the build on the <a href="{{ '/build/' | url }}">Build page</a>, it stays on the Mac. If you sign the app with your own iCloud container, it syncs through your private iCloud database.</p>
-        <p><sup class="verse" aria-hidden="true">2</sup>A backup is taken once a day, and Restore brings back what the store no longer has. Export All Data writes everything you have made to one file.</p>
-        <p class="more"><a href="{{ '/guide/sync-and-backups/' | url }}">Sync and backups ›</a></p>
+    <section class="passage">
+      <h2>Keeping what you make</h2>
+      <p><sup class="verse" aria-hidden="true">13</sup><mark class="hl-blue">What you make stays on your device</mark>. With sync off, as in the build on the <a href="{{ '/build/' | url }}">Build page</a>, it stays on the Mac. If you sign the app with your own iCloud container, it syncs through your private iCloud database. <sup class="verse" aria-hidden="true">14</sup>A backup is taken once a day, and Restore brings back what is no longer there. Export All Data writes everything you have made to one file.</p>
+      <div class="margin">
+        <div class="note">
+          <p class="note-ref"><span class="dot hl-blue"></span>Keeping what you make</p>
+          <p class="note-quote">What you make stays on your device</p>
+          <p class="note-body">Yours to keep. <a href="{{ '/guide/sync-and-backups/' | url }}">Sync and backups ›</a></p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 
   <section class="facts" aria-labelledby="sources-title">
     <p class="eyebrow">Where it comes from</p>

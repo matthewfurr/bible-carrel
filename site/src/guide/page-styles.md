@@ -5,8 +5,6 @@ lede: Four page styles, and the type set the way you read.
 
 The page comes in four styles: Printed (the default, set in Literata), Lectern, Study and Classic. You choose one in Settings › Reading.
 
-{% shot "reader-lectern-sepia", "Psalm 23 in the Lectern page style on Sepia paper, opening on a large drop numeral, with each line of poetry on its own line", "lazy", "(min-width: 65rem) 43rem, 100vw" %}
-
 ## What you can set
 
 Beside the style, Settings › Reading holds:
@@ -20,6 +18,10 @@ Beside the style, Settings › Reading holds:
 - section headings, shown or hidden
 - justification
 - the appearance: System, Light, Sepia or Dark
+
+Sepia is one of the four appearances. Here it is under the Lectern style, which opens a chapter on a large numeral:
+
+{% shot "reader-lectern-sepia", "Psalm 23 in the Lectern page style on Sepia paper, opening on a large drop numeral, with each line of poetry on its own line", "lazy", "(min-width: 65rem) 43rem, 100vw" %}
 
 Each change applies to the open chapter at once. The column's width, the verse numbers and the space between paragraphs follow the font size.
 
